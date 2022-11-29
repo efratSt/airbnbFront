@@ -1,8 +1,10 @@
 <template>
 
-    <section class="stay-footer">
-    
-    </section>
+    <footer>
+        <section class="stay-footer">
+            <h1>stay-footer</h1>
+        </section>
+    </footer>
 
 </template>
 

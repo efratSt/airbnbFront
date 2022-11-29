@@ -1,6 +1,7 @@
 <template>
   <header>
-      <router-link to="/login">Login / Signup</router-link>
+      <!-- <router-link to="/login">Login / Signup</router-link> -->
+      <h1>AIRBNB</h1>
   </header>
 </template>
 <script>

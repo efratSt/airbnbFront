@@ -3,6 +3,7 @@
         <user-msg />
         <app-header />
         <router-view />
+        <stay-footer />
     </section>
 </template>
 
@@ -11,6 +12,7 @@ import { store } from './store/store';
 import appHeader from './cmps/app-header.vue';
 import userMsg from './cmps/user-msg.vue';
 import { userService } from './services/user.service';
+import stayFooter from './cmps/stay-footer.vue';
 
 export default {
     created() {
@@ -21,6 +23,8 @@ export default {
     components: {
         appHeader,
         userMsg,
+        stayFooter,
+
     },
 };
 </script>

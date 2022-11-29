@@ -1,41 +1,17 @@
 <template>
-  <div class="container home">
-    <ul class="stay-list">
-      <li v-for="stay in stays" :key="stay._id">
-
-        <!-- פה נרנדר את הליסט -->
-
-        <!-- <p>
-          {{ stay.name }}
-        </p>
-        <p>
-          ${{ stay.price }}
-        </p>
-        <p>
-          desc: {{ stay}}
-        </p> -->
-        <!-- <img :src="{{ stay.imgUrls[0] }}"></img> -->
-        <!-- <pre>{{stay}}</pre> -->
-        <!-- <button @click="removeStay(stay._id)">x</button>
-        <button @click="updateStay(stay)">Update</button>
-        <hr />
-        <button @click="addStayMsg(stay._id)">Add stay msg</button>
-        <button @click="printStayToConsole(stay)">Print msgs to console</button> -->
-      </li>
-    </ul>
-    <!-- <hr />
-    <form @submit.prevent="addStay()">
-      <h2>Add stay</h2>
-      <input type="text"/>
-      <button>Save</button>
-    </form> -->
-  </div>
+    <section class="stay-list">
+      <h1>stay-app</h1>
+      <stay-list :stays="stays"/>
+    </section>
+    <!-- <pre>{{stays}}</pre> -->
 </template>
 
 <script>
+
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import {stayService} from '../services/stay.service.local'
-import { getActionRemoveStay, getActionUpdateStay, getActionAddStayMsg } from '../store/stay.store'
+import stayList  from '../cmps/stay-list.vue'
+
 export default {
   data() {
     return {
@@ -54,52 +30,9 @@ export default {
     this.$store.dispatch({type: 'loadStays'})
   },
   methods: {
-    async addStay() {
-      try {
-        await this.$store.dispatch({ type: 'addStay', stay: this.stayToAdd })
-        showSuccessMsg('Stay added')
-        this.stayToAdd = stayService.getEmptyStay()
-      } catch (err) {
-        console.log(err)
-        showErrorMsg('Cannot add stay')
-      }
+  },
+  components: {
+    stayList
     },
-    async removeStay(stayId) {
-      try {
-        await this.$store.dispatch(getActionRemoveStay(stayId))
-        showSuccessMsg('Stay removed')
-
-      } catch (err) {
-        console.log(err)
-        showErrorMsg('Cannot remove stay')
-      }
-    },
-    async updateStay(stay) {
-      try {
-        stay = { ...stay }
-        stay.price = +prompt('New price?', stay.price)
-        await this.$store.dispatch(getActionUpdateStay(stay))
-        showSuccessMsg('Stay updated')
-
-      } catch (err) {
-        console.log(err)
-        showErrorMsg('Cannot update stay')
-      }
-    },
-    async addStayMsg(stayId) {
-      try {
-        await this.$store.dispatch(getActionAddStayMsg(stayId))
-        showSuccessMsg('Stay msg added')
-      } catch (err) {
-        console.log(err)
-        showErrorMsg('Cannot add stay msg')
-      }
-    },
-    printStayToConsole(stay) {
-      console.log('Stay msgs:', stay.msgs)
-    }
-  }
-
-
 }
 </script>

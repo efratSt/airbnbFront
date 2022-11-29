@@ -1,7 +1,7 @@
 <template>
 
-    <section class="stay-list">
-        <h1>stay-list</h1>
+    <section class="stay-details">
+        <h1>stay-details</h1>
     </section>
 
 </template>
