@@ -32,8 +32,7 @@
         </section>
       </div>
     </div>
-    <Date-picker v-model="range" is-range/>
-  <Date-picker v-model="range" is-range/>
+  <Date-picker v-model="range" is-range :columns="2" color="gray"/>
   <div class="stay-chosen-dates">
   <span>{{ date(range.start) }} </span> <span>{{ date(range.end) }}</span>
 </div>
