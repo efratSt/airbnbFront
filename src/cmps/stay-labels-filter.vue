@@ -1,7 +1,7 @@
 <template>
     <section class="stay-labels-filter">
         <div class="icons-container" v-for="(icon, idx) in icons" :key="idx">
-            <div class="icon" :class="labels[idx]">
+            <div class="icon btn-label-filter" :class="labels[idx]">
                 <img :src="icons[idx]" alt="" />
                 <p>{{ labels[idx] }}</p>
             </div>
