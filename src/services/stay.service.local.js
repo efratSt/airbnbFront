@@ -26,6 +26,9 @@ var gStays = [
     summary:
       "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
     capacity: 8,
+    bedrooms: 3,
+    beds: 4,
+    bathrooms: 2,
     amenities: [
       "TV",
       "Wifi",
