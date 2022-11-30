@@ -3,10 +3,14 @@
     <div class="stay-details flex align-center">
       <div class="stay-info">
         <h2>{{ stay.summary }}</h2>
-        <h4>{{ stay.loc.city }},{{ stay.loc.country }}</h4>
-        <!-- add map links later -->
-        <span><button></button> Share</span>
-        <span><button></button> Save</span>
+        <div class="stay-secondary header flex space-between">
+          <h4>{{ stay.loc.city }},{{ stay.loc.country }}</h4>
+          <!-- add map links later -->
+          <div class="stay-secondary header buttons-container flex space-between">
+            <span><button></button> Share</span>
+            <span><button></button> Save</span>
+          </div>
+        </div>
         <div class="img-container grid">
           <img :src="stay.imgUrls[0]" alt="stay-img" />
         </div>
@@ -14,11 +18,11 @@
           <h3>
             {{ stay.type }} hosted by {{ stay.host.fullname }} - {{ stay.name }}
           </h3>
-          <h5> {{stay.capacity}} guests</h5>
+          <h5>{{ stay.capacity }} guests</h5>
         </section>
         <section class="stay-amenities container">
           <h3>What this place offers</h3>
-          <ul class="stay-amenities clean-list grid">
+          <ul class="stay-amenities-list clean-list">
             <li
               class="stay-amenity"
               v-for="(amenity, idx) in stay.amenities"
@@ -28,14 +32,16 @@
               {{ amenity }}
             </li>
           </ul>
-          <button v-if="(stay.amenities.length > 10)">Show all {{stay.amenities.length}} amenities</button>
+          <button v-if="stay.amenities.length > 10">
+            Show all {{ stay.amenities.length }} amenities
+          </button>
         </section>
       </div>
     </div>
-  <Date-picker v-model="range" is-range :columns="2" color="gray"/>
-  <div class="stay-chosen-dates">
-  <span>{{ date(range.start) }} </span> <span>{{ date(range.end) }}</span>
-</div>
+    <Date-picker v-model="range" is-range :columns="2" color="gray" />
+    <div class="stay-chosen-dates">
+      <span>{{ date(range.start) }} </span> <span>{{ date(range.end) }}</span>
+    </div>
     <div class="review-container">
       <div class="review-add flex">
         <input type="text" v-model="review" placeholder="Write your review" />
@@ -53,16 +59,15 @@
 </template>
 
 <script>
-
   export default {
     data() {
       return {
         stay: null,
         review: '',
         range: {
-      start: new Date(),
-      end: new Date(),
-    }
+          start: new Date(),
+          end: new Date(),
+        },
       }
     },
     computed: {
@@ -71,7 +76,7 @@
           ? 'These dates are available'
           : 'Stay is not available in these dates'
       },
-      
+
       reviews() {
         return this.$store.getters.getReviews
         // return null
