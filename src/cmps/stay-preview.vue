@@ -1,11 +1,15 @@
 <template>
     <section class="stay-preview">
-        <!-- <h4>stay-preview</h4> -->
         <section class="stay-card">
             <router-link :to="'/stay/' + stay._id">
-                <div>
-                    <img :src="stay.imgUrls[0]" />
-                </div>
+            <div class="stay-img-carousel">
+                <el-carousel height="150px" :autoplay="false" trigger="click" indicator-position="none">
+                    <el-carousel-item v-for="imgUrl in stay.imgUrls">
+                        <img :src="imgUrl" />
+                    </el-carousel-item>
+                </el-carousel>
+            </div>
+
                 <div class="stay-name-rate">
                     <p>
                         <span>{{ stay.name }},{{ stay.loc.country }} &nbsp; &nbsp;</span>
@@ -14,21 +18,12 @@
                 </div>
                 <div class="stay-added-price">
                     <p>
-                        <span class="stay-added">Added <br /></span>
+                        <span class="stay-added">Added {{ dateCalc }}<br /></span>
                         <span class="stay-price">{{ stay.price }}$ night</span>
                     </p>
                 </div>
 
             </router-link>
-
-                <!-- <carousel>
-                    <slide>
-                        Slide 1 Content
-                    </slide>
-                    <slide>
-                        Slide 2 Content
-                    </slide>
-                </carousel> -->
 
         </section>
     </section>
@@ -36,7 +31,6 @@
 
 <script>
 import stayDetails from '../views/stay-details.vue';
-
 export default {
     props: {
         stay: Object,
@@ -54,6 +48,12 @@ export default {
     computed: {
         rateCalc() {
             return this.stayRate = (this.stayRate) / this.stay.reviews.length
+        },
+        dateCalc() {
+            // console.log(new Date(this.stay.createdAt).toLocaleString())
+            // let time = new Date(Date.now()-this.stay.createdAt)
+            // var time = this.stay.createdAt
+            // console.log(this.stay.createdAt);
         }
     },
     methods: {
@@ -64,3 +64,23 @@ export default {
     },
 };
 </script>
+
+<style scoped>
+/* .el-carousel__item h3 {
+    color: #475669;
+    opacity: 0.75;
+    line-height: 300px;
+    margin: 0;
+    text-align: center;
+}
+
+.el-carousel__item:nth-child(2n) {
+    background-color: #99a9bf;
+}
+
+.el-carousel__item:nth-child(2n + 1) {
+    background-color: #d3dce6;
+} */
+</style>
+
+
