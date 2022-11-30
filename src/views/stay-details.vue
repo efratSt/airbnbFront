@@ -1,9 +1,9 @@
 <template>
-  <div class="stay-details-container container">
+  <div v-if="stay" class="stay-details-container container">
     <div class="stay-details flex align-center">
       <div class="stay-info">
-        <h2>{{ stay.summary }}</h2>
-        <div class="stay-secondary header flex space-between">
+        <h2 >{{ stay.summary }}</h2>
+        <div class="stay-secondary header flex align-center space-between">
           <h4>{{ stay.loc.city }},{{ stay.loc.country }}</h4>
           <!-- add map links later -->
           <div class="stay-secondary header buttons-container flex space-between">
