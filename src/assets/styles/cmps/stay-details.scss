@@ -43,7 +43,6 @@
 .img-3 {
   grid-area: area3;
   border-top-right-radius: 12px;
-  
 }
 .img-4 {
   grid-area: area4;
@@ -64,11 +63,15 @@
     margin-right: 0.5rem;
     font-size: 16px;
   }
+  .fa-solid.saved {
+    color: #ff385c;
+  }
   &.button {
     all: unset;
     padding: 8px;
     border-radius: 4px;
     font-size: 14px;
+    text-decoration: underline;
   }
   &.button:hover {
     cursor: pointer;

@@ -13,7 +13,7 @@
               <i class="fa-solid fa-arrow-up-from-bracket"></i> Share
             </button>
             <button class="stay-secondary header button">
-              <i class="fa-regular fa-heart"></i> Save
+              <i class="fa-regular fa-heart" :class="[{ 'fa-solid saved' : isSaved  }]" @click="toggleSaved"></i> Save
             </button>
           </div>
         </div>
@@ -92,6 +92,7 @@
           start: new Date(),
           end: new Date(),
         },
+        isSaved: false,
       }
     },
     computed: {
@@ -112,6 +113,11 @@
       //   this.getReviews(stayId)
     },
     methods: {
+      toggleSaved(){
+        console.log(this.isSaved)
+        this.isSaved = !this.isSaved
+        return this.isSaved
+      },
       async getStayById(stayId) {
         this.stay = await this.$store.dispatch({
           type: 'getStayById',
