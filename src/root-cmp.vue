@@ -1,5 +1,5 @@
 <template>
-    <section class="container main-container">
+    <section class="container main-container root-cmp">
         <user-msg />
         <stay-header />
         <router-view />
