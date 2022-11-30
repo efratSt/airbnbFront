@@ -1,11 +1,25 @@
 .stay-preview {
-    background-color: aqua;
-    display: flex;
-    flex-direction: row;
+    height: 250px;
+    width: 150px;
+
+    img {
+        height: 150px;
+        width: 150px;
+        object-fit: cover;
+        aspect-ratio: 1/1;
+        border-radius: 0.75em;
+    }
+
 
     .stay-card {
         background-color: azure;
-        margin: 10px;
-        padding: 10px;
+        width: 150px;
+        padding: 0;
+        // margin: 10px;
+        // padding: 10px;
+
+        p{
+            font-size: 0.8rem;
+        }
     }
 }
