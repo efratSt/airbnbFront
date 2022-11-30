@@ -9,7 +9,7 @@ var gStays = [
     _id: "10006546",
     name: "Ribeira Charming Duplex",
     type: "House",
-    createdAt:Date.now(),
+    createdAt: Date.now(),
     imgUrls: [
       "https://a0.muscache.com/im/pictures/e83e702f-ef49-40fb-8fa0-6512d7e26e9b.jpg?aki_policy=large",
       "otherImg.jpg",
@@ -22,10 +22,13 @@ var gStays = [
       "https://www.google.com/search?q=%D7%AA%D7%9E%D7%95%D7%A0%D7%95%D7%AA+%D7%A9%D7%9C+%D7%93%D7%99%D7%A8%D7%95%D7%AA+%D7%A0%D7%95%D7%A4%D7%A9&rlz=1C1GCEA_enIL1010IL1010&sxsrf=ALiCzsbUoTGbxwHjJvejqx8kkc9wryuZZw:1669800901821&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjByuSMzdX7AhWTWqQEHcaEBL0Q_AUoAXoECAEQAw&biw=1920&bih=929&dpr=1#imgrc=1t20f6EC5zAlkM",
       "https://www.google.com/search?q=%D7%AA%D7%9E%D7%95%D7%A0%D7%95%D7%AA+%D7%A9%D7%9C+%D7%93%D7%99%D7%A8%D7%95%D7%AA+%D7%A0%D7%95%D7%A4%D7%A9&rlz=1C1GCEA_enIL1010IL1010&sxsrf=ALiCzsbUoTGbxwHjJvejqx8kkc9wryuZZw:1669800901821&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjByuSMzdX7AhWTWqQEHcaEBL0Q_AUoAXoECAEQAw&biw=1920&bih=929&dpr=1#imgrc=qXtKme6GQn5OGM",
     ],
-    price: 81.0,
+    price: 80.0,
     summary:
       "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
     capacity: 8,
+    bedrooms: 3,
+    beds: 4,
+    bathrooms: 2,
     amenities: [
       "TV",
       "Wifi",

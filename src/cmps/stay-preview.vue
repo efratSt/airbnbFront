@@ -3,7 +3,9 @@
         <!-- <h4>stay-preview</h4> -->
         <section class="stay-card">
             <router-link :to="'/stay/' + stay._id">
-                <img :src="stay.imgUrls[0]" />
+                <div>
+                    <img :src="stay.imgUrls[0]" />
+                </div>
                 <div class="stay-name-rate">
                     <p>
                         <span>{{ stay.name }},{{ stay.loc.country }} &nbsp; &nbsp;</span>
@@ -16,7 +18,16 @@
                         <span class="stay-price">{{ stay.price }}$ night</span>
                     </p>
                 </div>
+
             </router-link>
+                <carousel>
+                    <slide>
+                        Slide 1 Content
+                    </slide>
+                    <slide>
+                        Slide 2 Content
+                    </slide>
+                </carousel>
         </section>
     </section>
 </template>
