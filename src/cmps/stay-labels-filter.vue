@@ -77,10 +77,31 @@ export default {
             ],
         };
     },
-    methods: {
-        filterByLabel(label) {
-            console.log(label);
-        },
+    unmounted() {
+        console.log(this.icons.length, this.labels.length);
     },
 };
 </script>
+
+<style>
+.stay-labels-filter {
+    padding-block: 20px;
+    display: flex;
+    gap: 25px;
+    overflow-x: scroll;
+}
+.stay-labels-filter .icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: max-content;
+    align-items: center;
+}
+.stay-labels-filter img {
+    height: 24px;
+    width: 24px;
+}
+.stay-labels-filter p {
+    font-size: 13px;
+}
+</style>
