@@ -2,23 +2,47 @@
   <div v-if="stay" class="stay-details-container container">
     <div class="stay-details flex align-center">
       <div class="stay-info">
-        <h2 >{{ stay.summary }}</h2>
+        <h2>{{ stay.summary }}</h2>
         <div class="stay-secondary header flex align-center space-between">
-          <h4>{{ stay.loc.city }},{{ stay.loc.country }}</h4>
+          <div class="stay-secondary header location">
+            <h4>{{ stay.loc.city }},{{ stay.loc.country }}</h4>
+          </div>
           <!-- add map links later -->
-          <div class="stay-secondary header buttons-container flex space-between">
-            <button class="stay-secondary header button"><i class="fa-solid fa-arrow-up-from-bracket"></i> Share</button>
-            <button class="stay-secondary header button"><i class="fa-regular fa-heart"></i> Save</button>
+          <div class="stay-secondary header buttons-container flex">
+            <button class="stay-secondary header button">
+              <i class="fa-solid fa-arrow-up-from-bracket"></i> Share
+            </button>
+            <button class="stay-secondary header button">
+              <i class="fa-regular fa-heart"></i> Save
+            </button>
           </div>
         </div>
-        <div class="img-container grid">
-          <img :src="stay.imgUrls[0]" alt="stay-img" />
+        <div class="img-container">
+          <article v-for="(image, idx) in stay.imgUrls.slice(0, 5)" :key="idx">
+            <img :src="image" alt="stay-img" :class="`grid-item img-${idx+1}`" />
+          </article>
         </div>
         <section class="stay-host-details">
-          <h3>
+          <h2>
             {{ stay.type }} hosted by {{ stay.host.fullname }} - {{ stay.name }}
-          </h3>
-          <h5>{{ stay.capacity }} guests</h5>
+          </h2>
+
+          <ol class="clean-list flex align-center">
+            <li>
+              <span>{{ stay.capacity }} guests</span>
+            </li>
+            <li>
+              <span> ·</span>
+              <span>{{ stay.bedrooms }} bedrooms</span>
+            </li>
+            <li>
+              <span> ·</span><span>{{ stay.beds }} beds </span>
+            </li>
+            <li>
+              <span> ·</span>
+              <span>{{ stay.bathrooms }} bathrooms</span>
+            </li>
+          </ol>
         </section>
         <section class="stay-amenities container">
           <h3>What this place offers</h3>
