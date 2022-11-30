@@ -176,5 +176,5 @@ function getEmptyStay() {
   // await storageService.post(STORAGE_KEY, getEmptyStay())
   // await storageService.post(STORAGE_KEY, getEmptyStay())
   // await storageService.post(STORAGE_KEY, getEmptyStay())
-    // await storageService.post(STORAGE_KEY, ...gStays)
+await storageService.post(STORAGE_KEY, ...gStays)
 })();
