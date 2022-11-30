@@ -1,15 +1,15 @@
 <template>
     <section class="stay-preview">
         <section class="stay-card">
-            <router-link :to="'/stay/' + stay._id">
             <div class="stay-img-carousel">
-                <el-carousel height="150px" :autoplay="false" trigger="click" indicator-position="none">
+                <el-carousel height="150px" :autoplay="false" trigger="click" indicator-position="">
                     <el-carousel-item v-for="imgUrl in stay.imgUrls">
                         <img :src="imgUrl" />
                     </el-carousel-item>
                 </el-carousel>
             </div>
 
+            <router-link :to="'/stay/' + stay._id">
                 <div class="stay-name-rate">
                     <p>
                         <span>{{ stay.name }},{{ stay.loc.country }} &nbsp; &nbsp;</span>
