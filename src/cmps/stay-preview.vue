@@ -18,7 +18,7 @@
                 </div>
                 <div class="stay-added-price">
                     <p>
-                        <span class="stay-added">Added {{ dateCalc }}<br /></span>
+                        <span class="stay-added">Added {{ dateCalc }} ago<br /></span>
                         <span class="stay-price">{{ stay.price }}$ night</span>
                     </p>
                 </div>
@@ -31,6 +31,8 @@
 
 <script>
 import stayDetails from '../views/stay-details.vue';
+import  {utilService}  from '../services/util.service';
+
 export default {
     props: {
         stay: Object,
@@ -50,10 +52,7 @@ export default {
             return this.stayRate = (this.stayRate) / this.stay.reviews.length
         },
         dateCalc() {
-            // console.log(new Date(this.stay.createdAt).toLocaleString())
-            // let time = new Date(Date.now()-this.stay.createdAt)
-            // var time = this.stay.createdAt
-            // console.log(this.stay.createdAt);
+            return utilService.timeSince(new Date(this.stay.createdAt))
         }
     },
     methods: {

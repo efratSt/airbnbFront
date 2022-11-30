@@ -9,7 +9,7 @@ var gStays = [
     _id: _makeId(),
     name: "Ribeira Charming Duplex",
     type: "House",
-    createdAt: new Date("2021-03-25"),
+    createdAt: utilService.randomDate(),
     imgUrls: [
       "https://images.homes.com/listings/112/9437373882-174864441-original.jpg",
       "https://images.homes.com/listings/112/1537373882-174864441-original.jpg",
@@ -51,7 +51,7 @@ var gStays = [
       {
         id: "madeId",
         txt: "Very helpful hosts. Cooked traditional...",
-        rate: 4,
+        rate: utilService.getRandomIntInclusive(1,5),
         by: {
           _id: "u102",
           fullname: "user2",
@@ -127,7 +127,7 @@ async function query(filterBy = { txt: "", price: 0 }) {
   //       stays = stays.filter(stay => stay.price <= filterBy.price)
   //   }
   if (!stays || !stays.length) stays = gStays;
-  // console.log(stays);
+  console.log(stays);
   return stays;
 }
 
