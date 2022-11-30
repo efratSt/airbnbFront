@@ -1,7 +1,6 @@
 <template>
-    <section class="stay-list">
+    <section class="stay-app">
         <stay-labels-filter />
-        <h1>stay-app</h1>
         <stay-list :stays="stays" />
     </section>
     <!-- <pre>{{stays}}</pre> -->

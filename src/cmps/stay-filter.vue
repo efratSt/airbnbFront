@@ -1,5 +1,5 @@
 <template>
-    <section v-if="!isOpen" class="stay-filter" @click="isOpen = true">
+    <section class="stay-filter">
         <div class="search-container">
             <div class="place-search search-btn-filter">
                 <span>Anywhere</span>
@@ -38,15 +38,6 @@
             </svg>
         </div>
     </section>
-    <article v-if="isOpen" class="search-modal">
-        <form>
-            <input type="text" />
-            <input type="date" />
-            <input type="date" />
-            <input type="number" />
-        </form>
-    </article>
-    <div v-if="isOpen" class="screen" @click="isOpen = false"></div>
 </template>
 
 <script>

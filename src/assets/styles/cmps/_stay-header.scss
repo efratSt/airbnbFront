@@ -1,4 +1,12 @@
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 15;
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+    padding-block: 10px;
     .header-center {
         display: flex;
         justify-content: space-between;
@@ -10,7 +18,9 @@ header {
             }
             h1 {
                 color: $clr-red;
-                font-family: airbnb-medium;
+                font-family: -apple-system, system-ui, BlinkMacSystemFont,
+                    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
                 margin: 0;
             }
         }
