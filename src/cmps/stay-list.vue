@@ -1,24 +1,22 @@
 <template>
     <section class="stay-list">
+        <h4>stay list</h4>
         <ul>
-            <stay-preview v-for="stay in stays" :stay="stay"/>
+            <stay-preview v-for="stay in stays" :stay="stay" />
         </ul>
     </section>
-
 </template>
 
 <script>
-
-import stayPreview from '../cmps/stay-preview.vue'
+import stayPreview from '../cmps/stay-preview.vue';
 
 export default {
     props: {
-        stays: Array
+        stays: Array,
     },
-
 
     components: {
-        stayPreview
+        stayPreview,
     },
-}
+};
 </script>
