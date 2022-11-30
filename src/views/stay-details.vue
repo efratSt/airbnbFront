@@ -61,7 +61,7 @@
         stay: null,
         review: '',
         range: {
-      start: new Date(2020, 0, 6),
+      start: new Date(),
       end: new Date(),
     }
       }
