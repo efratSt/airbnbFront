@@ -2,7 +2,7 @@
     <section class="stay-preview">
         <section class="stay-card">
             <div class="stay-img-carousel">
-                <el-carousel height="150px" :autoplay="false" trigger="click" indicator-position="">
+                <el-carousel :autoplay="false" trigger="click" indicator-position="">
                     <el-carousel-item v-for="imgUrl in stay.imgUrls">
                         <img :src="imgUrl" />
                     </el-carousel-item>
