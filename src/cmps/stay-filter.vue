@@ -1,15 +1,15 @@
 <template>
-    <section class="stay-filter">
+    <section v-if="!isOpen" class="stay-filter" @click="isOpen = true">
         <div class="search-container">
-            <div class="place-search">
+            <div class="place-search search-btn-filter">
                 <span>Anywhere</span>
             </div>
             <div class="search-border"></div>
-            <div class="date-search">
+            <div class="date-search search-btn-filter">
                 <span>Any week</span>
             </div>
             <div class="search-border"></div>
-            <div class="place-search">
+            <div class="guests-search search-btn-filter">
                 <span>Add guests</span>
             </div>
         </div>
@@ -38,8 +38,24 @@
             </svg>
         </div>
     </section>
+    <article v-if="isOpen" class="search-modal">
+        <form>
+            <input type="text" />
+            <input type="date" />
+            <input type="date" />
+            <input type="number" />
+        </form>
+    </article>
+    <div v-if="isOpen" class="screen" @click="isOpen = false"></div>
 </template>
 
 <script>
-export default {};
+export default {
+    name: 'stay-filter',
+    data() {
+        return {
+            isOpen: false,
+        };
+    },
+};
 </script>
