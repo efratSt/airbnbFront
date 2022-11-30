@@ -4,6 +4,9 @@ import { router } from './router.js'
 import { store } from './store/store.js'
 import 'v-calendar/dist/style.css'
 import VueCarousel from 'vue-carousel'
+
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
 import { stayService } from './services/stay.service.local'
 
 import './assets/styles/main.scss'
@@ -14,6 +17,7 @@ app.use(router)
 app.use(store)
 app.use(SetupCalendar, {})
 app.use(VueCarousel)
+app.use(ElementPlus)
 // Use the components
 app.component('Calendar', Calendar)
 app.component('DatePicker', DatePicker)

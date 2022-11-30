@@ -1,7 +1,7 @@
 <template>
-    <section class="container main-container root-cmp">
+    <section class="main-container root-cmp">
         <user-msg />
-        <stay-header />
+        <stay-header class="main-container full" />
         <router-view />
         <stay-footer />
     </section>

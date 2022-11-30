@@ -6,10 +6,10 @@ const STORAGE_KEY = 'stay'
 
 var gStays = [
   {
-    _id: '10006546',
-    name: 'Ribeira Charming Duplex',
-    type: 'House',
-    createdAt: Date.now(),
+    _id: "10006546",
+    name: "Ribeira Charming Duplex",
+    type: "House",
+    createdAt: new Date("2021-03-25")                                                                                                                                                                                               ,
     imgUrls: [
       "https://images.homes.com/listings/112/9437373882-174864441-original.jpg",
       "https://images.homes.com/listings/112/1537373882-174864441-original.jpg",
