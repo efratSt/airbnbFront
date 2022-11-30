@@ -1,5 +1,5 @@
 <template>
-    <section class="main-container">
+    <section class="container main-container">
         <user-msg />
         <stay-header />
         <router-view />
