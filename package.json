@@ -15,7 +15,10 @@
         "socket.io-client": "^4.5.1",
         "v-calendar": "^3.0.0-alpha.8",
         "vue": "^3.2.37",
+        "vue-carousel": "^0.18.0",
+        "vue-flux": "^6.4.0",
         "vue-router": "^4.1.2",
+        "vue-slick-carousel": "^1.0.6",
         "vuex": "^4.0.2"
     },
     "devDependencies": {

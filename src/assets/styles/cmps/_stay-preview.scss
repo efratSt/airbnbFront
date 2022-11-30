@@ -1,24 +1,25 @@
 .stay-preview {
     height: 250px;
     width: 150px;
-
-    img {
-        height: 150px;
-        width: 150px;
-        object-fit: cover;
-        aspect-ratio: 1/1;
-        border-radius: 0.75em;
-    }
+    // background-color: aqua;
+    position: relative;
 
     .stay-card {
-        background-color: azure;
+        position: relative;
         width: 150px;
         padding: 0;
-        // margin: 10px;
-        // padding: 10px;
+
+        img {
+            height: 150px;
+            width: 150px;
+            object-fit: cover;
+            aspect-ratio: 1/1;
+            border-radius: 0.75em;
+        }
 
         p {
             font-size: 0.8rem;
         }
+        
     }
 }
