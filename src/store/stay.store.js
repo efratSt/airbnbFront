@@ -35,6 +35,14 @@ export const stayStore = {
     stays({ stays }) {
       return stays
     },
+    getRateCalcPerStay({ reviews }) {
+      console.log('reviews',reviews);
+      var sum = 0
+      reviews.forEach(review => {
+        sum += review.rate
+      });
+      return sum / reviews.length
+    }
   },
   mutations: {
     setStays(state, { stays }) {
