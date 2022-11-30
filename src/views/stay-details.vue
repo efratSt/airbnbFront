@@ -1,5 +1,5 @@
 <template>
-  <div v-if="stay" class="stay-details-container container">
+  <div v-if="stay" class="stay-details-container">
     <div class="stay-details flex align-center">
       <div class="stay-info">
         <h2>{{ stay.summary }}</h2>
@@ -17,10 +17,10 @@
             </button>
           </div>
         </div>
-        <div class="img-container">
-          <article v-for="(image, idx) in stay.imgUrls.slice(0, 5)" :key="idx">
-            <img :src="image" alt="stay-img" :class="`grid-item img-${idx+1}`" />
-          </article>
+        <div class="img-container ">
+            <img  v-for="(image, idx) in stay.imgUrls.slice(0, 5)" :key="idx"
+            :src="image" alt="stay-img" :class="`grid-item img-${idx+1}`" />
+          
         </div>
         <section class="stay-host-details">
           <h2>
