@@ -1,6 +1,6 @@
 <template>
-
     <section class="stay-preview">
+        <h4>stay-preview</h4>
         <section class="stay-card">
             <router-link :to="'/stay/' + stay._id">
                 <img :src="stay.imgUrls[0]" />
@@ -9,19 +9,17 @@
             </router-link>
         </section>
     </section>
-
 </template>
 
 <script>
-
 import stayDetails from '../views/stay-details.vue';
 
 export default {
     props: {
-        stay: Object
+        stay: Object,
     },
     components: {
-        stayDetails
+        stayDetails,
     },
-}
+};
 </script>

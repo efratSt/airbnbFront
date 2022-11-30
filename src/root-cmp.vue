@@ -1,7 +1,7 @@
 <template>
-    <section>
+    <section class="main-container">
         <user-msg />
-        <app-header />
+        <stay-header />
         <router-view />
         <stay-footer />
     </section>
@@ -9,7 +9,7 @@
 
 <script>
 import { store } from './store/store';
-import appHeader from './cmps/app-header.vue';
+import stayHeader from './cmps/stay-header.vue';
 import userMsg from './cmps/user-msg.vue';
 import { userService } from './services/user.service';
 import stayFooter from './cmps/stay-footer.vue';
@@ -21,10 +21,9 @@ export default {
         if (user) store.commit({ type: 'setLoggedinUser', user });
     },
     components: {
-        appHeader,
+        stayHeader,
         userMsg,
         stayFooter,
-
     },
 };
 </script>

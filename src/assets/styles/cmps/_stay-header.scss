@@ -1,0 +1,19 @@
+.header-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo {
+        display: flex;
+        svg {
+            color: $clr-red;
+        }
+        h1 {
+            color: $clr-red;
+            font-family: 'airbnb-medium';
+        }
+    }
+    .btn-user {
+        display: flex;
+        align-items: center;
+    }
+}

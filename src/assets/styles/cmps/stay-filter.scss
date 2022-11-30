@@ -1,0 +1,21 @@
+.stay-filter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    align-items: center;
+    display: flex;
+    border-radius: 40px;
+    border: 1px solid #ebebeb;
+    justify-content: space-between;
+    box-shadow: 0 1px 2px #00000014, 0 4px 12px #0000000d;
+    transition: 0.2s;
+    height: 46px;
+    margin: 6px 0;
+    flex: 0 1 auto;
+    font-family: 'airbnb-medium';
+
+    .search-container {
+        display: flex;
+        gap: 10px;
+    }
+}
