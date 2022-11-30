@@ -4,8 +4,18 @@
         <section class="stay-card">
             <router-link :to="'/stay/' + stay._id">
                 <img :src="stay.imgUrls[0]" />
-                <p>name: {{ stay.name }}</p>
-                <p>country: {{ stay.loc.country }}</p>
+                <div class="stay-name-rate">
+                    <p>
+                        <span>{{ stay.name }},{{ stay.loc.country }} &nbsp; &nbsp;</span>
+                        <span>★{{ rateCalc }}</span>
+                    </p>
+                </div>
+                <div class="stay-added-price">
+                    <p>
+                        <span class="stay-added">Added <br /></span>
+                        <span class="stay-price">{{ stay.price }}$ night</span>
+                    </p>
+                </div>
             </router-link>
         </section>
     </section>
@@ -25,13 +35,13 @@ export default {
     },
     created() {
         this.stay.reviews.forEach(review => {
-            // console.log(review.rate);
             this.stayRate = review.rate
-            console.log('this.stayRate', this.stayRate);
         });
     },
     computed: {
-
+        rateCalc() {
+            return this.stayRate = (this.stayRate) / this.stay.reviews.length
+        }
     },
     methods: {
 
