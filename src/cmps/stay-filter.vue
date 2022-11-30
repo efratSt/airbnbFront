@@ -4,9 +4,11 @@
             <div class="place-search">
                 <span>Anywhere</span>
             </div>
+            <div class="search-border"></div>
             <div class="date-search">
                 <span>Any week</span>
             </div>
+            <div class="search-border"></div>
             <div class="place-search">
                 <span>Add guests</span>
             </div>
