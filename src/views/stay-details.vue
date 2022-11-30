@@ -117,6 +117,7 @@
         console.log(this.isSaved)
         this.isSaved = !this.isSaved
         return this.isSaved
+        // add store save to handle this correctly 
       },
       async getStayById(stayId) {
         this.stay = await this.$store.dispatch({
