@@ -1,14 +1,15 @@
 @font-face {
-    font-family: 'airbnb-bold';
-    src: url('../../fonts/Airbnb_Cereal-Bold.ttf');
+  font-family: 'airbnb-bold';
+  src: url(./../fonts/Airbnb-Bold.ttf) 
+  format('truetype');
 }
 
 @font-face {
-    font-family: 'airbnb-book';
-    src: url('../../fonts/Airbnb_Cereal-Book.ttf');
+  font-family: 'airbnb-book';
+  src: url(./../fonts/Airbnb_Cereal-Book.ttf);
 }
 
 @font-face {
-    font-family: 'airbnb-medium';
-    src: url('../../fonts/Airbnb_Cereal-Medium.ttf');
+  font-family: 'airbnb-medium';
+  src: url(./../fonts/Airbnb_Cereal-Medium.ttf);
 }
