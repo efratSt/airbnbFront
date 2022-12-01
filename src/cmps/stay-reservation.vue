@@ -15,7 +15,7 @@
             <!-- <span>{{ date(range.start) }} </span> <span>{{ date(range.end) }}</span> -->
             </div>
             <div class="reservation-guests">
-                <select v-model="selected">
+                <select v-model="numberOfGuest">
                     <option disabled value="">Please select one</option>
                     <option>1</option>
                     <option>2</option>
@@ -36,6 +36,11 @@
     props:{
         stay : Object,
         range: Object
+    },
+    data() {
+        return{
+            numberOfGuest: null
+        }
     },
     methods :{
         stayDuration(){
