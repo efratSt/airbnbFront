@@ -31,7 +31,7 @@
             :class="`grid-item img-${idx + 1}`"
           />
         </div>
-        <!-- <stayReservation :stay="stay" /> -->
+        <stayReservation :stay="stay" :range="range" />
         <section class="stay-host-details">
           <h2>
             {{ stay.type }} hosted by {{ stay.host.fullname }} - {{ stay.name }}
@@ -132,7 +132,6 @@ import stayReservation from '../cmps/stay-reservation.vue'
     },
     methods: {
       toggleSaved() {
-        console.log(this.isSaved)
         this.isSaved = !this.isSaved
         return this.isSaved
         // add store save to handle this correctly

@@ -18,6 +18,7 @@ var gStays = [
       "https://images.homes.com/listings/112/1237373882-174864441-original.jpg",
     ],
     price: 80.0,
+    currencyCode: 'USD',
     summary:
       "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
     capacity: 8,
