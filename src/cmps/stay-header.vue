@@ -17,7 +17,7 @@
             </router-link>
 
             <stay-filter @click="open" />
-            <stay-search-modal />
+            <!-- <stay-search-modal /> -->
             <router-link to="/login">
                 <div class="btn-user-all">
                     <a class="btn-user"
