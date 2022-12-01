@@ -14,9 +14,10 @@
   }
 }
 .img-container {
+  height: 425px;
   margin-bottom: 1rem;
   display: grid;
-  gap: 10px;
+  gap: 8px;
   grid-template-columns: 2fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-template-areas:
