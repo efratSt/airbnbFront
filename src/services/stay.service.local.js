@@ -49,15 +49,49 @@ var gStays = [
     },
     reviews: [
       {
-        id: "madeId",
+        id: _makeId(),
+        createdAt: new Date(),
         txt: "Very helpful hosts. Cooked traditional...",
         rate: utilService.getRandomIntInclusive(1,5),
         by: {
           _id: "u102",
           fullname: "user2",
-          imgUrl: "/img/img2.jpg",
+          imgUrl: "/src/assets/icons/user-m.png",
         },
       },
+      {
+        id: _makeId(),
+        createdAt: new Date(),
+        txt: "Very helpful hosts. Cooked traditional...",
+        rate: utilService.getRandomIntInclusive(1,5),
+        by: {
+          _id: "u103",
+          fullname: "user3",
+          imgUrl: "/src/assets/icons/user-f.png",
+        },
+      },
+      {
+        id: _makeId(),
+        createdAt: new Date(),
+        txt: "Very helpful hosts. Cooked traditional...",
+        rate: utilService.getRandomIntInclusive(1,5),
+        by: {
+          _id: "u104",
+          fullname: "user4",
+          imgUrl: "/src/assets/icons/user-m.png",
+        },
+      },
+      {
+        id: _makeId(),
+        createdAt: new Date(),
+        txt: "Very helpful hosts. Cooked traditional...",
+        rate: utilService.getRandomIntInclusive(1,5),
+        by: {
+          _id: "u105",
+          fullname: "user5",
+          imgUrl: "/src/assets/icons/user-f.png",
+        },
+      }
     ],
     likedByUsers: ["mini-user"], // for user-wishlist : use $in
   },

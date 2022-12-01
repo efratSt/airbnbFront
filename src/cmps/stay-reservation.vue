@@ -31,3 +31,18 @@
         <span class="reservation-price total">{{totalPrice}}</span>
     </div>
 </template>
+<script>
+  export default {
+    data() {
+      return {
+        stay: null,
+        review: '',
+        range: {
+          start: new Date(),
+          end: new Date(),
+        },
+        isSaved: false,
+      }
+    }
+}
+</script>
