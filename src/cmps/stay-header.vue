@@ -1,5 +1,5 @@
 <template>
-    <header>
+    <header class="main-container">
         <div class="header-center">
             <router-link to="/">
                 <div class="logo">
@@ -67,6 +67,7 @@
             </router-link>
         </div>
     </header>
+    <!-- <stay-search-modal /> -->
 </template>
 
 <script>

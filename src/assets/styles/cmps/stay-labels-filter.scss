@@ -1,12 +1,12 @@
 .stay-labels-filter {
     position: fixed;
-    top: 7.8vh;
+    top: 79px;
     left: 0;
     right: 0;
     z-index: 15;
     .icons-wrapper {
         background-color: white;
-        padding-block: 15px;
+        padding-block: 1rem;
         display: flex;
         gap: 25px;
         overflow-x: hidden;
@@ -27,6 +27,7 @@
             }
             p {
                 font-size: 13px;
+                padding-bottom: 10px;
             }
         }
         .icon:hover {
