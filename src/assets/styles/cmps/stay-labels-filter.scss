@@ -1,4 +1,7 @@
 .stay-labels-filter {
+    position: fixed;
+    z-index: 15;
+    background-color: white;
     padding-block: 20px;
     display: flex;
     gap: 25px;
