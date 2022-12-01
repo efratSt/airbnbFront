@@ -1,13 +1,14 @@
 <template>
     <div v-if="stay" class="reservation-element">
         <section class="reservation-header">
-            <span class="reservation-price">{{stay.price}}</span><span>{{currencyCode}}</span>
+            <span>{{currencyCode}}</span>
+            <span class="reservation-price">{{stay.price}}</span>
             <span class="reservation-price unit"> / night</span>
             <span class="reservation-stay rate"><i class="fa-solid fa-star"></i>{{stay.rate}}</span>
             <span>&#183</span>
             <span><a href="#">
             {{ stay.reviews.length }}
-            </a>
+            </a> reviews
             </span>
         </section>
         <section class="reservation-choice">

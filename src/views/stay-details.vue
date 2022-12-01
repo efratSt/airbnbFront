@@ -31,45 +31,47 @@
             :class="`grid-item img-${idx + 1}`"
           />
         </div>
-        <stayReservation :stay="stay" :range="range" />
         <section class="stay-host-details">
-          <h2>
-            {{ stay.type }} hosted by {{ stay.host.fullname }} - {{ stay.name }}
-          </h2>
-
-          <ol class="clean-list flex align-center">
-            <li>
-              <span>{{ stay.capacity }} guests</span>
-            </li>
-            <li>
-              <span> ·</span>
-              <span>{{ stay.bedrooms }} bedrooms</span>
-            </li>
-            <li>
-              <span> ·</span><span>{{ stay.beds }} beds </span>
-            </li>
-            <li>
-              <span> ·</span>
-              <span>{{ stay.bathrooms }} bathrooms</span>
-            </li>
-          </ol>
-        </section>
-        <section class="stay-amenities container">
-          <h3>What this place offers</h3>
-          <ul class="stay-amenities-list clean-list">
-            <li
-              class="stay-amenity"
-              v-for="(amenity, idx) in stay.amenities"
-              :key="idx"
-              :class="amenity"
-            >
-              {{ amenity }}
-            </li>
-          </ul>
-          <button v-if="stay.amenities.length > 10">
-            Show all {{ stay.amenities.length }} amenities
-          </button>
-        </section>
+            <h2>
+              {{ stay.type }} hosted by {{ stay.host.fullname }} -
+              {{ stay.name }}
+            </h2>
+            <ol class="clean-list flex align-center">
+              <li>
+                <span>{{ stay.capacity }} guests</span>
+              </li>
+              <li>
+                <span> ·</span>
+                <span>{{ stay.bedrooms }} bedrooms</span>
+              </li>
+              <li>
+                <span> ·</span><span>{{ stay.beds }} beds </span>
+              </li>
+              <li>
+                <span> ·</span>
+                <span>{{ stay.bathrooms }} bathrooms</span>
+              </li>
+            </ol>
+          </section>
+        <div class="stay-details-main flex space-between">
+           <section class="stay-amenities container">
+            <h3>What this place offers</h3>
+            <ul class="stay-amenities-list clean-list">
+              <li
+                class="stay-amenity"
+                v-for="(amenity, idx) in stay.amenities"
+                :key="idx"
+                :class="amenity"
+              >
+                {{ amenity }}
+              </li>
+            </ul>
+            <button v-if="stay.amenities.length > 10">
+              Show all {{ stay.amenities.length }} amenities
+            </button>
+          </section>
+          <stayReservation :stay="stay" :range="range"/>
+        </div>
       </div>
     </div>
     <Date-picker v-model="range" is-range :columns="2" color="gray" />
@@ -100,7 +102,7 @@
 </template>
 
 <script>
-import stayReservation from '../cmps/stay-reservation.vue'
+  import stayReservation from '../cmps/stay-reservation.vue'
   export default {
     data() {
       return {
@@ -167,12 +169,12 @@ import stayReservation from '../cmps/stay-reservation.vue'
           date.getMonth(),
           date.getDate(),
           date.getFullYear(),
-      ]
-        return  ' ' + month + '/' + year  
+        ]
+        return ' ' + month + '/' + year
       },
     },
-    components:{
-        stayReservation
-    }
+    components: {
+      stayReservation,
+    },
   }
 </script>
