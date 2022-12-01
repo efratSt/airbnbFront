@@ -1,13 +1,14 @@
 <template>
     <div v-if="stay" class="reservation-element">
         <section class="reservation-header">
-            <span class="reservation-price">{{stay.price}}</span><span>{{currencyCode}}</span>
+            <span>{{currencyCode}}</span>
+            <span class="reservation-price">{{stay.price}}</span>
             <span class="reservation-price unit"> / night</span>
             <span class="reservation-stay rate"><i class="fa-solid fa-star"></i>{{stay.rate}}</span>
             <span>&#183</span>
             <span><a href="#">
             {{ stay.reviews.length }}
-            </a>
+            </a> reviews
             </span>
         </section>
         <section class="reservation-choice">
@@ -15,7 +16,7 @@
             <!-- <span>{{ date(range.start) }} </span> <span>{{ date(range.end) }}</span> -->
             </div>
             <div class="reservation-guests">
-                <select v-model="selected">
+                <select v-model="numberOfGuest">
                     <option disabled value="">Please select one</option>
                     <option>1</option>
                     <option>2</option>
@@ -36,6 +37,11 @@
     props:{
         stay : Object,
         range: Object
+    },
+    data() {
+        return{
+            numberOfGuest: null
+        }
     },
     methods :{
         stayDuration(){
