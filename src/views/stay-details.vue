@@ -3,9 +3,15 @@
     <div class="stay-details flex align-center">
       <div class="stay-info">
         <h2>{{ stay.summary }}</h2>
-        <div class="stay-secondary header flex align-center space-between">
-          <div class="stay-secondary header location">
-            <h4>{{ stay.loc.city }},{{ stay.loc.country }}</h4>
+        <div class="stay-secondary-header flex align-center space-between">
+          <div class="stay-secondary-header location">
+            <span class="stay-rate"><i class="fa-solid fa-star"></i>{{ stayRate }}</span>
+            <span> &#183 </span>
+            <span><a href="#">
+            {{ stay.reviews.length }}
+            </a> reviews
+            </span>
+            <a href="#"><h4>{{ stay.loc.city }},{{ stay.loc.country }}</h4></a>
           </div>
           <!-- add map links later -->
           <div class="stay-secondary header buttons-container flex">
@@ -113,9 +119,17 @@
           end: new Date(),
         },
         isSaved: false,
-      }
+        }
     },
     computed: {
+        stayRate(){
+          console.log(this.stay.reviews)
+         let rateSum = 0
+         this.stay.reviews.forEach(review => {
+            rateSum += review.rate})
+            return (rateSum / this.stay.reviews.length).toFixed(2)
+
+        },
       stayAvailability() {
         return this.stay.Availability
           ? 'These dates are available'
@@ -129,8 +143,8 @@
     },
     created() {
       var stayId = this.$route.params.id
-      this.getStayById(stayId)
-      //   this.getReviews(stayId)
+      this.getStayById(stayId)   
+      
     },
     methods: {
       toggleSaved() {

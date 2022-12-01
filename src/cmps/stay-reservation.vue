@@ -30,7 +30,7 @@
                 </select>
             </div>
         </section>
-        <button class="reservation btn"> Reserve </button>
+        <button class="reservation-btn"> Reserve </button>
         <span>You won't be charged yet</span>
         <span class="reservation-price summary">{{stay.price}} x {{stayDuration}}</span>
         <span class="reservation-price summary">{{totalStayPrice}}</span>

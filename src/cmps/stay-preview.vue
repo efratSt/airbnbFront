@@ -27,7 +27,7 @@
                 <div class="stay-added-price">
                     <div>
                         <p class="stay-added">
-                            <span>Added {{ dateCalc }} ago<br /></span>
+                            <span class="stay-added-span">Added {{ dateCalc }} ago<br /></span>
                         </p>
                         <p>
                             <span class="stay-price"><span class="stay-price-only">{{ currencyCode }} {{ stay.price }}  </span> night</span>
@@ -63,7 +63,8 @@ export default {
     },
     computed: {
         rateCalc() {
-            let rate = this.stayRate = (this.stayRate) / this.stay.reviews.length
+            let rate = (this.stayRate = (this.stayRate) / this.stay.reviews.length)
+            if (rate.toFixed(2) % 1 === 0) return rate.toFixed(1) 
             return rate.toFixed(2)
         },
         dateCalc() {
