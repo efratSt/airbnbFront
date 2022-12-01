@@ -16,7 +16,7 @@
                 </div>
             </router-link>
 
-            <stay-filter @click="open" />
+            <stay-filter @click="isOpen = true" v-if="!isOpen" />
             <!-- <stay-search-modal /> -->
             <router-link to="/login">
                 <div class="btn-user-all">
@@ -67,13 +67,23 @@
             </router-link>
         </div>
     </header>
-    <!-- <stay-search-modal /> -->
+    <stay-search-modal v-if="isOpen" />
+    <div
+        class="screen main-container full"
+        v-if="isOpen"
+        @click="isOpen = false"
+    ></div>
 </template>
 
 <script>
 import stayFilter from './stay-filter.vue';
 import staySearchModal from './stay-search-modal.vue';
 export default {
+    data() {
+        return {
+            isOpen: false,
+        };
+    },
     computed: {
         loggedInUser() {
             return this.$store.getters.loggedinUser;

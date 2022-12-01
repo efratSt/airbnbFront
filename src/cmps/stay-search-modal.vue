@@ -2,22 +2,22 @@
     <section class="search-modal">
         <div class="search-container">
             <div class="search-line">
-                <label>
-                    Where
-                    <br />
+                <label class="search-line-btn">
+                    <p>Where</p>
+
                     <input type="text" placeholder="Search destination " />
                 </label>
                 <div class="check-in search-line-btn">
                     <p>Check in</p>
-                    <p>Add dates</p>
+                    <span>Add dates</span>
                 </div>
-                <div class="check-out">
+                <div class="check-out search-line-btn">
                     <p>Check out</p>
-                    <p>Add dates</p>
+                    <span>Add dates</span>
                 </div>
-                <div class="who">
+                <div class="who search-line-btn">
                     <p>Who</p>
-                    <p>Add guests</p>
+                    <span>Add guests</span>
                 </div>
             </div>
         </div>
