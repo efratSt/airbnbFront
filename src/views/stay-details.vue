@@ -13,15 +13,25 @@
               <i class="fa-solid fa-arrow-up-from-bracket"></i> Share
             </button>
             <button class="stay-secondary header button">
-              <i class="fa-regular fa-heart" :class="[{ 'fa-solid saved' : isSaved  }]" @click="toggleSaved"></i> Save
+              <i
+                class="fa-regular fa-heart"
+                :class="[{ 'fa-solid saved': isSaved }]"
+                @click="toggleSaved"
+              ></i>
+              Save
             </button>
           </div>
         </div>
-        <div class="img-container ">
-            <img  v-for="(image, idx) in stay.imgUrls.slice(0, 5)" :key="idx"
-            :src="image" alt="stay-img" :class="`grid-item img-${idx+1}`" />
-          
+        <div class="img-container">
+          <img
+            v-for="(image, idx) in stay.imgUrls.slice(0, 5)"
+            :key="idx"
+            :src="image"
+            alt="stay-img"
+            :class="`grid-item img-${idx + 1}`"
+          />
         </div>
+        <stayReservation :stay="stay" />
         <section class="stay-host-details">
           <h2>
             {{ stay.type }} hosted by {{ stay.host.fullname }} - {{ stay.name }}
@@ -71,11 +81,18 @@
         <input type="text" v-model="review" placeholder="Write your review" />
         <button @click="addReview" class="btn">Save</button>
       </div>
-      <details v-if="reviews" class="review-list">
+      <details v-if="stay.reviews" class="review-list">
         <summary>Reviews</summary>
-        <div v-for="review in reviews" :key="review._id" class="review-preview">
-          <h4>By {{ review.user.username }}</h4>
-          <p>{{ review.content }}</p>
+        <div
+          class="review-preview"
+          v-for="review in stay.reviews"
+          :key="review._id"
+        >
+          <img :src="review.by.imgUrl" alt="" />
+          <h3>by {{ review.by.fullname }}</h3>
+          <h4>{{ reviewDate(review.createdAt) }}</h4>
+          <!-- <h4>By {{ review.user.username }}</h4> -->
+          <p>{{ review.txt }}</p>
         </div>
       </details>
     </div>
@@ -83,6 +100,7 @@
 </template>
 
 <script>
+import stayReservation from '../cmps/stay-reservation.vue'
   export default {
     data() {
       return {
@@ -113,11 +131,11 @@
       //   this.getReviews(stayId)
     },
     methods: {
-      toggleSaved(){
+      toggleSaved() {
         console.log(this.isSaved)
         this.isSaved = !this.isSaved
         return this.isSaved
-        // add store save to handle this correctly 
+        // add store save to handle this correctly
       },
       async getStayById(stayId) {
         this.stay = await this.$store.dispatch({
@@ -144,6 +162,18 @@
       date(date) {
         return new Date(date).toLocaleDateString()
       },
+      reviewDate(date1) {
+        const date = new Date(date1)
+        const [month, day, year] = [
+          date.getMonth(),
+          date.getDate(),
+          date.getFullYear(),
+      ]
+        return  ' ' + month + '/' + year  
+      },
     },
+    components:{
+        stayReservation
+    }
   }
 </script>
