@@ -31,7 +31,7 @@
             :class="`grid-item img-${idx + 1}`"
           />
         </div>
-        <stayReservation :stay="stay" />
+        <!-- <stayReservation :stay="stay" /> -->
         <section class="stay-host-details">
           <h2>
             {{ stay.type }} hosted by {{ stay.host.fullname }} - {{ stay.name }}
