@@ -1,13 +1,19 @@
 <template>
-    <section class="stay-labels-filter">
-        <div class="icons-container" v-for="(icon, idx) in icons" :key="idx">
+    <section class="stay-labels-filter main-container full">
+        <div class="icons-wrapper main-container">
             <div
-                class="icon btn-label-filter"
-                :class="labels[idx]"
-                @click="filterByLabel(labels[idx])"
+                class="icons-container"
+                v-for="(icon, idx) in icons"
+                :key="idx"
             >
-                <img :src="icons[idx]" alt="" />
-                <p>{{ labels[idx] }}</p>
+                <div
+                    class="icon btn-label-filter"
+                    :class="labels[idx]"
+                    @click="filterByLabel(labels[idx])"
+                >
+                    <img :src="icons[idx]" alt="" />
+                    <p>{{ labels[idx] }}</p>
+                </div>
             </div>
         </div>
     </section>

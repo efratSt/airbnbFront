@@ -17,7 +17,7 @@
                 </div>
             </router-link>
 
-            <stay-filter />
+            <stay-filter @click="open" />
             <router-link to="/login">
                 <div class="btn-user-all">
                     <a class="btn-user"
@@ -75,6 +75,12 @@ export default {
     computed: {
         loggedInUser() {
             return this.$store.getters.loggedinUser;
+        },
+    },
+
+    methods: {
+        open() {
+            console.log('open ');
         },
     },
 

@@ -4,29 +4,34 @@
     left: 0;
     right: 0;
     z-index: 15;
-    box-shadow: 0 1px 2px #00000014, 0 4px 12px #0000000d;
-    background-color: white;
-    padding-block: 25px;
-    display: flex;
-    gap: 25px;
-    overflow-x: hidden;
-    align-items: center;
-    .icon {
+    .icons-wrapper {
+        background-color: white;
+        padding-block: 25px;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: max-content;
+        gap: 25px;
+        overflow-x: hidden;
         align-items: center;
-        cursor: pointer;
+        .icon {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: max-content;
+            align-items: center;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: 0.3s;
 
-        img {
-            height: 24px;
-            width: 24px;
+            img {
+                height: 24px;
+                width: 24px;
+            }
+            p {
+                font-size: 13px;
+            }
         }
-        p {
-            font-size: 13px;
+        .icon:hover {
+            box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+            opacity: 1;
         }
-    }
-    .icon:hover {
     }
 }
