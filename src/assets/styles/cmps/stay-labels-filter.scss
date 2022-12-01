@@ -1,22 +1,8 @@
-.stay-labels-filter {
-    padding-block: 20px;
+.btn-label-filter {
+    background-color: inherit;
+    cursor: pointer;
     display: flex;
-    gap: 25px;
-    overflow-x: hidden;
-    .icon {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: max-content;
-        align-items: center;
-        cursor: pointer;
-
-        img {
-            height: 24px;
-            width: 24px;
-        }
-        p {
-            font-size: 13px;
-        }
-    }
+    gap: 10px;
+    align-items: center;
+    padding: 0px 8px;
 }
