@@ -1,10 +1,8 @@
 .stay-filter {
     padding-inline: 10px;
     display: flex;
-    align-items: center;
     gap: 10px;
     align-items: center;
-    display: flex;
     border-radius: 40px;
     border: 1px solid #ebebeb;
     justify-content: space-between;
@@ -12,7 +10,9 @@
     transition: 0.2s;
     height: 46px;
     margin: 6px 0;
+    font-size: 14px;
     flex: 0 1 auto;
+    cursor: pointer;
 
     .search-container {
         display: flex;
@@ -23,7 +23,6 @@
         }
 
         .search-btn-filter {
-            cursor: pointer;
         }
     }
     .search-btn {
