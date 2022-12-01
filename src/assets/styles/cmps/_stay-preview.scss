@@ -18,6 +18,14 @@
             margin: 0;
             line-height: 19px;
             max-width: 100%;
+
+            .stay-preview-name {
+                font-family: 'airbnb-bold';
+            } 
+
+            .stay-added-span {
+                font-family: 'airbnb-book';
+            }
         }
 
         .stay-img-carousel {
