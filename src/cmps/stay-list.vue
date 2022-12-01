@@ -1,8 +1,6 @@
 <template>
     <section class="stay-list">
-        <!-- <h4>stay list</h4> -->
-        <ul class="card-layout">
-        <!-- <ul class="card-grid"> -->
+        <ul v-if="stays" class="card-layout">
             <stay-preview v-for="stay in stays" :stay="stay" />
         </ul>
     </section>
