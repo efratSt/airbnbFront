@@ -20,7 +20,7 @@ var gStays = [
     price: 80.0,
     currencyCode: 'USD',
     summary:
-      "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
+      "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto",
     capacity: 8,
     bedrooms: 3,
     beds: 4,
