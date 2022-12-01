@@ -12,8 +12,12 @@ $clr5: #dff0ea;
 $clr6: #fff;
 
 // Breakpoints
-$mobile-breakpoint: 460px;
-$narrow-breakpoint: 720px;
+
+// $mobile-breakpoint: 460px;
+// $narrow-breakpoint: 720px;
+$mobile-breakpoint: 720px;
+$narrow-breakpoint: 960px;
+
 $normal-breakpoint: 1200px;
 // $normal-breakpoint: 1743px;
 // was 960px
