@@ -6,6 +6,14 @@
 
 <script>
 export default {
-
+    data() {
+        return {
+            place: ''
+        }
+    },
+    created() {
+        this.place = this.$route.params.place
+        console.log('place' , this.place);
+    }
 }
 </script>

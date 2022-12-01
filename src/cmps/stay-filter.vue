@@ -15,7 +15,7 @@
         </div>
         
         <!-- <router-link :to="'/explore/italy'">  click here </router-link> -->
-        
+
         <div class="search-btn">
             <svg
                 viewBox="0 0 32 32"
