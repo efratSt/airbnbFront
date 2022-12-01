@@ -1,5 +1,5 @@
 <template>
-    <div v-if="stay" class="reservation-element">
+    <div v-if="stay" class="reservation-element flex">
         <section class="reservation-header">
             <span>{{currencyCode}}</span>
             <span class="reservation-price">{{stay.price}}</span>
