@@ -6,12 +6,12 @@
         <div class="stay-secondary header flex align-center space-between">
           <div class="stay-secondary header location">
             <span class="stay-rate"><i class="fa-solid fa-star"></i>{{ stayRate }}</span>
-            <span>&#183</span>
+            <span> &#183 </span>
             <span><a href="#">
             {{ stay.reviews.length }}
             </a> reviews
             </span>
-            <h4>{{ stay.loc.city }},{{ stay.loc.country }}</h4>
+            <a href="#"><h4>{{ stay.loc.city }},{{ stay.loc.country }}</h4></a>
           </div>
           <!-- add map links later -->
           <div class="stay-secondary header buttons-container flex">
