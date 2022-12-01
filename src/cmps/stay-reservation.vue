@@ -12,8 +12,14 @@
             </span>
         </section>
         <section class="reservation-choice">
-            <div class="reservation-chosen-dates">
-            <!-- <span>{{ date(range.start) }} </span> <span>{{ date(range.end) }}</span> -->
+            <div class="reservation-chosen-dates flex space-between">
+                <div class="reservation-checkin">
+                    <div>CHECK-IN</div>
+                    <span>{{ date(range.start) }} </span></div>
+                <div class="reservation-checkout">
+                    <div>CHECKOUT</div>
+                    <span>{{ date(range.end) }}</span>
+                </div>
             </div>
             <div class="reservation-guests">
                 <select v-model="numberOfGuest">
@@ -47,6 +53,9 @@
         stayDuration(){
             console.log(range.start,range.end)
         },
+        date(date) {
+        return new Date(date).toLocaleDateString()
+      },
         
     },
         
