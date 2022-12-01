@@ -5,6 +5,7 @@ import stayApp from './views/stay-app.vue'
 import loginSignup from './views/login-signup.vue'
 import userDetails from './views/user-details.vue'
 import stayDetails from './views/stay-details.vue'
+import stayExplore from './views/stay-explore.vue'
 
 const routes = [
   {
@@ -31,6 +32,11 @@ const routes = [
     path: '/user/:id',
     name: 'user-details',
     component: userDetails
+  },
+  {
+    path: '/explore/:place',
+    name: 'stay-explore',
+    component: stayExplore
   }
 ]
 

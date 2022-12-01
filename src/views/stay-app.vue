@@ -1,6 +1,6 @@
 <template>
     <section class="stay-app">
-        <stay-labels-filter />
+        <stay-labels-filter/>
         <stay-list :stays="stays" />
     </section>
     <!-- <pre>{{stays}}</pre> -->
@@ -16,6 +16,7 @@ export default {
     data() {
         return {
             stayToAdd: stayService.getEmptyStay(),
+            // isExplore: false
         };
     },
     computed: {
@@ -25,9 +26,15 @@ export default {
         stays() {
             return this.$store.getters.stays;
         },
+        isExplore() {
+            return (this.$route.name === 'stay-explore')
+            
+         }
+        
     },
     created() {
         this.$store.dispatch({ type: 'loadStays' });
+        // console.log(this.$router.params);
     },
     methods: {},
     components: {
