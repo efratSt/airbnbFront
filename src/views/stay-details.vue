@@ -5,6 +5,12 @@
         <h2>{{ stay.summary }}</h2>
         <div class="stay-secondary header flex align-center space-between">
           <div class="stay-secondary header location">
+            <span class="stay-rate"><i class="fa-solid fa-star"></i>{{ stayRate }}</span>
+            <span>&#183</span>
+            <span><a href="#">
+            {{ stay.reviews.length }}
+            </a> reviews
+            </span>
             <h4>{{ stay.loc.city }},{{ stay.loc.country }}</h4>
           </div>
           <!-- add map links later -->
@@ -113,7 +119,8 @@
           end: new Date(),
         },
         isSaved: false,
-      }
+        stayRate: 0      
+        }
     },
     computed: {
       stayAvailability() {
@@ -129,8 +136,8 @@
     },
     created() {
       var stayId = this.$route.params.id
-      this.getStayById(stayId)
-      //   this.getReviews(stayId)
+      this.getStayById(stayId)   
+      
     },
     methods: {
       toggleSaved() {
@@ -172,6 +179,18 @@
         ]
         return ' ' + month + '/' + year
       },
+      calcStayRate(){
+        this.stay.reviews.forEach(review => {
+            this.stayRate += review.rate
+            })
+            return rateCalc()
+      },
+      rateCalc() {
+            let rate = this.stayRate = (this.stayRate) / this.stay.reviews.length
+            console.log('this is', this.stay.rate)
+            return rate.toFixed(2)
+        },
+
     },
     components: {
       stayReservation,
