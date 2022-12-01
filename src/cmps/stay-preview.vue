@@ -2,9 +2,9 @@
     <section class="stay-preview">
         <section class="stay-card">
             <div class="stay-img-carousel">
-        
-                <button class="stay-wishlist-icon-btn" 
-                    @click="toggleSaved"><svg :class="[{ saved: isSaved }]" viewBox="0 0 32 32" aria-hidden="true">
+
+                <button class="stay-wishlist-icon-btn" @click="toggleSaved"><svg :class="[{ saved: isSaved }]"
+                        viewBox="0 0 32 32" aria-hidden="true">
                         <path
                             d="m16 28c7-4.733 14-10 14-17 0-1.792-.683-3.583-2.05-4.95-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05l-2.051 2.051-2.05-2.051c-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05-1.367 1.367-2.051 3.158-2.051 4.95 0 7 7 12.267 14 17z">
                         </path>
@@ -18,19 +18,19 @@
             </div>
 
             <router-link :to="'/stay/' + stay._id">
-                <div>
+                <!-- <div> -->
                     <p class="stay-name-rate">
                         <span class="stay-preview-name">{{ stay.name }},{{ stay.loc.country }} &nbsp; &nbsp;</span>
                         <span>★{{ rateCalc }}</span>
                     </p>
-                </div>
+                <!-- </div> -->
                 <div class="stay-added-price">
                     <div>
                         <p class="stay-added">
                             <span>Added {{ dateCalc }} ago<br /></span>
                         </p>
                         <p>
-                            <span class="stay-price"><span class="stay-price-only">{{ stay.price }}$</span> night</span>
+                            <span class="stay-price"><span class="stay-price-only">{{ currencyCode }} {{ stay.price }}  </span> night</span>
                         </p>
                     </div>
                 </div>
@@ -68,7 +68,13 @@ export default {
         },
         dateCalc() {
             return utilService.timeSince(new Date(this.stay.createdAt))
+        },
+        currencyCode() {
+            if (this.stay.currencyCode === 'USD') return '$'
+            if (this.stay.currencyCode === 'EUR') return '€'
+            if (this.stay.currencyCode === 'ILS') return '₪'
         }
+
     },
     methods: {
         toggleSaved() {
