@@ -18,5 +18,24 @@
         justify-content: space-between;
         border: 1px solid #ebebeb;
         border-radius: 50px;
+
+        .search-line-btn {
+            cursor: pointer;
+            transition: 0.5;
+            p {
+                font-size: 12px;
+                font-weight: 700;
+                color: #222222;
+            }
+            span {
+                font-size: 14px;
+                color: #717171;
+            }
+            input {
+                border: none;
+            }
+        }
+        .search-line-btn:hover {
+        }
     }
 }
