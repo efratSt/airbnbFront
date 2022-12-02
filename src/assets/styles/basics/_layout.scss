@@ -19,6 +19,7 @@
     @media (max-width: 550px) {
         grid-template-columns: 25px 1fr 25px;
     }
+    
     @media (min-width: 550px) {
         grid-template-columns: 25px 1fr 25px;
     }
@@ -30,6 +31,7 @@
     @media (min-width: 1130px) {
         grid-template-columns: 80px 1fr 80px;
     }
+
     @media (min-width: 1640px) {
         grid-template-columns: 80px 1fr 80px;
     }
@@ -73,6 +75,10 @@
     row-gap: 2.5em;
     padding: 0;
 
+    // @media (max-width: 550px) {
+    //     grid-template-columns: repeat(1, minmax(0, 1fr));
+    // }
+
     @media (min-width: 550px) {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -84,9 +90,20 @@
     @media (min-width: 1130px) {
         grid-template-columns: repeat(4, minmax(0, 1fr));
     }
+
     @media (min-width: 1640px) {
         grid-template-columns: repeat(5, minmax(0, 1fr));
     }
+
+    @media (min-width: 1700px) {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+
+
+
+
+
+
 
     // @media (max-width: 1640px) {
     //     grid-template-columns: repeat(6, minmax(0, 1fr));
