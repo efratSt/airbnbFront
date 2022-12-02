@@ -142,7 +142,7 @@
             </button>
         </div>
         </div>
-        <span>You won't be charged yet</span>
+        <p><span>You won't be charged yet</span></p>
         <span class="reservation-price summary">{{stay.price}} x {{stayDuration}}</span>
         <span class="reservation-price summary">{{totalStayPrice}}</span>
         <span v-if="extras" class="reservation-price extras">Service fee{{extra.fee}}</span>
@@ -165,7 +165,8 @@
             console.log(range.start,range.end)
         },
         date(date) {
-        return new Date(date).toLocaleDateString()
+        return (date) ? new Date(date).toLocaleDateString() : 'Add dates'
+        
       },
         
     },
@@ -184,7 +185,6 @@
             console.log('total price without fees')
         },
         stayRate(){
-          console.log(this.stay.reviews)
          let rateSum = 0
          this.stay.reviews.forEach(review => {
             rateSum += review.rate})
