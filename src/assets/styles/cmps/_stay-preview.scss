@@ -53,7 +53,7 @@
         }
 
         .el-carousel__arrow {
-            z-index: 10;
+            z-index: 10  !important;
             background-color: #eeeeee;
             transform: translateY(-50%);
             height: 27px;

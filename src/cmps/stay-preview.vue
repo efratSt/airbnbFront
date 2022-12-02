@@ -18,8 +18,8 @@
                         </path>
                     </svg></button>
 
-
                 <router-link :to="'/stay/' + stay._id">
+
                     <div class="text-container">
 
                         <div class="title"><span>{{ stay.name }}</span>
@@ -32,8 +32,8 @@
 
                         <p class="price-night"><span class="price">{{ currencyCode }} {{ stay.price }} </span> night</p>
                     </div>
-                </router-link>
 
+                </router-link>
             </section>
         </li>
     </section>
@@ -82,7 +82,7 @@ export default {
             console.log(this.isSaved)
             this.isSaved = !this.isSaved
             return this.isSaved
-        }
+        },
     },
     components: {
         stayDetails,
