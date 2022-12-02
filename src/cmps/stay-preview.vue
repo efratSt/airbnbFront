@@ -23,25 +23,27 @@
           </svg>
         </button>
 
-        <router-link  :to="'/stay/' + stay._id">
-          <div class="text-container">
-            <div class="title">
-              <span>{{ stay.name }}</span>
-              <div class="rating"><span class="star">★ </span>{{ rateCalc }}</div>
-            </div>
+
+                <router-link :to="'/stay/' + stay._id">
+                    <div class="text-container">
+
+                        <div class="title"><span>{{ stay.name }}</span>
+                            <div class="rating"><span class="star">★ </span>{{ rateCalc }}</div>
+                        </div>
 
             <div>
               <p class="added">Added {{ dateCalc }} ago</p>
             </div>
 
-            <p class="price-night">
-              <span class="price">{{ currencyCode }} {{ stay.price }} </span> night
-            </p>
-          </div>
-        </router-link>
-      </section>
-    </li>
-  </section>
+                        <p class="price-night"><span class="price">{{ currencyCode }} {{ stay.price }} </span> night</p>
+                    </div>
+                </router-link>
+
+            </section>
+        </li>
+    </section>
+
+
 </template>
 
 <script>
@@ -78,12 +80,12 @@ export default {
       if (this.stay.currencyCode === "EUR") return "€";
       if (this.stay.currencyCode === "ILS") return "₪";
     },
-  },
-  methods: {
-    toggleSaved() {
-      console.log(this.isSaved);
-      this.isSaved = !this.isSaved;
-      return this.isSaved;
+    methods: {
+        toggleSaved() {
+            console.log(this.isSaved)
+            this.isSaved = !this.isSaved
+            return this.isSaved
+        }
     },
   },
   components: {

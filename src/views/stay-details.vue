@@ -63,12 +63,13 @@
            <section class="stay-amenities container">
             <h3>What this place offers</h3>
             <ul class="stay-amenities-list clean-list">
-              <li
+              <li 
                 class="stay-amenity"
                 v-for="(amenity, idx) in stay.amenities"
                 :key="idx"
                 :class="amenity"
-              >
+                
+              > <img :src="this.getSource(amenity)" alt="">
                 {{ amenity }}
               </li>
             </ul>
@@ -114,15 +115,14 @@
         stay: null,
         review: '',
         range: {
-          start: new Date(),
-          end: new Date(),
+          start: null,
+          end: null,
         },
         isSaved: false,
         }
     },
     computed: {
         stayRate(){
-          console.log(this.stay.reviews)
          let rateSum = 0
          this.stay.reviews.forEach(review => {
             rateSum += review.rate})
@@ -146,6 +146,11 @@
       
     },
     methods: {
+      getSource(amenity)
+        {
+            
+            return `../assets/icons/${amenity}.svg`.toLowerCase
+        },
       toggleSaved() {
         this.isSaved = !this.isSaved
         return this.isSaved
@@ -173,10 +178,7 @@
         this.getReviews(this.stay._id)
         // this.getStayById(this.stay._id);
       },
-      date(date) {
-        return new Date(date).toLocaleDateString()
-      },
-      reviewDate(date1) {
+     reviewDate(date1) {
         const date = new Date(date1)
         const [month, day, year] = [
           date.getMonth(),
