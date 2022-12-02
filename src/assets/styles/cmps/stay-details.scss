@@ -75,6 +75,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(5, 1fr);
+  line-height: 3rem;
+  .amenity-icon{
+    margin-right: 0.5rem;
+  }
 }
 
 .stay-secondary.header {

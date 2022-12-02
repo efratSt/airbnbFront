@@ -64,12 +64,11 @@
             <h3>What this place offers</h3>
             <ul class="stay-amenities-list clean-list">
               <li 
-                class="stay-amenity"
+                class="stay-amenity flex align-center"
                 v-for="(amenity, idx) in stay.amenities"
                 :key="idx"
-                :class="amenity"
-                
-              > <img :src="this.getSource(amenity)" alt="">
+                :class="amenity"> 
+              <object class="amenity-icon" :data="this.getSource(amenity)" width="24" height="24"></object>
                 {{ amenity }}
               </li>
             </ul>
@@ -77,7 +76,7 @@
               Show all {{ stay.amenities.length }} amenities
             </button>
           </section>
-          <stayReservation :stay="stay" :range="range"/>
+        <stayReservation :stay="stay" :range="range"/>
         </div>
       </div>
     </div>
@@ -147,9 +146,10 @@
     },
     methods: {
       getSource(amenity)
-        {
-            
-            return `../assets/icons/${amenity}.svg`.toLowerCase
+        {            
+            const source = `src/assets/icons/${amenity}`.toLowerCase()+'.svg'
+            console.log(source)
+            return source
         },
       toggleSaved() {
         this.isSaved = !this.isSaved
