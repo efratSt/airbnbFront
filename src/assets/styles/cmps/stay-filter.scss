@@ -14,7 +14,7 @@
     font-weight: 700;
     flex: 0 1 auto;
     cursor: pointer;
-
+ 
     .search-container {
         display: flex;
         gap: 10px;
@@ -27,6 +27,7 @@
             font-weight: 400;
         }
     }
+    
     .search-btn {
         background-color: #ff385c;
         padding: 10px;

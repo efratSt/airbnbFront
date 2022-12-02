@@ -6,7 +6,7 @@
         <div class="stay-secondary-header flex align-center space-between">
           <div class="stay-secondary-header location">
             <span class="stay-rate"><i class="fa-solid fa-star"></i>{{ stayRate }}</span>
-            <span> &#183 </span>
+            <span> &nbsp&#183&nbsp </span>
             <span><a href="#">
             {{ stay.reviews.length }}
             </a> reviews
@@ -47,14 +47,14 @@
                 <span>{{ stay.capacity }} guests</span>
               </li>
               <li>
-                <span> ·</span>
+                <span>&nbsp&#183&nbsp</span>
                 <span>{{ stay.bedrooms }} bedrooms</span>
               </li>
               <li>
-                <span> ·</span><span>{{ stay.beds }} beds </span>
+                <span>&nbsp&#183&nbsp</span><span>{{ stay.beds }} beds </span>
               </li>
               <li>
-                <span> ·</span>
+                <span>&nbsp&#183&nbsp</span>
                 <span>{{ stay.bathrooms }} bathrooms</span>
               </li>
             </ol>
@@ -82,7 +82,6 @@
     </div>
     <Date-picker v-model="range" is-range :columns="2" color="gray" />
     <div class="stay-chosen-dates">
-      <span>{{ date(range.start) }} </span> <span>{{ date(range.end) }}</span>
     </div>
     <div class="review-container">
       <div class="review-add flex">

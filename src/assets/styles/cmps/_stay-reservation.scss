@@ -1,12 +1,176 @@
-.reservation-element{
-    font-family: Circular;
-    max-width: 300px;
-    flex-direction: column;
-    align-items: center;
+.order-container {
+  border: 1px solid #00000030;
+  border-radius: 13px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 0 5px 5px #00000015;
+  flex-direction: column;
+  align-items: center;
+}
 
-    .reservation-btn{
-        width: 80%;
-        padding: 0.8rem;
-        border-radius: 8px;
+.order-form-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-family: Circular;
+
+  p {
+    margin-top: 0;
+  }
+  .order-form-header-secondary {
+    display: flex;
+    align-items: center; 
+
+  }
+}
+
+.order-data {
+  border: 1px solid #00000050;
+  border-radius: 13px;
+  margin-bottom: 15px;
+}
+
+.date-picker {
+  display: flex;
+  justify-content: space-between;
+}
+
+.date-input {
+  display: flex;
+  flex-direction: column;
+  max-height: 58px;
+  padding: 1px 8px;
+  color: rgb(0, 0, 0);
+  line-height: 1rem;
+  &:last-of-type {
+    border-left: 1px solid #00000050;
+  }
+  label{
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+  input{
+    font-size: 0.8rem;
+  }
+}
+
+.guest-input {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border-top: 1px solid #00000050;
+  padding: 7px 12px;
+  color: gray;
+  font-size: 0.75rem;
+
+  svg {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    top: 50%;
+    right: 0;
+    transform: translatex(-12px) translatey(-50%);
+  }
+}
+
+input {
+  border: none;
+  padding: 0 0;
+  width: 50%;
+  outline: none;
+}
+
+label {
+  font-weight: 600;
+  font-size: 0.75em;
+}
+
+span.cost {
+  color: black;
+  font-size: 1.3em;
+}
+
+span.reviews {
+  color:#B9B9B9;
+  font-size: 0.85em;
+  text-decoration: underline;
+}
+
+.btn-container {
+  position: relative;
+  width: 100%;
+  height: 48px;
+  padding: 0 0;
+  margin: 0 0;
+  cursor: pointer;
+  border: none;
+  display: grid;
+  grid-template: repeat(10, 1fr) / repeat(10, 1fr);
+
+  @for $i from 0 to 10 {
+    .btn-cell1:nth-child(10n + #{$i + 1}):hover ~ .content {
+      --positionX: #{$i};
     }
+
+    .btn-cell1:nth-child(n + #{10 * $i + 1}):nth-child(-n + #{10 * ($i + 1)}):hover
+      ~ .content {
+      --positionY: #{$i};
+    }
+  }
+
+
+.btn-cell1 {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  // border: 1px solid rgba(128, 128, 128, 0.753);
+}
+
+.content {
+  --positionX: 0;
+  --positionY: 5;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  border-radius: 8px;
+
+  background-image: radial-gradient(
+    circle at calc((0 + var(--positionX, 0)) * 10%)
+      calc((0 + var(--positionY, 0)) * 5%),
+    rgb(241, 37, 75) 0%,
+    rgb(230, 30, 77) 27.5%,
+    rgb(227, 28, 95) 40%,
+    rgb(215, 4, 102) 57.5%,
+    rgb(189, 30, 89) 75%,
+    rgb(189, 30, 89) 100%
+  );
+}
+
+.action-btn {
+  padding: 0 0;
+  margin: 0 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+}
+
+span {
+  padding: 0 0;
+  margin: 0 0;
+  color: white;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  font-family: sans-serif;
+}
 }
