@@ -2,7 +2,7 @@
   border: 1px solid #00000030;
   border-radius: 13px;
   padding: 20px;
-  width: 300px;
+  width: 373px;
   box-shadow: 0 0 5px 5px #00000015;
   flex-direction: column;
   align-items: center;
@@ -173,4 +173,8 @@ span {
   font-weight: 600;
   font-family: sans-serif;
 }
+}
+
+.reservation-price{
+    text-decoration: underline;
 }

@@ -1,6 +1,7 @@
 .stay-details-container {
-  width: min(100% - 5px, 1120px);
+  // width: min(100% - 5px, 1120px);
   margin-inline: auto;
+  max-width: 1120px;
   margin-top: 6.5rem;
   h1,
   h2,
@@ -82,6 +83,19 @@
   .amenity-icon{
     margin-right: 0.5rem;
   }
+}
+.amenity-button{
+  all: unset;
+  cursor: pointer;
+  font-family: 'Circular',-apple-system,'BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
+  font-weight: 700;
+  padding: 12px 22px;
+  font-size: 16px;
+  background-color: white;
+  border: #222222 1px solid;
+  border-radius: 10px;
+  letter-spacing: -0.1px;
+  transition: box-shadow 0.2s ease,transform 0.1s ease;
 }
 
 .stay-secondary.header {

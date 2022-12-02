@@ -143,9 +143,15 @@
         </div>
         </div>
         <p><span>You won't be charged yet</span></p>
-        <span class="reservation-price summary">{{stay.price}} x {{stayDuration}}</span>
-        <span class="reservation-price summary">{{totalStayPrice}}</span>
-        <span v-if="extras" class="reservation-price extras">Service fee{{extra.fee}}</span>
+        <div v-if="this.range.start && this.range.end" class="flex space-between">
+            <div class="reservation-price">
+                <span>{{currencyCode}} {{stay.price}} x {{stayDuration}} nights</span>
+            </div> 
+            <div>
+                <span class="reservation-price-summary">{{currencyCode}}{{totalStayPrice}}</span>
+            </div>
+        </div>
+        <span v-if="stay.extras" class="reservation-price extras">Service fee{{extra.fee}}</span>
         <span class="reservation-price total">{{totalPrice}}</span>
     </div>
 </template>
@@ -157,18 +163,14 @@
     },
     data() {
         return{
-            numberOfGuest: null
+            numberOfGuest: null,
+            duration: null,
         }
     },
     methods :{
-        stayDuration(){
-            console.log(range.start,range.end)
-        },
         date(date) {
         return (date) ? new Date(date).toLocaleDateString() : 'Add dates'
-        
       },
-        
     },
         
     
@@ -180,17 +182,24 @@
         },
         totalStayPrice(){
             console.log('total price to calculate')
+            return (this.duration) * (this.stay.price)
         },
-        totalPrice(){
-            console.log('total price without fees')
-        },
+       
         stayRate(){
          let rateSum = 0
          this.stay.reviews.forEach(review => {
             rateSum += review.rate})
             return (rateSum / this.stay.reviews.length).toFixed(2)
         },
-    },
-    
+        stayDuration(){
+            if(this.range.start && this.range.end)
+            this.duration = ((this.range.end-this.range.start) / (1000 * 3600 * 24))
+            return this.duration
+        },
+        totalPrice(){
+            console.log('total price to calculate')
+                    },
+        
+    },   
 }
 </script>

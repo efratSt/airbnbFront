@@ -1,5 +1,5 @@
 <template>
-  <div v-if="stay" class="stay-details-container full" >
+  <div v-if="stay" class="stay-details-container">
     <div class="stay-details flex align-center">
       <div class="stay-info">
         <h2>{{ stay.summary }}</h2>
@@ -71,7 +71,7 @@
                 {{ amenity }}
               </li>
             </ul>
-            <button v-if="stay.amenities.length > 10">
+            <button class="amenity-button" v-if="stay.amenities.length > 10">
               Show all {{ stay.amenities.length }} amenities
             </button>
           </section>
@@ -144,12 +144,10 @@
       
     },
     methods: {
-      getSource(amenity)
-        {            
-            const source = `src/assets/icons/${amenity}`.toLowerCase()+'.svg'
-            console.log(source)
-            return source
-        },
+      getSource(amenity) {            
+        const source = `src/assets/icons/${amenity}`.toLowerCase()+'.svg'
+        return source
+      },
       toggleSaved() {
         this.isSaved = !this.isSaved
         return this.isSaved
