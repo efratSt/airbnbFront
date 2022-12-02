@@ -1,5 +1,5 @@
 <template>
-  <div v-if="stay" class="stay-details-container">
+  <div v-if="stay" class="stay-details-container full" >
     <div class="stay-details flex align-center">
       <div class="stay-info">
         <h2>{{ stay.summary }}</h2>
@@ -39,8 +39,7 @@
         </div>
         <section class="stay-host-details">
             <h2>
-              {{ stay.type }} hosted by {{ stay.host.fullname }} -
-              {{ stay.name }}
+              {{ stay.type }} hosted by {{ stay.host.fullname }} 
             </h2>
             <ol class="clean-list flex align-center">
               <li>
@@ -65,7 +64,7 @@
             <ul class="stay-amenities-list clean-list">
               <li 
                 class="stay-amenity flex align-center"
-                v-for="(amenity, idx) in stay.amenities"
+                v-for="(amenity, idx) in stay.amenities.slice(0,10)"
                 :key="idx"
                 :class="amenity"> 
               <object class="amenity-icon" :data="this.getSource(amenity)" width="24" height="24"></object>

@@ -96,7 +96,6 @@ var gStays = [
     ],
     likedByUsers: ['mini-user'], // for user-wishlist : use $in
   },
-  
 ]
 var gStays2 = [
   {
@@ -106,10 +105,10 @@ var gStays2 = [
     createdAt: utilService.randomDate(),
     imgUrls: [
       'https://a0.muscache.com/im/pictures/miso/Hosting-740634701378172939/original/8ef7a4b0-79b0-439c-9da0-4a170ad4090d.jpeg',
-      'https://a0.muscache.com/im/pictures/c4a1d4c5-f912-492a-afe3-02cb25e0d315.jpg',
-      'https://a0.muscache.com/im/pictures/miso/Hosting-740634701378172939/original/64d725da-b287-4c39-b298-aeb7595f32b0.jpeg',
+      'https://a0.muscache.com/im/pictures/miso/Hosting-740634701378172939/original/2a59972a-5d02-4fa2-82b0-df1ff1971f24.jpeg',
+      'https://a0.muscache.com/im/pictures/miso/Hosting-740634701378172939/original/e7171379-c720-4921-8a23-bb6c23fdb8e4.jpeg',
       'https://a0.muscache.com/im/pictures/miso/Hosting-740634701378172939/original/92b1145f-801b-4a4a-b448-dc167dc5f232.jpeg',
-       'https://a0.muscache.com/im/pictures/miso/Hosting-740634701378172939/original/4e36f28d-27cf-4bea-b473-c83ddec5fb9b.jpeg'
+      'https://a0.muscache.com/im/pictures/miso/Hosting-740634701378172939/original/4e36f28d-27cf-4bea-b473-c83ddec5fb9b.jpeg',
     ],
     price: 99,
     currencyCode: 'USD',

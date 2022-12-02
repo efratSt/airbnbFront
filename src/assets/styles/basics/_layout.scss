@@ -4,6 +4,7 @@
 }
 
 .main-container {
+    
     display: grid;
     // grid-template-columns: 10px 1fr 10px;
     grid-template-columns: 80px 1fr 80px;
@@ -14,6 +15,8 @@
         &.full {
             grid-column: 1 /-1;
         }
+       
+        
     }
 
     @media (max-width: 550px) {
@@ -32,6 +35,12 @@
     }
     @media (min-width: 1640px) {
         grid-template-columns: 80px 1fr 80px;
+        
+    }
+
+    .small{
+        grid-template-columns: 392px 1fr 392px;
+        
     }
 
     // @include for-b1-layout {
