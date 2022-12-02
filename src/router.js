@@ -42,8 +42,9 @@ const routes = [
 
 
 export const router = createRouter({
+  history: createWebHashHistory(),
   routes,
-  history: createWebHashHistory()
+  
   // base: process.env.BASE_URL,
 })
 
