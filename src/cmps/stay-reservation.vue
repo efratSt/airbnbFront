@@ -143,7 +143,7 @@
         </div>
         </div>
         <p><span>You won't be charged yet</span></p>
-        <div v-if="this.range.start && this.range.end" class="flex space-between">
+        <div v-if="this.range.start && this.range.end" class="reservation-price-container flex space-between">
             <div class="reservation-price">
                 <span>{{currencyCode}} {{stay.price}} x {{stayDuration}} nights</span>
             </div> 
