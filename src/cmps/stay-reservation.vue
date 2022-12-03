@@ -25,14 +25,17 @@
                     <label>CHECKOUT</label>
                     <input>{{ date(range.end) }}
                 </div>
-                </div>
-                <div class="guest-input">
+            </div>
+            <div>
+                <div @click="toggleModal" class="guest-input">
                     <label>GUESTS</label>
-                    <input value="2">
+                    <input  :value="totalGuests + ' guest'">
                     <svg viewBox="0 0 320 512" width="100" title="angle-down">
                     <path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" />
                     </svg>
+                    <guestsModal @click.stop="" v-if="guestsModalOpen" @counterChanged="counterChanged" :class="[{'details-page':guestsModalOpen }]"/>
                 </div>
+            </div>
             
         </section>
         <div class="btn-container">
@@ -156,6 +159,8 @@
     </div>
 </template>
 <script>
+import guestsModal from '../cmps/stay-guests-modal.vue'
+
   export default {
     props:{
         stay : Object,
@@ -165,12 +170,21 @@
         return{
             numberOfGuest: null,
             duration: null,
+            guestsModalOpen: false,
+            totalGuests: 1
         }
     },
     methods :{
+        toggleModal(){
+            this.guestsModalOpen = !this.guestsModalOpen
+            
+        },
         date(date) {
         return (date) ? new Date(date).toLocaleDateString() : 'Add dates'
       },
+      counterChanged(totalGuests) {
+            this.totalGuests = totalGuests;
+        },
     },
         
     
@@ -201,5 +215,8 @@
                     },
         
     },   
+    components:{
+        guestsModal
+    }
 }
 </script>

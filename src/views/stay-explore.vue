@@ -14,6 +14,12 @@ export default {
     created() {
         this.place = this.$route.params.place
         console.log('place' , this.place);
-    }
+    },
+    methods :{
+        consoleTest(){
+            console.log(item)
+        }
+    } 
 }
 </script>
+

@@ -1,7 +1,7 @@
 <template>
   <div v-if="stay" class="stay-details-container">
-    <div class="stay-details flex align-center">
-      <div class="stay-info">
+    <div class="stay-details">       
+        <div class="stay-details-summary">
         <h2>{{ stay.summary }}</h2>
         <div class="stay-secondary-header flex align-center space-between">
           <div class="stay-secondary-header location">
@@ -28,6 +28,7 @@
             </button>
           </div>
         </div>
+        </div>
         <div class="img-container">
           <img
             v-for="(image, idx) in stay.imgUrls.slice(0, 5)"
@@ -37,10 +38,18 @@
             :class="`grid-item img-${idx + 1}`"
           />
         </div>
-        <section class="stay-host-details">
+    </div>
+        <div class="stay-details-extra flex space-between">
+        <div>
+        <section class="stay-details host">
+        <div class="host-header flex space-between">
+            <div>
             <h2>
               {{ stay.type }} hosted by {{ stay.host.fullname }} 
             </h2>
+        </div>  
+            <img src="../assets/icons/user-f.png" alt="host image" class="host-img">
+        </div>
             <ol class="clean-list flex align-center">
               <li>
                 <span>{{ stay.capacity }} guests</span>
@@ -54,13 +63,13 @@
               </li>
               <li>
                 <span>&nbsp&#183&nbsp</span>
-                <span>{{ stay.bathrooms }} bathrooms</span>
+                <span>{{ stay.bathrooms }} bath</span>
               </li>
             </ol>
           </section>
         <div class="stay-details-main flex space-between">
-           <section class="stay-amenities container">
-            <h3>What this place offers</h3>
+           <section class="stay-amenities-container">
+            <h2>What this place offers</h2>
             <ul class="stay-amenities-list clean-list">
               <li 
                 class="stay-amenity flex align-center"
@@ -75,10 +84,12 @@
               Show all {{ stay.amenities.length }} amenities
             </button>
           </section>
-        <stayReservation :stay="stay" :range="range"/>
         </div>
+        </div>
+        <stayReservation :stay="stay" :range="range"/>
       </div>
-    </div>
+    
+
     <Date-picker v-model="range" is-range :columns="2" color="gray" />
     <div class="stay-chosen-dates">
     </div>
