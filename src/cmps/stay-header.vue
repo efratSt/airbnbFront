@@ -1,5 +1,5 @@
 <template>
-    <header class="main-container"  :class="[{ 'small' : !notMain }]" >
+    <header class="main-container" :class="{ small: !notMain }">
         <div class="header-center">
             <router-link to="/">
                 <div class="logo">
@@ -85,11 +85,10 @@ export default {
         };
     },
     computed: {
-        notMain(){
-         if(!this.$route.params.id) {
-             return true  
-        } else return false
-
+        notMain() {
+            if (!this.$route.params.id) {
+                return true;
+            } else return false;
         },
         loggedInUser() {
             return this.$store.getters.loggedinUser;

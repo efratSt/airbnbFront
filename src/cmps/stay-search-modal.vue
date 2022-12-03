@@ -18,9 +18,9 @@
                 </div>
                 <div class="break-point"></div>
                 <div class="last-search">
-                    <div class="who search-line-btn">
+                    <div @click="guestOpen" class="who search-line-btn">
                         <p>Who</p>
-                        <span>Add guests</span>
+                        <span>{{ guests }} guests</span>
                     </div>
                     <div class="search-btn">
                         <svg
@@ -47,6 +47,10 @@
                         </svg>
                     </div>
                 </div>
+                <stay-guests-modal
+                    v-if="isGeustOpen"
+                    @counterChanged="counterChanged"
+                />
             </div>
             <Date-picker
                 class="calender"
@@ -61,6 +65,7 @@
 </template>
 
 <script>
+import stayGuestsModal from './stay-guests-modal.vue';
 export default {
     data() {
         return {
@@ -68,8 +73,9 @@ export default {
                 start: null,
                 end: null,
             },
-
+            isGeustOpen: false,
             isCalOpen: false,
+            totalGuests: 0,
         };
     },
 
@@ -80,7 +86,27 @@ export default {
 
         calOpen() {
             this.isCalOpen = !this.isCalOpen;
+            this.isGeustOpen = false;
         },
+
+        guestOpen() {
+            this.isGeustOpen = !this.isGeustOpen;
+            this.isCalOpen = false;
+        },
+
+        counterChanged(totalGuests) {
+            this.totalGuests = totalGuests;
+        },
+    },
+
+    computed: {
+        guests() {
+            return !this.totalGuests ? 'Add' : this.totalGuests;
+        },
+    },
+
+    components: {
+        stayGuestsModal,
     },
 };
 </script>
