@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 <stay-guests-modal
-                    v-if="isGeustOpen"
+                    v-if="isGuestOpen"
                     @counterChanged="counterChanged"
                 />
             </div>
@@ -73,7 +73,7 @@ export default {
                 start: null,
                 end: null,
             },
-            isGeustOpen: false,
+            isGuestOpen: false,
             isCalOpen: false,
             totalGuests: 0,
         };
@@ -86,11 +86,11 @@ export default {
 
         calOpen() {
             this.isCalOpen = !this.isCalOpen;
-            this.isGeustOpen = false;
+            this.isGuestOpen = false;
         },
 
         guestOpen() {
-            this.isGeustOpen = !this.isGeustOpen;
+            this.isGuestOpen = !this.isGuestOpen;
             this.isCalOpen = false;
         },
 

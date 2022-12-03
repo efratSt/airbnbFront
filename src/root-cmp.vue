@@ -1,12 +1,10 @@
 <template>
     <section class="main-container root-cmp">
         <user-msg />
-        <stay-header class="main-container"/>
+        <stay-header class="main-container" />
         <stay-labels-filter v-if="notMain" />
         <router-view />
-        <span>
-          
-      </span>
+        <span> </span>
         <stay-footer />
     </section>
 </template>
@@ -24,13 +22,12 @@ export default {
         const user = userService.getLoggedinUser();
         if (user) store.commit({ type: 'setLoggedinUser', user });
     },
-    computed:{
-        notMain(){
-         if(!this.$route.params.id) {
-             return true  
-        } else return false
-
-        }
+    computed: {
+        notMain() {
+            if (!this.$route.params.id) {
+                return true;
+            } else return false;
+        },
     },
     components: {
         stayHeader,
