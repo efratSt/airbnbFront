@@ -5,7 +5,7 @@ import { userService } from "./user.service.js";
 
 const STORAGE_KEY = "stay";
 
-var stays = require("../../data/stay.json");
+// var stays = require("../../data/stay.json");
 
 console.log("stays", stays);
 
