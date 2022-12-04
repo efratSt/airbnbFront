@@ -41,15 +41,12 @@
     </div>
         <div class="stay-details-extra flex space-between">
         <div>
-        <section class="stay-details host">
+    <section class="stay-details host">
         <div class="host-header flex space-between">
             <div>
             <h2>
               {{ stay.type }} hosted by {{ stay.host.fullname }} 
             </h2>
-        </div>  
-            <img :src="stay.host.imgUrl" alt="host image" class="host-img">
-        </div>
             <ol class="clean-list flex align-center">
               <li>
                 <span>{{ stay.capacity }} guests</span>
@@ -66,7 +63,10 @@
                 <span>{{ stay.bathrooms }} bath</span>
               </li>
             </ol>
-          </section>
+            </div>  
+            <img :src="stay.host.imgUrl" alt="host image" class="host-img">
+        </div>
+    </section>
         <div class="stay-details-main flex space-between">
            <section class="stay-amenities-container">
             <h2>What this place offers</h2>
@@ -94,24 +94,28 @@
     <div class="stay-chosen-dates">
     </div>
     <div class="review-container">
-      <div class="review-add flex">
+      <!-- <div class="review-add flex">
         <input type="text" v-model="review" placeholder="Write your review" />
         <button @click="addReview" class="btn">Save</button>
-      </div>
-      <details v-if="stay.reviews" class="review-list">
-        <summary>Reviews</summary>
+      </div> -->
+        <h2>Reviews</h2>
+        <div v-if="stay.reviews" class="review-list">
         <div
           class="review-preview"
           v-for="review in stay.reviews"
           :key="review._id"
         >
+          <div class="review-title flex align-center">
           <img :src="review.by.imgUrl" alt="" />
-          <h3>by {{ review.by.fullname }}</h3>
+          <div class="review-title content flex">
+          <h3> {{ review.by.fullname }}</h3>
           <h4>{{ reviewDate(review.createdAt) }}</h4>
+          </div>
+          </div>  
           <!-- <h4>By {{ review.user.username }}</h4> -->
           <p>{{ review.txt }}</p>
         </div>
-      </details>
+      </div>
     </div>
   </div>
 </template>
