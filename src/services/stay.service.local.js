@@ -258,7 +258,6 @@ async function query(filterBy = { txt: '', price: 0 }) {
   //       stays = stays.filter(stay => stay.price <= filterBy.price)
   //   }
   if (!stays || !stays.length) stays = gStays
-  console.log(stays)
   return stays
 }
 

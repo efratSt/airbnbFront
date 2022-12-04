@@ -48,7 +48,7 @@
               {{ stay.type }} hosted by {{ stay.host.fullname }} 
             </h2>
         </div>  
-            <img src="../assets/icons/user-f.png" alt="host image" class="host-img">
+            <img :src="stay.host.imgUrl" alt="host image" class="host-img">
         </div>
             <ol class="clean-list flex align-center">
               <li>
