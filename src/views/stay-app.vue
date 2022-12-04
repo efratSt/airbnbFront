@@ -35,9 +35,7 @@ export default {
         // console.log(this.$router.params);
     },
     computed: {
-        StayToShow() {
-            
-        }
+        StayToShow() {},
     },
     methods: {},
     components: {
