@@ -12,7 +12,7 @@
         padding-top: 1.2rem;
         padding-bottom: 0.8rem;
         display: flex;
-        gap: 25px;
+        gap: 40px;
         overflow-x: hidden;
         align-items: center;
         .icon {
@@ -31,14 +31,19 @@
                 width: 24px;
             }
             p {
-                font-size: 13px;
+                font-size: 14px;
                 padding-bottom: 10px;
                 text-transform: capitalize;
             }
-        }
-        .icon:hover {
-            box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.15);
-            opacity: 1;
+            &:hover {
+                box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.15);
+                opacity: 1;
+            }
+            &:focus,
+            &:active {
+                opacity: 1;
+                box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 1);
+            }
         }
     }
 
