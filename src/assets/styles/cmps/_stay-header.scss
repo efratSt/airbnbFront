@@ -23,20 +23,42 @@ header {
                 margin: 0;
             }
         }
-        .btn-user {
-            display: flex;
-            align-items: center;
-            gap: 15px;
 
-            border-radius: 50px;
-            padding: 5px 5px 5px 12px;
-            border: 1px solid #ebebeb;
-            transition: 0.5s;
-        }
-        .btn-user:hover {
-            box-shadow: 0 2px 4px #0000002e;
+        .btn-user-all {
+            cursor: pointer;
+            .btn-user {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+
+                border-radius: 50px;
+                padding: 5px 5px 5px 12px;
+                border: 1px solid #ebebeb;
+                transition: 0.5s;
+            }
+            .btn-user:hover {
+                box-shadow: 0 2px 4px #0000002e;
+            }
         }
     }
+}
+
+.login-modal {
+    position: absolute;
+    z-index: 100;
+    top: 70px;
+    right: 80px;
+    background-color: white;
+    height: 40px;
+    cursor: pointer;
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px #0000002e;
+    font-size: 14px;
+    font-family: airbnb-medium;
+    display: grid;
+    place-content: center;
+    padding: 0 10px;
 }
 
 .screen {

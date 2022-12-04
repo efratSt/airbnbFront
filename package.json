@@ -20,7 +20,6 @@
         "vue-flux": "^6.4.0",
         "vue-router": "^4.1.2",
         "vue-slick-carousel": "^1.0.6",
-        "vue3-carousel": "^0.2.8",
         "vuex": "^4.0.2"
     },
     "devDependencies": {
