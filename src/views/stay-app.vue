@@ -16,7 +16,6 @@ export default {
     data() {
         return {
             stayToAdd: stayService.getEmptyStay(),
-            tryStays: null
             // isExplore: false
         };
     },
@@ -25,7 +24,6 @@ export default {
             return this.$store.getters.loggedinUser;
         },
         getStays() {
-            // console.log('try get stay to show', this.$store.getters.stays);
             return this.$store.getters.stays;
         },
         isExplore() {
@@ -34,10 +32,6 @@ export default {
     },
     created() {
         this.$store.dispatch({ type: 'loadStays' });
-        // console.log('hi from stay-app');
-        // this.tryStays = this.$store.getters.stays
-        // console.log('tryStays', this.tryStays);
-        // console.log(this.$router.params);
     },
     
     methods: {},
