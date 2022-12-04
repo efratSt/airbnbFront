@@ -4,17 +4,21 @@
             <div class="search-line">
                 <div class="where search-line-btn">
                     <p>Where</p>
-                    <input type="text" placeholder="Search destination " />
+                    <input
+                        v-model="filterBy.location"
+                        type="text"
+                        placeholder="Search destination "
+                    />
                 </div>
                 <div class="break-point"></div>
                 <div @click="calOpen" class="check-in search-line-btn">
                     <p>Check in</p>
-                    <span>{{ date(range.start) }}</span>
+                    <span>{{ date(filterBy.range.start) }}</span>
                 </div>
                 <div class="break-point"></div>
                 <div @click="calOpen" class="check-out search-line-btn">
                     <p>Check out</p>
-                    <span>{{ date(range.end) }}</span>
+                    <span>{{ date(filterBy.range.end) }}</span>
                 </div>
                 <div class="break-point"></div>
                 <div class="last-search">
@@ -22,7 +26,7 @@
                         <p>Who</p>
                         <span>{{ guests }} guests</span>
                     </div>
-                    <div class="search-btn">
+                    <div @click="searchStay" class="search-btn">
                         <svg
                             viewBox="0 0 32 32"
                             xmlns="http://www.w3.org/2000/svg"
@@ -52,10 +56,10 @@
                     @counterChanged="counterChanged"
                 />
             </div>
-            <Date-picker 
+            <Date-picker
                 class="calender-search"
                 v-if="isCalOpen"
-                v-model="range"
+                v-model="filterBy.range"
                 is-range
                 :columns="2"
                 color="gray"
@@ -69,13 +73,17 @@ import stayGuestsModal from './stay-guests-modal.vue';
 export default {
     data() {
         return {
-            range: {
-                start: null,
-                end: null,
-            },
             isGuestOpen: false,
             isCalOpen: false,
             totalGuests: 0,
+            filterBy: {
+                range: {
+                    start: null,
+                    end: null,
+                },
+                location: '',
+                guests: 0,
+            },
         };
     },
 
@@ -96,6 +104,15 @@ export default {
 
         counterChanged(totalGuests) {
             this.totalGuests = totalGuests;
+            this.filterBy.guests = totalGuests;
+        },
+
+        searchStay() {
+            console.log(this.filterBy);
+            this.$store.commit({
+                type: 'setFilterBy',
+                filterBy: { ...this.filterBy },
+            });
         },
     },
 
