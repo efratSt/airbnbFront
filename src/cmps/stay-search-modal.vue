@@ -53,7 +53,7 @@
                 />
             </div>
             <Date-picker
-                class="calender"
+                class="calender-search"
                 v-if="isCalOpen"
                 v-model="range"
                 is-range
