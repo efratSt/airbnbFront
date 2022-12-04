@@ -83,6 +83,7 @@ export default {
                 },
                 location: '',
                 guests: 0,
+                label: '',
             },
         };
     },

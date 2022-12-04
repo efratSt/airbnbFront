@@ -28,40 +28,6 @@
                 <Navigation />
             </template>
         </Carousel>
-
-<<<<<<< HEAD
-        <!-- 
-        <Carousel :settings="settings" :breakpoints="breakpoints">
-            <Slide v-for="(icon, idx) in icons" :key="idx">
-                <div class="carousel__item">
-                    <div class="icon btn-label-filter" :class="labels[idx]" @click="filterByLabel(labels[idx])">
-                        <img :src="icons[idx]" alt="" />
-                        <p>{{ labels[idx] }}</p>
-                    </div>
-                </div>
-            </Slide>
-
-
-            <template #addons>
-                <Navigation />
-            </template>
-        </Carousel> -->
-
-        <!-- 
-        <el-carousel :autoplay="false" :pause-on-hover="false" :loop="false" type="card" height="150px" indicator-position="none"
->
-            <el-carousel-item class="icons-wrapper main-container"  v-for="(icon, idx) in icons" :key="idx">
-                <div class="icons-container">
-                    <div class="icon btn-label-filter" justify="center" :class="labels[idx]" @click="filterByLabel(labels[idx])">
-                        <img :src="icons[idx]" alt="" />
-                        <p>{{ labels[idx] }}</p>
-                    </div>
-                </div>
-            </el-carousel-item>
-        </el-carousel> -->
-=======
-
->>>>>>> c5eefec825a0fbe6e14edfa59258b0524413bd8c
     </section>
 </template>
 
@@ -135,28 +101,11 @@ export default {
                 itemsToShow: 11.5,
                 itemsToScroll: 1,
                 snapAlign: 'center',
-                wrapAround: true,
+                wrapAround: false,
                 mouseDrag: false,
                 touchDrag: false,
             },
-<<<<<<< HEAD
-            breakpoints: {
-                // 700px and up
-                700: {
-                    itemsToShow: 9.5,
-                    snapAlign: 'center',
-                },
-                // 1024 and up
-                1024: {
-                    itemsToShow: 9.5,
-                    snapAlign: 'start',
-                },
-            },
         };
-=======
-           
-        }
->>>>>>> c5eefec825a0fbe6e14edfa59258b0524413bd8c
     },
     mounted() {
         window.addEventListener('scroll', this.updateScroll);
@@ -177,30 +126,3 @@ export default {
     },
 };
 </script>
-
-<<<<<<< HEAD
-<style>
-/* .carousel__item {
-    min-height: 200px;
-    width: 100%;
-    background-color: var(--vc-clr-primary);
-    color: var(--vc-clr-white);
-    font-size: 20px;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.carousel__slide {
-    padding: 10px;
-}
-
-.carousel__prev,
-.carousel__next {
-    box-sizing: content-box;
-    border: 5px solid white;
-} */
-</style>
-=======
->>>>>>> c5eefec825a0fbe6e14edfa59258b0524413bd8c
