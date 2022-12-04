@@ -67,7 +67,9 @@
             <!-- </router-link> -->
         </div>
     </header>
-    <stay-search-modal v-if="isOpen" />
+    <Transition name="slide-fade">
+        <stay-search-modal v-if="isOpen" />
+    </Transition>
     <div v-if="isLoginOpen" class="login-modal">
         <p>Sign up / Log in</p>
     </div>

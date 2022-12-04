@@ -28,10 +28,6 @@
                 <Navigation />
             </template>
         </Carousel>
-<<<<<<< HEAD
-=======
-
->>>>>>> aed80567e6d501cbaeceeea995ea877835cdf67e
     </section>
 </template>
 
@@ -104,30 +100,20 @@ export default {
             settings: {
                 itemsToShow: 11.5,
                 itemsToScroll: 1,
-<<<<<<< HEAD
-                snapAlign: 'center',
-                wrapAround: false,
-=======
                 snapAlign: 'start',
                 wrapAround: true,
->>>>>>> aed80567e6d501cbaeceeea995ea877835cdf67e
                 mouseDrag: false,
                 touchDrag: false,
                 modelValue: 0,
             },
-<<<<<<< HEAD
         };
-=======
-           
-        }
->>>>>>> aed80567e6d501cbaeceeea995ea877835cdf67e
     },
     mounted() {
         window.addEventListener('scroll', this.updateScroll);
     },
     methods: {
         filterByLabel(label) {
-            this.$store.commit({type: 'setFilterByLabel', label})
+            this.$store.commit({ type: 'setFilterByLabel', label });
         },
         updateScroll() {
             this.scrollPosition = window.scrollY;
@@ -141,7 +127,3 @@ export default {
     },
 };
 </script>
-<<<<<<< HEAD
-=======
-
->>>>>>> aed80567e6d501cbaeceeea995ea877835cdf67e
