@@ -1,8 +1,9 @@
 .el-carousel__button {
-    width: 7px;
-    height: 7px;
+    width: 6px;
+    height: 6px;
     background-color: rgb(255, 255, 255);
     border-radius: 50%;
+    margin: -1px;
 }
 
 .card-container {
@@ -70,6 +71,7 @@
 
         .el-carousel__indicators--horizontal {
             bottom: 13px;
+            // padding-right: 50px;
         }
     }
 
