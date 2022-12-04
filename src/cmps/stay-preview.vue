@@ -56,7 +56,7 @@ export default {
         rateCalc() {
             let rate = (this.stayRate = this.stayRate / this.stay.reviews.length);
             if (rate.toFixed(2) % 1 === 0) return rate.toFixed(1);
-            console.log(rate.toFixed(2));
+            // console.log(rate.toFixed(2));
             return rate.toFixed(2);
         },
         dateCalc() {

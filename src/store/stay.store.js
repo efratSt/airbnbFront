@@ -24,13 +24,19 @@ export function getActionAddStayMsg(stayId) {
         type: 'addStayMsg',
         stayId,
         txt: 'Stam txt',
+        label: ''
     };
 }
 
 export const stayStore = {
     state: {
         stays: [],
-        filterBy: null,
+        filterBy: {
+            location: '',
+            range: {},
+            guests: 0,
+        },
+        filterLabel: ''
     },
     getters: {
         stays({ stays }) {
@@ -47,8 +53,12 @@ export const stayStore = {
     },
     mutations: {
         setFilterBy(state, { filterBy }) {
-            console.log(filterBy);
-            state.filterBy = filterBy;
+            console.log('from store');
+            state.filterBy = filterBy
+        },
+        setFilterByLabel(state, { label }) {
+            state.filterLabel = label
+            console.log('from store label',state.filterLabel);
         },
         setStays(state, { stays }) {
             state.stays = stays;
@@ -68,9 +78,9 @@ export const stayStore = {
             if (!stay.msgs) stay.msgs = [];
             stay.msgs.push(msg);
         },
-        setFilterBy(state, { filterBy }) {
-            state.filterBy = filterBy;
-        },
+        // setFilterBy(state, { filterBy }) {
+        //     state.filterBy = filterBy;
+        // },
     },
     actions: {
         async addStay(context, { stay }) {
