@@ -24,7 +24,8 @@ export function getActionAddStayMsg(stayId) {
         type: 'addStayMsg',
         stayId,
         txt: 'Stam txt',
-        label: ''
+        label: '',
+        showExplore: false,
     };
 }
 
@@ -40,6 +41,7 @@ export const stayStore = {
     },
     getters: {
         stays({ stays }) {
+            console.log('try to connect from get stays from store');
             return stays;
         },
         getRateCalcPerStay({ reviews }) {
@@ -52,6 +54,9 @@ export const stayStore = {
         },
         getFilterLabel({ filterLabel }) {
             return filterLabel
+        },
+        getShowExplore({ showExplore }) {
+            return showExplore
         }
     },
     mutations: {
@@ -109,6 +114,7 @@ export const stayStore = {
         async loadStays(context) {
             try {
                 const stays = await stayService.query();
+                console.log('stay from store', stays);
                 context.commit({ type: 'setStays', stays });
             } catch (err) {
                 console.log('stayStore: Error in loadStays', err);

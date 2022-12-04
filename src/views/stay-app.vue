@@ -24,6 +24,7 @@ export default {
             return this.$store.getters.loggedinUser;
         },
         stays() {
+            console.log('try get stay to show', this.$store.getters.stays);
             return this.$store.getters.stays;
         },
         isExplore() {
@@ -35,9 +36,9 @@ export default {
         // console.log(this.$router.params);
     },
     computed: {
-        StayToShow() {
+        // StayToShow() {
             
-        }
+        // }
     },
     methods: {},
     components: {
