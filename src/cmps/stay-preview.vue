@@ -25,8 +25,7 @@
                     <div>
                         <p class="added">Added {{ dateCalc }} ago</p>
                     </div>
-                    <p class="price-night"><span class="price">{{ currencyCode }} {{ stay.price }} </span> &nbsp/&nbsp
-                        night</p>
+                    <p class="price-night"><span class="price">{{ currencyCode }}{{ stay.price }} </span> night</p>
                 </div>
             </section>
         </li>

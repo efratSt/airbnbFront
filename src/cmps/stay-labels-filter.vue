@@ -12,7 +12,7 @@
             </div>
         </div> -->
 
-        <Carousel class="icons-wrapper main-container" :settings="settings">
+        <Carousel class="icons-wrapper main-container" :settings="settings" :breakpoints="breakpoints">
             <Slide v-for="(icon, idx) in icons" :key="idx">
                 <div
                     class="carousel__item icon btn-label-filter"
@@ -106,7 +106,12 @@ export default {
                 touchDrag: false,
                 modelValue: 0,
             },
-           
+
+            breakpoints: {
+                1600: {
+                    itemsToShow: 13.5
+                }
+            },
         }
     },
     mounted() {
