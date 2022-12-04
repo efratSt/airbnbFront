@@ -114,7 +114,7 @@ export const stayStore = {
         async loadStays(context) {
             try {
                 const stays = await stayService.query();
-                console.log('stay from store', stays);
+                // console.log('stay from store', stays);
                 context.commit({ type: 'setStays', stays });
             } catch (err) {
                 console.log('stayStore: Error in loadStays', err);

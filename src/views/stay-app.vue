@@ -1,7 +1,7 @@
 <template>
     <section class="stay-app">
         <!-- <stay-labels-filter/> -->
-        <stay-list :stays="stays" />
+        <stay-list :stays="tryStays" />
     </section>
     <!-- <pre>{{stays}}</pre> -->
 </template>
@@ -16,6 +16,7 @@ export default {
     data() {
         return {
             stayToAdd: stayService.getEmptyStay(),
+            tryStays: null
             // isExplore: false
         };
     },
@@ -33,6 +34,8 @@ export default {
     },
     created() {
         this.$store.dispatch({ type: 'loadStays' });
+        console.log('hi from stay-app');
+        this.tryStays = this.$store.getters.stays
         // console.log(this.$router.params);
     },
     computed: {
