@@ -8,7 +8,8 @@
   h3,
   h4,
   h5,
-  h6 {
+  h6,
+  a {
     all: unset;
     font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI',
       Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -32,6 +33,7 @@
     }
   }
 }
+
 .img-container {
   margin-top: 1rem;
   height: 562px;
@@ -73,12 +75,13 @@
   border-bottom-right-radius: 12px;
 }
 
-.host-header{
+.host-header {
   margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: $clr7 1px solid;
 }
 .stay-amenities-container {
   margin-bottom: 1rem;
-
   h2 {
     font-size: 22px;
     letter-spacing: 0.25px;
@@ -95,11 +98,11 @@
     // display: grid;
     // grid-template-columns: 1fr 1fr;
     // grid-template-rows: repeat(5, 1fr);
-     line-height: 1.5rem;
+    line-height: 1.5rem;
     .amenity-icon {
       margin-right: 1rem;
     }
-    li {      
+    li {
       width: 51.5%;
       margin-bottom: 1rem;
     }
@@ -123,12 +126,17 @@
   }
 }
 
+.stay-header{
+  margin-bottom: -1.5px;
+  padding-bottom: none;
+}
+
 .stay-secondary.header {
   i {
-    margin-right: 0.5rem;
+    margin-right: 0.33rem;
     font-size: 16px;
   }
-  .fa-solid.saved {
+   .fa-solid.saved {
     color: #ff385c;
   }
   &.button {
@@ -159,6 +167,9 @@
 }
 
 .review-container {
+  border-top: $clr7 1px solid;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
   h2 {
     font-weight: 600;
   }
@@ -182,17 +193,33 @@
   }
 }
 
-.details-page-calender{
-  &.main{
+.details-page-calender-container{
   width: 647px;
+  border-top: $clr7 1px solid;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
 }
-&.secondary{
-  position: absolute;
-  width: 661px;
-  height: 448px;
-  right: -30px;
-  top: 58px;
-  z-index: 8000;
+.details-page-calender {
+  &.main {
+    width: 647px;
+  }
+  &.secondary {
+    position: absolute;
+    width: 661px;
+    height: 448px;
+    right: -30px;
+    top: 58px;
+    z-index: 8000;
+  }
 }
+.stay-rate{
+  font-size: 14px;
 }
-
+.reviews{
+  a{
+    color: #222222;
+    font-weight: 600;
+    text-decoration: none;
+    
+  }
+}

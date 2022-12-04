@@ -50,6 +50,9 @@ export const stayStore = {
             });
             return sum / reviews.length;
         },
+        getFilterLabel({ filterLabel }) {
+            return filterLabel
+        }
     },
     mutations: {
         setFilterBy(state, { filterBy }) {

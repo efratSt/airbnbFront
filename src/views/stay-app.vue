@@ -34,6 +34,11 @@ export default {
         this.$store.dispatch({ type: 'loadStays' });
         // console.log(this.$router.params);
     },
+    computed: {
+        StayToShow() {
+            
+        }
+    },
     methods: {},
     components: {
         stayList,

@@ -16,15 +16,18 @@
   width: 100%;
   font-family: 'Circular', -apple-system, 'BlinkMacSystemFont', 'Roboto',
   'Helvetica Neue', sans-serif;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 
   p {
     margin-top: 0;
+    text-decoration: none;
   }
   .order-form-header-secondary {
     display: flex;
     align-items: center; 
-
+  }
+  i{
+    font-size: 10px;
   }
 }
 
@@ -77,7 +80,9 @@
     }
   }
 }
-
+.order-form-header-secondary.reviews{
+  font-size: 14px;
+}
 .guest-input {
   position: relative;
   display: flex;
@@ -113,6 +118,7 @@ label {
 span.cost {
   color: black;
   font-size: 1.3em;
+  font-weight: 500;
 }
 
 span.reviews {
@@ -123,7 +129,7 @@ span.reviews {
 
 .btn-container {
   position: relative;
-  width: 99%;
+  width: 99.9%;
   height: 48px;
   padding: 0 0;
   margin: 0 0;
