@@ -101,10 +101,11 @@ export default {
             settings: {
                 itemsToShow: 11.5,
                 itemsToScroll: 1,
-                snapAlign: 'center',
+                snapAlign: 'start',
                 wrapAround: true,
                 mouseDrag: false,
                 touchDrag: false,
+                modelValue: 0,
             },
            
         }
