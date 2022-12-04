@@ -206,9 +206,9 @@ import guestsModal from '../cmps/stay-guests-modal.vue'
     computed: {
         reservationButton() {
            if (this.reservationStatus === null && !this.range.start || !this.range.end) {
-            return 'Enter dates to check availability'
+            return 'Check availability'
            } else if (this.reservationStatus === null && this.range.start && this.range.end) {
-            return 'Click to check'
+            return 'Check this dates'
            }
            else if( this.reservationStatus === 'confirmed'){
                return 'Reserved'
