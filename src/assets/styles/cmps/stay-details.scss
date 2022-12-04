@@ -15,20 +15,19 @@
     margin: 0 0 0.6em;
     line-height: 1;
   }
-  .stay-details{
-    h2{
+  .stay-details {
+    h2 {
       font-size: 26px;
       letter-spacing: 0.28px;
       color: #222222;
       font-family: airbnb-book;
       font-weight: 900;
-      
     }
-    .fa-star{
+    .fa-star {
       font-size: 14px;
       margin-inline-end: 1px;
     }
-    a{
+    a {
       text-decoration: underline;
     }
   }
@@ -42,7 +41,7 @@
   grid-template-columns: 2.05fr 1fr 1fr;
   grid-template-rows: 265.5px 258.5px;
   grid-template-areas:
-   'area1  area2 area3'
+    'area1  area2 area3'
     'area1  area4  area5';
 }
 
@@ -73,45 +72,49 @@
   grid-area: area5;
   border-bottom-right-radius: 12px;
 }
-.stay-amenities-container{
-margin-bottom: 1rem;
 
-h2{
-  font-size: 22px;
+.host-header{
+  margin-bottom: 1rem;
+}
+.stay-amenities-container {
+  margin-bottom: 1rem;
+
+  h2 {
+    font-size: 22px;
     letter-spacing: 0.25px;
     margin-bottom: -5px;
     padding: 0;
     font-weight: 600;
-    
-}
-.stay-amenities-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(5, 1fr);
-  line-height: 3rem;
-  .amenity-icon{
-    margin-right: 1rem; 
   }
-  li{
-    margin-bottom: -5px;
+  .stay-amenities-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    line-height: 3rem;
+    .amenity-icon {
+      margin-right: 1rem;
+    }
+    li {
+      margin-bottom: -5px;
+    }
+    li:nth-child(2n) {
+      margin-left: 5.5rem;
+    }
   }
-  li:nth-child(2n) {
-    margin-left: 5.5rem; 
+  .amenity-button {
+    all: unset;
+    cursor: pointer;
+    font-family: 'Circular', -apple-system, 'BlinkMacSystemFont', 'Roboto',
+      'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    padding: 12px 22px;
+    font-size: 16px;
+    background-color: white;
+    border: #222222 1px solid;
+    border-radius: 10px;
+    letter-spacing: -0.1px;
+    transition: box-shadow 0.2s ease, transform 0.1s ease;
   }
-}
-.amenity-button{
-  all: unset;
-  cursor: pointer;
-  font-family: 'Circular',-apple-system,'BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
-  font-weight: 700;
-  padding: 12px 22px;
-  font-size: 16px;
-  background-color: white;
-  border: #222222 1px solid;
-  border-radius: 10px;
-  letter-spacing: -0.1px;
-  transition: box-shadow 0.2s ease,transform 0.1s ease;
-}
 }
 
 .stay-secondary.header {
@@ -135,18 +138,40 @@ h2{
   }
 }
 
-.stay-details-extra{
-
-  .host-header h2{
+.stay-details-extra {
+  .host-header h2 {
     font-size: 22px;
     letter-spacing: 0.18px;
     margin-bottom: -5px;
     padding: 0;
-   
   }
-  .host-img{
+  .host-img {
     height: 56px;
     border-radius: 100%;
-   margin-left: 250px;
+    margin-left: 250px;
+  }
+}
+
+.review-container {
+  h2 {
+    font-weight: 600;
+  }
+
+  .review-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    // grid-template-rows: repeat(5, 1fr);
+    line-height: 2rem;
+    img {
+      margin-right: 10px;
+    }
+
+    .review-title .content {
+      flex-direction: column;
+
+      h3 {
+        font-weight: 600;
+      }
+    }
   }
 }

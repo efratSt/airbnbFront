@@ -14,7 +14,9 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  font-family: Circular;
+  font-family: 'Circular', -apple-system, 'BlinkMacSystemFont', 'Roboto',
+  'Helvetica Neue', sans-serif;
+  margin-bottom: 0.5rem;
 
   p {
     margin-top: 0;
@@ -38,6 +40,7 @@
 }
 
 .date-input {
+  position: relative;
   display: flex;
   flex-direction: column;
   max-height: 58px;
@@ -53,6 +56,24 @@
   }
   input{
     font-size: 0.8rem;
+    background-color: white;
+  }
+  button{
+    all: unset;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 32px;
+    width: 32px;
+    border-radius: 100%;
+    
+    cursor: pointer;
+    &:hover{
+      background-color:#F7F7F7;
+    }
   }
 }
 
