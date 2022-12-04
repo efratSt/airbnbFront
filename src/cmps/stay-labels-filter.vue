@@ -29,6 +29,7 @@
             </template>
         </Carousel>
 
+<<<<<<< HEAD
         <!-- 
         <Carousel :settings="settings" :breakpoints="breakpoints">
             <Slide v-for="(icon, idx) in icons" :key="idx">
@@ -58,6 +59,9 @@
                 </div>
             </el-carousel-item>
         </el-carousel> -->
+=======
+
+>>>>>>> c5eefec825a0fbe6e14edfa59258b0524413bd8c
     </section>
 </template>
 
@@ -128,9 +132,14 @@ export default {
             ],
             scrollPosition: null,
             settings: {
-                itemsToShow: 9.5,
+                itemsToShow: 11.5,
+                itemsToScroll: 1,
                 snapAlign: 'center',
+                wrapAround: true,
+                mouseDrag: false,
+                touchDrag: false,
             },
+<<<<<<< HEAD
             breakpoints: {
                 // 700px and up
                 700: {
@@ -144,6 +153,10 @@ export default {
                 },
             },
         };
+=======
+           
+        }
+>>>>>>> c5eefec825a0fbe6e14edfa59258b0524413bd8c
     },
     mounted() {
         window.addEventListener('scroll', this.updateScroll);
@@ -165,6 +178,7 @@ export default {
 };
 </script>
 
+<<<<<<< HEAD
 <style>
 /* .carousel__item {
     min-height: 200px;
@@ -188,3 +202,5 @@ export default {
     border: 5px solid white;
 } */
 </style>
+=======
+>>>>>>> c5eefec825a0fbe6e14edfa59258b0524413bd8c
