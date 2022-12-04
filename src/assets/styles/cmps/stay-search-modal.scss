@@ -11,8 +11,9 @@
 
     .search-line {
         position: relative;
-        width: 50%;
-        padding: 5px 25px;
+        width: 65%;
+        max-width: 700px;
+        min-width: 550px;
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
@@ -31,6 +32,13 @@
             flex-direction: column;
             font-size: 14px;
             justify-content: center;
+            border-radius: 50px;
+            // width: 100%;
+            flex-basis: 50%;
+            padding-inline-start: 20px;
+            &:hover {
+                background-color: #ebebeb;
+            }
 
             p {
                 font-size: 12px;
@@ -46,10 +54,11 @@
                 background-color: transparent;
             }
             &.where {
-                flex-basis: 30%;
+                flex-basis: 100%;
                 padding-bottom: 5px;
 
                 input {
+                    padding-top: 3px;
                     width: 100%;
                 }
             }
@@ -57,7 +66,14 @@
 
         .last-search {
             display: flex;
-            gap: 30px;
+            justify-content: space-between;
+            gap: 10px;
+            border-radius: 40px;
+            flex-basis: 120%;
+            padding-inline-end: 10px;
+            &:hover {
+                background-color: #ebebeb;
+            }
             .search-btn {
                 background-color: #ff385c;
                 padding: 15px;
@@ -75,7 +91,9 @@
     }
     .calender-search {
         position: absolute;
-        width: 49%;
+        width: 65%;
+        max-width: 700px;
+        min-width: 550px;
         left: 50%;
         transform: translateX(-50%);
         padding: 20px;
