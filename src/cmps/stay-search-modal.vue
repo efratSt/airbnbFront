@@ -108,7 +108,7 @@ export default {
         },
 
         searchStay() {
-            console.log(this.filterBy);
+            // console.log('from search modal' ,this.filterBy);
             this.$store.commit({
                 type: 'setFilterBy',
                 filterBy: { ...this.filterBy },
