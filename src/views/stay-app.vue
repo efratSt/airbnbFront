@@ -1,7 +1,7 @@
 <template>
     <section class="stay-app">
         <!-- <stay-labels-filter/> -->
-        <stay-list :stays="tryStays" />
+        <stay-list :stays="getStays" />
     </section>
     <!-- <pre>{{stays}}</pre> -->
 </template>
@@ -24,8 +24,8 @@ export default {
         loggedInUser() {
             return this.$store.getters.loggedinUser;
         },
-        stays() {
-            console.log('try get stay to show', this.$store.getters.stays);
+        getStays() {
+            // console.log('try get stay to show', this.$store.getters.stays);
             return this.$store.getters.stays;
         },
         isExplore() {
@@ -34,15 +34,12 @@ export default {
     },
     created() {
         this.$store.dispatch({ type: 'loadStays' });
-        console.log('hi from stay-app');
-        this.tryStays = this.$store.getters.stays
+        // console.log('hi from stay-app');
+        // this.tryStays = this.$store.getters.stays
+        // console.log('tryStays', this.tryStays);
         // console.log(this.$router.params);
     },
-    computed: {
-        // StayToShow() {
-            
-        // }
-    },
+    
     methods: {},
     components: {
         stayList,

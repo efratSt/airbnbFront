@@ -40,9 +40,8 @@ export const stayStore = {
         filterLabel: ''
     },
     getters: {
-        stays({ stays }) {
-            console.log('try to connect from get stays from store');
-            return stays;
+        stays(state) {
+            return state.stays;
         },
         getRateCalcPerStay({ reviews }) {
             console.log('reviews', reviews);
@@ -70,6 +69,7 @@ export const stayStore = {
         },
         setStays(state, { stays }) {
             state.stays = stays;
+            console.log('setStays',state.stays);
         },
         addStay(state, { stay }) {
             state.stays.push(stay);
@@ -114,7 +114,6 @@ export const stayStore = {
         async loadStays(context) {
             try {
                 const stays = await stayService.query();
-                // console.log('stay from store', stays);
                 context.commit({ type: 'setStays', stays });
             } catch (err) {
                 console.log('stayStore: Error in loadStays', err);
