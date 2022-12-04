@@ -9,9 +9,8 @@
             <div class="order-form-header-secondary">
                 <p><i class="fa-solid fa-star"></i>{{stayRate}}</p>
                 <p> &nbsp&#183&nbsp </p>
-                <p><span class="reviews"><a href="#">
-                {{ stay.reviews.length }}
-                 reviews</a> 
+                <p><span class="reviews">
+                    <a href="#"> {{ stay.reviews.length }} reviews</a> 
                 </span></p>
             </div>
         </section>
@@ -205,16 +204,15 @@ import guestsModal from '../cmps/stay-guests-modal.vue'
     
     computed: {
         reservationButton() {
-           if (this.reservationStatus === null && !this.range.start || !this.range.end) {
-            return 'Check availability'
-           } else if (this.reservationStatus === null && this.range.start && this.range.end) {
-            return 'Check this dates'
-           }
-           else if( this.reservationStatus === 'confirmed'){
-               return 'Reserved'
-           }
+            if (this.reservationStatus === null && !this.range.start || !this.range.end) {
+                return 'Check availability'
+            } else if (this.reservationStatus === null && this.range.start && this.range.end) {
+                return 'Check this dates'
+            }
+            else if( this.reservationStatus === 'confirmed'){
+                return 'Reserved'
+            }
         },
-        
         currencyCode(){
             if(this.stay.currencyCode === 'USD') return '$'
             if(this.stay.currencyCode === 'EUR') return '€'
@@ -224,10 +222,9 @@ import guestsModal from '../cmps/stay-guests-modal.vue'
             console.log('total price to calculate')
             return (this.duration) * (this.stay.price)
         },
-       
         stayRate(){
-         let rateSum = 0
-         this.stay.reviews.forEach(review => {
+            let rateSum = 0
+            this.stay.reviews.forEach(review => {
             rateSum += review.rate})
             return (rateSum / this.stay.reviews.length).toFixed(2)
         },
@@ -238,8 +235,7 @@ import guestsModal from '../cmps/stay-guests-modal.vue'
         },
         totalPrice(){
             console.log('total price to calculate')
-                    },
-        
+        },
     },   
     components:{
         guestsModal
