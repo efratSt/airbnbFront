@@ -26,10 +26,11 @@
                     <label>CHECKOUT</label>
                     <input :disabled="true">{{ date(range.end) }}
                     <button @click="(range.end=null)" v-if="range.end"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 4; overflow: visible;"><path d="m6 6 20 20"></path><path d="m26 6-20 20"></path></svg></button>
+                    <!-- <Date-picker class="details-page-calender secondary" v-model="range" is-range :columns="2" color="gray" /> -->
                 </div>
             </div>
             <div>
-                <div @click="toggleModal" class="guest-input">
+                <div @click="toggleGuestsModal" class="guest-input">
                     <label>GUESTS</label>
                     <input  :value="totalGuests + ' guest'">
                     <svg viewBox="0 0 320 512" width="100" title="angle-down">
@@ -40,7 +41,7 @@
             </div>
             
         </section>
-        <div class="btn-container">
+        <div @click="sendReservation" class="btn-container">
             <div class="btn-cell1"></div>
             <div class="btn-cell1"></div>
             <div class="btn-cell1"></div>
@@ -143,7 +144,7 @@
             <div class="btn-cell1"></div>
             <div class="content">
             <button class="action-btn">
-            <span>Check availability</span>
+            <span>{{ reservationButton }}</span>
             </button>
         </div>
         </div>
@@ -170,6 +171,7 @@ import guestsModal from '../cmps/stay-guests-modal.vue'
     },
     data() {
         return{
+            reservationStatus:null,
             numberOfGuest: null,
             duration: null,
             guestsModalOpen: false,
@@ -177,20 +179,42 @@ import guestsModal from '../cmps/stay-guests-modal.vue'
         }
     },
     methods :{
-        toggleModal(){
-            this.guestsModalOpen = !this.guestsModalOpen
-            
+        toggleGuestsModal(){
+            this.guestsModalOpen = !this.guestsModalOpen         
         },
         date(date) {
         return (date) ? new Date(date).toLocaleDateString() : 'Add dates'
-      },
-      counterChanged(totalGuests) {
+        },
+        counterChanged(totalGuests) {
             this.totalGuests = totalGuests;
         },
+        sendReservation(){
+            if (this.range.start && this.range.end) {
+            this.reservationStatus = 'confirmed'
+            let reservation = {
+                stay: this.stay,
+                range: this.range,
+                duration: this.duration,
+                price: this.totalStayPrice
+            } 
+            console.log(reservation)
+            } 
+    }
     },
         
     
     computed: {
+        reservationButton() {
+           if (this.reservationStatus === null && !this.range.start || !this.range.end) {
+            return 'Enter dates to check availability'
+           } else if (this.reservationStatus === null && this.range.start && this.range.end) {
+            return 'Click to check'
+           }
+           else if( this.reservationStatus === 'confirmed'){
+               return 'Reserved'
+           }
+        },
+        
         currencyCode(){
             if(this.stay.currencyCode === 'USD') return '$'
             if(this.stay.currencyCode === 'EUR') return '€'

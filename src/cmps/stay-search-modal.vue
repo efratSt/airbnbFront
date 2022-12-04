@@ -52,7 +52,7 @@
                     @counterChanged="counterChanged"
                 />
             </div>
-            <Date-picker
+            <Date-picker 
                 class="calender-search"
                 v-if="isCalOpen"
                 v-model="range"
