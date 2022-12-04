@@ -5,7 +5,7 @@
         <stay-labels-filter v-if="notMain" />
         <router-view />
         <span> </span>
-        <stay-footer />
+        <!-- <stay-footer /> -->
     </section>
 </template>
 

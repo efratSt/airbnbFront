@@ -1,5 +1,8 @@
 <template>
-    <section class="stay-labels-filter main-container full">
+    <section
+        class="stay-labels-filter main-container full"
+        :class="{ shadow: scrollPosition }"
+    >
         <div class="icons-wrapper main-container">
             <div
                 class="icons-container"
@@ -81,11 +84,18 @@ export default {
                 'caves',
                 'islands',
             ],
+            scrollPosition: null,
         };
+    },
+    mounted() {
+        window.addEventListener('scroll', this.updateScroll);
     },
     methods: {
         filterByLabel(label) {
             console.log(label);
+        },
+        updateScroll() {
+            this.scrollPosition = window.scrollY;
         },
     },
 };
