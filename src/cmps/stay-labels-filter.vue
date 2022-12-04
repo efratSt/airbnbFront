@@ -1,7 +1,8 @@
 <template>
-    <section class="stay-labels-filter main-container full" :class="{ shadow: scrollPosition }">
-
-
+    <section
+        class="stay-labels-filter main-container full"
+        :class="{ shadow: scrollPosition }"
+    >
         <!-- <div class="icons-wrapper main-container">
             <div class="icons-container" v-for="(icon, idx) in icons" :key="idx">
                 <div class="icon btn-label-filter" :class="labels[idx]" @click="filterByLabel(labels[idx])">
@@ -11,10 +12,13 @@
             </div>
         </div> -->
 
-
         <Carousel class="icons-wrapper main-container" :settings="settings">
             <Slide v-for="(icon, idx) in icons" :key="idx">
-                <div class="carousel__item icon btn-label-filter" :class="labels[idx]" @click="filterByLabel(labels[idx])">
+                <div
+                    class="carousel__item icon btn-label-filter"
+                    :class="labels[idx]"
+                    @click="filterByLabel(labels[idx])"
+                >
                     <img :src="icons[idx]" alt="" />
                     <p>{{ labels[idx] }}</p>
                 </div>
@@ -24,51 +28,14 @@
                 <Navigation />
             </template>
         </Carousel>
-
-
-        <!-- 
-        <Carousel :settings="settings" :breakpoints="breakpoints">
-            <Slide v-for="(icon, idx) in icons" :key="idx">
-                <div class="carousel__item">
-                    <div class="icon btn-label-filter" :class="labels[idx]" @click="filterByLabel(labels[idx])">
-                        <img :src="icons[idx]" alt="" />
-                        <p>{{ labels[idx] }}</p>
-                    </div>
-                </div>
-            </Slide>
-
-
-            <template #addons>
-                <Navigation />
-            </template>
-        </Carousel> -->
-
-        <!-- 
-        <el-carousel :autoplay="false" :pause-on-hover="false" :loop="false" type="card" height="150px" indicator-position="none"
->
-            <el-carousel-item class="icons-wrapper main-container"  v-for="(icon, idx) in icons" :key="idx">
-                <div class="icons-container">
-                    <div class="icon btn-label-filter" justify="center" :class="labels[idx]" @click="filterByLabel(labels[idx])">
-                        <img :src="icons[idx]" alt="" />
-                        <p>{{ labels[idx] }}</p>
-                    </div>
-                </div>
-            </el-carousel-item>
-        </el-carousel> -->
-
-
-
     </section>
 </template>
 
 <script>
-
-import 'vue3-carousel/dist/carousel.css'
-import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
-
+import 'vue3-carousel/dist/carousel.css';
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
 
 export default {
-
     data() {
         return {
             icons: [
@@ -131,21 +98,15 @@ export default {
             ],
             scrollPosition: null,
             settings: {
-                itemsToShow: 9.5,
-                snapAlign: 'center',
+                itemsToShow: 11.5,
+                itemsToScroll: 1,
+                snapAlign: 'start',
+                wrapAround: true,
+                mouseDrag: false,
+                touchDrag: false,
+                modelValue: 0,
             },
-            breakpoints: {
-                // 700px and up
-                700: {
-                    itemsToShow: 9.5,
-                    snapAlign: 'center',
-                },
-                // 1024 and up
-                1024: {
-                    itemsToShow: 9.5,
-                    snapAlign: 'start',
-                },
-            },
+           
         }
     },
     mounted() {
@@ -153,7 +114,7 @@ export default {
     },
     methods: {
         filterByLabel(label) {
-            console.log(label);
+            this.$store.commit({type: 'setFilterByLabel', label})
         },
         updateScroll() {
             this.scrollPosition = window.scrollY;
@@ -167,29 +128,3 @@ export default {
     },
 };
 </script>
-
-
-
-<style>
-/* .carousel__item {
-    min-height: 200px;
-    width: 100%;
-    background-color: var(--vc-clr-primary);
-    color: var(--vc-clr-white);
-    font-size: 20px;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.carousel__slide {
-    padding: 10px;
-}
-
-.carousel__prev,
-.carousel__next {
-    box-sizing: content-box;
-    border: 5px solid white;
-} */
-</style>
