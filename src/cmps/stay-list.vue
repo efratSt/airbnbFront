@@ -1,6 +1,6 @@
 <template>
     <section class="stay-list">
-        <ul class="card-layout">
+        <ul v-if="stays" class="card-layout">
             <stay-preview v-for="stay in stays" :stay="stay" />
         </ul>
     </section>

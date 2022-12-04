@@ -1,7 +1,7 @@
 <template>
     <section class="stay-app">
         <!-- <stay-labels-filter/> -->
-        <stay-list :stays="stays" />
+        <stay-list :stays="getStays" />
     </section>
     <!-- <pre>{{stays}}</pre> -->
 </template>
@@ -23,7 +23,7 @@ export default {
         loggedInUser() {
             return this.$store.getters.loggedinUser;
         },
-        stays() {
+        getStays() {
             return this.$store.getters.stays;
         },
         isExplore() {
@@ -32,7 +32,6 @@ export default {
     },
     created() {
         this.$store.dispatch({ type: 'loadStays' });
-        // console.log(this.$router.params);
     },
     computed: {
         StayToShow() {},

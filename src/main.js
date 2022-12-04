@@ -4,7 +4,7 @@ import { router } from './router.js'
 import { store } from './store/store.js'
 import 'v-calendar/dist/style.css'
 import VueCarousel from 'vue-carousel'
-import { GoogleMap, Marker } from 'vue3-google-map'
+
 
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
@@ -20,8 +20,6 @@ app.use(SetupCalendar, {})
 app.use(VueCarousel)
 app.use(ElementPlus)
 // Use the components
-app.component('GoogleMap', GoogleMap)
-app.component('Marker', Marker)
 app.component('Calendar', Calendar)
 app.component('DatePicker', DatePicker)
 

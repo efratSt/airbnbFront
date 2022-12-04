@@ -24,7 +24,8 @@ export function getActionAddStayMsg(stayId) {
         type: 'addStayMsg',
         stayId,
         txt: 'Stam txt',
-        label: ''
+        label: '',
+        showExplore: false,
     };
 }
 
@@ -39,8 +40,8 @@ export const stayStore = {
         filterLabel: ''
     },
     getters: {
-        stays({ stays }) {
-            return stays;
+        stays(state) {
+            return state.stays;
         },
         getRateCalcPerStay({ reviews }) {
             console.log('reviews', reviews);
@@ -52,6 +53,9 @@ export const stayStore = {
         },
         getFilterLabel({ filterLabel }) {
             return filterLabel
+        },
+        getShowExplore({ showExplore }) {
+            return showExplore
         }
     },
     mutations: {
