@@ -82,23 +82,29 @@
   h2 {
     font-size: 22px;
     letter-spacing: 0.25px;
-    margin-bottom: -5px;
     padding: 0;
     font-weight: 600;
   }
   .stay-amenities-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(5, 1fr);
-    line-height: 3rem;
+    margin-top: 20px;
+    max-width: 647px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    // display: grid;
+    // grid-template-columns: 1fr 1fr;
+    // grid-template-rows: repeat(5, 1fr);
+     line-height: 1.5rem;
     .amenity-icon {
       margin-right: 1rem;
     }
-    li {
-      margin-bottom: -5px;
+    li {      
+      width: 51.5%;
+      margin-bottom: 1rem;
     }
     li:nth-child(2n) {
-      margin-left: 5.5rem;
+      width: 48.5%;
     }
   }
   .amenity-button {
@@ -174,4 +180,18 @@
       }
     }
   }
+}
+
+.details-page-calender{
+  &.main{
+  width: 647px;
+}
+&.secondary{
+  position: absolute;
+  width: 661px;
+  height: 448px;
+  right: -30px;
+  top: 58px;
+  z-index: 8000;
+}
 }

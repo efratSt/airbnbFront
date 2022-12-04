@@ -90,7 +90,7 @@
       </div>
     
 
-    <Date-picker v-model="range" is-range :columns="2" color="gray" />
+    <Date-picker class="details-page-calender main" v-model="range" is-range :columns="2" color="gray" />
     <div class="stay-chosen-dates">
     </div>
     <div class="review-container">
