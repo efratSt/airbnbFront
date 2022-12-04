@@ -1,24 +1,31 @@
 <template>
-    <section
-        class="stay-labels-filter main-container full"
-        :class="{ shadow: scrollPosition }"
-    >
+    <section class="stay-labels-filter main-container full" :class="{ shadow: scrollPosition }">
+
+
         <div class="icons-wrapper main-container">
-            <div
-                class="icons-container"
-                v-for="(icon, idx) in icons"
-                :key="idx"
-            >
-                <div
-                    class="icon btn-label-filter"
-                    :class="labels[idx]"
-                    @click="filterByLabel(labels[idx])"
-                >
+            <div class="icons-container" v-for="(icon, idx) in icons" :key="idx">
+                <div class="icon btn-label-filter" :class="labels[idx]" @click="filterByLabel(labels[idx])">
                     <img :src="icons[idx]" alt="" />
                     <p>{{ labels[idx] }}</p>
                 </div>
             </div>
         </div>
+
+<!-- 
+        <el-carousel :autoplay="false" :pause-on-hover="false" :loop="false" type="card" height="150px" indicator-position="none"
+>
+            <el-carousel-item class="icons-wrapper main-container"  v-for="(icon, idx) in icons" :key="idx">
+                <div class="icons-container">
+                    <div class="icon btn-label-filter" justify="center" :class="labels[idx]" @click="filterByLabel(labels[idx])">
+                        <img :src="icons[idx]" alt="" />
+                        <p>{{ labels[idx] }}</p>
+                    </div>
+                </div>
+            </el-carousel-item>
+        </el-carousel> -->
+
+
+
     </section>
 </template>
 

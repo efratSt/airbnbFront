@@ -43,6 +43,50 @@
                 </button>
             </section>
         </div>
+        <div class="break-line"></div>
+        <div class="guests-counter">
+            <div class="counter-details">
+                <p>Infants</p>
+                <span>Under 2</span>
+            </div>
+            <section class="simple-counter">
+                <button
+                    :disabled="infantsCounter <= 0"
+                    @click="changeCounter(-1, 'infants')"
+                >
+                    -
+                </button>
+                <span class="counter">{{ infantsCounter }}</span>
+                <button
+                    :disabled="infantsCounter >= 8"
+                    @click="changeCounter(1, 'infants')"
+                >
+                    +
+                </button>
+            </section>
+        </div>
+        <div class="break-line"></div>
+        <div class="guests-counter">
+            <div class="counter-details">
+                <p>Pets</p>
+                <span><a href="#">Bringing a service animal? </a></span>
+            </div>
+            <section class="simple-counter">
+                <button
+                    :disabled="petsCounter <= 0"
+                    @click="changeCounter(-1, 'pets')"
+                >
+                    -
+                </button>
+                <span class="counter">{{ petsCounter }}</span>
+                <button
+                    :disabled="petsCounter >= 8"
+                    @click="changeCounter(1, 'pets')"
+                >
+                    +
+                </button>
+            </section>
+        </div>
     </section>
 </template>
 
@@ -52,12 +96,16 @@ export default {
         return {
             adultsCounter: 0,
             childrenCounter: 0,
+            infantsCounter: 0,
+            petsCounter: 0,
         };
     },
     methods: {
         changeCounter(diff, countType) {
             if (countType === 'adults') this.adultsCounter += diff;
-            else this.childrenCounter += diff;
+            else if (countType === 'children') this.childrenCounter += diff;
+            else if (countType === 'infants') this.infantsCounter += diff;
+            else this.petsCounter += diff;
             let totalGuests = this.adultsCounter + this.childrenCounter;
             this.$emit('counterChanged', totalGuests);
         },

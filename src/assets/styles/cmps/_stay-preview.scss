@@ -22,7 +22,7 @@
     img {
         border-radius: 0.75em;
         width: 100%;
-        aspect-ratio: 1/1;
+        aspect-ratio: 20/19;
         object-fit: cover;
     }
 
@@ -67,6 +67,10 @@
         .el-carousel__button:last-child {
             color: #000;
         }
+
+        .el-carousel__indicators--horizontal {
+            bottom: 13px;
+        }
     }
 
     .wishList {
@@ -74,7 +78,7 @@
         z-index: 1;
         background-color: inherit;
         right: 1px;
-        top: 5px;
+        top: 4px;
         cursor: pointer;
         stroke: #eeeeee;
         stroke-width: 2px;
@@ -93,7 +97,7 @@
     }
 
     .text-container {
-        margin-top: 15px;
+        margin-top: 14px;
         font-size: 15px;
         font-family: 'airbnb-book';
 
@@ -106,6 +110,7 @@
             align-content: center;
             white-space: nowrap;
             margin-bottom: 3px;
+            margin-top: -14px;
 
             span {
                 overflow: clip;
