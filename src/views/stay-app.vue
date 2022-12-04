@@ -24,6 +24,7 @@ export default {
             return this.$store.getters.loggedinUser;
         },
         getStays() {
+            console.log('hey');
             return this.$store.getters.stays;
         },
         isExplore() {
