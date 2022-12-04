@@ -1,7 +1,8 @@
 <template>
-    <section class="stay-labels-filter main-container full" :class="{ shadow: scrollPosition }">
-
-
+    <section
+        class="stay-labels-filter main-container full"
+        :class="{ shadow: scrollPosition }"
+    >
         <!-- <div class="icons-wrapper main-container">
             <div class="icons-container" v-for="(icon, idx) in icons" :key="idx">
                 <div class="icon btn-label-filter" :class="labels[idx]" @click="filterByLabel(labels[idx])">
@@ -11,10 +12,13 @@
             </div>
         </div> -->
 
-
         <Carousel class="icons-wrapper main-container" :settings="settings">
             <Slide v-for="(icon, idx) in icons" :key="idx">
-                <div class="carousel__item icon btn-label-filter" :class="labels[idx]" @click="filterByLabel(labels[idx])">
+                <div
+                    class="carousel__item icon btn-label-filter"
+                    :class="labels[idx]"
+                    @click="filterByLabel(labels[idx])"
+                >
                     <img :src="icons[idx]" alt="" />
                     <p>{{ labels[idx] }}</p>
                 </div>
@@ -24,7 +28,6 @@
                 <Navigation />
             </template>
         </Carousel>
-
 
         <!-- 
         <Carousel :settings="settings" :breakpoints="breakpoints">
@@ -55,20 +58,14 @@
                 </div>
             </el-carousel-item>
         </el-carousel> -->
-
-
-
     </section>
 </template>
 
 <script>
-
-import 'vue3-carousel/dist/carousel.css'
-import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
-
+import 'vue3-carousel/dist/carousel.css';
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
 
 export default {
-
     data() {
         return {
             icons: [
@@ -146,7 +143,7 @@ export default {
                     snapAlign: 'start',
                 },
             },
-        }
+        };
     },
     mounted() {
         window.addEventListener('scroll', this.updateScroll);
@@ -167,8 +164,6 @@ export default {
     },
 };
 </script>
-
-
 
 <style>
 /* .carousel__item {
