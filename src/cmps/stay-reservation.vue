@@ -4,13 +4,13 @@
             <div class="order-form-header-secondary">
             <p><span class="cost">{{currencyCode}}</span></p>
             <p><span class="cost">{{stay.price}}</span> </p>
-            <p class="reservation-price unit">&nbsp/ night</p>
+            <p class="cost-price unit">&nbspnight</p>
             </div>
-            <div class="order-form-header-secondary">
+            <div class="order-form-header-secondary reviews">
                 <p><i class="fa-solid fa-star"></i>{{stayRate}}</p>
                 <p> &nbsp&#183&nbsp </p>
                 <p><span class="reviews">
-                    <a href="#"> {{ stay.reviews.length }} reviews</a> 
+                    <a href="#">{{stay.reviews.length}} reviews</a> 
                 </span></p>
             </div>
         </section>

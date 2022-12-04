@@ -2,32 +2,34 @@
     <div v-if="stay" class="stay-details-container">
         <div class="stay-details">       
             <div class="stay-details-summary">
-        <h2>{{ stay.summary }}</h2>
-        <div class="stay-secondary-header flex align-center space-between">
-          <div class="stay-secondary-header location">
-            <span class="stay-rate"><i class="fa-solid fa-star"></i>{{ stayRate }}</span>
-            <span> &nbsp&#183&nbsp </span>
-            <span><a href="#">
-            {{ stay.reviews.length }}
-            </a> reviews
-            </span>
-            <a href="#"><h4>{{ stay.loc.city }},{{ stay.loc.country }}</h4></a>
-          </div>
-          <!-- add map links later -->
-          <div class="stay-secondary header buttons-container flex">
-            <button class="stay-secondary header button">
-              <i class="fa-solid fa-arrow-up-from-bracket"></i> Share
-            </button>
-            <button class="stay-secondary header button">
-              <i
-                class="fa-regular fa-heart"
-                :class="[{ 'fa-solid saved': isSaved }]"
-                @click="toggleSaved"
-              ></i>
-              Save
-            </button>
-          </div>
-        </div>
+                <div class="stay-header">
+                    <h2>{{ stay.summary }}</h2>
+                </div>    
+                <div class="stay-secondary-header flex align-center space-between">
+                    <div class="stay-secondary-header location">
+                        <span class="stay-rate"><i class="fa-solid fa-star"></i>{{ stayRate }}</span>
+                        <span>&nbsp&#183 </span>
+                        <span class="reviews">
+                            <a href="#">
+                                {{ stay.reviews.length }} reviews</a>   
+                        </span>&nbsp&#183
+                        <a href="#"><h4>{{ stay.loc.city }},{{ stay.loc.country }}</h4></a>
+                    </div>
+                    <!-- add map links later -->
+                    <div class="stay-secondary header buttons-container flex">
+                        <button class="stay-secondary header button">
+                        <i class="fa-solid fa-arrow-up-from-bracket"></i> Share
+                        </button>
+                        <button class="stay-secondary header button">
+                            <i
+                            class="fa-regular fa-heart"
+                            :class="[{ 'fa-solid saved': isSaved }]"
+                            @click="toggleSaved"
+                            ></i>
+                            Save
+                        </button>
+                    </div>
+                </div>
             </div>
             <div class="img-container">
           <img

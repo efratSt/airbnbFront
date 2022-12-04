@@ -20,6 +20,7 @@
 
   p {
     margin-top: 0;
+    text-decoration: none;
   }
   .order-form-header-secondary {
     display: flex;
@@ -79,7 +80,9 @@
     }
   }
 }
-
+.order-form-header-secondary.reviews{
+  font-size: 14px;
+}
 .guest-input {
   position: relative;
   display: flex;
@@ -115,6 +118,7 @@ label {
 span.cost {
   color: black;
   font-size: 1.3em;
+  font-weight: 500;
 }
 
 span.reviews {
@@ -125,7 +129,7 @@ span.reviews {
 
 .btn-container {
   position: relative;
-  width: 97%;
+  width: 99.9%;
   height: 48px;
   padding: 0 0;
   margin: 0 0;
