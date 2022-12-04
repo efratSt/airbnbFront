@@ -82,8 +82,14 @@ export default {
     data() {
         return {
             isOpen: false,
+            scrollPosition: null,
         };
     },
+
+    mounted() {
+        window.addEventListener('scroll', this.updateScroll);
+    },
+
     computed: {
         notMain() {
             if (!this.$route.params.id) {
@@ -98,6 +104,10 @@ export default {
     methods: {
         open() {
             console.log('open ');
+        },
+        updateScroll() {
+            this.scrollPosition = window.scrollY;
+            if (this.scrollPosition > 100) this.isOpen = false;
         },
     },
 
