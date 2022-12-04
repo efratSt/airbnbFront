@@ -101,7 +101,7 @@
     .text-container {
         margin-top: 14px;
         font-size: 15px;
-        font-family: 'airbnb-book';
+        font-family: "airbnb-book";
 
         .title {
             display: flex;
@@ -111,7 +111,7 @@
             align-self: center;
             align-content: center;
             white-space: nowrap;
-            margin-bottom: 3px;
+            margin-bottom: 7px;
             margin-top: -14px;
 
             span {
@@ -119,13 +119,23 @@
                 color: #000;
                 font-weight: 600;
             }
+
+            .sum-reviews {
+                font-family: "airbnb-medium";
+                font-weight: 200;
+            }
+        }
+        .num-of-bads {
+            margin-top: 4px;
         }
 
         .price-night {
-            margin-top: 6px;
+            margin-top: 10px;
 
             .price {
-                font-family: 'airbnb-medium';
+                font-weight: bold;
+                // font-weight: 900;
+                // font-weight: 200;
             }
         }
     }
