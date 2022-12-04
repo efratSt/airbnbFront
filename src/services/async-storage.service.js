@@ -23,7 +23,7 @@ function get(entityType, entityId) {
 }
 
 function post(entityType, newEntity) {
-  // console.log(newEntity);
+  console.log(newEntity);
   newEntity = JSON.parse(JSON.stringify(newEntity))
   newEntity._id = newEntity._id ? newEntity._id : _makeId()
   return query(entityType).then((entities) => {
@@ -33,6 +33,7 @@ function post(entityType, newEntity) {
     return newEntity
   })
 }
+
 
 function put(entityType, updatedEntity) {
   updatedEntity = JSON.parse(JSON.stringify(updatedEntity))

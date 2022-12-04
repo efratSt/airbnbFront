@@ -3,11 +3,17 @@ import { utilService } from "./util.service.js";
 import { userService } from "./user.service.js";
 
 
+import ggStays from '../../data/stay.json' assert {type: 'json'}
+
+
+
+
+console.log("stays", ggStays);
+
+
+
 const STORAGE_KEY = "stay";
 
-// var stays = require("../../data/stay.json");
-
-console.log("stays", stays);
 
 var gStays = [
   {
@@ -263,6 +269,7 @@ async function query(filterBy = { txt: "", price: 0 }) {
   //       stays = stays.filter(stay => stay.price <= filterBy.price)
   //   }
   if (!stays || !stays.length) stays = gStays;
+  // if (!stays || !stays.length) stays = ggStays;
   return stays;
 }
 
@@ -318,8 +325,12 @@ function getEmptyStay() {
   // await storageService.post(STORAGE_KEY, getEmptyStay())
   // await storageService.post(STORAGE_KEY, getEmptyStay())
   // await storageService.post(STORAGE_KEY, getEmptyStay())
+  // await storageService.post(STORAGE_KEY, ...gStays);
   await storageService.post(STORAGE_KEY, ...gStays);
-  await storageService.post(STORAGE_KEY, ...gStays2);
+
+
+
+  // await storageService.post(STORAGE_KEY, ggStays);
 })();
 
 function _makeId(length = 5) {
