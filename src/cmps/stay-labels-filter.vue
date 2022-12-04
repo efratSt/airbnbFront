@@ -12,7 +12,11 @@
             </div>
         </div> -->
 
-        <Carousel class="icons-wrapper main-container" :settings="settings" :breakpoints="breakpoints">
+        <Carousel
+            class="icons-wrapper main-container"
+            :settings="settings"
+            :breakpoints="breakpoints"
+        >
             <Slide v-for="(icon, idx) in icons" :key="idx">
                 <div
                     class="carousel__item icon btn-label-filter"
@@ -109,10 +113,10 @@ export default {
 
             breakpoints: {
                 1600: {
-                    itemsToShow: 13.5
-                }
+                    itemsToShow: 13.5,
+                },
             },
-        }
+        };
     },
     mounted() {
         window.addEventListener('scroll', this.updateScroll);
