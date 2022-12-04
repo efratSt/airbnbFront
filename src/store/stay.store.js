@@ -25,7 +25,7 @@ export function getActionAddStayMsg(stayId) {
         stayId,
         txt: 'Stam txt',
         label: '',
-        showExplore: false,
+        showExplore: true,
     };
 }
 
@@ -37,7 +37,8 @@ export const stayStore = {
             range: {},
             guests: 0,
         },
-        filterLabel: ''
+        filterLabel: '',
+        showExplore: true,
     },
     getters: {
         stays(state) {
@@ -60,7 +61,6 @@ export const stayStore = {
     },
     mutations: {
         setFilterBy(state, { filterBy }) {
-            console.log('from store');
             state.filterBy = filterBy
         },
         setFilterByLabel(state, { label }) {

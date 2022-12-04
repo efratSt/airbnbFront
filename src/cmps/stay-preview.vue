@@ -44,12 +44,15 @@ export default {
         return {
             stayRate: 0,
             isSaved: false,
+            isExploreShow: false
         };
     },
     created() {
         this.stay.reviews.forEach((review) => {
             this.stayRate += review.rate;
         });
+        this.isExploreShow = this.$store.getters.getShowExplore
+        console.log(this.isExploreShow);
     },
     computed: {
         rateCalc() {
@@ -57,6 +60,10 @@ export default {
             if (rate.toFixed(2) % 1 === 0) return rate.toFixed(1);
             // console.log(rate.toFixed(2));
             return rate.toFixed(2);
+        },
+        sumReviews() {
+            console.log(this.stay.reviews.length);
+            return this.stay.reviews.length
         },
         dateCalc() {
             return utilService.timeSince(new Date(this.stay.createdAt));
