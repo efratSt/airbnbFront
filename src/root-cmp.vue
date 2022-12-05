@@ -24,14 +24,17 @@ export default {
     },
     computed: {
         notMain() {
+<<<<<<< HEAD
             if (this.$store.getters.getShowExplore || this.$route.params.id) {
                 return false
             }
             if (!this.$route.params.id) {
+=======
+            if (this.$route.path === '/') {
+          
+>>>>>>> b4dfecd71a5dfda43490edefbcb71fe038bee445
                 return true
-            }
-            // else
-            //     return false;
+            }else return false;
         },
     },
     components: {
