@@ -3,7 +3,7 @@
         <div class="stay-details">       
             <div class="stay-details-summary">
                 <div class="stay-header">
-                    <h2>{{ stay.about }}</h2>
+                    <h2>{{ stay.name }}</h2>
                 </div>    
                 <div class="stay-secondary-header flex align-center space-between">
                     <div class="stay-secondary-header location">
@@ -69,6 +69,8 @@
                         <img :src="stay.host.thumbnailUrl" alt="host image" class="host-img">
                     </div>
                 </section>
+                <section class="stay-details-summary">
+                <p class="stay-details-summary content">{{stay.summary}}</p></section>
                 <div class="stay-details-main flex space-between">
                 <section class="stay-amenities-container">
                     <h2>What this place offers</h2>
