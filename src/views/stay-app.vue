@@ -34,9 +34,7 @@ export default {
     created() {
         this.$store.dispatch({ type: 'loadStays' });
     },
-    computed: {
-        StayToShow() {},
-    },
+
     methods: {},
     components: {
         stayList,
