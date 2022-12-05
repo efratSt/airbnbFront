@@ -2,7 +2,7 @@ import { storageService } from "./async-storage.service.js";
 import { utilService } from "./util.service.js";
 import { userService } from "./user.service.js";
 
-import ggStays from '../../data/stays.json' assert {type: 'json'}
+import ggStays from '../../data/stay.json' assert {type: 'json'}
 
 
 const STORAGE_KEY = "stay";
