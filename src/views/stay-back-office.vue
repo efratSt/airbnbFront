@@ -29,7 +29,7 @@
                     <td>$60</td>
                     <td>$240</td>
                     <td>Pending</td>
-                    <td><button>Approve</button></td>
+                    <td><button class="approve">Approve</button></td>
                     <td><button>Reject</button></td>
                 </tr>
                 <tr>
@@ -41,7 +41,7 @@
                     <td>$60</td>
                     <td>$240</td>
                     <td>Pending</td>
-                    <td><button>Approve</button></td>
+                    <td><button class="approve">Approve</button></td>
                     <td><button>Reject</button></td>
                 </tr>
                 <tr>
@@ -53,7 +53,7 @@
                     <td>$60</td>
                     <td>$240</td>
                     <td>Pending</td>
-                    <td><button>Approve</button></td>
+                    <td><button class="approve">Approve</button></td>
                     <td><button>Reject</button></td>
                 </tr>
                 <tr>
@@ -65,7 +65,7 @@
                     <td>$60</td>
                     <td>$240</td>
                     <td>Pending</td>
-                    <td><button>Approve</button></td>
+                    <td><button class="approve">Approve</button></td>
                     <td><button>Reject</button></td>
                 </tr>
             </table>
