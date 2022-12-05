@@ -262,7 +262,7 @@ async function query(filterBy = { txt: "", price: 0 }) {
   //       stays = stays.filter(stay => stay.price <= filterBy.price)
   //   }
   if (!stays || !stays.length){
-    stays = ggStays;
+    stays = normalizeData(ggStays)
     
     localStorage.setItem(STORAGE_KEY, JSON.stringify(stays))
   } 
@@ -316,6 +316,14 @@ function getEmptyStay() {
   };
 }
 
+function normalizeData(stays){
+  stays.forEach(stay => { stay.currencyCode = 'USD'
+  return stays
+  
+});
+console.log(stays)
+return stays
+}
 // TEST DATA
 // (async () => {
 //   // await storageService.post(STORAGE_KEY, getEmptyStay())
