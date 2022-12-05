@@ -22,7 +22,7 @@
                     <div class="title">
                         <span>{{ stay.roomType }} in {{ stay.loc.city }}</span>
                         <div class="rating">
-                            <span class="star">★ </span>
+                            <span class="star">★</span>
                             <span>{{ stayRate }}</span>
                             <span class="sum-reviews">({{ sumReviews }})</span>
                         </div>
