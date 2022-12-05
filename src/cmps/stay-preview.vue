@@ -45,15 +45,11 @@ export default {
     },
     data() {
         return {
-            stayRate: 0,
             isSaved: false,
         };
     },
     created() {
-        this.stay.reviews.forEach((review) => {
-            this.stayRate += review.rate;
-        });
-
+      
     },
     computed: {
         rateCalc() {
