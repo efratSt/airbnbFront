@@ -25,7 +25,7 @@
                     <label>CHECKOUT</label>
                     <input :disabled="true">{{ date(range.end) }}
                     <button @click="(range.end=null)" v-if="range.end"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 4; overflow: visible;"><path d="m6 6 20 20"></path><path d="m26 6-20 20"></path></svg></button>
-                    <!-- <Date-picker class="details-page-calender secondary" v-model="range" is-range :columns="2" color="gray" /> -->
+                    <!-- <Date-picker v-if="(!this.range.start && !this.range.end)" class="details-page-calender secondary" v-model="range" is-range :columns="2" color="gray" /> -->
                 </div>
             </div>
             <div>
