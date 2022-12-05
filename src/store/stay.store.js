@@ -42,7 +42,16 @@ export const stayStore = {
   },
   getters: {
     stays(state) {
-      return state.stays;
+      if (!state.filterBy) return state.stays
+      let stayToShow = state.stays.filter((stay) => {
+        // console.log('from stay',stay.loc.country.toLowerCase() );
+        // console.log('from filter',state.filterBy.location.toLowerCase() );
+        return stay.loc.country.toLowerCase() === state.filterBy.location.toLowerCase()
+
+      } )
+      // return state.stays;
+      // console.log('stayToShow: ', stayToShow);
+      return stayToShow
     },
     getRateCalcPerStay({ reviews }) {
       console.log("reviews", reviews);
@@ -61,10 +70,7 @@ export const stayStore = {
   },
   mutations: {
     setFilterBy(state, { filterBy }) {
-      // console.log('hi from setFilterBy');
       state.filterBy = filterBy;
-      if (state.filterBy.location) state.showExplore = true;
-      // console.log("state.showExplore ", state.showExplore);
     },
     setFilterByLabel(state, { label }) {
       state.filterLabel = label;

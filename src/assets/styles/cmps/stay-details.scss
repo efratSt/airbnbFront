@@ -35,13 +35,12 @@
 }
 
 .img-container {
-  margin-top: 1rem;
-  height: 562px;
-  margin-bottom: 3rem;
+  height: 561px;
+  margin-bottom: 1.2rem;
   display: grid;
   gap: 8px;
   grid-template-columns: 2.05fr 1fr 1fr;
-  grid-template-rows: 280px 272px;
+  grid-template-rows: 265.59px 257.59px;
   grid-template-areas:
     'area1  area2 area3'
     'area1  area4  area5';
@@ -81,6 +80,8 @@
   border-bottom: $clr7 1px solid;
 }
 .stay-amenities-container {
+  border-top: $clr7 1px solid;
+  padding-top: 1rem;
   margin-bottom: 1rem;
   h2 {
     font-size: 22px;
@@ -152,6 +153,25 @@
   }
 }
 
+.stay-details.host{
+  max-width: 647px;
+}
+
+.stay-details-summary{   
+    padding-bottom: 1rem;  
+  .content{
+    max-width: 65ch;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-size: 14px;
+    line-height: 1.43;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
 .stay-details-extra {
   .host-header h2 {
     font-size: 22px;
@@ -162,10 +182,12 @@
   .host-img {
     height: 56px;
     border-radius: 100%;
-    margin-left: 250px;
+    
   }
 }
-
+.reservation-cmp-container{
+  position: sticky;
+}
 .review-container {
   border-top: $clr7 1px solid;
   padding-bottom: 2rem;
@@ -194,14 +216,14 @@
 }
 
 .details-page-calender-container{
-  width: 647px;
+  max-width: 647px;
   border-top: $clr7 1px solid;
   padding-bottom: 2rem;
   padding-top: 2rem;
 }
 .details-page-calender {
   &.main {
-    width: 647px;
+   max-width: 647px;
   }
   &.secondary {
     position: absolute;
@@ -214,6 +236,8 @@
 }
 .stay-rate{
   font-size: 14px;
+  font-weight: 600;
+  
 }
 .reviews{
   a{

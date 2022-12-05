@@ -11,9 +11,9 @@
                         <span>&nbsp&#183 </span>
                         <span class="reviews">
                             <a href="#">
-                                {{ stay.reviews.length }} reviews</a>   
+                                {{ stay.reviews.length }}reviews</a>   
                         </span>&nbsp&#183
-                        <a href="#"><h4>{{ stay.loc.city }},{{ stay.loc.country }}</h4></a>
+                        <a href="#"><h4>{{ stay.loc.address }}</h4></a>
                     </div>
                     <!-- add map links later -->
                     <div class="stay-secondary header buttons-container flex">
@@ -90,7 +90,9 @@
                 </section>
             </div>
         </div>
-        <stayReservation :stay="stay" :range="range"/>
+        <div class="reservation-cmp-container" >
+            <stayReservation :stay="stay" :range="range"/>
+        </div>
         </div>
         <div class="details-page-calender-container">
             <Date-picker class="details-page-calender main" v-model="range" is-range :columns="2" color="gray" />

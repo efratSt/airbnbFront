@@ -1,6 +1,6 @@
 <template>
     <div v-if="stay" class="order-container">
-        <section class="order-form-header">
+        <section class="order-form-header" :class="{ flex : this.range.start && this.range.end}">
             <div class="order-form-header-secondary">
             <p><span class="cost">{{currencyCode}}</span></p>
             <p><span class="cost">{{stay.price}}</span> </p>
@@ -147,17 +147,33 @@
             </button>
         </div>
         </div>
-        <p><span>You won't be charged yet</span></p>
-        <div v-if="this.range.start && this.range.end" class="reservation-price-container flex space-between">
-            <div class="reservation-price">
-                <span>{{currencyCode}} {{stay.price}} x {{stayDuration}} nights</span>
+            <div v-if="this.range.start && this.range.end" class="reservation-price-container">
+                <div class="flex space-between">
+                    <div class="reservation-price">
+                        <span>{{currencyCode}}{{stay.price}}x{{stayDuration}} nights</span>
+                    </div>
+                    <div>
+                        <span class="reservation-price-summary">{{currencyCode}}{{totalStayPrice.toLocaleString()}}</span>
+                    </div>
+                </div>
+                <div class="flex space-between">
+                    <div class="reservation-price extra fees">
+                        <span >Other fee</span>
+                    </div> 
+                    <div class="reservation-price-extra fees">
+                        <span>{{currencyCode}}{{extraFee}}</span>
+                    </div>
+                </div>
+                <div class="reservation-total flex space-between">
+                <div class="reservation-price-total text">
+                     <span>Total</span>
+                </div>
+                <div>
+                   <span class="reservation-price-total sum">{{currencyCode}}{{totalPrice}}</span>
+                </div>
             </div> 
-            <div>
-                <span class="reservation-price-summary">{{currencyCode}}{{totalStayPrice}}</span>
             </div>
-        </div>
-        <span v-if="stay.extras" class="reservation-price extras">Service fee{{extra.fee}}</span>
-        <span class="reservation-price total">{{totalPrice}}</span>
+
     </div>
 </template>
 <script>
@@ -170,6 +186,8 @@ import guestsModal from '../cmps/stay-guests-modal.vue'
     },
     data() {
         return{
+            stayPrice: null,
+            extraFee: 303,
             reservationStatus:null,
             numberOfGuest: null,
             duration: null,
@@ -207,7 +225,7 @@ import guestsModal from '../cmps/stay-guests-modal.vue'
             if (this.reservationStatus === null && !this.range.start || !this.range.end) {
                 return 'Check availability'
             } else if (this.reservationStatus === null && this.range.start && this.range.end) {
-                return 'Check this dates'
+                return 'Reserve'
             }
             else if( this.reservationStatus === 'confirmed'){
                 return 'Reserved'
@@ -219,8 +237,8 @@ import guestsModal from '../cmps/stay-guests-modal.vue'
             if(this.stay.currencyCode === 'ILS') return '₪'
         },
         totalStayPrice(){
-            console.log('total price to calculate')
-            return (this.duration) * (this.stay.price)
+            this.stayPrice = (this.duration) * (this.stay.price)
+            return this.stayPrice
         },
         stayRate(){
             let rateSum = 0
@@ -230,11 +248,11 @@ import guestsModal from '../cmps/stay-guests-modal.vue'
         },
         stayDuration(){
             if(this.range.start && this.range.end)
-            this.duration = ((this.range.end-this.range.start) / (1000 * 3600 * 24))
+            this.duration = (((this.range.end-this.range.start) / (1000 * 3600 * 24)))
             return this.duration
         },
         totalPrice(){
-            console.log('total price to calculate')
+          return (this.stayPrice + this.extraFee).toLocaleString()
         },
     },   
     components:{
