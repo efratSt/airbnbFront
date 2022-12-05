@@ -2,16 +2,16 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 647px;
+    width: 780px;
     z-index: 9000;
     position: absolute;
-    top: 750px;
-    margin-inline: auto;
+    top: 650px;
+    left: calc(100% - 780px*1.72);
     background-color: white;
     border: 1px solid #00000030;
     border-radius: 13px;
     box-shadow: 0 0 5px 5px #00000015;
-    height: 500px;
+    height: 700px;
     overflow-y: scroll;
 
    
