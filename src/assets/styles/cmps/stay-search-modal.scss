@@ -19,7 +19,7 @@
         justify-content: space-between;
         border: 1px solid #ebebeb;
         border-radius: 50px;
-
+        background-color: #ebebeb;
         .break-point {
             border-right: 1px solid #dddddd;
             height: 30px;
@@ -37,7 +37,11 @@
             flex-basis: 50%;
             padding-inline-start: 20px;
             &:hover {
-                background-color: #ebebeb;
+                background-color: #dddddd;
+            }
+            &:focus {
+                background-color: #fff;
+                box-shadow: 0 1px 2px #00000014, 0 4px 12px #0000000d;
             }
 
             p {
@@ -52,14 +56,57 @@
                 border: none;
                 font-size: 14px;
                 background-color: transparent;
+                padding-bottom: 3px;
             }
             &.where {
+                position: relative;
                 flex-basis: 100%;
-                padding-bottom: 5px;
-
+                padding-inline-start: 25px;
                 input {
                     padding-top: 3px;
                     width: 100%;
+                }
+                .search-text-modal {
+                    position: absolute;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    background-color: white;
+                    border-radius: 20px;
+                    top: 70px;
+                    left: 0;
+                    width: 400px;
+                    padding: 16px 32px;
+                    border-radius: 32px;
+                    box-shadow: 0 0 0 1px #0000000a, 0 8px 16px #00000026;
+
+                    h3 {
+                        margin: 0;
+                        padding-inline-start: 10px;
+                        padding-bottom: 20px;
+                        border-bottom: 1px solid #dddddd;
+                    }
+
+                    .recent-container {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+
+                        .recent-loc {
+                            display: flex;
+                            align-items: center;
+                            gap: 15px;
+                            font-size: 18px;
+                            color: #717171;
+                            font-weight: 500;
+                            padding: 10px;
+
+                            &:hover {
+                                background-color: #ebebeb;
+                                border-radius: 32px;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -70,7 +117,7 @@
             gap: 10px;
             border-radius: 40px;
             flex-basis: 120%;
-            padding-inline-end: 10px;
+            padding-inline-end: 3px;
             &:hover {
                 background-color: #ebebeb;
             }

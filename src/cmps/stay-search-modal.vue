@@ -2,27 +2,76 @@
     <section class="search-modal">
         <div class="search-container">
             <div class="search-line">
-                <div class="where search-line-btn">
+                <div
+                    @click="searchOpen"
+                    class="where search-line-btn"
+                    tabindex="1"
+                >
                     <p>Where</p>
                     <input
-                        v-model="filterBy.location"
                         type="text"
-                        placeholder="Search destination "
+                        placeholder="Search destination"
+                        v-model="filterBy.location"
                     />
+                    <div v-if="isSearchOpen" class="search-text-modal">
+                        <h3>Recent searches</h3>
+                        <div class="recent-container">
+                            <div
+                                class="recent-loc"
+                                @click.stop="searchRecent('tel aviv')"
+                            >
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>Tel Aviv</span>
+                            </div>
+                            <div
+                                class="recent-loc"
+                                @click.stop="searchRecent('istanbul')"
+                            >
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>Istanbul</span>
+                            </div>
+                            <div
+                                class="recent-loc"
+                                @click.stop="searchRecent('porto')"
+                            >
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>Porto</span>
+                            </div>
+                            <div
+                                class="recent-loc"
+                                @click.stop="searchRecent('new york')"
+                            >
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>New York</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="break-point"></div>
-                <div @click="calOpen" class="check-in search-line-btn">
+                <div
+                    @click="calOpen"
+                    class="check-in search-line-btn"
+                    tabindex="2"
+                >
                     <p>Check in</p>
                     <span>{{ date(filterBy.range.start) }}</span>
                 </div>
                 <div class="break-point"></div>
-                <div @click="calOpen" class="check-out search-line-btn">
+                <div
+                    @click="calOpen"
+                    class="check-out search-line-btn"
+                    tabindex="3"
+                >
                     <p>Check out</p>
                     <span>{{ date(filterBy.range.end) }}</span>
                 </div>
                 <div class="break-point"></div>
                 <div class="last-search">
-                    <div @click="guestOpen" class="who search-line-btn">
+                    <div
+                        @click="guestOpen"
+                        class="who search-line-btn"
+                        tabindex="4"
+                    >
                         <p>Who</p>
                         <span>{{ guests }} guests</span>
                     </div>
@@ -75,6 +124,7 @@ export default {
         return {
             isGuestOpen: false,
             isCalOpen: false,
+            isSearchOpen: false,
             totalGuests: 0,
             filterBy: {
                 range: {
@@ -94,12 +144,20 @@ export default {
         },
 
         calOpen() {
-            this.isCalOpen = !this.isCalOpen;
+            this.isCalOpen = true;
             this.isGuestOpen = false;
+            this.isSearchOpen = false;
         },
 
         guestOpen() {
             this.isGuestOpen = !this.isGuestOpen;
+            this.isCalOpen = false;
+            this.isSearchOpen = false;
+        },
+
+        searchOpen() {
+            this.isSearchOpen = true;
+            this.isGuestOpen = false;
             this.isCalOpen = false;
         },
 
@@ -108,12 +166,21 @@ export default {
             this.filterBy.guests = totalGuests;
         },
 
+        searchRecent(location) {
+            console.log(location);
+            this.filterBy.location = location;
+            this.isSearchOpen = false;
+        },
+
         searchStay() {
             // console.log('from search modal' ,this.filterBy);
             this.$store.commit({
                 type: 'setFilterBy',
                 filterBy: { ...this.filterBy },
             });
+            this.isSearchOpen = false;
+            this.isGuestOpen = false;
+            this.isCalOpen = false;
         },
     },
 

@@ -14,13 +14,16 @@ header {
         align-items: center;
         .logo {
             display: flex;
+            align-items: center;
             svg {
                 color: $clr-red;
             }
-            h1 {
+            span {
                 color: $clr-red;
                 font-family: airbnb-medium;
                 margin: 0;
+                font-size: 23px;
+                font-weight: 700;
             }
         }
 
