@@ -74,7 +74,7 @@ export default {
             return bads + ' bad'
         },
         isExploreShow() {
-            return this.$store.getters.getShowExplore
+            return  (this.$route.name === 'stay-explore') 
         },
         stayRate() {
             let rateSum = 0

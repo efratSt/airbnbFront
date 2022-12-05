@@ -197,7 +197,7 @@ export default {
             this.isCalOpen = false
             this.isModalOpen = false
 
-            const queryStringParams = `?range=${this.filterBy.range.start}/${this.filterBy.range.end}&location=${this.filterBy.location}&guests=${this.filterBy.guests}&label=${this.filterBy.label}`;
+            const queryStringParams = `?rangeStart=${new Date(this.filterBy.range.start).toLocaleDateString()}&rangeEnd=${new Date(this.filterBy.range.end).toLocaleDateString()}&location=${this.filterBy.location}&guests=${this.filterBy.guests}`;
              if (this.filterBy.location) this.$router.push('/explore/' + queryStringParams)
         },
     },

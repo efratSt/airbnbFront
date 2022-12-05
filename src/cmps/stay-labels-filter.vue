@@ -112,9 +112,25 @@ export default {
             },
 
             breakpoints: {
+                // 500: {
+                //     itemsToShow: 5.5
+                // },
+                // 600: {
+                //     itemsToShow: 7.5
+                // },
+                // 700: {
+                //     itemsToShow: 8.5
+                // },
+                // 800: {
+                //     itemsToShow: 5.5
+                // },
+                // 1000: {
+                //     itemsToShow: 1.5,
+                // },
                 1600: {
                     itemsToShow: 13.5,
                 },
+
             },
         };
     },

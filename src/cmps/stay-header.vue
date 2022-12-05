@@ -117,7 +117,7 @@ export default {
             if (this.scrollPosition > 100) this.isOpen = false
         },
         setShowExplore() {
-            this.$store.commit({ type: 'setExploreShow', showExplore: false })
+            this.$store.commit({ type: 'setFilterBy', filterBy: null })
         },
     },
 
