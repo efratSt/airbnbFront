@@ -1,25 +1,34 @@
 <template>
     <div>
-        <h1>hello i explore</h1>
+        <stay-list :stays="getStays" />
     </div>
 </template>
 
 <script>
+
+import stayList from '../cmps/stay-list.vue';
+
 export default {
     data() {
         return {
-            place: ''
+            place: '',
+            stays: null
         }
     },
     created() {
-        this.place = this.$route.params.place
-        console.log('place' , this.place);
+        // this.place = this.$route.params.place;
     },
-    methods :{
-        consoleTest(){
-            console.log(item)
-        }
-    } 
+    computed: {
+        getStays() {
+            console.log(this.$store.getters.stays);
+            return this.$store.getters.stays;
+        },
+    },
+    methods: {
+    },
+    components: {
+        stayList,
+    },
 }
 </script>
 

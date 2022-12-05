@@ -36,7 +36,7 @@ const routes = [
   {
     path: '/explore',
     name: 'stay-explore',
-    component: stayApp
+    component: stayExplore
   }
 ]
 
