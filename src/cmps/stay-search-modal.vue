@@ -15,34 +15,43 @@
                     />
                     <div v-if="isSearchOpen" class="search-text-modal">
                         <h3>Recent searches</h3>
-                        <div class="recent-container">
-                            <div
-                                class="recent-loc"
-                                @click.stop="searchRecent('tel aviv')"
-                            >
-                                <i class="fa-solid fa-location-dot"></i>
-                                <span>Tel Aviv</span>
+                        <div class="search-wrapper">
+                            <div class="recent-container">
+                                <div
+                                    class="recent-loc"
+                                    @click.stop="searchRecent('tel aviv')"
+                                >
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <span>Tel Aviv</span>
+                                </div>
+                                <div
+                                    class="recent-loc"
+                                    @click.stop="searchRecent('istanbul')"
+                                >
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <span>Istanbul</span>
+                                </div>
+                                <div
+                                    class="recent-loc"
+                                    @click.stop="searchRecent('porto')"
+                                >
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <span>Porto</span>
+                                </div>
+                                <div
+                                    class="recent-loc"
+                                    @click.stop="searchRecent('new york')"
+                                >
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <span>New York</span>
+                                </div>
                             </div>
-                            <div
-                                class="recent-loc"
-                                @click.stop="searchRecent('istanbul')"
-                            >
-                                <i class="fa-solid fa-location-dot"></i>
-                                <span>Istanbul</span>
-                            </div>
-                            <div
-                                class="recent-loc"
-                                @click.stop="searchRecent('porto')"
-                            >
-                                <i class="fa-solid fa-location-dot"></i>
-                                <span>Porto</span>
-                            </div>
-                            <div
-                                class="recent-loc"
-                                @click.stop="searchRecent('new york')"
-                            >
-                                <i class="fa-solid fa-location-dot"></i>
-                                <span>New York</span>
+                            <div class="img-wrapper">
+                                <img
+                                    src="	https://a0.muscache.com/pictures/f9ec8a23-ed44-420b-83e5-10ff1f071a13.jpg"
+                                    alt=""
+                                />
+                                <p>I'm flexible</p>
                             </div>
                         </div>
                     </div>
@@ -167,7 +176,6 @@ export default {
         },
 
         searchRecent(location) {
-            console.log(location);
             this.filterBy.location = location;
             this.isSearchOpen = false;
         },
