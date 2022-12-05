@@ -2,7 +2,7 @@
     <header class="main-container" :class="{ small: !notMain }">
         <div class="header-center">
             <router-link to="/">
-                <div class="logo">
+                <div class="logo" @click="setShowExplore">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         style="display: inline-block; height: 32px; width: 38px"
@@ -19,7 +19,7 @@
             <stay-filter @click="isOpen = true" v-if="!isOpen" />
             <!-- <stay-search-modal /> -->
             <!-- <router-link to="/login"> -->
-            <div @click="isLoginOpen = !isLoginOpen" class="btn-user-all">
+            <div @click="isLoginOpen = !isLoginOpen"  class="btn-user-all">
                 <a class="btn-user"
                     ><div class="hamburger">
                         <svg
@@ -114,6 +114,9 @@ export default {
         updateScroll() {
             this.scrollPosition = window.scrollY;
             if (this.scrollPosition > 100) this.isOpen = false;
+        },
+        setShowExplore() {
+            this.$store.commit({ type: 'setExploreShow', showExplore: false})
         },
     },
 

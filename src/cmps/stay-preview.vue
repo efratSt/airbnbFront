@@ -63,7 +63,7 @@ export default {
             return rate.toFixed(2);
         },
         sumReviews() {
-            console.log(this.stay.reviews.length);
+            // console.log(this.stay.reviews.length);
             return this.stay.reviews.length
         },
         dateCalc() {
