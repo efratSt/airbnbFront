@@ -42,7 +42,6 @@ export const stayStore = {
   },
   getters: {
     stays(state) {
-    //   console.log(state.filterLabel);  
       return state.stays;
     },
     getRateCalcPerStay({ reviews }) {

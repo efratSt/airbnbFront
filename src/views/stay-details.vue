@@ -66,7 +66,7 @@
                                 </li>
                             </ol>
                         </div>  
-                        <img :src="stay.host.thumbnailUrl" alt="host image" class="host-img">
+                        <img :src="stay.host.thumbnailUrl" onerror="src='https://ca.slack-edge.com/T03PU4YR4NS-U040G1HDV34-37fee1583827-512'" alt="host image" class="host-img">
                     </div>
                 </section>
                 <section class="stay-details-summary">
