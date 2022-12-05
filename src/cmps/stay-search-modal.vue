@@ -196,6 +196,9 @@ export default {
             this.isGuestOpen = false
             this.isCalOpen = false
             this.isModalOpen = false
+
+            const queryStringParams = `?range=${this.filterBy.range.start}/${this.filterBy.range.end}&location=${this.filterBy.location}&guests=${this.filterBy.guests}&label=${this.filterBy.label}`;
+             if (this.filterBy.location) this.$router.push('/explore/' + queryStringParams)
         },
     },
 

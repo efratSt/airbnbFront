@@ -64,7 +64,7 @@ export const stayStore = {
       // console.log('hi from setFilterBy');
       state.filterBy = filterBy;
       if (state.filterBy.location) state.showExplore = true;
-      console.log("state.showExplore ", state.showExplore);
+      // console.log("state.showExplore ", state.showExplore);
     },
     setFilterByLabel(state, { label }) {
       state.filterLabel = label;

@@ -16,7 +16,7 @@
         
         <!-- <router-link :to="'/explore/italy'">  click here </router-link> -->
 
-        <div class="search-btn">
+        <div class="search-btn" @click="goToExplore">
             <svg
                 viewBox="0 0 32 32"
                 xmlns="http://www.w3.org/2000/svg"
@@ -51,5 +51,10 @@ export default {
             isOpen: false,
         };
     },
+    methods: {
+        goToExplore() {
+            console.log('hifgsdfgd');
+        }
+    }
 };
 </script>

@@ -58,7 +58,6 @@ export default {
     },
     computed: {
         sumReviews() {
-            console.log(this.stay.reviews.length)
             return this.stay.reviews.length
         },
         dateCalc() {
