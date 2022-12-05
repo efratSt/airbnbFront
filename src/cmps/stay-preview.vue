@@ -55,10 +55,6 @@ export default {
         }
     },
     created() {
-        this.stay.reviews.forEach((review) => {
-            this.stayRate += review.rate;
-        });
-
     },
     computed: {
         sumReviews() {
