@@ -46,12 +46,12 @@
                                     <span>New York</span>
                                 </div>
                             </div>
-                            <div class="img-wrapper">
+                            <div @click.stop="flexSearch" class="img-wrapper">
                                 <img
                                     src="	https://a0.muscache.com/pictures/f9ec8a23-ed44-420b-83e5-10ff1f071a13.jpg"
                                     alt=""
                                 />
-                                <p>I'm flexible</p>
+                                <span>I'm flexible</span>
                             </div>
                         </div>
                     </div>
@@ -177,6 +177,11 @@ export default {
 
         searchRecent(location) {
             this.filterBy.location = location;
+            this.isSearchOpen = false;
+        },
+
+        flexSearch() {
+            this.filterBy.location = 'barcelona';
             this.isSearchOpen = false;
         },
 

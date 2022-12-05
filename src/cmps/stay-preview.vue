@@ -19,16 +19,22 @@
                 </button>
 
                 <div class="text-container">
-                    <div class="title"><span>{{ stay.roomType }} in {{ stay.loc.city}}</span>
-                        <div class="rating"><span class="star">★ </span>{{ stayRate }}
+                    <div class="title">
+                        <span>{{ stay.roomType }} in {{ stay.loc.city }}</span>
+                        <div class="rating">
+                            <span class="star">★ </span>{{ stayRate }}
                             <span v-if="isExploreShow" class="sum-reviews">({{ sumReviews }})</span>
                         </div>
                     </div>
                     <div>
-                        <p class="added">{{ stay.name }}</p>
+                        <p class="name">{{ stay.name }}</p>
                         <p v-if="isExploreShow" class="num-of-bads">{{ stay.capacity / 2 }} bed</p>
                     </div>
-                    <p class="price-night"><span class="price">{{ currencyCode }}{{ stay.price }} </span> night</p>
+                    <p class="price-night">
+                        <span class="price">{{ currencyCode }}{{ stay.price }}
+                        </span>
+                        night
+                    </p>
                 </div>
             </section>
         </li>
@@ -36,8 +42,8 @@
 </template>
 
 <script>
-import stayDetails from "../views/stay-details.vue";
-import { utilService } from "../services/util.service";
+import stayDetails from '../views/stay-details.vue'
+import { utilService } from '../services/util.service'
 
 export default {
     props: {
@@ -46,29 +52,31 @@ export default {
     data() {
         return {
             isSaved: false,
-        };
+        }
     },
     created() {
-      
+        this.stay.reviews.forEach((review) => {
+            this.stayRate += review.rate;
+        });
+
     },
     computed: {
-        rateCalc() {
-            let rate = (this.stayRate = this.stayRate / this.stay.reviews.length);
-            if (rate.toFixed(2) % 1 === 0) return rate.toFixed(1);
-            // console.log(rate.toFixed(2));
-            return rate.toFixed(2);
-        },
         sumReviews() {
-            // console.log(this.stay.reviews.length);
+            console.log(this.stay.reviews.length)
             return this.stay.reviews.length
         },
         dateCalc() {
-            return utilService.timeSince(new Date(this.stay.createdAt));
+            return utilService.timeSince(new Date(this.stay.createdAt))
         },
         currencyCode() {
-            if (this.stay.currencyCode === "USD") return "$";
-            if (this.stay.currencyCode === "EUR") return "€";
-            if (this.stay.currencyCode === "ILS") return "₪";
+            if (this.stay.currencyCode === 'USD') return '$'
+            if (this.stay.currencyCode === 'EUR') return '€'
+            if (this.stay.currencyCode === 'ILS') return '₪'
+        },
+        sumOfBads() {
+            var bads = this.stay.beds
+            if (bads > 1) return bads + ' bads'
+            return bads + ' bad'
         },
         isExploreShow() {
             return this.$store.getters.getShowExplore
@@ -79,7 +87,6 @@ export default {
                 rateSum += review.rate
             })
             return (rateSum / this.stay.reviews.length).toFixed(2)
-
         }
     },
     methods: {
@@ -89,10 +96,10 @@ export default {
         },
         goToDetails() {
             this.$router.push(`/stay/${this.stay._id}`)
-        }
+        },
     },
     components: {
         stayDetails,
     },
-};
+}
 </script>
