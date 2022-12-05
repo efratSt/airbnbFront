@@ -29,9 +29,9 @@
 
                 <div class="text-container">
                     <div class="title">
-                        <span>{{ stay.name }}</span>
+                        <span>{{ stay.roomType }} in {{ stay.loc.city }}</span>
                         <div class="rating">
-                            <span class="star">★ </span>{{ rateCalc }}
+                            <span class="star">★ </span>{{ stayRate }}
                             <span v-if="isExploreShow" class="sum-reviews"
                                 >({{ sumReviews }})</span
                             >
@@ -56,8 +56,8 @@
 </template>
 
 <script>
-import stayDetails from '../views/stay-details.vue';
-import { utilService } from '../services/util.service';
+import stayDetails from '../views/stay-details.vue'
+import { utilService } from '../services/util.service'
 
 export default {
     props: {
@@ -67,53 +67,53 @@ export default {
         return {
             stayRate: 0,
             isSaved: false,
-        };
+        }
     },
     created() {
         this.stay.reviews.forEach((review) => {
-            this.stayRate += review.rate;
-        });
+            this.stayRate += review.rate
+        })
     },
     computed: {
         rateCalc() {
             let rate = (this.stayRate =
-                this.stayRate / this.stay.reviews.length);
-            if (rate.toFixed(2) % 1 === 0) return rate.toFixed(1);
+                this.stayRate / this.stay.reviews.length)
+            if (rate.toFixed(2) % 1 === 0) return rate.toFixed(1)
             // console.log(rate.toFixed(2));
-            return rate.toFixed(2);
+            return rate.toFixed(2)
         },
         sumReviews() {
-            // console.log(this.stay.reviews.length);
-            return this.stay.reviews.length;
+            console.log(this.stay.reviews.length)
+            return this.stay.reviews.length
         },
         dateCalc() {
-            return utilService.timeSince(new Date(this.stay.createdAt));
+            return utilService.timeSince(new Date(this.stay.createdAt))
         },
         currencyCode() {
-            if (this.stay.currencyCode === 'USD') return '$';
-            if (this.stay.currencyCode === 'EUR') return '€';
-            if (this.stay.currencyCode === 'ILS') return '₪';
+            if (this.stay.currencyCode === 'USD') return '$'
+            if (this.stay.currencyCode === 'EUR') return '€'
+            if (this.stay.currencyCode === 'ILS') return '₪'
         },
         sumOfBads() {
-            var bads = this.stay.beds;
-            if (bads > 1) return bads + ' bads';
-            return bads + ' bad';
+            var bads = this.stay.beds
+            if (bads > 1) return bads + ' bads'
+            return bads + ' bad'
         },
         isExploreShow() {
-            return this.$store.getters.getShowExplore;
+            return this.$store.getters.getShowExplore
         },
     },
     methods: {
         toggleSaved() {
-            this.isSaved = !this.isSaved;
-            return !this.isSaved;
+            this.isSaved = !this.isSaved
+            return !this.isSaved
         },
         goToDetails() {
-            this.$router.push(`/stay/${this.stay._id}`);
+            this.$router.push(`/stay/${this.stay._id}`)
         },
     },
     components: {
         stayDetails,
     },
-};
+}
 </script>

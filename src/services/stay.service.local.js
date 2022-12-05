@@ -2,11 +2,9 @@ import { storageService } from "./async-storage.service.js";
 import { utilService } from "./util.service.js";
 import { userService } from "./user.service.js";
 
-import ggStays from '../../data/stay.json' assert {type: 'json'}
-
+import ggStays from "../../data/stay.json" assert { type: "json" };
 
 const STORAGE_KEY = "stay";
-
 
 var gStays = [
   {
@@ -254,28 +252,31 @@ window.cs = stayService;
 
 async function query(filterBy = { txt: "", price: 0 }) {
   var stays = await storageService.query(STORAGE_KEY);
-  //   if (filterBy.txt) {
-  //       const regex = new RegExp(filterBy.txt, 'i')
-  //       stays = stays.filter(stay => regex.test(stay.vendor) || regex.test(stay.description))
-  //   }
-  //   if (filterBy.price) {
-  //       stays = stays.filter(stay => stay.price <= filterBy.price)
-  //   }
-  if (!stays || !stays.length){
-    stays = ggStays;
-    
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(stays))
-  } 
+
+  if (filterBy.txt) {
+    const regex = new RegExp(filterBy.txt, "i");
+    stays = stays.filter(
+      (stay) => regex.test(stay.vendor) || regex.test(stay.description)
+    );
+  }
+
+  if (filterBy.price) {
+    stays = stays.filter((stay) => stay.price <= filterBy.price);
+  }
+  if (!stays || !stays.length) {
+    stays = normalizeData(ggStays)
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(stays));
+  }
   // if (!stays || !stays.length) stays = ggStays;
   return stays;
 }
 
 function getById(stayId) {
-  return storageService.get(STORAGE_KEY, stayId)
+  return storageService.get(STORAGE_KEY, stayId);
 }
 
 async function remove(stayId) {
-  await storageService.remove(STORAGE_KEY, stayId)
+  await storageService.remove(STORAGE_KEY, stayId);
 }
 
 async function save(stay) {
@@ -316,16 +317,20 @@ function getEmptyStay() {
   };
 }
 
+function normalizeData(stays) {
+  stays.forEach((stay) => {
+    stay.currencyCode = "USD";
+    stay.reviews.forEach(
+      (review) => (review.rate = utilService.getRandomIntInclusive(3, 5))
+    );
+    return stays;
+  });
+  return stays;
+}
+
 // TEST DATA
 // (async () => {
-//   // await storageService.post(STORAGE_KEY, getEmptyStay())
-//   // await storageService.post(STORAGE_KEY, getEmptyStay())
-//   // await storageService.post(STORAGE_KEY, getEmptyStay())
-//   // await storageService.post(STORAGE_KEY, getEmptyStay())
-//   // await storageService.post(STORAGE_KEY, ...gStays);
-//   console.log(...ggStays)
 //   await storageService.post(STORAGE_KEY, [...ggStays]);
-
 // })();
 
 function _makeId(length = 5) {
