@@ -24,18 +24,10 @@ export default {
     },
     computed: {
         notMain() {
-            if (this.$store.getters.getShowExplore || this.$route.params.id) {
-                console.log(
-                    'this.$store.getters.getShowExplore',
-                    this.$store.getters.getShowExplore
-                )
-                return false
-            }
-            if (!this.$route.params.id) {
+            if (this.$route.path === '/') {
+          
                 return true
-            }
-            // else
-            //     return false;
+            }else return false;
         },
     },
     components: {
