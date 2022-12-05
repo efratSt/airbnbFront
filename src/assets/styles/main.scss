@@ -11,6 +11,12 @@
 @import 'basics/links';
 @import 'basics/forms';
 
+// views
+@import 'cmps/root-cmp';
+@import 'cmps/stay-app';
+@import 'cmps/stay-details';
+@import 'cmps/stay-back-office.scss';
+
 // Components
 @import 'cmps/stay-header';
 @import 'cmps/user-msg';
@@ -19,9 +25,6 @@
 @import 'cmps/stay-preview';
 @import 'cmps/stay-filter';
 @import 'cmps/stay-labels-filter';
-@import 'cmps/stay-details';
 @import 'cmps/stay-search-modal';
-@import 'cmps/stay-app';
-@import 'cmps/root-cmp';
 @import 'cmps/stay-reservation';
 @import 'cmps/stay-guests-modal';

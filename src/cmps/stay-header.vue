@@ -17,9 +17,10 @@
             </router-link>
 
             <stay-filter @click="isOpen = true" v-if="!isOpen" />
-            <!-- <stay-search-modal /> -->
-            <!-- <router-link to="/login"> -->
-            <div @click="isLoginOpen = !isLoginOpen"  class="btn-user-all">
+            <router-link to="/backoffice" class="link-back">
+                <span class="back-office-link">Airbnd your home</span>
+            </router-link>
+            <div @click="isLoginOpen = !isLoginOpen" class="btn-user-all">
                 <a class="btn-user"
                     ><div class="hamburger">
                         <svg
@@ -81,42 +82,42 @@
 </template>
 
 <script>
-import stayFilter from './stay-filter.vue';
-import staySearchModal from './stay-search-modal.vue';
+import stayFilter from './stay-filter.vue'
+import staySearchModal from './stay-search-modal.vue'
 export default {
     data() {
         return {
             isOpen: false,
             isLoginOpen: false,
             scrollPosition: null,
-        };
+        }
     },
 
     mounted() {
-        window.addEventListener('scroll', this.updateScroll);
+        window.addEventListener('scroll', this.updateScroll)
     },
 
     computed: {
         notMain() {
             if (!this.$route.params.id) {
-                return true;
-            } else return false;
+                return true
+            } else return false
         },
         loggedInUser() {
-            return this.$store.getters.loggedinUser;
+            return this.$store.getters.loggedinUser
         },
     },
 
     methods: {
         open() {
-            console.log('open ');
+            console.log('open ')
         },
         updateScroll() {
-            this.scrollPosition = window.scrollY;
-            if (this.scrollPosition > 100) this.isOpen = false;
+            this.scrollPosition = window.scrollY
+            if (this.scrollPosition > 100) this.isOpen = false
         },
         setShowExplore() {
-            this.$store.commit({ type: 'setExploreShow', showExplore: false})
+            this.$store.commit({ type: 'setExploreShow', showExplore: false })
         },
     },
 
@@ -124,5 +125,5 @@ export default {
         stayFilter,
         staySearchModal,
     },
-};
+}
 </script>

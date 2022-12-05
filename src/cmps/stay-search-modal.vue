@@ -1,5 +1,5 @@
 <template>
-    <section class="search-modal">
+    <section class="search-modal" v-if="isModalOpen">
         <div class="search-container">
             <div class="search-line">
                 <div
@@ -127,13 +127,14 @@
 </template>
 
 <script>
-import stayGuestsModal from './stay-guests-modal.vue';
+import stayGuestsModal from './stay-guests-modal.vue'
 export default {
     data() {
         return {
             isGuestOpen: false,
             isCalOpen: false,
             isSearchOpen: false,
+            isModalOpen: true,
             totalGuests: 0,
             filterBy: {
                 range: {
@@ -144,45 +145,45 @@ export default {
                 guests: 0,
                 label: '',
             },
-        };
+        }
     },
 
     methods: {
         date(date) {
-            return date ? new Date(date).toLocaleDateString() : 'Add dates';
+            return date ? new Date(date).toLocaleDateString() : 'Add dates'
         },
 
         calOpen() {
-            this.isCalOpen = true;
-            this.isGuestOpen = false;
-            this.isSearchOpen = false;
+            this.isCalOpen = true
+            this.isGuestOpen = false
+            this.isSearchOpen = false
         },
 
         guestOpen() {
-            this.isGuestOpen = !this.isGuestOpen;
-            this.isCalOpen = false;
-            this.isSearchOpen = false;
+            this.isGuestOpen = !this.isGuestOpen
+            this.isCalOpen = false
+            this.isSearchOpen = false
         },
 
         searchOpen() {
-            this.isSearchOpen = true;
-            this.isGuestOpen = false;
-            this.isCalOpen = false;
+            this.isSearchOpen = true
+            this.isGuestOpen = false
+            this.isCalOpen = false
         },
 
         counterChanged(totalGuests) {
-            this.totalGuests = totalGuests;
-            this.filterBy.guests = totalGuests;
+            this.totalGuests = totalGuests
+            this.filterBy.guests = totalGuests
         },
 
         searchRecent(location) {
-            this.filterBy.location = location;
-            this.isSearchOpen = false;
+            this.filterBy.location = location
+            this.isSearchOpen = false
         },
 
         flexSearch() {
-            this.filterBy.location = 'barcelona';
-            this.isSearchOpen = false;
+            this.filterBy.location = 'barcelona'
+            this.isSearchOpen = false
         },
 
         searchStay() {
@@ -190,21 +191,22 @@ export default {
             this.$store.commit({
                 type: 'setFilterBy',
                 filterBy: { ...this.filterBy },
-            });
-            this.isSearchOpen = false;
-            this.isGuestOpen = false;
-            this.isCalOpen = false;
+            })
+            this.isSearchOpen = false
+            this.isGuestOpen = false
+            this.isCalOpen = false
+            this.isModalOpen = false
         },
     },
 
     computed: {
         guests() {
-            return !this.totalGuests ? 'Add' : this.totalGuests;
+            return !this.totalGuests ? 'Add' : this.totalGuests
         },
     },
 
     components: {
         stayGuestsModal,
     },
-};
+}
 </script>
