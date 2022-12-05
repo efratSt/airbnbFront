@@ -19,14 +19,14 @@
                 </button>
 
                 <div class="text-container">
-                    <div class="title"><span>{{ stay.name }}</span>
-                        <div class="rating"><span class="star">★ </span>{{ rateCalc }} 
-                            <span v-if="isExploreShow" class="sum-reviews">({{sumReviews}})</span>
+                    <div class="title"><span>{{ stay.roomType }} in {{ stay.loc.city}}</span>
+                        <div class="rating"><span class="star">★ </span>{{ stayRate }}
+                            <span v-if="isExploreShow" class="sum-reviews">({{ sumReviews }})</span>
                         </div>
                     </div>
                     <div>
-                        <p class="added">Added {{ dateCalc }} ago</p>
-                        <p v-if="isExploreShow" class="num-of-bads">{{sumOfBads}} bad</p>
+                        <p class="added">{{ stay.name }}</p>
+                        <p v-if="isExploreShow" class="num-of-bads">{{ stay.capacity / 2 }} bed</p>
                     </div>
                     <p class="price-night"><span class="price">{{ currencyCode }}{{ stay.price }} </span> night</p>
                 </div>
@@ -53,7 +53,7 @@ export default {
         this.stay.reviews.forEach((review) => {
             this.stayRate += review.rate;
         });
-        
+
     },
     computed: {
         rateCalc() {
@@ -74,15 +74,17 @@ export default {
             if (this.stay.currencyCode === "EUR") return "€";
             if (this.stay.currencyCode === "ILS") return "₪";
         },
-        sumOfBads() {
-            var bads = this.stay.beds
-            if (bads > 1) return  bads + ' bads'
-            return bads + ' bad'
-        },
         isExploreShow() {
             return this.$store.getters.getShowExplore
-        }
+        },
+        stayRate() {
+            let rateSum = 0
+            this.stay.reviews.forEach(review => {
+                rateSum += review.rate
+            })
+            return (rateSum / this.stay.reviews.length).toFixed(2)
 
+        }
     },
     methods: {
         toggleSaved() {
