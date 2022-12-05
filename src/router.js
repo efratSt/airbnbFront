@@ -34,9 +34,9 @@ const routes = [
     component: userDetails
   },
   {
-    path: '/explore/:place',
+    path: '/explore',
     name: 'stay-explore',
-    component: stayExplore
+    component: stayApp
   }
 ]
 
