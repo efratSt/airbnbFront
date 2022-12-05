@@ -25,7 +25,7 @@
                         </div>
                     </div>
                     <div>
-                        <p class="added">{{ stay.name }}</p>
+                        <p class="name">{{ cutName }}</p>
                         <p v-if="isExploreShow" class="num-of-bads">{{ stay.capacity / 2 }} bed</p>
                     </div>
                     <p class="price-night"><span class="price">{{ currencyCode }}{{ stay.price }} </span> night</p>
@@ -45,23 +45,12 @@ export default {
     },
     data() {
         return {
-            stayRate: 0,
             isSaved: false,
         };
     },
     created() {
-        this.stay.reviews.forEach((review) => {
-            this.stayRate += review.rate;
-        });
-
     },
     computed: {
-        rateCalc() {
-            let rate = (this.stayRate = this.stayRate / this.stay.reviews.length);
-            if (rate.toFixed(2) % 1 === 0) return rate.toFixed(1);
-            // console.log(rate.toFixed(2));
-            return rate.toFixed(2);
-        },
         sumReviews() {
             // console.log(this.stay.reviews.length);
             return this.stay.reviews.length
@@ -83,7 +72,10 @@ export default {
                 rateSum += review.rate
             })
             return (rateSum / this.stay.reviews.length).toFixed(2)
-
+        },
+        cutName(){
+            if (this.stay.name.length > 25) return this.stay.name.substring(0, 25) + '...'
+            return this.stay.name
         }
     },
     methods: {

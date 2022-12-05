@@ -102,6 +102,7 @@
         margin-top: 14px;
         font-size: 15px;
         font-family: "airbnb-book";
+        text-overflow: ellipsis " [..]";
 
         .title {
             display: flex;
@@ -124,6 +125,10 @@
                 font-family: "airbnb-medium";
                 font-weight: 200;
             }
+        }
+        .name {
+            text-overflow: ellipsis;
+            // max-width: 2ch;
         }
         .num-of-bads {
             margin-top: 4px;
