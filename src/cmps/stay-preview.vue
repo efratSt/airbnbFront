@@ -3,12 +3,7 @@
         <li class="card-container">
             <section class="preview-section">
                 <div>
-                    <el-carousel
-                        :loop="false"
-                        :autoplay="false"
-                        trigger="click"
-                        indicator-position=""
-                    >
+                    <el-carousel :loop="false" :autoplay="false" trigger="click" indicator-position="">
                         <el-carousel-item v-for="imgUrl in stay.imgUrls">
                             <img :src="imgUrl" />
                         </el-carousel-item>
@@ -16,14 +11,10 @@
                 </div>
 
                 <button class="wishList" @click.stop="toggleSaved">
-                    <svg
-                        :class="[{ saved: isSaved }]"
-                        viewBox="0 0 32 32"
-                        aria-hidden="true"
-                    >
+                    <svg :class="[{ saved: isSaved }]" viewBox="0 0 32 32" aria-hidden="true">
                         <path
-                            d="m16 28c7-4.733 14-10 14-17 0-1.792-.683-3.583-2.05-4.95-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05l-2.051 2.051-2.05-2.051c-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05-1.367 1.367-2.051 3.158-2.051 4.95 0 7 7 12.267 14 17z"
-                        ></path>
+                            d="m16 28c7-4.733 14-10 14-17 0-1.792-.683-3.583-2.05-4.95-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05l-2.051 2.051-2.05-2.051c-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05-1.367 1.367-2.051 3.158-2.051 4.95 0 7 7 12.267 14 17z">
+                        </path>
                     </svg>
                 </button>
 
@@ -32,20 +23,15 @@
                         <span>{{ stay.roomType }} in {{ stay.loc.city }}</span>
                         <div class="rating">
                             <span class="star">★ </span>{{ stayRate }}
-                            <span v-if="isExploreShow" class="sum-reviews"
-                                >({{ sumReviews }})</span
-                            >
+                            <span v-if="isExploreShow" class="sum-reviews">({{ sumReviews }})</span>
                         </div>
                     </div>
                     <div>
-                        <p class="added">Added {{ dateCalc }} ago</p>
-                        <p v-if="isExploreShow" class="num-of-bads">
-                            {{ sumOfBads }} bad
-                        </p>
+                        <p class="name">{{ stay.name }}</p>
+                        <p v-if="isExploreShow" class="num-of-bads">{{ stay.capacity / 2 }} bed</p>
                     </div>
                     <p class="price-night">
-                        <span class="price"
-                            >{{ currencyCode }}{{ stay.price }}
+                        <span class="price">{{ currencyCode }}{{ stay.price }}
                         </span>
                         night
                     </p>
@@ -69,18 +55,9 @@ export default {
         }
     },
     created() {
-        this.stay.reviews.forEach((review) => {
-            this.stayRate += review.rate;
-        });
 
     },
     computed: {
-        rateCalc() {
-            let rate = (this.stayRate = this.stayRate / this.stay.reviews.length);
-            if (rate.toFixed(2) % 1 === 0) return rate.toFixed(1);
-            // console.log(rate.toFixed(2));
-            return rate.toFixed(2);
-        },
         sumReviews() {
             console.log(this.stay.reviews.length)
             return this.stay.reviews.length
@@ -107,7 +84,6 @@ export default {
                 rateSum += review.rate
             })
             return (rateSum / this.stay.reviews.length).toFixed(2)
-
         }
     },
     methods: {

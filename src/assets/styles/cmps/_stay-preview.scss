@@ -127,8 +127,12 @@
             }
         }
         .name {
-            text-overflow: ellipsis;
+            // text-overflow: ellipsis;
             // max-width: 2ch;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+            white-space: nowrap;
         }
         .num-of-bads {
             margin-top: 4px;

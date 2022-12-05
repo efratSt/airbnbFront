@@ -12,14 +12,13 @@ export const orderService = {
   save,
 };
 
-async function query(
-  filterBy = { hostId: "", buyerId: "", status: "", totalPrice: 0 }
-) {
-  var orders = await storageService.query(STORAGE_KEY);
 
+async function query(filterBy = { hostId: "" }) {
+  var orders = await storageService.query(STORAGE_KEY);
   if (!orders || !orders.length) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(gOrder));
   }
+  orders.filter(order => order.hostId === filterBy.hostId)
   return orders;
 }
 

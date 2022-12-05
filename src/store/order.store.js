@@ -13,6 +13,16 @@ export const orderStore = {
     setOrders(state, { orders }) {
       state.orders = orders;
     },
+    addOrder(state, { order }) {
+      state.orders.push(order);
+    },
+    updateOrder(state, { order }) {
+      const idx = state.orders.findIndex((c) => c.id === order._id);
+      state.orders.splice(idx, 1, order);
+    },
+    removeOrder(state, { orderId }) {
+      state.orders = state.orders.filter((order) => order._id !== orderId);
+    },
   },
   actions: {
     async loadOrder(context) {
@@ -24,12 +34,41 @@ export const orderStore = {
         throw err;
       }
     },
-    addOrder(state, { order }) {
-      state.orders.push(order);
+    async addOrder(context, { order }) {
+      try {
+        order = await orderService.save(order);
+        context.commit(getActionAddOrder(order));
+        return order;
+      } catch (err) {
+        console.log("orderStore: Error in addOrder", err);
+        throw err;
+      }
     },
-    updateOrder(state, { order }) {
-        const idx = state.orders.findIndex((c) => c.id === order._id);
-        state.orders.splice(idx, 1, order);
-      },
+    async updateOrder(context, { order }) {
+      try {
+        order = await orderService.save(order);
+        context.commit(getActionUpdateOrder(order));
+        return order;
+      } catch (err) {
+        console.log("orderStore: Error in updateOrder", err);
+        throw err;
+      }
+    },
+    async removeOrder(context, { orderId }) {
+      try {
+        await orderService.remove(orderId);
+        context.commit(getActionRemoveOrder(orderId));
+      } catch (err) {
+        console.log("orderStore: Error in removeOrder", err);
+        throw err;
+      }
+    },
+    async getOrderById(context, { orderId }) {
+      try {
+        return await orderService.getById(orderId);
+      } catch (err) {
+        console.log(err);
+      }
+    },
   },
 };
