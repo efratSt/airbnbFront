@@ -42,16 +42,24 @@ export const stayStore = {
   },
   getters: {
     stays(state) {
-      if (!state.filterBy) return state.stays
-      let stayToShow = state.stays.filter((stay) => {
-        // console.log('from stay',stay.loc.country.toLowerCase() );
-        // console.log('from filter',state.filterBy.location.toLowerCase() );
-        return stay.loc.country.toLowerCase() === state.filterBy.location.toLowerCase()
-
-      } )
+      let stayToShow = state.stays;
+      if (state.filterLabel) {
+        stayToShow = stayToShow.filter(
+          (stay) => {
+            return stay.type.toLowerCase() === state.filterLabel.toLowerCase()
+          } 
+        );
+      }
+      if (!state.filterBy) return stayToShow
+      stayToShow = state.stays.filter((stay) => {
+        return (
+          stay.loc.country.toLowerCase() ===
+          state.filterBy.location.toLowerCase()
+        );
+      });
       // return state.stays;
       // console.log('stayToShow: ', stayToShow);
-      return stayToShow
+      return stayToShow;
     },
     getRateCalcPerStay({ reviews }) {
       console.log("reviews", reviews);
@@ -74,7 +82,7 @@ export const stayStore = {
     },
     setFilterByLabel(state, { label }) {
       state.filterLabel = label;
-    //   state.dispatch({ type: 'loadStays' });
+      //   state.dispatch({ type: 'loadStays' });
     },
     setStays(state, { stays }) {
       state.stays = stays;
