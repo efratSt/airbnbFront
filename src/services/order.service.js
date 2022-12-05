@@ -1,7 +1,7 @@
 import { storageService } from "./async-storage.service.js";
 import gOrder from "../../data/order.json" assert { type: "json" };
 
-console.log("gOrder: ", gOrder);
+// console.log("gOrder: ", gOrder);
 
 const STORAGE_KEY = "order";
 
