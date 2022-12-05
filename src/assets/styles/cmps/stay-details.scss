@@ -22,7 +22,7 @@
       letter-spacing: 0.28px;
       color: #222222;
       font-family: airbnb-book;
-      font-weight: 900;
+      font-weight: 600;
     }
     .fa-star {
       font-size: 14px;
@@ -127,17 +127,20 @@
   }
 }
 
-.stay-header{
+.stay-header {
   margin-bottom: -1.5px;
   padding-bottom: none;
 }
 
+.location-details h4 {
+  font-weight: 500;
+}
 .stay-secondary.header {
   i {
     margin-right: 0.33rem;
     font-size: 16px;
   }
-   .fa-solid.saved {
+  .fa-solid.saved {
     color: #ff385c;
   }
   &.button {
@@ -153,15 +156,16 @@
   }
 }
 
-.stay-details.host{
+.stay-details.host {
   max-width: 647px;
 }
 
-.stay-details-summary{   
-    padding-bottom: 1rem;  
-  .content{
+.stay-details-summary {
+  padding-bottom: 1rem;
+  .content {
     max-width: 65ch;
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+      Helvetica Neue, sans-serif;
     font-size: 14px;
     line-height: 1.43;
     margin: 0;
@@ -182,10 +186,9 @@
   .host-img {
     height: 56px;
     border-radius: 100%;
-    
   }
 }
-.reservation-cmp-container{
+.reservation-cmp-container {
   position: sticky;
 }
 .review-container {
@@ -215,7 +218,7 @@
   }
 }
 
-.details-page-calender-container{
+.details-page-calender-container {
   max-width: 647px;
   border-top: $clr7 1px solid;
   padding-bottom: 2rem;
@@ -223,7 +226,7 @@
 }
 .details-page-calender {
   &.main {
-   max-width: 647px;
+    max-width: 647px;
   }
   &.secondary {
     position: absolute;
@@ -234,20 +237,18 @@
     z-index: 8000;
   }
 }
-.stay-rate{
+.stay-rate {
   font-size: 14px;
   font-weight: 600;
-  
 }
-.reviews{
-  a{
+.reviews {
+  a {
     color: #222222;
     font-weight: 600;
     text-decoration: none;
-    
   }
 }
-.review-user-img{
+.review-user-img {
   height: 40px;
   border-radius: 100%;
   padding: 5px;

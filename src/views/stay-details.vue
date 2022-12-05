@@ -13,7 +13,7 @@
                             <a href="#">
                                 {{ stay.reviews.length }}reviews</a>   
                         </span>&nbsp&#183
-                        <a href="#"><h4>{{ stay.loc.address }}</h4></a>
+                        <a class="location-details" href="#"><h4>{{ stay.loc.city }},{{stay.loc.country}}</h4></a>
                     </div>
                     <!-- add map links later -->
                     <div class="stay-secondary header buttons-container flex">
@@ -84,9 +84,10 @@
                         {{ amenity }}
                     </li>
                     </ul>
-                    <button class="amenity-button" v-if="stay.amenities.length > 10">
+                    <button @click="toggleAmenities" class="amenity-button" v-if="stay.amenities.length > 10">
                     Show all {{ stay.amenities.length }} amenities
                     </button>
+                    <amenitiesModal @toggleAmenities="toggleAmenities" class="amenities-modal" v-if="showAmenities" :amenities="stay.amenities"/>
                 </section>
             </div>
         </div>
@@ -123,10 +124,12 @@
 </template>
 
 <script>
+    import amenitiesModal from '../cmps/stay-amenities-modal.vue'
     import stayReservation from '../cmps/stay-reservation.vue'
     export default {
     data() {
     return {
+        showAmenities: false,
         stay: null,
         review: '',
         range: {
@@ -200,9 +203,13 @@
         ]
         return ' ' + month + '/' + year
         },
+        toggleAmenities(){
+            this.showAmenities = !this.showAmenities
+        }
     },
     components: {
         stayReservation,
+        amenitiesModal
     },
     }
 </script>
