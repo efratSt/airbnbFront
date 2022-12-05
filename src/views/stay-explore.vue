@@ -19,7 +19,6 @@ export default {
         this.place = this.$route.params
         console.log(this.$route.query);
         this.$store.dispatch({ type: 'loadStays' });
-        
     },
     computed: {
         getStays() {
