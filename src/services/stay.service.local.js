@@ -2,14 +2,7 @@ import { storageService } from "./async-storage.service.js";
 import { utilService } from "./util.service.js";
 import { userService } from "./user.service.js";
 
-
-import ggStays from '../../data/stay.json' assert {type: 'json'}
-
-
-
-
-console.log("stays", ggStays);
-
+import ggStays from '../../data/stays.json' assert {type: 'json'}
 
 
 const STORAGE_KEY = "stay";
@@ -268,17 +261,21 @@ async function query(filterBy = { txt: "", price: 0 }) {
   //   if (filterBy.price) {
   //       stays = stays.filter(stay => stay.price <= filterBy.price)
   //   }
-  if (!stays || !stays.length) stays = gStays;
+  if (!stays || !stays.length){
+    stays = ggStays;
+    
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(stays))
+  } 
   // if (!stays || !stays.length) stays = ggStays;
   return stays;
 }
 
 function getById(stayId) {
-  return storageService.get(STORAGE_KEY, stayId);
+  return storageService.get(STORAGE_KEY, stayId)
 }
 
 async function remove(stayId) {
-  await storageService.remove(STORAGE_KEY, stayId);
+  await storageService.remove(STORAGE_KEY, stayId)
 }
 
 async function save(stay) {
@@ -320,18 +317,16 @@ function getEmptyStay() {
 }
 
 // TEST DATA
-(async () => {
-  // await storageService.post(STORAGE_KEY, getEmptyStay())
-  // await storageService.post(STORAGE_KEY, getEmptyStay())
-  // await storageService.post(STORAGE_KEY, getEmptyStay())
-  // await storageService.post(STORAGE_KEY, getEmptyStay())
-  // await storageService.post(STORAGE_KEY, ...gStays);
-  await storageService.post(STORAGE_KEY, ...gStays);
+// (async () => {
+//   // await storageService.post(STORAGE_KEY, getEmptyStay())
+//   // await storageService.post(STORAGE_KEY, getEmptyStay())
+//   // await storageService.post(STORAGE_KEY, getEmptyStay())
+//   // await storageService.post(STORAGE_KEY, getEmptyStay())
+//   // await storageService.post(STORAGE_KEY, ...gStays);
+//   console.log(...ggStays)
+//   await storageService.post(STORAGE_KEY, [...ggStays]);
 
-
-
-  // await storageService.post(STORAGE_KEY, ggStays);
-})();
+// })();
 
 function _makeId(length = 5) {
   var text = "";

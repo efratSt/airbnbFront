@@ -47,14 +47,13 @@ export default {
         return {
             stayRate: 0,
             isSaved: false,
-            isExploreShow: false
         };
     },
     created() {
         this.stay.reviews.forEach((review) => {
             this.stayRate += review.rate;
         });
-        this.isExploreShow = this.$store.getters.getShowExplore
+        
     },
     computed: {
         rateCalc() {
@@ -79,6 +78,9 @@ export default {
             var bads = this.stay.beds
             if (bads > 1) return  bads + ' bads'
             return bads + ' bad'
+        },
+        isExploreShow() {
+            return this.$store.getters.getShowExplore
         }
 
     },

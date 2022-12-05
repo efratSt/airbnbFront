@@ -3,7 +3,7 @@
         <div class="stay-details">       
             <div class="stay-details-summary">
                 <div class="stay-header">
-                    <h2>{{ stay.summary }}</h2>
+                    <h2>{{ stay.about }}</h2>
                 </div>    
                 <div class="stay-secondary-header flex align-center space-between">
                     <div class="stay-secondary-header location">
@@ -47,7 +47,7 @@
                     <div class="host-header flex space-between">
                         <div>
                             <h2>
-                            {{ stay.type }} hosted by {{ stay.host.fullname }} 
+                            {{ stay.roomType }} hosted by {{ stay.host.fullname }} 
                             </h2>
                             <ol class="clean-list flex align-center">
                                 <li>
@@ -58,7 +58,7 @@
                                     <span>{{ stay.bedrooms }} bedrooms</span>
                                 </li>
                                 <li>
-                                    <span>&nbsp&#183&nbsp</span><span>{{ stay.beds }} beds </span>
+                                    <span>&nbsp&#183&nbsp</span><span>{{ stay.capacity/2 }} beds </span>
                                 </li>
                                 <li>
                                     <span>&nbsp&#183&nbsp</span>
@@ -66,7 +66,7 @@
                                 </li>
                             </ol>
                         </div>  
-                        <img :src="stay.host.imgUrl" alt="host image" class="host-img">
+                        <img :src="stay.host.thumbnailUrl" alt="host image" class="host-img">
                     </div>
                 </section>
                 <div class="stay-details-main flex space-between">
@@ -104,7 +104,7 @@
                 :key="review._id"
                 >
                 <div class="review-title flex align-center">
-                    <img :src="review.by.imgUrl" alt="" />
+                    <img class="review-user-img" :src="review.by.imgUrl" alt="" />
                     <div class="review-title content flex">
                     <h3> {{ review.by.fullname }}</h3>
                     <h4>{{ reviewDate(review.createdAt) }}</h4>
