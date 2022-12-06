@@ -1,5 +1,5 @@
 <template>
-    <section class="main-container root-cmp">
+    <section class="main-container root-cmp" :class="{ small: !notMain }">
         <user-msg />
         <stay-header />
         <stay-labels-filter v-if="notMain" />
