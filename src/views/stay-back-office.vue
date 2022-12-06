@@ -111,11 +111,13 @@
         <section v-if="isAddModalOpen" class="add-modal">
             <h1>add a stay</h1>
             <button @click="isAddModalOpen = false">Back</button>
+            <stay-add />
         </section>
     </section>
 </template>
 
 <script>
+import stayAdd from '../cmps/stay-add.vue'
 export default {
     data() {
         return {
@@ -131,6 +133,10 @@ export default {
         openAddModal() {
             this.isAddModalOpen = true
         },
+    },
+
+    components: {
+        stayAdd,
     },
 }
 </script>

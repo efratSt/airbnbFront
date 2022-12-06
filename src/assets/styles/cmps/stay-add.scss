@@ -1,0 +1,40 @@
+.stay-add-form {
+    form {
+        display: flex;
+        justify-content: space-evenly;
+
+        .stay-add-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+            input {
+                color: #717171;
+                font-size: 16px;
+                border-bottom: 1px solid lightgray;
+                width: 100%;
+            }
+        }
+
+        .stay-add-details {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            label {
+                color: #717171;
+                font-size: 16px;
+                border-bottom: 1px solid lightgray;
+                width: 100%;
+
+                input {
+                    font-size: 16px;
+                    padding-inline-start: 10px;
+                }
+
+                select {
+                    border: none;
+                }
+            }
+        }
+    }
+}
