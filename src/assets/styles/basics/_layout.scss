@@ -41,7 +41,7 @@
         
     }
     &.small{
-        
+        ;
         @media (max-width: 550px) {
             grid-template-columns: 25px 1fr 25px;
         }
@@ -55,16 +55,16 @@
         }
     
         @media (min-width: 1130px) {
-            grid-template-columns: 160px 1fr 160px;
+            grid-template-columns: 65px 1fr 65px;
             
         }
         
         @media (min-width: 1440px) {
-            grid-template-columns: 254px 1fr 254px;
+            grid-template-columns: 1fr 1120px 1fr;
     }
     
         @media (min-width: 1640px) {
-                grid-template-columns: 325px 1fr 325px;
+                grid-template-columns:1fr 1120px 1fr;
         }
     }  
    
