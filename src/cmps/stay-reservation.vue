@@ -16,14 +16,14 @@
         </section>
         <section class="order-data">
             <div class="date-picker">
-                <div  @click="$emit('moveCalender')" class="date-input">
+                <div @click="moveCalender" class="date-input">
                     <label >CHECK-IN</label>
                     <input :disabled="true">{{ date(range.start) }}
                     <button @click="(range.start=null)" v-if="range.start"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 4; overflow: visible;"><path d="m6 6 20 20"></path><path d="m26 6-20 20"></path></svg></button>
                 </div>        
-                <div @click="$emit('moveCalender')" class="date-input">
+                <div @click="moveCalender" class="date-input">
                     <label>CHECKOUT</label>
-                    <input :disabled="true">{{ date(range.end) }}    
+                    <input >{{ date(range.end) }}    
                     <button @click="(range.end=null)" v-if="range.end"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 4; overflow: visible;"><path d="m6 6 20 20"></path><path d="m26 6-20 20"></path></svg></button>
                     <!-- <Date-picker v-if="(!this.range.start && !this.range.end)" class="details-page-calender secondary" v-model="range" is-range :columns="2" color="gray" /> -->
                 </div>
@@ -31,11 +31,11 @@
             <div>
                 <div @click="toggleGuestsModal" class="guest-input">
                     <label>GUESTS</label>
-                    <input  :value="totalGuests + ' guest'">
+                    <input  :value="totalGuests"> {{guestDisplay}}
                     <svg viewBox="0 0 320 512" width="100" title="angle-down">
                     <path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" />
                     </svg>
-                    <guestsModal @click.stop="" v-if="guestsModalOpen" @counterChanged="counterChanged" :class="[{'details-page':guestsModalOpen }]"/>
+                    <guestsModal v-click-outside="toggleGuestsModal"  @click.stop="" v-if="guestsModalOpen" @counterChanged="counterChanged" :class="[{'details-page':guestsModalOpen }]"/>
                 </div>
             </div>
             
@@ -198,6 +198,9 @@ import guestsModal from '../cmps/stay-guests-modal.vue'
         }
     },
     methods :{
+        moveCalender(){
+            this.$emit('moveCalender')
+        },
         toggleGuestsModal(){
             this.guestsModalOpen = !this.guestsModalOpen         
         },
@@ -221,7 +224,9 @@ import guestsModal from '../cmps/stay-guests-modal.vue'
     }
     },
     computed: {
-       
+        guestDisplay(){
+            return (this.totalGuests === 1) ? 'guest' : 'guests'
+        },
         reservationButton() {
             if (this.reservationStatus === null && !this.range.start || !this.range.end) {
                 return 'Check availability'
