@@ -5,64 +5,64 @@ import { utilService } from './util.service.js'
 import { userService } from './user.service.js'
 
 
-const STORAGE_KEY = 'car'
+const STORAGE_KEY = 'stay'
 
-export const carService = {
+export const stayService = {
     query,
     getById,
     save,
     remove,
-    getEmptyCar,
-    addCarMsg
+    getEmptyStay,
+    addStayMsg
 }
-window.cs = carService
+window.cs = stayService
 
 
 async function query(filterBy = { txt: '', price: 0 }) {
     return httpService.get(STORAGE_KEY, filterBy)
 
-    // var cars = await storageService.query(STORAGE_KEY)
+    // var stays = await storageService.query(STORAGE_KEY)
     // if (filterBy.txt) {
     //     const regex = new RegExp(filterBy.txt, 'i')
-    //     cars = cars.filter(car => regex.test(car.vendor) || regex.test(car.description))
+    //     stays = stays.filter(stay => regex.test(stay.vendor) || regex.test(stay.description))
     // }
     // if (filterBy.price) {
-    //     cars = cars.filter(car => car.price <= filterBy.price)
+    //     stays = stays.filter(stay => stay.price <= filterBy.price)
     // }
-    // return cars
+    // return stays
 
 }
-function getById(carId) {
-    // return storageService.get(STORAGE_KEY, carId)
-    return httpService.get(`car/${carId}`)
+function getById(stayId) {
+    // return storageService.get(STORAGE_KEY, stayId)
+    return httpService.get(`stay/${stayId}`)
 }
 
-async function remove(carId) {
-    // await storageService.remove(STORAGE_KEY, carId)
-    return httpService.delete(`car/${carId}`)
+async function remove(stayId) {
+    // await storageService.remove(STORAGE_KEY, stayId)
+    return httpService.delete(`stay/${stayId}`)
 }
-async function save(car) {
-    var savedCar
-    if (car._id) {
-        // savedCar = await storageService.put(STORAGE_KEY, car)
-        savedCar = await httpService.put(`car/${car._id}`, car)
+async function save(stay) {
+    var savedStay
+    if (stay._id) {
+        // savedStay = await storageService.put(STORAGE_KEY, stay)
+        savedStay = await httpService.put(`stay/${stay._id}`, stay)
 
     } else {
         // Later, owner is set by the backend
-        car.owner = userService.getLoggedinUser()
-        // savedCar = await storageService.post(STORAGE_KEY, car)
-        savedCar = await httpService.post('car', car)
+        stay.owner = userService.getLoggedinUser()
+        // savedStay = await storageService.post(STORAGE_KEY, stay)
+        savedStay = await httpService.post('stay', stay)
     }
-    return savedCar
+    return savedStay
 }
 
-async function addCarMsg(carId, txt) {
-    const savedMsg = await httpService.post(`car/${carId}/msg`, {txt})
+async function addStayMsg(stayId, txt) {
+    const savedMsg = await httpService.post(`stay/${stayId}/msg`, {txt})
     return savedMsg
 }
 
 
-function getEmptyCar() {
+function getEmptyStay() {
     return {
         vendor: 'Susita-' + (Date.now() % 1000),
         price: utilService.getRandomIntInclusive(1000, 9000),

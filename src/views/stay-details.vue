@@ -55,10 +55,14 @@
                                 </li>
                                 <li>
                                     <span>&nbsp&#183&nbsp</span>
-                                    <span>{{ stay.bedrooms }} bedrooms</span>
+                                    <span>{{ stay.bedrooms }}</span>
+                                    <span v-if="(stay.bedrooms ===1)"> bedroom</span>
+                                    <span v-if="(stay.bedrooms > 1)"> bedrooms</span>
                                 </li>
                                 <li>
-                                    <span>&nbsp&#183&nbsp</span><span>{{ stay.capacity/2 }} beds </span>
+                                    <span>&nbsp&#183&nbsp</span><span>{{ Math.ceil(stay.capacity/2) }}</span>
+                                    <span v-if="(Math.ceil(stay.capacity/2) ===1)"> bed</span>
+                                    <span v-if="(Math.ceil(stay.capacity/2) > 1)"> beds </span>
                                 </li>
                                 <li>
                                     <span>&nbsp&#183&nbsp</span>
@@ -95,28 +99,27 @@
             <stayReservation @moveCalender="moveCalender" :stay="stay" :range="range"/>
         </div>
         </div>
-        <div class="details-page-calender-container">
-            <Date-picker class="details-page-calender main" v-model="range" is-range :columns="2" color="gray" />
+        <div class="details-page-calender-container" :class=" { 'modal' : calenderCentered} ">
+            <Date-picker class="details-page-calender main"  v-model="range" is-range :columns="2" color="gray" />
         </div>
             <div class="stay-chosen-dates">
             </div>
             <div class="review-container">
                 <h2>Reviews</h2>
                 <div v-if="stay.reviews" class="review-list">
-                <div
-                class="review-preview"
-                v-for="review in stay.reviews"
-                :key="review._id"
-                >
-                <div class="review-title flex align-center">
-                    <img class="review-user-img" :src="review.by.imgUrl" alt="" />
-                    <div class="review-title content flex">
-                    <h3> {{ review.by.fullname }}</h3>
-                    <h4>{{ reviewDate(review.createdAt) }}</h4>
-                    </div>
-                </div>  
-            <!-- <h4>By {{ review.user.username }}</h4> -->
-                <p>{{ review.txt }}</p>
+                    <div
+                    class="review-preview"
+                    v-for="review in stay.reviews"
+                    :key="review._id"
+                    >
+                    <div class="review-title flex align-center">
+                        <img class="review-user-img" :src="review.by.imgUrl" alt="" />
+                        <div class="review-title content flex">
+                            <span class="review-user-name"> {{ review.by.fullname }}</span>
+                            <span class="review-user-date">{{ reviewDate(review.at) }}</span>
+                        </div>
+                    </div>  
+                    <p class="review-content">{{ review.txt }}</p>
                 </div>
                 </div>
             </div>
@@ -129,6 +132,7 @@
     export default {
     data() {
     return {
+        calenderCentered: false,
         showAmenities: false,
         stay: null,
         review: '',
@@ -163,8 +167,9 @@
     this.getStayById(stayId)   
     },
     methods: {
-        dateChange(range){
-            console.log('range',range)
+        moveCalender(){
+            this.calenderCentered = true
+            console.log('hu',this.calenderCentered)
         },
         getSource(amenity) {            
         const source = `src/assets/icons/${amenity}`.toLowerCase()+'.svg'
@@ -199,12 +204,13 @@
         },
         reviewDate(date1) {
         const date = new Date(date1)
-        const [month, day, year] = [
-            date.getMonth(),
-            date.getDate(),
-            date.getFullYear(),
-        ]
-        return ' ' + month + '/' + year
+        const month = date.toLocaleString('default', { month: 'long' })
+        const [day, year] = [
+        
+          date.getDate(),
+         date.getFullYear(),
+         ]
+        return  month + ' ' + year
         },
         toggleAmenities(){
             this.showAmenities = !this.showAmenities
