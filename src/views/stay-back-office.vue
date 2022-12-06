@@ -109,8 +109,10 @@
             </table>
         </div>
         <section v-if="isAddModalOpen" class="add-modal">
-            <h1>add a stay</h1>
-            <button @click="isAddModalOpen = false">Back</button>
+            <h1>Add a stay</h1>
+            <button :title="'Back'" @click="isAddModalOpen = false">
+                <i class="fa-solid fa-arrow-left-long"></i>
+            </button>
             <stay-add />
         </section>
     </section>

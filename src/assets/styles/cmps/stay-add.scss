@@ -1,7 +1,9 @@
 .stay-add-form {
     form {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-bottom: 15px;
 
         .stay-add-info {
             display: flex;
@@ -10,7 +12,8 @@
 
             input {
                 color: #717171;
-                font-size: 16px;
+                font-size: 18px;
+                font-weight: 500;
                 border-bottom: 1px solid lightgray;
                 width: 100%;
             }
@@ -22,9 +25,12 @@
             gap: 15px;
             label {
                 color: #717171;
-                font-size: 16px;
+                font-size: 18px;
                 border-bottom: 1px solid lightgray;
                 width: 100%;
+                font-weight: 500;
+                display: flex;
+                justify-content: space-between;
 
                 input {
                     font-size: 16px;
@@ -34,7 +40,86 @@
                 select {
                     border: none;
                 }
+
+                &.desc {
+                    display: block;
+                    border: none;
+                }
             }
+        }
+
+        .amenities-checkbox {
+            display: flex;
+            flex-direction: column;
+
+            .amenities-add {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    }
+
+    .desc-imgs {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        gap: 50px;
+        .desc {
+            display: flex;
+            flex-direction: column;
+            h3 {
+                margin: 0;
+                padding-bottom: 15px;
+                text-align: center;
+                transform: translateX(-5px);
+            }
+
+            textarea {
+                border-radius: 12px;
+            }
+        }
+
+        .img-container {
+            padding-top: 35px;
+            margin-bottom: 1.2rem;
+            display: grid;
+            gap: 8px;
+            grid-template-columns: 2.05fr 1fr 1fr;
+            grid-template-rows: 180.59px 180.59px;
+            grid-template-areas:
+                'area1  area2 area3'
+                'area1  area4  area5';
+        }
+
+        .grid-item {
+            width: 100%;
+            object-fit: cover;
+            height: 100%;
+            background-color: #ded8d8;
+            display: grid;
+            place-content: center;
+            cursor: pointer;
+        }
+
+        .img-1 {
+            border-top-left-radius: 12px;
+            border-bottom-left-radius: 12px;
+            grid-area: area1;
+        }
+
+        .img-2 {
+            grid-area: area2;
+        }
+
+        .img-3 {
+            grid-area: area3;
+            border-top-right-radius: 12px;
+        }
+        .img-4 {
+            grid-area: area4;
+        }
+        .img-5 {
+            grid-area: area5;
+            border-bottom-right-radius: 12px;
         }
     }
 }

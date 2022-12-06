@@ -104,5 +104,20 @@
         top: 0;
         height: 90vh;
         background-color: white;
+
+        h1 {
+            font-size: 1.5em;
+            margin: 0;
+            padding-top: 20px;
+        }
+
+        button {
+            font-size: 1.5em;
+            margin: 0;
+            padding: 0;
+            background: none;
+            color: $clr-red;
+            cursor: pointer;
+        }
     }
 }

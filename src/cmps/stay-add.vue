@@ -40,7 +40,7 @@
                     <input v-model="stayToAdd.capacity" type="number" min="1" />
                 </label>
                 <label>
-                    Stay type
+                    Room type
                     <select v-model="stayToAdd.roomType">
                         <option value="Entire place">Entire place</option>
                         <option value="Single room">Single room</option>
@@ -48,7 +48,7 @@
                     </select>
                 </label>
                 <label>
-                    Property type
+                    Stay type
                     <select v-model="stayToAdd.type">
                         <option value="Entire place">Beach</option>
                         <option value="Campers">Campers</option>
@@ -58,8 +58,67 @@
                         <option value="Castles">Castles</option>
                     </select>
                 </label>
-                <label>
-                    Description
+            </div>
+            <div class="amenities-checkbox">
+                <h3>Amenities</h3>
+                <div class="amenities-add">
+                    <el-checkbox
+                        v-model="stayToAdd.amenities"
+                        label="TV"
+                        size="large"
+                    />
+                    <el-checkbox
+                        v-model="stayToAdd.amenities"
+                        label="Wifi"
+                        size="large"
+                    />
+                    <el-checkbox
+                        v-model="stayToAdd.amenities"
+                        label="AC"
+                        size="large"
+                    />
+                    <el-checkbox
+                        v-model="stayToAdd.amenities"
+                        label="Smoking allowed"
+                        size="large"
+                    />
+                    <el-checkbox
+                        v-model="stayToAdd.amenities"
+                        label="Pets allowed"
+                        size="large"
+                    />
+                    <el-checkbox
+                        v-model="stayToAdd.amenities"
+                        label="Cooking basics"
+                        size="large"
+                    />
+                    <el-checkbox
+                        v-model="stayToAdd.amenities"
+                        label="Kitchen"
+                        size="large"
+                    />
+                    <el-checkbox
+                        v-model="stayToAdd.amenities"
+                        label="Washer"
+                        size="large"
+                    />
+                    <el-checkbox
+                        v-model="stayToAdd.amenities"
+                        label="Dryer"
+                        size="large"
+                    />
+                    <el-checkbox
+                        v-model="stayToAdd.amenities"
+                        label="First aid kit"
+                        size="large"
+                    />
+                </div>
+            </div>
+        </form>
+        <div class="desc-imgs">
+            <div class="desc">
+                <h3>Description</h3>
+                <label class="desc">
                     <textarea
                         v-model="stayToAdd.summary"
                         name=""
@@ -69,60 +128,16 @@
                     ></textarea>
                 </label>
             </div>
-            <div class="amenities-checkbox">
-                <h3>Amenities</h3>
-                <el-checkbox
-                    v-model="stayToAdd.amenities"
-                    label="TV"
-                    size="large"
-                />
-                <el-checkbox
-                    v-model="stayToAdd.amenities"
-                    label="Wifi"
-                    size="large"
-                />
-                <el-checkbox
-                    v-model="stayToAdd.amenities"
-                    label="AC"
-                    size="large"
-                />
-                <el-checkbox
-                    v-model="stayToAdd.amenities"
-                    label="Smoking allowed"
-                    size="large"
-                />
-                <el-checkbox
-                    v-model="stayToAdd.amenities"
-                    label="Pets allowed"
-                    size="large"
-                />
-                <el-checkbox
-                    v-model="stayToAdd.amenities"
-                    label="Cooking basics"
-                    size="large"
-                />
-                <el-checkbox
-                    v-model="stayToAdd.amenities"
-                    label="Kitchen"
-                    size="large"
-                />
-                <el-checkbox
-                    v-model="stayToAdd.amenities"
-                    label="Washer"
-                    size="large"
-                />
-                <el-checkbox
-                    v-model="stayToAdd.amenities"
-                    label="dryer"
-                    size="large"
-                />
-                <el-checkbox
-                    v-model="stayToAdd.amenities"
-                    label="First aid kit"
-                    size="large"
-                />
+            <div class="imgs-uplowd">
+                <div class="img-container">
+                    <div class="grid-item img-1">Upload Image</div>
+                    <div class="grid-item img-2">Upload Image</div>
+                    <div class="grid-item img-3">Upload Image</div>
+                    <div class="grid-item img-4">Upload Image</div>
+                    <div class="grid-item img-5">Upload Image</div>
+                </div>
             </div>
-        </form>
+        </div>
     </section>
 </template>
 
