@@ -2,7 +2,7 @@
     <div class="container about">
         <p>{{ msg }}</p>
 
-        <div v-if="loggedinUser">
+        <div class="loggedin-user" v-if="loggedinUser">
             <h3>
                 Loggedin User:
                 {{ loggedinUser.fullname }}
@@ -84,6 +84,7 @@ export default {
             return this.$store.getters.users;
         },
         loggedinUser() {
+            console.log(this.$store.getters.loggedinUser);
             return this.$store.getters.loggedinUser;
         },
     },

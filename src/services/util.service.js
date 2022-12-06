@@ -7,8 +7,20 @@ export const utilService = {
   saveToStorage,
   loadFromStorage,
   timeSince,
-  randomDate
+  randomDate,
+  normalizeData
 };
+
+function normalizeData(stays) {
+  stays.forEach((stay) => {
+    stay.currencyCode = "USD";
+    stay.reviews.forEach(
+      (review) => (review.rate = utilService.getRandomIntInclusive(3, 5))
+    );
+    return stays;
+  });
+  return stays;
+}
 
 function makeId(length = 6) {
   var txt = "";
