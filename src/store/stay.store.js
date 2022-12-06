@@ -82,7 +82,6 @@ export const stayStore = {
     },
     setFilterByLabel(state, { label }) {
       state.filterLabel = label;
-      //   state.dispatch({ type: 'loadStays' });
     },
     setStays(state, { stays }) {
       state.stays = stays;
