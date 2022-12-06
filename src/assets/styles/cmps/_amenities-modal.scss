@@ -1,20 +1,40 @@
 .amenities-modal {
   display: flex;
   flex-direction: column;
-  width: 780px;
+  width: min(100% - 25px, 780px);
+  margin-inline-start: auto;
+  margin-inline-end: auto;
   z-index: 9000;
   position: fixed;
   top: 190px;
-  left: calc(100% - 780px * 1.72);
+  left: calc(100vw - 780px * 1.742);
   background-color: white;
   border: 1px solid #00000030;
   border-radius: 13px;
-  box-shadow: 0 0 5px 5px #00000015;
+  box-shadow: 0 0 5px 5px hsla(0, 0%, 0%, 0.082);
   height: 700px;
   overflow-y: scroll;
   overflow-x: hidden;
 
+  .button-container{
+  width: min(100% - 25px, 780px);
+  margin-inline: auto;
+  border-left: 1px solid #00000030;
+  border-right: 1px solid #00000030;
+  border-top: 1px solid #00000030;
+  border-top-left-radius : 13px;
+  border-top-right-radius : 13px;
+  box-shadow: -1px 0px 0 0 hsla(0, 0%, 0%, 0.082);
+  // left: calc(100% - 780px * 1.72);
+  height: 4rem;
+  width: 780px;
+  position: fixed;
+  top: 180px;
+  background-color: white;
+  padding-bottom: 1rem;
+}
   h2 {
+    margin-top: 3.5rem;
     padding-left: 25px;
   }
   .stay-amenities-list-modal {
@@ -24,9 +44,6 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    // display: grid;
-    // grid-template-columns: 1fr 1fr;
-    // grid-template-rows: repeat(5, 1fr);
     line-height: 3.5rem;
     .amenity-icon-modal {
       margin-right: 2rem;
@@ -38,7 +55,7 @@
       border-bottom: $clr7 1px solid;
     }
   }
-  .close-amenities-modal {
+  .close-amenities-modal { //button
     color: black;
     background-color: white;
     cursor: pointer;
@@ -48,7 +65,7 @@
     width: 50px;
     top: 0;
     position: sticky;
-    left: 15px;
+    left: 35px;
     margin-bottom: 1rem;
     :hover {
       background-color: $clr7;
@@ -63,23 +80,23 @@
   }
 }
 
-.amenities-modal::-webkit-scrollbar {
-  width: 16px;
-  height: 2px;
-}
-/* Track */
-::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  -webkit-border-radius: 13px;
-  border-radius: 13px;
-}
-/* Handle */
-::-webkit-scrollbar-thumb {
-  -webkit-border-radius: 6px;
-  border-radius: 6px;
-  background: $clr7;
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
-}
-::-webkit-scrollbar-thumb:window-inactive {
-  background: rgba(0, 0, 0, 0.4);
-}
+// .amenities-modal::-webkit-scrollbar {
+//   width: 16px;
+//   height: 2px;
+// }
+// /* Track */
+// ::-webkit-scrollbar-track {
+//   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+//   -webkit-border-radius: 13px;
+//   border-radius: 13px;
+// }
+// /* Handle */
+// ::-webkit-scrollbar-thumb {
+//   -webkit-border-radius: 6px;
+//   border-radius: 6px;
+//   background: $clr7;
+//   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+// }
+// ::-webkit-scrollbar-thumb:window-inactive {
+//   background: rgba(0, 0, 0, 0.4);
+// }

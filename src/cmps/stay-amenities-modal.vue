@@ -1,7 +1,9 @@
 <template>
     <div>
-        <button @click="$emit('toggleAmenities')" class="close-amenities-modal">
-            <svg class="close-amenities-modal svg" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 3; overflow: visible;"><path d="m6 6 20 20"></path><path d="m26 6-20 20"></path></svg></button>  
+        <div class="button-container">
+            <button @click="$emit('toggleAmenities')" class="close-amenities-modal"> 
+            <svg class="close-amenities-modal svg" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 3; overflow: visible;"><path d="m6 6 20 20"></path><path d="m26 6-20 20"></path></svg></button>
+        </div>
         <h2>What this place offers</h2>
         <ul class="stay-amenities-list-modal clean-list">
             <li class="stay-amenity-modal"

@@ -13,6 +13,11 @@ import { orderService} from './services/order.service'
 
 import './assets/styles/main.scss'
 import rootCmp from './root-cmp.vue'
+import {
+    focusDirective,
+    customOnDirective,
+    clickOutsideDirective,
+  } from './directives'
 
 const app = createApp(rootCmp)
 app.use(router)
@@ -20,8 +25,13 @@ app.use(store)
 app.use(SetupCalendar, {})
 app.use(VueCarousel)
 app.use(ElementPlus)
+app.directive('focus', focusDirective)
+app.directive('custom-on', customOnDirective)
+app.directive('click-outside', clickOutsideDirective)
+
 // Use the components
 app.component('Calendar', Calendar)
 app.component('DatePicker', DatePicker)
 
 app.mount('#app')
+

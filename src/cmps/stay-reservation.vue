@@ -16,16 +16,16 @@
         </section>
         <section class="order-data">
             <div class="date-picker">
-                <div class="date-input">
+                <div  @click="$emit('moveCalender')" class="date-input">
                     <label >CHECK-IN</label>
                     <input :disabled="true">{{ date(range.start) }}
                     <button @click="(range.start=null)" v-if="range.start"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 4; overflow: visible;"><path d="m6 6 20 20"></path><path d="m26 6-20 20"></path></svg></button>
                 </div>        
-                <div class="date-input">
+                <div @click="$emit('moveCalender')" class="date-input">
                     <label>CHECKOUT</label>
-                    <input :disabled="true">{{ date(range.end) }}
+                    <input :disabled="true">{{ date(range.end) }}    
                     <button @click="(range.end=null)" v-if="range.end"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 4; overflow: visible;"><path d="m6 6 20 20"></path><path d="m26 6-20 20"></path></svg></button>
-                    <Date-picker v-if="(!this.range.start && !this.range.end)" class="details-page-calender secondary" v-model="range" is-range :columns="2" color="gray" />
+                    <!-- <Date-picker v-if="(!this.range.start && !this.range.end)" class="details-page-calender secondary" v-model="range" is-range :columns="2" color="gray" /> -->
                 </div>
             </div>
             <div>
@@ -177,6 +177,7 @@
     </div>
 </template>
 <script>
+import { range } from 'lodash'
 import guestsModal from '../cmps/stay-guests-modal.vue'
 
   export default {
@@ -192,7 +193,8 @@ import guestsModal from '../cmps/stay-guests-modal.vue'
             numberOfGuest: null,
             duration: null,
             guestsModalOpen: false,
-            totalGuests: 1
+            totalGuests: 1,
+            
         }
     },
     methods :{
@@ -218,9 +220,8 @@ import guestsModal from '../cmps/stay-guests-modal.vue'
             } 
     }
     },
-        
-    
     computed: {
+       
         reservationButton() {
             if (this.reservationStatus === null && !this.range.start || !this.range.end) {
                 return 'Check availability'
@@ -253,7 +254,7 @@ import guestsModal from '../cmps/stay-guests-modal.vue'
         },
         totalPrice(){
           return (this.stayPrice + this.extraFee).toLocaleString()
-        },
+        },           
     },   
     components:{
         guestsModal

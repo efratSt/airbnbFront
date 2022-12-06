@@ -84,15 +84,15 @@
                         {{ amenity }}
                     </li>
                     </ul>
-                    <button @click="toggleAmenities" class="amenity-button" v-if="stay.amenities.length > 10">
+                    <button  @click="toggleAmenities" class="amenity-button" v-if="stay.amenities.length > 10">
                     Show all {{ stay.amenities.length }} amenities
                     </button>
-                    <amenitiesModal @toggleAmenities="toggleAmenities" class="amenities-modal" v-if="showAmenities" :amenities="stay.amenities"/>
+                    <amenitiesModal v-click-outside="toggleAmenities" @toggleAmenities="toggleAmenities" class="amenities-modal" v-if="showAmenities" :amenities="stay.amenities"/>
                 </section>
             </div>
         </div>
         <div class="reservation-cmp-container" >
-            <stayReservation :stay="stay" :range="range"/>
+            <stayReservation @moveCalender="moveCalender" :stay="stay" :range="range"/>
         </div>
         </div>
         <div class="details-page-calender-container">
@@ -163,6 +163,9 @@
     this.getStayById(stayId)   
     },
     methods: {
+        dateChange(range){
+            console.log('range',range)
+        },
         getSource(amenity) {            
         const source = `src/assets/icons/${amenity}`.toLowerCase()+'.svg'
         return source
