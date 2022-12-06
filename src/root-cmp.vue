@@ -1,7 +1,7 @@
 <template>
     <section class="main-container root-cmp">
         <user-msg />
-        <stay-header class="main-container" />
+        <stay-header />
         <stay-labels-filter v-if="notMain" />
         <router-view />
         <span> </span>
