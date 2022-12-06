@@ -32,10 +32,7 @@ export default {
     computed: {
         getStays() {
             var tryStay = this.$store.getters.stays.length
-            console.log('tryStay', tryStay);
-
             this.sumOfStays = tryStay
-            console.log('this.sumOfStays', this.sumOfStays);
             return this.$store.getters.stays;
         },
         showHowManyStays() {

@@ -8,6 +8,7 @@ import VueCarousel from 'vue-carousel'
 
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
+
 import { stayService } from './services/stay.service.local'
 import { orderService} from './services/order.service'
 

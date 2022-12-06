@@ -1,5 +1,6 @@
 import { stayService } from "../services/stay.service.local";
 // import { stayService } from "../services/stay.service";
+import { utilService } from "../services/util.service";
 
 export function getActionRemoveStay(stayId) {
   return {
@@ -130,6 +131,7 @@ export const stayStore = {
     async loadStays(context) {
       try {
         const stays = await stayService.query();
+        utilService.normalizeData(stays)
         context.commit({ type: "setStays", stays });
       } catch (err) {
         console.log("stayStore: Error in loadStays", err);
