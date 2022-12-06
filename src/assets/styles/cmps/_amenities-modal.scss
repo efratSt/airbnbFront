@@ -6,7 +6,6 @@
   margin-inline-end: auto;
   z-index: 9000;
   position: fixed;
-  top: 190px;
   left: calc(100vw - 780px * 1.742);
   background-color: white;
   border: 1px solid #00000030;
@@ -15,21 +14,29 @@
   height: 700px;
   overflow-y: scroll;
   overflow-x: hidden;
+  left: 50%;
+  margin-left: - 780px / 2;
+  margin-top: - 700px / 2;
+  min-height: 700px;
+  min-width: 780px;
+  position: fixed;
+  top: 58%;
 
   .button-container{
-  width: min(100% - 25px, 780px);
-  margin-inline: auto;
   border-left: 1px solid #00000030;
   border-right: 1px solid #00000030;
   border-top: 1px solid #00000030;
   border-top-left-radius : 13px;
   border-top-right-radius : 13px;
   box-shadow: -1px 0px 0 0 hsla(0, 0%, 0%, 0.082);
-  // left: calc(100% - 780px * 1.72);
   height: 4rem;
-  width: 780px;
+  left: 50%;
+  margin-left: - 780px / 2;
+  margin-top: - 700px / 2;
+  min-height: 10px;
+  min-width: 780px;
   position: fixed;
-  top: 180px;
+  top: 55%;
   background-color: white;
   padding-bottom: 1rem;
 }

@@ -111,12 +111,12 @@
     li:nth-child(2n) {
       width: 48.5%;
     }
-  
-  li:nth-child(9):last-child {
-    align-self: flex-start;
-    width: 100%;
-    margin-bottom: -10px;
-  }
+
+    li:nth-child(9):last-child {
+      align-self: flex-start;
+      width: 100%;
+      margin-bottom: -10px;
+    }
   }
   .amenity-button {
     all: unset;
@@ -207,22 +207,53 @@
   }
 
   .review-list {
+    padding-top: 1rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     // grid-template-rows: repeat(5, 1fr);
-    line-height: 2rem;
     img {
       margin-right: 10px;
+      height: 40px;
+      border-radius: 100%;
+      padding: 5px;
+      border: #222222 1px solid;
     }
-
+    .review-title{
+      
+      height: 45px;
+    }
     .review-title .content {
+     
       flex-direction: column;
-
-      h3 {
+      
+      .review-user-name {
+        line-height: 1.2rem;
+        font-size: 16px;
         font-weight: 600;
+      }
+      .review-user-date{
+        font-size: 14px;
+        color: #717171;
       }
     }
   }
+}
+
+.review-content{
+  overflow: hidden;
+  width: 100%;
+  font-size: 16px;
+  padding-top: 12px;
+  margin-bottom: 14px;
+  line-height: 1.5rem;
+  max-width: 50ch;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+    Helvetica Neue, sans-serif;
+    display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .details-page-calender-container {
@@ -230,6 +261,20 @@
   border-top: $clr7 1px solid;
   padding-bottom: 2rem;
   padding-top: 2rem;
+
+  // &.modal{
+  // margin-inline-start: auto;
+  // margin-inline-end: auto;
+  // z-index: 9000;
+  // position: absolute;
+  // top: 920px;
+  // left: 51.9%;
+  // background-color: white;
+  // border: 1px solid #00000030;
+  // border-radius: 13px;
+  // box-shadow: 0 0 5px 5px hsla(0, 0%, 0%, 0.082);
+
+  // }
 }
 .details-page-calender {
   &.main {
@@ -254,10 +299,4 @@
     font-weight: 600;
     text-decoration: none;
   }
-}
-.review-user-img {
-  height: 40px;
-  border-radius: 100%;
-  padding: 5px;
-  border: #222222 1px solid;
 }

@@ -1448,7 +1448,7 @@
       "Handheld shower head"
     ],
     "bathrooms": 1,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "roomType": "Entire home/apt",
     "host": {
       "_id": "622f3401e36c59e6164fab5c",
@@ -2332,7 +2332,7 @@
       "Host greets you"
     ],
     "bathrooms": 1,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "roomType": "Entire home/apt",
     "host": {
       "_id": "622f3405e36c59e6164fb898",
@@ -3403,7 +3403,7 @@
       "Iron"
     ],
     "bathrooms": 1,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "roomType": "Entire home/apt",
     "host": {
       "_id": "622f3405e36c59e6164fb911",
@@ -9063,7 +9063,7 @@
       "Paid parking on premises"
     ],
     "bathrooms": 1,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "roomType": "Entire home/apt",
     "host": {
       "_id": "622f3407e36c59e6164fbd21",
@@ -9758,7 +9758,6 @@
       "Hangers",
       "Hair dryer",
       "Iron",
-
       "Hot water",
       "Bed linens",
       "Extra pillows and blankets",
@@ -9771,7 +9770,7 @@
       "Long term stays allowed"
     ],
     "bathrooms": 1,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "roomType": "Entire home/apt",
     "host": {
       "_id": "622f3407e36c59e6164fbd44",
@@ -10313,7 +10312,7 @@
       "Patio or balcony"
     ],
     "bathrooms": 1,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "roomType": "Entire home/apt",
     "host": {
       "_id": "622f3407e36c59e6164fbe7e",
@@ -12298,7 +12297,7 @@
       "Bidet"
     ],
     "bathrooms": 1,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "roomType": "Entire home/apt",
     "host": {
       "_id": "622f3405e36c59e6164fb98a",
@@ -12782,7 +12781,7 @@
       "Private entrance"
     ],
     "bathrooms": 1,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "roomType": "Entire home/apt",
     "host": {
       "_id": "622f3406e36c59e6164fbc4f",
@@ -13078,7 +13077,7 @@
       "Beachfront"
     ],
     "bathrooms": 1,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "roomType": "Entire home/apt",
     "host": {
       "_id": "622f3402e36c59e6164fac8d",
@@ -13766,7 +13765,7 @@
       "Beachfront"
     ],
     "bathrooms": 1,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "roomType": "Entire home/apt",
     "host": {
       "_id": "622f3406e36c59e6164fb9ed",
@@ -14898,7 +14897,7 @@
       "Iron"
     ],
     "bathrooms": 1,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "roomType": "Entire home/apt",
     "host": {
       "_id": "622f3403e36c59e6164fb142",
@@ -16436,7 +16435,7 @@
       "Wide entryway"
     ],
     "bathrooms": 1,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "roomType": "Entire home/apt",
     "host": {
       "_id": "622f3401e36c59e6164fab98",
@@ -21431,7 +21430,7 @@
       "Bathroom essentials"
     ],
     "bathrooms": 1,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "roomType": "Entire home/apt",
     "host": {
       "_id": "622f3406e36c59e6164fba87",
@@ -22287,7 +22286,7 @@
       "Ethernet connection"
     ],
     "bathrooms": 1,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "roomType": "Entire home/apt",
     "host": {
       "_id": "622f3402e36c59e6164fac2f",
@@ -22548,7 +22547,7 @@
       "Bidet"
     ],
     "bathrooms": 1,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "roomType": "Entire home/apt",
     "host": {
       "_id": "622f3402e36c59e6164fadbd",
@@ -22833,7 +22832,7 @@
       "Well-lit path to entrance"
     ],
     "bathrooms": 1,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "roomType": "Entire home/apt",
     "host": {
       "_id": "622f3402e36c59e6164fadc6",
@@ -23102,7 +23101,7 @@
       "Stove"
     ],
     "bathrooms": 1,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "roomType": "Entire home/apt",
     "host": {
       "_id": "622f3402e36c59e6164fae3f",
@@ -25129,7 +25128,7 @@
       "Long term stays allowed"
     ],
     "bathrooms": 1,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "roomType": "Entire home/apt",
     "host": {
       "_id": "622f3402e36c59e6164fac62",
@@ -25339,7 +25338,7 @@
       "Hot water kettle"
     ],
     "bathrooms": 1,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "roomType": "Entire home/apt",
     "host": {
       "_id": "622f3405e36c59e6164fb885",
@@ -32261,7 +32260,7 @@
       "Long term stays allowed",
       "Host greets you"
     ],
-    "bathrooms": 0,
+    "bathrooms": 1,
     "bedrooms": 2,
     "roomType": "Entire home/apt",
     "host": {
@@ -35042,7 +35041,7 @@
       "Host greets you"
     ],
     "bathrooms": 1,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "roomType": "Entire home/apt",
     "host": {
       "_id": "622f3403e36c59e6164faf9e",
@@ -37573,7 +37572,7 @@
       "Building staff"
     ],
     "bathrooms": 1,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "roomType": "Entire home/apt",
     "host": {
       "_id": "622f3407e36c59e6164fbfef",
@@ -38015,7 +38014,7 @@
       "Hair dryer"
     ],
     "bathrooms": 1,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "roomType": "Entire home/apt",
     "host": {
       "_id": "622f3401e36c59e6164fab68",
@@ -39966,7 +39965,7 @@
       "Beachfront"
     ],
     "bathrooms": 1,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "roomType": "Entire home/apt",
     "host": {
       "_id": "622f3403e36c59e6164faf93",
@@ -49237,7 +49236,7 @@
       "Host greets you"
     ],
     "bathrooms": 1,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "roomType": "Entire home/apt",
     "host": {
       "_id": "622f3406e36c59e6164fba6c",
@@ -50317,7 +50316,7 @@
       "Bed linens"
     ],
     "bathrooms": 1,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "roomType": "Entire home/apt",
     "host": {
       "_id": "622f3404e36c59e6164fb468",
@@ -52399,7 +52398,7 @@
       "Long term stays allowed"
     ],
     "bathrooms": 1,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "roomType": "Entire home/apt",
     "host": {
       "_id": "622f3407e36c59e6164fbd83",
@@ -53127,7 +53126,7 @@
       "Luggage dropoff allowed"
     ],
     "bathrooms": 1,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "roomType": "Entire home/apt",
     "host": {
       "_id": "622f3404e36c59e6164fb5a6",
@@ -54678,7 +54677,7 @@
       "Paid parking on premises"
     ],
     "bathrooms": 1,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "roomType": "Private room",
     "host": {
       "_id": "622f3403e36c59e6164fb127",
@@ -55230,7 +55229,7 @@
       "Long term stays allowed"
     ],
     "bathrooms": 1,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "roomType": "Entire home/apt",
     "host": {
       "_id": "622f3402e36c59e6164faeae",
@@ -57457,7 +57456,7 @@
       "Full kitchen"
     ],
     "bathrooms": 1,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "roomType": "Entire home/apt",
     "host": {
       "_id": "622f3406e36c59e6164fbc06",
@@ -60183,7 +60182,7 @@
       "Long term stays allowed"
     ],
     "bathrooms": 1,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "roomType": "Entire home/apt",
     "host": {
       "_id": "622f3405e36c59e6164fb93b",
@@ -61832,7 +61831,7 @@
       "Extra pillows and blankets"
     ],
     "bathrooms": 1,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "roomType": "Entire home/apt",
     "host": {
       "_id": "622f3402e36c59e6164fad05",
@@ -63353,7 +63352,7 @@
       "Full kitchen"
     ],
     "bathrooms": 1,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "roomType": "Entire home/apt",
     "host": {
       "_id": "622f3407e36c59e6164fbe34",
@@ -67017,7 +67016,7 @@
       "Hair dryer",
       "Iron"
     ],
-    "bathrooms": 0,
+    "bathrooms": 1,
     "bedrooms": 1,
     "roomType": "Private room",
     "host": {
@@ -69315,7 +69314,7 @@
       "Paid parking on premises"
     ],
     "bathrooms": 1,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "roomType": "Entire home/apt",
     "host": {
       "_id": "622f3407e36c59e6164fbfdb",
@@ -73106,7 +73105,7 @@
       "24-hour check-in"
     ],
     "bathrooms": 1,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "roomType": "Entire home/apt",
     "host": {
       "_id": "622f3405e36c59e6164fb913",
@@ -73426,7 +73425,7 @@
       "Other"
     ],
     "bathrooms": 1,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "roomType": "Entire home/apt",
     "host": {
       "_id": "622f3402e36c59e6164fad9d",
@@ -73706,7 +73705,7 @@
       "Long term stays allowed"
     ],
     "bathrooms": 1,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "roomType": "Entire home/apt",
     "host": {
       "_id": "622f3403e36c59e6164fb12c",
@@ -74866,7 +74865,7 @@
       "Bidet"
     ],
     "bathrooms": 1,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "roomType": "Entire home/apt",
     "host": {
       "_id": "622f3402e36c59e6164fad7e",
@@ -75464,7 +75463,7 @@
       "Hair dryer"
     ],
     "bathrooms": 1,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "roomType": "Entire home/apt",
     "host": {
       "_id": "622f3404e36c59e6164fb3d3",
