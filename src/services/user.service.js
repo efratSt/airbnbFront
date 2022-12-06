@@ -50,6 +50,7 @@ function remove(userId) {
 async function update(user) {
     // await storageService.put('user', user)
     user = await httpService.put(`user/${user._id}`, user)
+    console.log('user from user.service ', user);
     // Handle case in which admin updates other user's details
     if (getLoggedinUser()._id === user._id) saveLocalUser(user)
     return user
@@ -88,7 +89,7 @@ async function changeScore(by) {
 
 
 function saveLocalUser(user) {
-    user = {_id: user._id, fullname: user.fullname, imgUrl: user.imgUrl, score: user.score}
+    user = {_id: user._id, fullname: user.fullname, imgUrl: user.imgUrl, isAdmin: user.isAdmin, userName: user.username}
     sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
     return user
 }

@@ -1,10 +1,11 @@
 [
 	{
-		"fullname": "Edgar",
+		"fullname": "Patty And Beckett",
 		"imgUrl": "https://a0.muscache.com/im/pictures/d17abb7c-beb0-4dbe-976e-fc633de18b4b.jpg?aki_policy=profile_small",
 		"username": "75091963",
 		"password": "Edgar",
-		"_id": "622f3401e36c59e6164fab4d"
+		"_id": "622f3403e36c59e6164faf93",
+		"isAdmin": true
 	},
 	{
 		"fullname": "Leo",

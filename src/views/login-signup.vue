@@ -6,6 +6,7 @@
             <h3>
                 Loggedin User:
                 {{ loggedinUser.fullname }}
+                <pre>{{loggedinUser}}</pre>
                 <button @click="doLogout">Logout</button>
             </h3>
         </div>
