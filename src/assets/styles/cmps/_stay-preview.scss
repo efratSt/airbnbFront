@@ -117,10 +117,12 @@
             white-space: nowrap;
             margin-bottom: 7px;
             margin-top: -14px;
+            color: #222222;
 
             span {
-                overflow: clip;
-                color: #000;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
                 font-weight: 600;
             }
 
@@ -136,18 +138,19 @@
             text-overflow: ellipsis;
             width: 100%;
             white-space: nowrap;
+            color: #969a9a;
         }
         .num-of-bads {
             margin-top: 4px;
+            color: #969a9a;
         }
 
         .price-night {
             margin-top: 10px;
+            color: #292222;
 
             .price {
                 font-weight: bold;
-                // font-weight: 900;
-                // font-weight: 200;
             }
         }
     }

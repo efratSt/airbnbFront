@@ -32,6 +32,8 @@ export default {
     },
     created() {
         this.$store.dispatch({ type: 'loadStays' });
+        this.$store.commit({ type: 'setFilterBy', filterBy: null })
+        this.$store.commit({ type: 'setFilterByLabel', filterLabel: "" })
     },
 
     methods: {},

@@ -1,4 +1,5 @@
 import { stayService } from "../services/stay.service.local";
+// import { stayService } from "../services/stay.service";
 
 export function getActionRemoveStay(stayId) {
   return {
@@ -44,16 +45,16 @@ export const stayStore = {
     stays(state) {
       let stayToShow = state.stays;
       if (state.filterLabel) {
-        stayToShow = stayToShow.filter(
-          (stay) => {
-            return stay.type.toLowerCase() === state.filterLabel.toLowerCase()
-          } 
-        );
+        stayToShow = stayToShow.filter((stay) => {
+          return stay.type.toLowerCase() === state.filterLabel.toLowerCase();
+        });
       }
-      if (!state.filterBy) return stayToShow
+      if (!state.filterBy) return stayToShow;
       stayToShow = state.stays.filter((stay) => {
         return (
           stay.loc.country.toLowerCase() ===
+          state.filterBy.location.toLowerCase() ||
+          stay.loc.city.toLowerCase() ===
           state.filterBy.location.toLowerCase()
         );
       });

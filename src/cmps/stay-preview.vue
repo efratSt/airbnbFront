@@ -29,7 +29,7 @@
                     </div>
                     <div>
                         <p class="name">{{ stay.name }}</p>
-                        <p v-if="isExploreShow" class="num-of-bads">{{ stay.capacity / 2 }} bed</p>
+                        <p v-if="isExploreShow" class="num-of-bads">{{ numOfBeds }}</p>
                     </div>
                     <p class="price-night">
                         <span class="price">{{ currencyCode }}{{ stay.price }}
@@ -83,6 +83,10 @@ export default {
                 rateSum += review.rate
             })
             return (rateSum / this.stay.reviews.length).toFixed(2)
+        },
+        numOfBeds() {
+            if ((this.stay.capacity ) > 1) return (this.stay.capacity ) + ' beds'
+            return (this.stay.capacity ) + ' bed'
         }
     },
     methods: {
