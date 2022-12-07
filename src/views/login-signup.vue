@@ -32,7 +32,7 @@
             <form @submit.prevent="doSignup">
                 <h2>Signup</h2>
                 <input type="text" v-model="signupCred.fullname" placeholder="Your full name" />
-                <input type="text" v-model="signupCred.password" placeholder="Password" />
+                <input type="password" v-model="signupCred.password" placeholder="Password" />
                 <input type="text" v-model="signupCred.username" placeholder="Username" />
                 <button>Signup</button>
             </form>
@@ -58,10 +58,10 @@ export default {
             msg: '',
             loginCred: { username: '75091963', password: 'Edgar' },
             signupCred: {
-                username: '75091963',
-                password: 'Edgar',
-                fullname: 'Edgar',
-                imgUrl: 'https://www.history.com/.image/c_fit%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_620/MTU3OTIzNTc4NTMxNDg5NDI2/how-did-edgar-allan-poe-dies-featured-photo.jpg',
+                username: '',
+                password: '',
+                fullname: '',
+                imgUrl: 'https://xsgames.co/randomusers/avatar.php?g=female',
             },
         };
     },
