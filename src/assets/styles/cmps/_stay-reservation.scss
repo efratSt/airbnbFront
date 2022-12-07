@@ -11,8 +11,14 @@
   'Helvetica Neue', sans-serif;
   position: sticky;
   top: 100px;
-  @media (min-width: 1080px) {
-     width: 320px;
+  @media (max-width: 1055px) {
+    width: 320px;
+     }
+  @media (min-width: 1055px) {
+      width: 344px;
+       }
+  @media (min-width: 1120px) {
+     width: 373px;
       }
     
 }
