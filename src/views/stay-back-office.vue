@@ -16,7 +16,10 @@
                         <th>Status</th>
                         <th>Actions</th>
                     </tr>
-                    <tr v-for="order in orderByHost" :key="orderByHost._id">
+                    <tr
+                        v-for="(order, idx) in orderByHost"
+                        :key="orderByHost._id"
+                    >
                         <td>12/07/2022</td>
                         <td>Puki ben david</td>
                         <td>luki house</td>
@@ -29,12 +32,12 @@
                         </td>
                         <td>
                             <button
-                                @click="changeStatus('Approved')"
+                                @click="changeStatus('Approved', idx)"
                                 class="approve"
                             >
                                 Approved
                             </button>
-                            <button @click="changeStatus('Rejected')">
+                            <button @click="changeStatus('Rejected', idx)">
                                 Reject
                             </button>
                         </td>
@@ -119,7 +122,6 @@ import awesomeChart from '../cmps/awesome-chart.vue'
 export default {
     data() {
         return {
-            currStatus: 'Pending',
             isAddModalOpen: false,
             orderByHost: [],
 
@@ -183,17 +185,16 @@ export default {
             this.isAddModalOpen = true
         },
 
-        changeStatus(status) {
-            this.currStatus = status
+        changeStatus(status, idx) {
+            this.orderByHost[idx].status = status
         },
     },
 
-    computed: {
-        setStatusStyle() {
-            if (this.currStatus === 'Pending') return 'Pending'
-            if (this.currStatus === 'Rejected') return 'red'
-            return 'green'
-        },
+    computed: {},
+    setStatusStyle(idx) {
+        // if (this.orderByHost[idx].status === 'Pending') return 'Pending'
+        // if (this.orderByHost[idx].status === 'Rejected') return 'red'
+        // return 'green'
     },
 
     components: {
