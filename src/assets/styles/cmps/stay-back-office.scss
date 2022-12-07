@@ -136,7 +136,7 @@
         width: 100%;
         border-collapse: collapse;
         tr {
-            text-align: center;
+            text-align: left;
             width: 100%;
             th {
                 font-size: 16px;
@@ -154,6 +154,10 @@
                 }
                 &.green {
                     color: green;
+                }
+                img {
+                    width: 30px;
+                    height: 30px;
                 }
                 button {
                     background-color: $clr-red;
