@@ -223,7 +223,7 @@ export default {
         },
 
         searchStay() {
-            // console.log('from search modal' ,this.filterBy);
+            this.$emit('closeScreen')
             this.$store.commit({
                 type: 'setFilterBy',
                 filterBy: { ...this.filterBy },

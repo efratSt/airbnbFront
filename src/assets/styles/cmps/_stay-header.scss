@@ -106,3 +106,9 @@ header {
         }
     }
 }
+
+@media (max-width: 950px) {
+    .link-back {
+        display: none;
+    }
+}

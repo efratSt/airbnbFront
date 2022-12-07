@@ -1,6 +1,6 @@
 <template>
     <section class="stay-back-office">
-        <h3>My back office</h3>
+        <h3>My bnd details</h3>
         <button @click="openAddModal" class="add-stay-btn">Add a stay</button>
         <div class="main-back-office">
             <div class="orders-list">
@@ -24,7 +24,9 @@
                         <td>4</td>
                         <td>$60</td>
                         <td>$240</td>
-                        <td>{{ currStatus }}</td>
+                        <td class="pending" :class="setStatusStyle">
+                            {{ currStatus }}
+                        </td>
                         <td>
                             <button
                                 @click="changeStatus('Approved')"
@@ -173,6 +175,14 @@ export default {
 
         changeStatus(status) {
             this.currStatus = status
+        },
+    },
+
+    computed: {
+        setStatusStyle() {
+            if (this.currStatus === 'Pending') return 'Pending'
+            if (this.currStatus === 'Rejected') return 'red'
+            return 'green'
         },
     },
 
