@@ -37,10 +37,9 @@
                     </svg>
                     <guestsModal v-click-outside="toggleGuestsModal"  @click.stop="" v-if="guestsModalOpen" @counterChanged="counterChanged" :class="[{'details-page':guestsModalOpen }]"/>
                 </div>
-            </div>
-            
+            </div> 
         </section>
-        <div @click="sendReservation" class="btn-container">
+        <div @click="setReservation" class="btn-container">
             <div class="btn-cell1"></div>
             <div class="btn-cell1"></div>
             <div class="btn-cell1"></div>
@@ -150,7 +149,7 @@
             <div v-if="this.range.start && this.range.end" class="reservation-price-container">
                 <div class="flex space-between">
                     <div class="reservation-price">
-                        <span>{{currencyCode}}{{stay.price}}x{{stayDuration}} nights</span>
+                        <span>{{currencyCode}}{{stay.price}} x {{stayDuration}} nights</span>
                     </div>
                     <div>
                         <span class="reservation-price-summary">{{currencyCode}}{{totalStayPrice.toLocaleString()}}</span>
@@ -173,7 +172,6 @@
                 </div>
             </div> 
             </div>
-
     </div>
 </template>
 <script>
@@ -194,7 +192,6 @@ import guestsModal from '../cmps/stay-guests-modal.vue'
             duration: null,
             guestsModalOpen: false,
             totalGuests: 1,
-            
         }
     },
     methods :{
@@ -210,18 +207,31 @@ import guestsModal from '../cmps/stay-guests-modal.vue'
         counterChanged(totalGuests) {
             this.totalGuests = totalGuests;
         },
-        sendReservation(){
+        setReservation(){
             if (this.range.start && this.range.end) {
-            this.reservationStatus = 'confirmed'
-            let reservation = {
-                stay: this.stay,
-                range: this.range,
+            this.reservationStatus = 'confirm-send'
+            const order = {
+                hostId: this.stay.host._id,
+                createdAt: Date.now(),
+                price: this.totalStayPrice,
+                stay:{
+                    stayId: this.stay._id,
+                    name: this.stay.name,
+                },
+                startDate: this.range.start,
+                endDate: this.range.end,
+                guests: this.totalGuests,
+                // range: this.range,
                 duration: this.duration,
-                price: this.totalStayPrice
+                mesgs:[],
+                status: `pending`
             } 
-            console.log(reservation)
+            this.sendOrder(order)
+            }
+            },
+            async sendOrder(order){
+                await this.$store.dispatch({ type: 'addOrder', order })
             } 
-    }
     },
     computed: {
         guestDisplay(){
@@ -233,7 +243,7 @@ import guestsModal from '../cmps/stay-guests-modal.vue'
             } else if (this.reservationStatus === null && this.range.start && this.range.end) {
                 return 'Reserve'
             }
-            else if( this.reservationStatus === 'confirmed'){
+            else if( this.reservationStatus === 'confirm-send'){
                 return 'Reserved'
             }
         },
@@ -243,8 +253,8 @@ import guestsModal from '../cmps/stay-guests-modal.vue'
             if(this.stay.currencyCode === 'ILS') return '₪'
         },
         totalStayPrice(){
-            this.stayPrice = (this.duration) * (this.stay.price)
-            return this.stayPrice
+            this.stayPrice =( (this.duration) * (this.stay.price) )
+            return (this.stayPrice)
         },
         stayRate(){
             let rateSum = 0
@@ -254,7 +264,7 @@ import guestsModal from '../cmps/stay-guests-modal.vue'
         },
         stayDuration(){
             if(this.range.start && this.range.end)
-            this.duration = (((this.range.end-this.range.start) / (1000 * 3600 * 24)))
+            this.duration = (((this.range.end-this.range.start) / (1000 * 3600 * 24))).toFixed(0)
             return this.duration
         },
         totalPrice(){
