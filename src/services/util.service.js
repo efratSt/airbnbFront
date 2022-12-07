@@ -8,17 +8,24 @@ export const utilService = {
   loadFromStorage,
   timeSince,
   randomDate,
-  normalizeData
+  normalizeData,
 };
 
 function normalizeData(stays) {
-  stays.forEach((stay) => {
-    stay.currencyCode = "USD";
-    stay.reviews.forEach(
+  if (Array.isArray(stays)) {
+    stays.forEach((stay) => {
+      stay.currencyCode = "USD";
+      stay.reviews.forEach(
+        (review) => (review.rate = utilService.getRandomIntInclusive(3, 5))
+      );
+      return stays;
+    });
+  } else {
+    stays.currencyCode = "USD";
+    stays.reviews.forEach(
       (review) => (review.rate = utilService.getRandomIntInclusive(3, 5))
     );
-    return stays;
-  });
+  }
   return stays;
 }
 
@@ -138,12 +145,11 @@ function timeSince(date) {
   return Math.floor(seconds) + " seconds";
 }
 
-
 function randomDate() {
-    var year = getRandomIntInclusive(2021, 2022)
-    var month = getRandomIntInclusive(1, 11)
-    var day = getRandomIntInclusive(1, 30)
-    return new Date( year + "-" + month + "-" + day)
+  var year = getRandomIntInclusive(2021, 2022);
+  var month = getRandomIntInclusive(1, 11);
+  var day = getRandomIntInclusive(1, 30);
+  return new Date(year + "-" + month + "-" + day);
 }
 
 // function timeSince(date) {

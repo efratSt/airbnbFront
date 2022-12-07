@@ -32,14 +32,12 @@
       text-decoration: underline;
     }
   }
-  @media (max-width: 800px)  {
+  @media (max-width: 800px) {
     flex-direction: column;
   }
-   
 }
 
 .img-container {
-  
   margin-bottom: 3rem;
   display: grid;
   gap: 8px;
@@ -49,40 +47,40 @@
     'area1  area2 area3'
     'area1  area4  area5';
 
-    .grid-item {
-      width: 100%;
-      object-fit: cover;
-      height: 100%;
-    }
-    
-    .img-1 {
-      border-top-left-radius: 12px;
-      border-bottom-left-radius: 12px;
-      grid-area: area1;
-    }
-    
-    .img-2 {
-      grid-area: area2;
-    }
-    
-    .img-3 {
-      grid-area: area3;
-      border-top-right-radius: 12px;
-    }
-    .img-4 {
-      grid-area: area4;
-    }
-    .img-5 {
-      grid-area: area5;
-      border-bottom-right-radius: 12px;
-    }
-    
-  @media (max-width: 800px)  {
+  .grid-item {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+  }
+
+  .img-1 {
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    grid-area: area1;
+  }
+
+  .img-2 {
+    grid-area: area2;
+  }
+
+  .img-3 {
+    grid-area: area3;
+    border-top-right-radius: 12px;
+  }
+  .img-4 {
+    grid-area: area4;
+  }
+  .img-5 {
+    grid-area: area5;
+    border-bottom-right-radius: 12px;
+  }
+
+  @media (max-width: 800px) {
     display: block;
 
     .img-1 {
       border-top-left-radius: unset;
-      border-bottom-left-radius: unset;     
+      border-bottom-left-radius: unset;
     }
     .img-2 {
       display: none;
@@ -97,7 +95,6 @@
     .img-5 {
       display: none;
     }
-    
   }
 
   @media (max-width: 1130px) and (min-width: 800px) {
@@ -192,12 +189,13 @@
 }
 
 .location-details h4 {
+  font-size: 14px;
   font-weight: 500;
 }
 .stay-secondary.header {
   i {
     margin-right: 0.33rem;
-    font-size: 16px;
+    font-size: 14px;
   }
   .fa-solid.saved {
     color: #ff385c;
@@ -212,6 +210,9 @@
   &.button:hover {
     cursor: pointer;
     background-color: #f7f7f7;
+  }
+  .reviews-link {
+      font-size: 14px;
   }
 }
 
@@ -255,6 +256,9 @@
   padding-bottom: 2rem;
   padding-top: 2rem;
   h2 {
+    font-size: 22px;
+    letter-spacing: 0.25px;
+    padding: 0;
     font-weight: 600;
   }
 
@@ -267,7 +271,7 @@
       margin-right: 10px;
       height: 40px;
       border-radius: 100%;
-      padding: 5px;
+      padding: 1px;
       border: #222222 1px solid;
     }
     .review-title {
@@ -347,6 +351,20 @@
   a {
     color: #222222;
     font-weight: 600;
+    font-size: 14px;
     text-decoration: none;
   }
+}
+.superhost {
+  font-size: 14px;
+}
+.superhost-badge {
+  margin-bottom: -2px;
+  padding-top: 2px;
+  line-break: strict;
+  display: inline;
+  height: 16px;
+  width: 16px;
+  fill: #000000;
+  color: #222222 !important ;
 }

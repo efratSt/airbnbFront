@@ -1,5 +1,5 @@
-import { stayService } from "../services/stay.service.local";
-// import { stayService } from "../services/stay.service";
+// import { stayService } from "../services/stay.service.local";
+import { stayService } from "../services/stay.service";
 
 import { utilService } from "../services/util.service";
 
@@ -88,6 +88,7 @@ export const stayStore = {
     },
     setStays(state, { stays }) {
       state.stays = stays;
+      console.log(state.stays[0]);
     },
     addStay(state, { stay }) {
       state.stays.push(stay);
@@ -159,7 +160,10 @@ export const stayStore = {
     },
     async getStayById(context, { stayId }) {
       try {
-        return await stayService.getById(stayId);
+        let stay = await stayService.getById(stayId);
+        
+        return utilService.normalizeData(stay)
+        // return await stayService.getById(stayId);
       } catch (err) {
         console.log(err);
       }

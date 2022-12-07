@@ -19,6 +19,9 @@ window.cs = stayService
 
 
 async function query(filterBy = { txt: '', price: 0 }) {
+    // let stays = httpService.get(STORAGE_KEY, filterBy)
+    // stays = utilService.normalizeData(stays)
+    // return stay
     return httpService.get(STORAGE_KEY, filterBy)
 
     // var stays = await storageService.query(STORAGE_KEY)

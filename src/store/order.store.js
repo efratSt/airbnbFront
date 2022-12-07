@@ -23,19 +23,21 @@ export const orderStore = {
   },
   actions: {
     async addOrder(context, { order }) {
+        // console.log('order: ', order);
       try {
         order = await orderService.add(order);
         context.commit({ type: "addOrder", order });
-        context.dispatch({ type: "increaseScore" });
+        // context.dispatch({ type: "increaseScore" });
+
         return order;
       } catch (err) {
         console.log("orderStore: Error in addOrder", err);
         throw err;
       }
     },
-    async loadOrders(context) {
+    async loadOrders(context, {filterBy}) {
       try {
-        const orders = await orderService.query();
+        const orders = await orderService.query(filterBy);
         context.commit({ type: "setOrders", orders });
       } catch (err) {
         console.log("orderStore: Error in loadOrders", err);

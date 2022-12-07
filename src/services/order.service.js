@@ -31,8 +31,7 @@ export const orderService = {
 
 
 function query(filterBy) {
-  // var queryStr = (!filterBy) ? '' : `?name=${filterBy.name}&sort=anaAref`
-  return httpService.get(`order${queryStr}`)
+  return httpService.get(`order`, filterBy)
   // return storageService.query('order')
 }
 
@@ -42,11 +41,13 @@ async function remove(orderId) {
 
 }
 async function add(order) {
-  storageService.post(ORDER_DB , order)
-  const addedOrder = await httpService.post(`order`, order)
+  // storageService.post(ORDER_DB , order)
+  const addedOrder = await httpService.post(ORDER_DB, order)
 
-  order.byUser = userService.getLoggedinUser()
-  order.aboutUser = await userService.getById(order.aboutUserId)
+  // order.byUser = userService.getLoggedinUser()
+  // order.aboutUser = await userService.getById(order.aboutUserId)
+
+
   // const addedOrder = await storageService.post('order', order)
 
   return addedOrder
