@@ -88,7 +88,6 @@ export const stayStore = {
     },
     setStays(state, { stays }) {
       state.stays = stays;
-      console.log(state.stays[0]);
     },
     addStay(state, { stay }) {
       state.stays.push(stay);

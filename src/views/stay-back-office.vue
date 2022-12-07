@@ -121,6 +121,7 @@ export default {
         return {
             currStatus: 'Pending',
             isAddModalOpen: false,
+            orderByHost: [],
 
             testData1: {
                 labels: [
@@ -173,6 +174,7 @@ export default {
         console.log('from back office', this.$route)
         var hostId = this.$store.getters.loggedinUser._id
         this.$store.dispatch({type: 'loadOrders', filterBy: {hostId}})
+        this.orderByHost = this.$store.getters.orders
     },
 
     methods: {
