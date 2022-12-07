@@ -1,4 +1,4 @@
-import { orderService } from "../services/order.service";
+import { orderService } from "../services/order.service"
 
 export const orderStore = {
   state: {
@@ -6,52 +6,52 @@ export const orderStore = {
   },
   getters: {
     orders({ orders }) {
-        console.log('all orders from storeOder: ', orders);
-      return orders;
+        console.log('all orders from storeOder: ', orders)
+      return orders
     },
   },
   mutations: {
     setOrders(state, { orders }) {
-      state.orders = orders;
+      state.orders = orders
     },
     addOrder(state, { order }) {
-      state.orders.push(order);
+      state.orders.push(order)
     },
     removeOrder(state, { orderId }) {
-      state.orders = state.orders.filter((order) => order._id !== orderId);
+      state.orders = state.orders.filter((order) => order._id !== orderId)
     },
   },
   actions: {
     async addOrder(context, { order }) {
-        // console.log('order: ', order);
+        // console.log('order: ', order)
       try {
-        order = await orderService.add(order);
-        context.commit({ type: "addOrder", order });
-        // context.dispatch({ type: "increaseScore" });
+        order = await orderService.add(order)
+        context.commit({ type: "addOrder", order })
+        // context.dispatch({ type: "increaseScore" })
 
-        return order;
+        return order
       } catch (err) {
-        console.log("orderStore: Error in addOrder", err);
-        throw err;
+        console.log("orderStore: Error in addOrder", err)
+        throw err
       }
     },
     async loadOrders(context, {filterBy}) {
       try {
-        const orders = await orderService.query(filterBy);
-        context.commit({ type: "setOrders", orders });
+        const orders = await orderService.query(filterBy)
+        context.commit({ type: "setOrders", orders })
       } catch (err) {
-        console.log("orderStore: Error in loadOrders", err);
-        throw err;
+        console.log("orderStore: Error in loadOrders", err)
+        throw err
       }
     },
     async removeOrder(context, { orderId }) {
       try {
-        await orderService.remove(orderId);
-        context.commit({ type: "removeOrder", orderId });
+        await orderService.remove(orderId)
+        context.commit({ type: "removeOrder", orderId })
       } catch (err) {
-        console.log("orderStore: Error in removeOrder", err);
-        throw err;
+        console.log("orderStore: Error in removeOrder", err)
+        throw err
       }
     },
   },
-};
+}

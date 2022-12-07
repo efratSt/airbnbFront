@@ -232,3 +232,10 @@ span {
   border-top:  $clr7 1px solid;
   font-weight: 600;
 }
+.input-container{
+  width: 46px;
+  &.wide{
+    width: 56px;
+  }
+
+}

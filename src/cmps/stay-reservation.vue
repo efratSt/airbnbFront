@@ -41,9 +41,9 @@
             <div>
                 <div @click="toggleGuestsModal" class="guest-input">
                     <label>GUESTS</label>
-                    <div class="input-container flex">
+                    <div class="input-container flex" :class="[{ wide : totalGuests > 9}]">
                         <input  :value="totalGuests">
-                        <span>{{guestDisplay}}</span>
+                        <span class="guests-display"> {{guestDisplay}}</span>
                     </div>
                     <svg viewBox="0 0 320 512" width="100" title="angle-down">
                         <path
