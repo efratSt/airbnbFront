@@ -29,7 +29,8 @@
                     </div>
                     <div>
                         <p class="name">{{ stay.name }}</p>
-                        <p v-if="isExploreShow" class="num-of-bads">{{ numOfBeds }}</p>
+                        <p v-if="isExploreShow" class="num-of-bads"> {{ Math.ceil(stay.capacity / 2) }} &nbsp{{ numOfBeds }}
+                        </p>
                     </div>
                     <p class="price-night">
                         <span class="price">{{ currencyCode }}{{ stay.price }}
@@ -75,7 +76,7 @@ export default {
             return bads + ' bad'
         },
         isExploreShow() {
-            return  (this.$route.name === 'stay-explore') 
+            return (this.$route.name === 'stay-explore')
         },
         stayRate() {
             let rateSum = 0
@@ -85,8 +86,8 @@ export default {
             return (rateSum / this.stay.reviews.length).toFixed(2)
         },
         numOfBeds() {
-            if ((this.stay.capacity ) > 1) return (this.stay.capacity ) + ' beds'
-            return (this.stay.capacity ) + ' bed'
+            if (Math.ceil(this.stay.capacity / 2) === 1) return 'bed'
+            return 'beds'
         }
     },
     methods: {
