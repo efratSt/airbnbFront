@@ -26,7 +26,7 @@ export const orderStore = {
       try {
         order = await orderService.add(order);
         context.commit({ type: "addOrder", order });
-        context.dispatch({ type: "increaseScore" });
+        // context.dispatch({ type: "increaseScore" });
 
         return order;
       } catch (err) {
@@ -34,9 +34,9 @@ export const orderStore = {
         throw err;
       }
     },
-    async loadOrders(context) {
+    async loadOrders(context, {filterBy}) {
       try {
-        const orders = await orderService.query();
+        const orders = await orderService.query(filterBy);
         context.commit({ type: "setOrders", orders });
       } catch (err) {
         console.log("orderStore: Error in loadOrders", err);

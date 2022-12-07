@@ -134,6 +134,8 @@ export default {
 
     created() {
         console.log('from back office', this.$route)
+        var hostId = this.$store.getters.loggedinUser._id
+        this.$store.dispatch({type: 'loadOrders', filterBy: {hostId}})
     },
 
     methods: {

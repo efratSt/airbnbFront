@@ -31,8 +31,7 @@ export const orderService = {
 
 
 function query(filterBy) {
-  // var queryStr = (!filterBy) ? '' : `?name=${filterBy.name}&sort=anaAref`
-  return httpService.get(`order${queryStr}`)
+  return httpService.get(`order`, filterBy)
   // return storageService.query('order')
 }
 
