@@ -24,60 +24,31 @@
                         <td>4</td>
                         <td>$60</td>
                         <td>$240</td>
-                        <td>Pending</td>
+                        <td>{{ currStatus }}</td>
                         <td>
-                            <button class="approve">Approved</button>
-                            <button>Reject</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>12/07/2022</td>
-                        <td>muki ben david</td>
-                        <td>nuki house</td>
-                        <td>12/09/2022 - 12/13/2022</td>
-                        <td>4</td>
-                        <td>$60</td>
-                        <td>$240</td>
-                        <td>Approved</td>
-                        <td>
-                            <button class="approve">Approved</button>
-                            <button>Reject</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>12/07/2022</td>
-                        <td>Puki ben david</td>
-                        <td>muki house</td>
-                        <td>12/09/2022 - 12/13/2022</td>
-                        <td>4</td>
-                        <td>$60</td>
-                        <td>$240</td>
-                        <td>Approved</td>
-                        <td>
-                            <button class="approve">Approved</button>
-                            <button>Reject</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>12/07/2022</td>
-                        <td>Puki ben david</td>
-                        <td>muki house</td>
-                        <td>12/09/2022 - 12/13/2022</td>
-                        <td>4</td>
-                        <td>$60</td>
-                        <td>$240</td>
-                        <td>Approved</td>
-                        <td>
-                            <button class="approve">Approved</button>
-                            <button>Reject</button>
+                            <button
+                                @click="changeStatus('Approved')"
+                                class="approve"
+                            >
+                                Approved
+                            </button>
+                            <button @click="changeStatus('Rejected')">
+                                Reject
+                            </button>
                         </td>
                     </tr>
                 </table>
             </div>
             <div class="stats stats-charts">
-                <div class="chart stats-item">chart</div>
+                <div class="chart stats-item">
+                    <h4>2021</h4>
+                    <awesome-chart :data="testData1" />
+                </div>
 
-                <div class="by-nights stats-item">by-nights</div>
+                <div class="by-nights stats-item">
+                    <h4>2022</h4>
+                    <awesome-chart :data="testData2" />
+                </div>
             </div>
             <div class="stats-info stats">
                 <div class="total-rev stats-item">
@@ -98,7 +69,7 @@
                     </div>
                 </div>
                 <div class="orders stats-item">
-                    <h4>Orders management</h4>
+                    <h4>2022</h4>
                     <div class="orders-stats stats-info">
                         <div class="orders-item">
                             <span>Cancellations</span>
@@ -111,6 +82,19 @@
                         <div class="orders-item">
                             <span>Pending now</span>
                             <span>1</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="orders stats-item">
+                    <h4>2021</h4>
+                    <div class="orders-stats stats-info">
+                        <div class="orders-item">
+                            <span>Cancellations</span>
+                            <span class="order-red">8.33%</span>
+                        </div>
+                        <div class="orders-item">
+                            <span>Average revenue</span>
+                            <span class="order-green">$3,875</span>
                         </div>
                     </div>
                 </div>
@@ -129,20 +113,72 @@
 
 <script>
 import stayAdd from '../cmps/stay-add.vue'
+import awesomeChart from '../cmps/awesome-chart.vue'
 export default {
     data() {
         return {
+            currStatus: 'Pending',
             isAddModalOpen: false,
+
+            testData1: {
+                labels: [
+                    'August',
+                    'September',
+                    'October',
+                    'November',
+                    'December',
+                ],
+                datasets: [
+                    {
+                        data: [350, 400, 600, 700, 500],
+                        backgroundColor: [
+                            'red',
+                            '#77CEFF',
+                            '#0079AF',
+                            '#123E6B',
+                            '#97B0C4',
+                            '#A5C8ED',
+                        ],
+                    },
+                ],
+            },
+            testData2: {
+                labels: [
+                    'August',
+                    'September',
+                    'October',
+                    'November',
+                    'December',
+                ],
+                datasets: [
+                    {
+                        data: [150, 500, 700, 100, 200],
+                        backgroundColor: [
+                            'red',
+                            '#77CEFF',
+                            '#0079AF',
+                            '#123E6B',
+                            '#97B0C4',
+                            '#A5C8ED',
+                        ],
+                    },
+                ],
+            },
         }
     },
     methods: {
         openAddModal() {
             this.isAddModalOpen = true
         },
+
+        changeStatus(status) {
+            this.currStatus = status
+        },
     },
 
     components: {
         stayAdd,
+        awesomeChart,
     },
 }
 </script>
