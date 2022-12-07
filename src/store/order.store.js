@@ -6,8 +6,7 @@ export const orderStore = {
   },
   getters: {
     orders({ orders }) {
-        console.log('all orders from storeOder: ', orders)
-      return orders
+      return orders;
     },
   },
   mutations: {

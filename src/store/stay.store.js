@@ -87,8 +87,7 @@ export const stayStore = {
       state.filterLabel = label
     },
     setStays(state, { stays }) {
-      state.stays = stays
-      console.log(state.stays[0])
+      state.stays = stays;
     },
     addStay(state, { stay }) {
       state.stays.push(stay)

@@ -4,25 +4,22 @@
 
         <div class="loggedin-user" v-if="loggedinUser">
             <h3>
-                Loggedin User:
+                <!-- Loggedin User:
                 {{ loggedinUser.fullname }}
-                <pre>{{loggedinUser}}</pre>
-                <button @click="doLogout">Logout</button>
+                <pre>{{loggedinUser}}</pre> -->
+                Welcome {{ loggedinUser.fullname }}
             </h3>
+            <button @click="doLogout">Logout</button>
         </div>
         <div v-else>
             <h2>Login</h2>
             <form @submit.prevent="doLogin">
-                <select v-model="loginCred.username">
-                    <option value="">Select User</option>
-                    <option
-                        v-for="user in users"
-                        :key="user._id"
-                        :value="user.username"
-                    >
+                <input v-model="loginCred.username" type="text" />
+                <input v-model="loginCred.password" type="password" />
+                    <!-- <option value="">Select User</option>
+                    <option v-for="user in users" :key="user._id" :value="user.username">
                         {{ user.fullname }}
-                    </option>
-                </select>
+                    </option> -->
                 <!-- <input type="text" v-model="loginCred.username" placeholder="User name" />
         <input
           type="text"
@@ -34,26 +31,14 @@
             <p class="mute">user1 or admin, pass:123</p>
             <form @submit.prevent="doSignup">
                 <h2>Signup</h2>
-                <input
-                    type="text"
-                    v-model="signupCred.fullname"
-                    placeholder="Your full name"
-                />
-                <input
-                    type="text"
-                    v-model="signupCred.password"
-                    placeholder="Password"
-                />
-                <input
-                    type="text"
-                    v-model="signupCred.username"
-                    placeholder="Username"
-                />
+                <input type="text" v-model="signupCred.fullname" placeholder="Your full name" />
+                <input type="text" v-model="signupCred.password" placeholder="Password" />
+                <input type="text" v-model="signupCred.username" placeholder="Username" />
                 <button>Signup</button>
             </form>
         </div>
         <hr />
-        <details>
+        <!-- <details>
             <summary>Admin Section</summary>
             <ul>
                 <li v-for="user in users" :key="user._id">
@@ -61,7 +46,7 @@
                     <button @click="removeUser(user._id)">x</button>
                 </li>
             </ul>
-        </details>
+        </details> -->
     </div>
 </template>
 
@@ -71,12 +56,12 @@ export default {
     data() {
         return {
             msg: '',
-            loginCred: { username: 'user1', password: '123' },
+            loginCred: { username: '75091963', password: 'Edgar' },
             signupCred: {
-                username: '',
-                password: '',
-                fullname: '',
-                imgUrl: '',
+                username: '75091963',
+                password: 'Edgar',
+                fullname: 'Edgar',
+                imgUrl: 'https://a0.muscache.com/im/pictures/d17abb7c-beb0-4dbe-976e-fc633de18b…',
             },
         };
     },
