@@ -24,7 +24,7 @@ export default {
     },
     computed: {
         notMain() {
-            if (this.$route.path === '/') {
+            if (this.$route.path === '/' || this.$route.path === 'backoffice' ) {
           
                 return true
             }else return false;
