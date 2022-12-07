@@ -123,6 +123,7 @@
     table {
         width: 100%;
         text-align: left;
+        border-collapse: collapse;
         tr {
             text-align: center;
             width: 100%;
@@ -131,6 +132,7 @@
             }
             td {
                 font-size: 14px;
+                border-bottom: 1px solid lightgrey;
                 button {
                     background-color: $clr-red;
                     border-radius: 5px;
