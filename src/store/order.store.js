@@ -27,7 +27,6 @@ export const orderStore = {
         order = await orderService.add(order);
         context.commit({ type: "addOrder", order });
         context.dispatch({ type: "increaseScore" });
-
         return order;
       } catch (err) {
         console.log("orderStore: Error in addOrder", err);

@@ -16,22 +16,7 @@
     margin: 0 0 0.6em;
     line-height: 1;
   }
-  .stay-details {
-    h2 {
-      font-size: 26px;
-      letter-spacing: 0.28px;
-      color: #222222;
-      font-family: airbnb-book;
-      font-weight: 600;
-    }
-    .fa-star {
-      font-size: 14px;
-      margin-inline-end: 1px;
-    }
-    a {
-      text-decoration: underline;
-    }
-  }
+
 }
 
 .img-container {
@@ -96,7 +81,7 @@
     
   }
 
-  @media (max-width: 950px) and (min-width: 820px) {
+  @media (max-width: 1130px) and (min-width: 800px) {
     grid-template-columns: 2.05fr 1fr 1fr;
     grid-template-rows: 200px 200px;
   }
@@ -242,6 +227,26 @@
     height: 56px;
     border-radius: 100%;
   }
+  .stay-details {
+    h2 {
+      font-size: 26px;
+      letter-spacing: 0.28px;
+      color: #222222;
+      font-family: airbnb-book;
+      font-weight: 600;
+    }
+    .fa-star {
+      font-size: 14px;
+      margin-inline-end: 1px;
+    }
+    a {
+      text-decoration: underline;
+    }
+  }
+  @media (max-width: 800px)  {
+    flex-direction: column;
+  }
+   
 }
 .reservation-cmp-container {
   position: sticky;

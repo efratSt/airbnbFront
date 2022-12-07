@@ -4,7 +4,7 @@ import {userService} from './user.service'
 
 import { store } from '../store/store'
 import { socketService, SOCKET_EVENT_REVIEW_ADDED, SOCKET_EVENT_REVIEW_ABOUT_YOU } from './socket.service'
-
+const ORDER_DB = 'order'
 
 ;(() => {
 
@@ -42,7 +42,8 @@ async function remove(orderId) {
 
 }
 async function add(order) {
-  const addedOrder = await httpService.post(`order`, order)
+  storageService.post(ORDER_DB , order)
+  // const addedOrder = await httpService.post(`order`, order)
 
   order.byUser = userService.getLoggedinUser()
   order.aboutUser = await userService.getById(order.aboutUserId)

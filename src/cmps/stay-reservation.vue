@@ -39,7 +39,7 @@
                 </div>
             </div> 
         </section>
-        <div @click="sendReservation" class="btn-container">
+        <div @click="setReservation" class="btn-container">
             <div class="btn-cell1"></div>
             <div class="btn-cell1"></div>
             <div class="btn-cell1"></div>
@@ -192,7 +192,6 @@ import guestsModal from '../cmps/stay-guests-modal.vue'
             duration: null,
             guestsModalOpen: false,
             totalGuests: 1,
-            
         }
     },
     methods :{
@@ -208,18 +207,31 @@ import guestsModal from '../cmps/stay-guests-modal.vue'
         counterChanged(totalGuests) {
             this.totalGuests = totalGuests;
         },
-        sendReservation(){
+        setReservation(){
             if (this.range.start && this.range.end) {
-            this.reservationStatus = 'confirmed'
-            let reservation = {
-                stay: this.stay,
-                range: this.range,
+            this.reservationStatus = 'confirm-send'
+            const order = {
+                hostId: this.stay.host._id,
+                createdAt: Date.now(),
+                price: this.totalStayPrice,
+                stay:{
+                    stayId: this.stay._id,
+                    name: this.stay.name,
+                },
+                startDate: this.range.start,
+                endDate: this.range.end,
+                guests: this.totalGuests,
+                // range: this.range,
                 duration: this.duration,
-                price: this.totalStayPrice
+                mesgs:[],
+                status: `pending`
             } 
-            console.log(reservation)
+            this.sendOrder(order)
+            }
+            },
+            async sendOrder(order){
+                await this.$store.dispatch({ type: 'addOrder', order })
             } 
-    }
     },
     computed: {
         guestDisplay(){
@@ -231,7 +243,7 @@ import guestsModal from '../cmps/stay-guests-modal.vue'
             } else if (this.reservationStatus === null && this.range.start && this.range.end) {
                 return 'Reserve'
             }
-            else if( this.reservationStatus === 'confirmed'){
+            else if( this.reservationStatus === 'confirm-send'){
                 return 'Reserved'
             }
         },
