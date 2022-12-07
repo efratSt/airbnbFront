@@ -24,7 +24,8 @@ export default {
     },
     computed: {
         notMain() {
-            if (this.$route.path === '/' || this.$route.path === 'backoffice' ) {
+            console.log(this.$route)
+            if (this.$route.path === '/' || this.$route.path === '/backoffice' ) {
           
                 return true
             }else return false;
