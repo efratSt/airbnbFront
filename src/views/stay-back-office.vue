@@ -16,16 +16,16 @@
                         <th>Status</th>
                         <th>Actions</th>
                     </tr>
-                    <tr>
+                    <tr v-for="order in orderByHost" :key="orderByHost._id">
                         <td>12/07/2022</td>
                         <td>Puki ben david</td>
                         <td>luki house</td>
                         <td>12/09/2022 - 12/13/2022</td>
-                        <td>4</td>
-                        <td>$60</td>
-                        <td>$240</td>
+                        <td>{{ order.guests }}</td>
+                        <td>${{ order.price / order.duration }}</td>
+                        <td>${{ order.price }}</td>
                         <td class="pending" :class="setStatusStyle">
-                            {{ currStatus }}
+                            {{ order.status }}
                         </td>
                         <td>
                             <button
@@ -173,8 +173,9 @@ export default {
     created() {
         console.log('from back office', this.$route)
         var hostId = this.$store.getters.loggedinUser._id
-        this.$store.dispatch({type: 'loadOrders', filterBy: {hostId}})
+        this.$store.dispatch({ type: 'loadOrders', filterBy: { hostId } })
         this.orderByHost = this.$store.getters.orders
+        console.log(this.orderByHost)
     },
 
     methods: {
