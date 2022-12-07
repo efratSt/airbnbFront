@@ -128,7 +128,7 @@
                     ></textarea>
                 </label>
             </div>
-            <div class="imgs-uplowd">
+            <div class="imgs-upload">
                 <div class="img-container">
                     <div class="grid-item img-1">Upload Image</div>
                     <div class="grid-item img-2">Upload Image</div>
