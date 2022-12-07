@@ -1,43 +1,53 @@
-import { storageService } from "./async-storage.service.js";
-import gOrder from "../../data/order.json" assert { type: "json" };
+import { httpService } from './http.service'
+import { storageService } from './async-storage.service'
+import {userService} from './user.service'
 
-// console.log("gOrder: ", gOrder);
+import { store } from '../store/store'
+import { socketService, SOCKET_EVENT_REVIEW_ADDED, SOCKET_EVENT_REVIEW_ABOUT_YOU } from './socket.service'
 
-const STORAGE_KEY = "order";
+
+;(() => {
+
+  setTimeout(()=>{
+    // socketService.on(SOCKET_EVENT_REVIEW_ADDED, (order) => {
+    //   console.log('GOT from socket', order)
+    //   store.commit({type: 'addOrder', order})
+    // })
+    // socketService.on(SOCKET_EVENT_REVIEW_ABOUT_YOU, (order) => {
+    //   showSuccessMsg(`New order about me ${order.txt}`)
+    // })
+  }, 0)
+
+})()
+
+
 
 export const orderService = {
+  add,
   query,
-  getById,
-  remove,
-  save,
-};
-
-
-async function query(filterBy = { hostId: "" }) {
-  var orders = await storageService.query(STORAGE_KEY);
-  if (!orders || !orders.length) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(gOrder));
-  }
-  orders.filter(order => order.hostId === filterBy.hostId)
-  return orders;
+  remove
 }
 
-function getById(orderId) {
-  return storageService.get(STORAGE_KEY, orderId);
+
+
+function query(filterBy) {
+  // var queryStr = (!filterBy) ? '' : `?name=${filterBy.name}&sort=anaAref`
+  return httpService.get(`order${queryStr}`)
+  // return storageService.query('order')
 }
 
 async function remove(orderId) {
-  await storageService.remove(STORAGE_KEY, orderId);
+  await httpService.delete(`order/${orderId}`)
+  // await storageService.delete('order', orderId)
+
+}
+async function add(order) {
+  const addedOrder = await httpService.post(`order`, order)
+
+  order.byUser = userService.getLoggedinUser()
+  order.aboutUser = await userService.getById(order.aboutUserId)
+  // const addedOrder = await storageService.post('order', order)
+
+  return addedOrder
 }
 
-async function save(order) {
-  var savedOrder;
-  if (order._id) {
-    savedOrder = await storageService.put(STORAGE_KEY, order);
-  } else {
-    // Later, owner is set by the backend
-    order.owner = userService.getLoggedinUser();
-    savedOrder = await storageService.post(STORAGE_KEY, order);
-  }
-  return savedOrder;
-}

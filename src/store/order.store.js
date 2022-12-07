@@ -5,8 +5,9 @@ export const orderStore = {
     orders: [],
   },
   getters: {
-    getOrder(state) {
-      return state.orders;
+    orders({ orders }) {
+        console.log('all orders from storeOder: ', orders);
+      return orders;
     },
   },
   mutations: {
@@ -16,16 +17,24 @@ export const orderStore = {
     addOrder(state, { order }) {
       state.orders.push(order);
     },
-    updateOrder(state, { order }) {
-      const idx = state.orders.findIndex((c) => c.id === order._id);
-      state.orders.splice(idx, 1, order);
-    },
     removeOrder(state, { orderId }) {
       state.orders = state.orders.filter((order) => order._id !== orderId);
     },
   },
   actions: {
-    async loadOrder(context) {
+    async addOrder(context, { order }) {
+      try {
+        order = await orderService.add(order);
+        context.commit({ type: "addOrder", order });
+        context.dispatch({ type: "increaseScore" });
+
+        return order;
+      } catch (err) {
+        console.log("orderStore: Error in addOrder", err);
+        throw err;
+      }
+    },
+    async loadOrders(context) {
       try {
         const orders = await orderService.query();
         context.commit({ type: "setOrders", orders });
@@ -34,40 +43,13 @@ export const orderStore = {
         throw err;
       }
     },
-    async addOrder(context, { order }) {
-      try {
-        order = await orderService.save(order);
-        context.commit(getActionAddOrder(order));
-        return order;
-      } catch (err) {
-        console.log("orderStore: Error in addOrder", err);
-        throw err;
-      }
-    },
-    async updateOrder(context, { order }) {
-      try {
-        order = await orderService.save(order);
-        context.commit(getActionUpdateOrder(order));
-        return order;
-      } catch (err) {
-        console.log("orderStore: Error in updateOrder", err);
-        throw err;
-      }
-    },
     async removeOrder(context, { orderId }) {
       try {
         await orderService.remove(orderId);
-        context.commit(getActionRemoveOrder(orderId));
+        context.commit({ type: "removeOrder", orderId });
       } catch (err) {
         console.log("orderStore: Error in removeOrder", err);
         throw err;
-      }
-    },
-    async getOrderById(context, { orderId }) {
-      try {
-        return await orderService.getById(orderId);
-      } catch (err) {
-        console.log(err);
       }
     },
   },
