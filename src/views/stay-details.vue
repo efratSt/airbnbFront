@@ -178,7 +178,6 @@ export default {
                 type: 'getStayById',
                 stayId,
             })
-            console.log('this stay:', this.stay);
         },
         async getReviews(stayId) {
             await this.$store.dispatch({
