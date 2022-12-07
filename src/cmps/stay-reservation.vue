@@ -1,13 +1,13 @@
 <template>
     <div v-if="stay" class="order-container">
-        <section class="order-form-header" :class="{ flex : this.range.start && this.range.end}">
+        <section class="order-form-header">
             <div class="order-form-header-secondary">
             <p><span class="cost">{{currencyCode}}</span></p>
             <p><span class="cost">{{stay.price}}</span> </p>
             <p class="cost-price unit">&nbspnight</p>
             </div>
             <div class="order-form-header-secondary reviews">
-                <p><i class="fa-solid fa-star"></i>{{stayRate}}</p>
+                <p>{{stayRate}}</p>
                 <p> &nbsp&#183&nbsp </p>
                 <p><span class="reviews">
                     <a href="#">{{stay.reviews.length}} reviews</a> 

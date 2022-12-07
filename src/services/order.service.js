@@ -43,7 +43,7 @@ async function remove(orderId) {
 }
 async function add(order) {
   storageService.post(ORDER_DB , order)
-  // const addedOrder = await httpService.post(`order`, order)
+  const addedOrder = await httpService.post(`order`, order)
 
   order.byUser = userService.getLoggedinUser()
   order.aboutUser = await userService.getById(order.aboutUserId)
