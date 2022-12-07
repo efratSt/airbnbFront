@@ -38,6 +38,14 @@ header {
                 padding: 5px 5px 5px 12px;
                 border: 1px solid #ebebeb;
                 transition: 0.5s;
+                img {
+                    width: 20px;
+                    height: 20px;
+                    border: 1px solid black;
+                    border-radius: 50%;
+                    display: grid;
+                    place-content: center;
+                }
             }
             .btn-user:hover {
                 box-shadow: 0 2px 4px #0000002e;

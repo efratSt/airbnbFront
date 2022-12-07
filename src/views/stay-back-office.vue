@@ -121,7 +121,7 @@ export default {
         return {
             currStatus: 'Pending',
             isAddModalOpen: false,
-
+            loggedinUser: null,
             testData1: {
                 labels: [
                     'August',
@@ -172,7 +172,8 @@ export default {
     created() {
         console.log('from back office', this.$route)
         var hostId = this.$store.getters.loggedinUser._id
-        this.$store.dispatch({type: 'loadOrders', filterBy: {hostId}})
+        this.$store.dispatch({ type: 'loadOrders', filterBy: { hostId } })
+        this.loggedinUser = this.$store.getters.loggedinUser
     },
 
     methods: {
