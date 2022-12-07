@@ -135,11 +135,6 @@ export default {
             isAddModalOpen: false,
         }
     },
-
-    created() {
-        console.log('from back office', this.$route)
-    },
-
     methods: {
         openAddModal() {
             this.isAddModalOpen = true
