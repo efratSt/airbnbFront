@@ -239,6 +239,7 @@ export default {
                     // range: this.range,
                     duration: this.duration,
                     mesgs: [],
+                    buyer: this.$store.getters.loggedinUser || null,
                     status: `pending`
                 }
                 this.sendOrder(order)
