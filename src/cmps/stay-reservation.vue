@@ -7,7 +7,7 @@
             <p class="cost-price unit">&nbspnight</p>
             </div>
             <div class="order-form-header-secondary reviews">
-                <p>{{stayRate}}</p>
+                <p><i class="fa-solid fa-star"></i>{{stayRate}}</p>
                 <p> &nbsp&#183&nbsp </p>
                 <p><span class="reviews">
                     <a href="#">{{stay.reviews.length}} reviews</a> 

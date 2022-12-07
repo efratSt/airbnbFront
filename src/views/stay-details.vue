@@ -207,7 +207,7 @@
         const month = date.toLocaleString('default', { month: 'long' })
         const [day, year] = [
         
-          date.getDate(),
+        date.getDate(),
          date.getFullYear(),
          ]
         return  month + ' ' + year
