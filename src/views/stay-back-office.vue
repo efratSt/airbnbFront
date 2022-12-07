@@ -27,8 +27,6 @@
                         <td>Pending</td>
                         <td>
                             <button class="approve">Approved</button>
-                        </td>
-                        <td>
                             <button>Reject</button>
                         </td>
                     </tr>
@@ -41,8 +39,10 @@
                         <td>$60</td>
                         <td>$240</td>
                         <td>Approved</td>
-                        <td><button class="approve">Approved</button></td>
-                        <td><button>Reject</button></td>
+                        <td>
+                            <button class="approve">Approved</button>
+                            <button>Reject</button>
+                        </td>
                     </tr>
                     <tr>
                         <td>12/07/2022</td>
@@ -53,8 +53,10 @@
                         <td>$60</td>
                         <td>$240</td>
                         <td>Approved</td>
-                        <td><button class="approve">Approved</button></td>
-                        <td><button>Reject</button></td>
+                        <td>
+                            <button class="approve">Approved</button>
+                            <button>Reject</button>
+                        </td>
                     </tr>
                     <tr>
                         <td>12/07/2022</td>
@@ -65,8 +67,10 @@
                         <td>$60</td>
                         <td>$240</td>
                         <td>Approved</td>
-                        <td><button class="approve">Approved</button></td>
-                        <td><button>Reject</button></td>
+                        <td>
+                            <button class="approve">Approved</button>
+                            <button>Reject</button>
+                        </td>
                     </tr>
                 </table>
             </div>
