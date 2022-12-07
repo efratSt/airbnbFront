@@ -247,10 +247,20 @@
     height: 56px;
     border-radius: 100%;
   }
-}
+
 .reservation-cmp-container {
   position: sticky;
+  flex-shrink: 2;
 }
+// @media (max-width: 800px) {
+//   flex-direction: column;
+//   .reservation-cmp-container{
+//     position: fixed ;
+//     bottom: 0;
+//   }
+// }
+}
+
 .review-container {
   border-top: $clr7 1px solid;
   padding-bottom: 2rem;
