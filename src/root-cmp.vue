@@ -1,5 +1,5 @@
 <template>
-    <section class="main-container root-cmp" :class="{ small: !notMain }">
+    <section class="main-container root-cmp" :class="{ small: !isSmallDisplay }">
         <user-msg />
         <stay-header />
         <stay-labels-filter v-if="notMain" />
@@ -25,11 +25,15 @@ export default {
     computed: {
         notMain() {
             console.log(this.$route)
-            if (this.$route.path === '/' || this.$route.path === '/backoffice' ) {
-          
-                return true
+            if (this.$route.path === '/' ) {
+                 return true
             }else return false;
         },
+        isSmallDisplay(){
+            if (this.$route.params.id ) {
+                 return false
+            }else return true;
+        }
     },
     components: {
         stayHeader,
