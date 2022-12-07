@@ -1,5 +1,5 @@
 <template>
-    <div class="container about">
+    <div class="container-about">
         <p>{{ msg }}</p>
 
         <div class="loggedin-user" v-if="loggedinUser">
@@ -28,8 +28,8 @@
         /> -->
                 <button>Login</button>
             </form>
-            <p class="mute">user1 or admin, pass:123</p>
-            <form @submit.prevent="doSignup">
+            <!-- <p class="mute">user1 or admin, pass:123</p> -->
+            <form class="signup-container" @submit.prevent="doSignup">
                 <h2>Signup</h2>
                 <input type="text" v-model="signupCred.fullname" placeholder="Your full name" />
                 <input type="password" v-model="signupCred.password" placeholder="Password" />
@@ -37,7 +37,7 @@
                 <button>Signup</button>
             </form>
         </div>
-        <hr />
+        <!-- <hr /> -->
         <!-- <details>
             <summary>Admin Section</summary>
             <ul>
