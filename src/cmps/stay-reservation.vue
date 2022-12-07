@@ -1,6 +1,6 @@
 <template>
     <div v-if="stay" class="order-container">
-        <section class="order-form-header" :class="{ flex : this.range.start && this.range.end}">
+        <section class="order-form-header">
             <div class="order-form-header-secondary">
             <p><span class="cost">{{currencyCode}}</span></p>
             <p><span class="cost">{{stay.price}}</span> </p>
