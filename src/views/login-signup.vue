@@ -61,7 +61,7 @@ export default {
                 username: '75091963',
                 password: 'Edgar',
                 fullname: 'Edgar',
-                imgUrl: 'https://a0.muscache.com/im/pictures/d17abb7c-beb0-4dbe-976e-fc633de18b…',
+                imgUrl: 'https://www.history.com/.image/c_fit%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_620/MTU3OTIzNTc4NTMxNDg5NDI2/how-did-edgar-allan-poe-dies-featured-photo.jpg',
             },
         };
     },
