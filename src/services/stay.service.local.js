@@ -321,7 +321,10 @@ function normalizeData(stays) {
   stays.forEach((stay) => {
     stay.currencyCode = "USD";
     stay.reviews.forEach(
-      (review) => (review.rate = utilService.getRandomIntInclusive(3, 5))
+      (review) => {
+        (review.rate = utilService.getRandomIntInclusive(3, 5)),
+      (review.by.imgUrl =`https://avatars.dicebear.com/api/adventurer/your-${utilService.makeId(6)}-seed.svg`)
+    }
     );
     return stays;
   });

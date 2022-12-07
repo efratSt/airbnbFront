@@ -24,7 +24,6 @@ export default {
     },
     computed: {
         notMain() {
-            console.log(this.$route)
             if (this.$route.path === '/' ) {
                  return true
             }else return false;
