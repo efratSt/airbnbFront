@@ -72,7 +72,7 @@
         </div>
     </header>
     <Transition name="slide-fade">
-        <stay-search-modal v-if="isOpen" />
+        <stay-search-modal v-if="isOpen" @closeScreen="closeScreen" />
     </Transition>
     <div v-if="isLoginOpen" @click="isLoginOpen = false" class="login-modal">
         <router-link to="/login">
@@ -126,6 +126,10 @@ export default {
         setShowExplore() {
             this.$store.commit({ type: 'setFilterBy', filterBy: null })
             this.$store.commit({ type: 'setFilterByLabel', filterLabel: '' })
+        },
+
+        closeScreen() {
+            this.isOpen = false
         },
     },
 

@@ -197,14 +197,14 @@ export default {
             // this.getStayById(this.stay._id);
         },
         reviewDate(date1) {
-            const date = new Date(date1)
-            const month = date.toLocaleString('default', { month: 'long' })
-            const [day, year] = [
-
-                date.getDate(),
-                date.getFullYear(),
-            ]
-            return month + ' ' + year
+        const date = new Date(date1)
+        const month = date.toLocaleString('default', { month: 'long' })
+        const [day, year] = [
+        
+        date.getDate(),
+         date.getFullYear(),
+         ]
+        return  month + ' ' + year
         },
         toggleAmenities() {
             this.showAmenities = !this.showAmenities

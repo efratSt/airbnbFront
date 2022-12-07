@@ -138,6 +138,7 @@
                 </div>
             </div>
         </div>
+        <button @click="addStay">Save</button>
     </section>
 </template>
 
@@ -164,6 +165,12 @@ export default {
                 amenities: [],
             },
         }
+    },
+
+    methods: {
+        addStay() {
+            console.log(this.stayToAdd)
+        },
     },
 }
 </script>
