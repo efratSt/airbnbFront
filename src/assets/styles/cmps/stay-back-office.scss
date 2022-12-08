@@ -34,11 +34,14 @@
     @media (max-width: 1200px) {
         .main-back-office {
             grid-template-columns: 1fr;
-            grid-template-rows: 0.5fr 200px 200px;
+            grid-template-rows: 300px 170px 100px;
             grid-template-areas:
                 'area2  area2 area2'
                 'area1  area1  area1'
                 'area3  area3  area3';
+            .stats-info {
+                height: 100%;
+            }
         }
     }
 }

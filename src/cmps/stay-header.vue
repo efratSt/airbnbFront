@@ -72,9 +72,6 @@
         </div>
     </header>
     <div v-if="isLoginOpen" class="login-modal">
-        <div @click="login" class="link">
-            <span>Login/Logout</span>
-        </div>
         <div @click="wishList" class="link">
             <span>Wish list</span>
         </div>
@@ -83,6 +80,9 @@
         </div>
         <div @click="backOffice" class="link">
             <span>Back office</span>
+        </div>
+        <div @click="login" class="link">
+            <span>Login/Logout</span>
         </div>
     </div>
     <section v-if="isAddModalOpen" class="add-modal">
