@@ -6,7 +6,7 @@
   box-shadow: 0 0 5px 5px #00000015;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  
   font-family: 'Circular', -apple-system, 'BlinkMacSystemFont', 'Roboto',
   'Helvetica Neue', sans-serif;
   position: sticky;
@@ -21,6 +21,12 @@
   //    width: 373px;
   //     }
     
+}
+.reservation-no-dates-header{
+  justify-self: flex-start;
+  color: #222222;
+  font-size: 22px;
+  font-weight: 400;
 }
 
 .order-form-header {
@@ -249,4 +255,8 @@ span {
     width: 56px;
   }
 
+}
+.fa-solid.fa-star.reservation{
+  font-size: 14px;
+  scale: 0.7;
 }

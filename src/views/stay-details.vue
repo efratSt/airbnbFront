@@ -116,7 +116,7 @@
                 </div>
             </div>
             <div class="reservation-cmp-container">
-                <stayReservation @orderSent="orderSent" @moveCalender="moveCalender" :stay="stay" :range="range" />
+                <stayReservation @orderSent="orderSent" @updateCalender="updateCalender" :stay="stay" :range="range" />
             </div>
         </div>
         <div class="details-page-calender-container" :class="{ 'modal': calenderCentered }">
@@ -187,9 +187,8 @@ export default {
         this.getStayById(stayId)
     },
     methods: {
-        moveCalender() {
-            this.calenderCentered = true
-            console.log('hu', this.calenderCentered)
+        updateCalender(range) {
+            this.range = range
         },
         orderSent(order){
             this.order = order

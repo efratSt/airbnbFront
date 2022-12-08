@@ -1,13 +1,19 @@
 <template>
     <div v-if="stay" class="order-container">
+            <p class="reservation-no-dates-header" v-if="(!range.start || !range.end)">Add dates for prices</p>
         <section class="order-form-header">
-            <div class="order-form-header-secondary">
+            <div v-if="(range.start && range.end)" class="order-form-header-secondary">
                 <p><span class="cost">{{ currencyCode }}</span></p>
                 <p><span class="cost">{{ stay.price }}</span> </p>
                 <p class="cost-price unit">&nbspnight</p>
             </div>
-            <div class="order-form-header-secondary reviews">
-                <p><i class="fa-solid fa-star"></i>{{ stayRate }}</p>
+            <div class="order-form-header-secondary reviews flex align-center">
+                <div>
+                    <i class="fa-solid fa-star reservation"></i>
+                </div>
+                <div>
+                    <p>{{ stayRate }}</p>
+                </div>
                 <p> &nbsp&#183&nbsp </p>
                 <p><span class="reviews">
                         <a href="#">{{ stay.reviews.length }} reviews</a>
@@ -16,17 +22,17 @@
         </section>
         <section class="order-data">
             <div class="date-picker">
-                <div @click="moveCalender" class="date-input">
+                <div @click="openCalender" class="date-input">
                     <label>CHECK-IN</label>
                     <input :disabled="true">{{ date(range.start) }}
-                    <button @click="(range.start = null)" v-if="range.start"><svg viewBox="0 0 32 32"
+                    <button @click="(range.start = null),(range.end = null)" v-if="range.start"><svg viewBox="0 0 32 32"
                             xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false"
                             style="display: block; fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 4; overflow: visible;">
                             <path d="m6 6 20 20"></path>
                             <path d="m26 6-20 20"></path>
                         </svg></button>
                 </div>
-                <div @click="moveCalender" class="date-input">
+                <div @click="openCalender" class="date-input">
                     <label>CHECKOUT</label>
                     <input>{{ date(range.end) }}
                     <button @click="(range.end = null)" v-if="range.end"><svg viewBox="0 0 32 32"
@@ -35,7 +41,7 @@
                             <path d="m6 6 20 20"></path>
                             <path d="m26 6-20 20"></path>
                         </svg></button>
-                    <!-- <Date-picker v-if="(!this.range.start && !this.range.end)" class="details-page-calender secondary" v-model="range" is-range :columns="2" color="gray" /> -->
+                    <Date-picker v-click-outside="closeCalenderModal" @click.stop="openCalender" v-if="calenderOpen" class="details-page-calender secondary" v-model="range" is-range :columns="2" color="gray" />
                 </div>
             </div>
             <div>
@@ -171,10 +177,26 @@
             </div>
             <div class="flex space-between">
                 <div class="reservation-price extra fees">
-                    <span>Other fee</span>
+                    <span>Cleaning fee</span>
                 </div>
                 <div class="reservation-price-extra fees">
-                    <span>{{ currencyCode }}{{ extraFee }}</span>
+                    <span>{{ currencyCode }}{{ cleaningFee }}</span>
+                </div>
+            </div>
+            <div class="flex space-between">
+                <div class="reservation-price extra fees">
+                    <span>Service fee</span>
+                </div>
+                <div class="reservation-price-extra fees">
+                    <span>{{ currencyCode }}{{ serviceFee }}</span>
+                </div>
+            </div>
+            <div class="flex space-between">
+                <div class="reservation-price extra fees">
+                    <span>Taxes</span>
+                </div>
+                <div class="reservation-price-extra fees">
+                    <span>{{ currencyCode }}{{ taxes }}</span>
                 </div>
             </div>
             <div class="reservation-total flex space-between">
@@ -200,18 +222,27 @@ export default {
     data() {
         return {
             stayPrice: null,
-            extraFee: 303,
+            cleaningFee: 63,
+            serviceFee: 54,
+            taxes: 25,
             reservationStatus: null,
             numberOfGuest: null,
             duration: null,
             guestsModalOpen: false,
             totalGuests: 1,
-            order: null
+            order: null,
+            calenderOpen: false,
+           
         }
     },
     methods: {
-        moveCalender() {
-            this.$emit('moveCalender')
+        openCalender() {
+            if ((this.calenderOpen) && (!this.range.start || !this.range.end))return
+            this.calenderOpen = !this.calenderOpen
+            this.$emit('updateCalender' , this.range)
+        },
+        closeCalenderModal(){
+            this.calenderOpen = false
         },
         toggleGuestsModal() {
             this.guestsModalOpen = !this.guestsModalOpen
@@ -231,7 +262,7 @@ export default {
                     createdAt: Date.now(),
                     price:{
                         price: this.stay.price,
-                        fees: this.extraFee,
+                        fees: this.cleaningFee + this.serviceFee + this.taxes,
                         totalPrice:this.totalStayPrice,
                     },
                     stay: {
@@ -249,7 +280,7 @@ export default {
                     buyer: this.$store.getters.loggedinUser || null,
                     status: `pending`,
                 }
-                // this.order = order
+                // CHECK DECONSTRUCTION OPTION OR SENDING STAY AS WHOLE
                 this.$emit('orderSent',order)
                 
             }
@@ -291,7 +322,7 @@ export default {
             return this.duration
         },
         totalPrice() {
-            return (this.stayPrice + this.extraFee).toLocaleString()
+            return (this.stayPrice + this.serviceFee + this.cleaningFee + this.taxes).toLocaleString()
         },
     },
     components: {

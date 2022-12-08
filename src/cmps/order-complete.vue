@@ -22,7 +22,7 @@
             </div>
             <div class="flex space-between">
                 <div class="order-price extra fees">
-                    <span>Other fee</span>
+                    <span>Other fees</span>
                 </div>
                 <div class="order-price-extra fees">
                     <span>{{ currencyCode }}{{ order.price.fees }}</span>
@@ -43,7 +43,7 @@
         </div>
     </div>
         <div  class="order-modal-buttons">
-            <button @click="$emit('closeOrderModal')" class="order-modal-btn close">Back</button>
+            <!-- <button @click="$emit('closeOrderModal')" class="order-modal-btn close">Back</button> -->
             <button @click="sendOrder" class="order-modal-btn confirm">Confirm</button>
         </div>
     </div>

@@ -18,16 +18,19 @@ export const clickOutsideDirective = {
     el.clickOutside = ({ clientX, clientY }) => {
       const { left, top, width, height } = el.getBoundingClientRect()
       if (
-        !(clientX > left &&
+        !(
+          clientX > left &&
           clientX < left + width &&
           clientY > top &&
-          clientY < top + height)
+          clientY < top + height
+        )
       ) {
         cb()
-        console.log('outside')
-      } else {
-        console.log('inside')
+        // console.log('outside')
       }
+      //  else {
+      //   console.log('inside')
+      // }
     }
     setTimeout(() => {
       document.addEventListener('click', el.clickOutside)
@@ -48,8 +51,6 @@ export const close = {
     }
   },
 }
-
-
 
 function _isDarkColor(c) {
   c = c.substring(1) // strip #
