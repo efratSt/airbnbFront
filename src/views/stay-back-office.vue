@@ -32,12 +32,12 @@
                         </td>
                         <td>
                             <button
-                                @click="changeStatus('Approved', idx)"
+                                @click="changeStatus('Approved', idx, order)"
                                 class="approve"
                             >
                                 Approved
                             </button>
-                            <button @click="changeStatus('Rejected', idx)">
+                            <button @click="changeStatus('Rejected', idx, order)">
                                 Reject
                             </button>
                         </td>
@@ -123,7 +123,7 @@ export default {
     data() {
         return {
             isAddModalOpen: false,
-            orderByHost: [],
+            orderByHost: null,
 
             testData1: {
                 labels: [
@@ -173,11 +173,12 @@ export default {
     },
 
     created() {
-        console.log('from back office', this.$route)
         var hostId = this.$store.getters.loggedinUser._id
-        this.$store.dispatch({ type: 'loadOrders', filterBy: { hostId } })
+        this.$store.dispatch({ type: 'loadOrders', filterBy: {hostId}})
         this.orderByHost = this.$store.getters.orders
-        console.log(this.orderByHost)
+        // console.log('hostId: ', hostId);
+        console.log('orderByHost: ',this.orderByHost)
+        // console.log('from back office', this.$route)
     },
 
     methods: {
@@ -185,8 +186,11 @@ export default {
             this.isAddModalOpen = true
         },
 
-        changeStatus(status, idx) {
+        changeStatus(status, idx, order) {
+            console.log('order before change: ', order);
+            // console.log('orderId: ', order._id);
             this.orderByHost[idx].status = status
+            console.log('order after change: ', order);
         },
     },
 
