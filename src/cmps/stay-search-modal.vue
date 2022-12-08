@@ -45,6 +45,13 @@
                                     <i class="fa-solid fa-location-dot"></i>
                                     <span>Turkey</span>
                                 </div>
+                                <div
+                                    class="recent-loc"
+                                    @click.stop="searchRecent('Australia')"
+                                >
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <span>Australia</span>
+                                </div>
                             </div>
                             <div class="search-img-container">
                                 <div

@@ -2,26 +2,65 @@
     padding-top: 100px;
 
     .order-list-container {
-        background-color: aqua;
         margin: 10px;
         display: flex;
-        max-height: 100px;
-
+        justify-content: space-between;
+        align-items: center;
+        width: 90vw;
+        // box-shadow: 6px 5px 11px -6px rgba(153, 90, 90, 0.221);
+        // -webkit-box-shadow: 6px 5px 11px -6px rgba(153, 90, 90, 0.229);
+        // -moz-box-shadow: 6px 5px 11px -6px rgba(153, 90, 90, 0.226);
+        border-bottom: 1px solid lightgrey;
+        .header {
+            background-color: aqua;
+        }
         .order-list-img {
+            padding-right: 10px;
+            width: 150px;
+
             img {
                 height: 100%;
-                width: 100px;
-                object-fit: cover;
+                width: 100%;
+                // object-fit: cover;
+                display: flex;
             }
         }
 
         .order-list-name {
             width: 300px;
-            height: 100px;
 
             p {
-                
+                overflow: hidden;
+                text-overflow: ellipsis;
+                width: 100%;
+                white-space: nowrap;
+                padding-right: 10px;
             }
+        }
+
+        .order-list-place {
+            width: 120px;
+            padding-right: 10px;
+        }
+
+        .order-list-date-start {
+            width: 120px;
+            padding-right: 10px;
+        }
+
+        .order-list-date-end {
+            width: 120px;
+            padding-right: 10px;
+        }
+
+        .order-list-date-create {
+            width: 120px;
+            padding-right: 10px;
+        }
+
+        .order-list-place-status {
+            width: 120px;
+            padding-right: 10px;
         }
     }
 }

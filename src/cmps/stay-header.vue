@@ -103,81 +103,81 @@
 </template>
 
 <script>
-  import stayFilter from './stay-filter.vue'
-  import stayAdd from './stay-add.vue'
-  import staySearchModal from './stay-search-modal.vue'
-  import loginSignup from '../views/login-signup.vue'
+import stayFilter from './stay-filter.vue'
+import stayAdd from './stay-add.vue'
+import staySearchModal from './stay-search-modal.vue'
+import loginSignup from '../views/login-signup.vue'
 
-  export default {
+export default {
     data() {
-      return {
-        isOpen: false,
-        isLoginOpen: false,
-        scrollPosition: null,
-        loggedinUser: null,
-        isAddModalOpen: false,
-      }
+        return {
+            isOpen: false,
+            isLoginOpen: false,
+            scrollPosition: null,
+            loggedinUser: null,
+            isAddModalOpen: false,
+        }
     },
 
     created() {
-      this.loggedinUser = this.$store.getters.loggedinUser
+        this.loggedinUser = this.$store.getters.loggedinUser
     },
 
     mounted() {
-      window.addEventListener('scroll', this.updateScroll)
+        window.addEventListener('scroll', this.updateScroll)
     },
 
     computed: {
-      notMain() {
-        if (!this.$route.params.id) {
-          return true
-        } else return false
-      },
-      loggedInUser() {
-        return this.$store.getters.loggedinUser
-      },
+        notMain() {
+            if (!this.$route.params.id) {
+                return true
+            } else return false
+        },
+        loggedInUser() {
+            return this.$store.getters.loggedinUser
+        },
     },
 
     methods: {
-      closeLogin() {
-        this.isLoginOpen = false
-      },
-      updateScroll() {
-        this.scrollPosition = window.scrollY
-        if (this.scrollPosition > 100) this.isOpen = false
-      },
-      setShowExplore() {
-        this.$store.commit({ type: 'setFilterBy', filterBy: null })
-        this.$store.commit({ type: 'setFilterByLabel', filterLabel: '' })
-      },
+        closeLogin() {
+            this.isLoginOpen = false
+        },
+        updateScroll() {
+            this.scrollPosition = window.scrollY
+            if (this.scrollPosition > 100) this.isOpen = false
+        },
+        setShowExplore() {
+            this.$store.commit({ type: 'setFilterBy', filterBy: null })
+            this.$store.commit({ type: 'setFilterByLabel', filterLabel: '' })
+        },
 
-      closeScreen() {
-        this.isOpen = false
-      },
+        closeScreen() {
+            this.isOpen = false
+        },
 
-      backOffice() {
-        this.$router.push('/backoffice')
-        this.isLoginOpen = false
-      },
+        backOffice() {
+            this.$router.push('/backoffice')
+            this.isLoginOpen = false
+        },
 
-      MyOrders() {
-        this.$router.push('/orderList')
-        this.isLoginOpen = false
-      },
+        MyOrders() {
+            this.$router.push('/orderList')
+            this.isLoginOpen = false
+        },
 
-      login() {
-        this.$router.push('/login')
-        this.isLoginOpen = false
-      },
+        login() {
+            this.$router.push('/login')
+            this.isLoginOpen = false
+        },
 
-      wishList() {},
+        wishList() {},
     },
 
     components: {
-      stayFilter,
-      staySearchModal,
-      loginSignup,
-      stayAdd,
+        stayFilter,
+        staySearchModal,
+        loginSignup,
+        stayAdd,
     },
-  }
+}
 </script>
