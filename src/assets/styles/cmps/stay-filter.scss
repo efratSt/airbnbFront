@@ -30,25 +30,33 @@
                 font-weight: 400;
             }
         }
+      
+    }
+    .small-search{
+        display: none;
+    }
+    .search-btn {
+        background-color: #ff385c;
+        padding: 10px;
+        border-radius: 50%;
+        color: #fff;
+        z-index: 10;
+        margin: 7px 7px 7px 0;
+    }
 
-        .search-btn {
-            background-color: #ff385c;
-            padding: 10px;
-            border-radius: 50%;
-            color: #fff;
-            z-index: 10;
-            margin: 7px 7px 7px 0;
-        }
+
+&.small{
+    .stay-filter{
+    width: 295px;
+    justify-content: space-between;
     }
-    &.small {
-        .stay-filter {
-            width: 295px;
-            justify-content: space-between;
-        }
-        .search-container {
-            display: none;
-        }
+    .search-container{
+    display: none;
     }
+    .small-search{
+        display: block;
+    }
+}
 }
 
 .stay-filter:hover {
