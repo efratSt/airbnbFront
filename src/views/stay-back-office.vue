@@ -1,7 +1,7 @@
 <template>
     <section class="stay-back-office">
         <h3>My bnd details</h3>
-        <button @click="openAddModal" class="add-stay-btn">Add a stay</button>
+        <!-- <button @click="openAddModal" class="add-stay-btn">Add a stay</button> -->
         <div class="main-back-office">
             <div class="orders-list">
                 <table>
@@ -63,14 +63,14 @@
                     <div class="revenue-stats stats-info">
                         <div class="revenue-item">
                             <span>This Month</span>
-                            <span>$357</span>
+                            <span>$1,357</span>
                         </div>
                         <div class="revenue-item">
                             <span>This Year</span>
-                            <span>$1,578</span>
+                            <span>$19,578</span>
                         </div>
                         <div class="revenue-item">
-                            <span>Total Incom</span>
+                            <span>Total Income</span>
                             <span>$3,345</span>
                         </div>
                     </div>
@@ -108,18 +108,18 @@
             </div>
         </div>
 
-        <section v-if="isAddModalOpen" class="add-modal">
+        <!-- <section v-if="isAddModalOpen" class="add-modal">
             <h1>Add a stay</h1>
             <button :title="'Back'" @click="isAddModalOpen = false">
                 <i class="fa-solid fa-arrow-left-long"></i>
             </button>
             <stay-add />
-        </section>
+        </section> -->
     </section>
 </template>
 
 <script>
-import stayAdd from '../cmps/stay-add.vue'
+// import stayAdd from '../cmps/stay-add.vue'
 import awesomeChart from '../cmps/awesome-chart.vue'
 export default {
     data() {
@@ -198,7 +198,7 @@ export default {
         },
     },
     components: {
-        stayAdd,
+        // stayAdd,
         awesomeChart,
     },
 }

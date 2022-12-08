@@ -68,11 +68,34 @@
                             alt="host image" class="host-img">
                     </div>
                 </section>
-                <orderComplete v-if="orderModalOpen" v-click-outside="closeOrderModal" :order="order"/>
-                <section class="stay-highlights"></section>
+                <orderComplete v-if="orderModalOpen" v-click-outside="closeOrderModal" @closeOrderModal="closeOrderModal" :order="order"/>
+                <section class="stay-highlights flex">
+                    <div class="stay-highlights-content flex ">
+                        <img src="../assets/icons/Lock on bedroom door.svg" alt="">
+                        <div class="stay-highlights-content inner flex">
+                            <span class="stay-highlights-content inner title"> Self check-in</span>
+                            <span class="stay-highlights-content inner detail">Check yourself in with the keypad.</span>                   
+                        </div>
+                    </div >
+                    <div class="stay-highlights-content flex">
+                        <img class="stay-highlights-content img" src="../assets/icons/Park for free.svg" alt="">
+                        <div class="stay-highlights-content inner flex">
+                            <span class="stay-highlights-content inner title">Park for free </span>
+                            <span class="stay-highlights-content inner detail">This is one of the few places in the area with free parking.</span>
+                        </div>
+                    </div>
+                    <div class="stay-highlights-content flex">
+                        <img class="stay-highlights-content img" src="../assets/icons/Long term stays allowed.svg" alt="">
+                        <div class="stay-highlights-content inner flex">
+                            <span class="stay-highlights-content inner title"> Free cancellation for 48 hours. </span>
+                        </div>
+                    </div>    
+                </section>
                 <section class="stay-details-summary">
                     <p class="stay-details-summary content">{{ stay.summary }}</p>
                 </section>
+                
+                
                 <div class="stay-details-main flex space-between">
                     <section class="stay-amenities-container">
                         <h2>What this place offers</h2>
@@ -104,7 +127,7 @@
         <div class="review-container">
             <h2>Reviews</h2>
             <div v-if="stay.reviews" class="review-list">
-                <div class="review-preview" v-for="review in stay.reviews" :key="review._id">
+                <div class="review-preview" v-for="review in stay.reviews.slice(0, 8)" :key="review._id">
                     <div class="review-title flex align-center">
                         <img class="review-user-img" :src="review.by.imgUrl" alt="" />
                         <div class="review-title content flex">

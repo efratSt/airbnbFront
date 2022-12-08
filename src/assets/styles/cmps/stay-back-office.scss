@@ -25,7 +25,7 @@
         height: 120%;
         display: grid;
         grid-template-columns: 1fr 2fr 2fr;
-        grid-template-rows: 0.5fr 1fr;
+        grid-template-rows: 0.8fr 0.2fr;
         gap: 20px;
         grid-template-areas:
             'area1  area2 area2'
@@ -41,29 +41,31 @@
                 'area3  area3  area3';
         }
     }
+}
 
-    .add-modal {
-        position: absolute;
-        width: 100%;
-        top: 0;
-        height: 90vh;
-        background-color: white;
+.add-modal {
+    position: fixed;
+    width: 100%;
+    padding: 0 80px;
+    top: 85px;
+    height: 100vh;
+    background-color: white;
+    z-index: 100;
 
-        h1 {
-            font-size: 1.5em;
-            margin: 0;
-            padding-top: 20px;
-        }
+    h1 {
+        font-size: 1.5em;
+        margin: 0;
+        padding-top: 20px;
+    }
 
-        button {
-            font-size: 1.5em;
-            margin: 0;
-            padding: 0;
-            background: none;
-            color: $clr-red;
-            cursor: pointer;
-            padding-top: 15px;
-        }
+    button {
+        font-size: 1.5em;
+        margin: 0;
+        padding: 0;
+        background: none;
+        color: $clr-red;
+        cursor: pointer;
+        padding-top: 15px;
     }
 }
 
