@@ -31,7 +31,9 @@
         }
       
     }
-
+    .small-search{
+        display: none;
+    }
     .search-btn {
         background-color: #ff385c;
         padding: 10px;
@@ -49,6 +51,9 @@
     }
     .search-container{
     display: none;
+    }
+    .small-search{
+        display: block;
     }
 }
 }

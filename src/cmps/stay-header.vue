@@ -15,7 +15,6 @@
           <span>airbnd</span>
         </div>
       </router-link>
-
       <stay-filter @click="isOpen = true" v-if="!isOpen" />
       <div class="link-back" @click="this.isAddModalOpen = true">
         <span class="back-office-link">Airbnd your home</span>
@@ -46,6 +45,22 @@
                 <path d="m2 8h28"></path>
               </g>
             </svg>
+
+            <section v-if="isAddModalOpen" class="add-modal">
+              <h1>Add a stay</h1>
+              <button :title="'Back'" @click="isAddModalOpen = false">
+                <i class="fa-solid fa-arrow-left-long"></i>
+              </button>
+              <stay-add />
+            </section>
+            <Transition name="slide-fade">
+              <stay-search-modal v-if="isOpen" @closeScreen="closeScreen" />
+            </Transition>
+            <div
+              class="screen main-container full"
+              v-if="isOpen"
+              @click="isOpen = false"
+            ></div>
           </div>
           <div class="user-svg">
             <svg
@@ -85,21 +100,6 @@
       <span>Back office</span>
     </div>
   </div>
-  <section v-if="isAddModalOpen" class="add-modal">
-    <h1>Add a stay</h1>
-    <button :title="'Back'" @click="isAddModalOpen = false">
-      <i class="fa-solid fa-arrow-left-long"></i>
-    </button>
-    <stay-add />
-  </section>
-  <Transition name="slide-fade">
-    <stay-search-modal v-if="isOpen" @closeScreen="closeScreen" />
-  </Transition>
-  <div
-    class="screen main-container full"
-    v-if="isOpen"
-    @click="isOpen = false"
-  ></div>
 </template>
 
 <script>

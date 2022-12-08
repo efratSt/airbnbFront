@@ -13,7 +13,7 @@
                 <span>Add guests</span>
             </div>
         </div>
-        <span>Start your search</span>
+        <span class="small-search">Start your search</span>
         
         <!-- <router-link :to="'/explore/italy'">  click here </router-link> -->
 
