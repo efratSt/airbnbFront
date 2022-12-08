@@ -53,12 +53,11 @@ async function add(order) {
 
 async function save(order) {
   console.log('order from save in service: ', order);
-  var savedOrder = await httpService.put(`order/${order._id}`, order);
-  // if (order._id) {
-  //   console.log('from save with id');
-  // } else {
-  //   console.log('from save withNot id');
-  //   savedOrder = await httpService.post("order", order);
-  // }
+  var savedOrder
+  if (order._id) {
+    savedOrder = await httpService.put(`order/${order._id}`, order);
+  } else {
+    savedOrder = await httpService.post("order", order);
+  }
   return savedOrder;
 }
