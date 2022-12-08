@@ -1,6 +1,6 @@
 <template>
-    <section class="stay-filter">
-        <div class="search-container">
+    <section class="stay-filter" >
+        <div class="search-container" >
             <div class="place-search search-btn-filter">
                 <span>Anywhere</span>
             </div>
@@ -13,6 +13,7 @@
                 <span>Add guests</span>
             </div>
         </div>
+        <span>Start your search</span>
         
         <!-- <router-link :to="'/explore/italy'">  click here </router-link> -->
 
