@@ -1,8 +1,6 @@
 <template>
-    <div>
-    <h2>helooo</h2>
-        <h1>{{ loggedInUser.fullname }}</h1>
-        <pre>{{ ordersByUser }}</pre>
+    <div class="order-list">
+        
     </div>
 </template>
 
