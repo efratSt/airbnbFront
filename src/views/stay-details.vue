@@ -68,7 +68,7 @@
                             alt="host image" class="host-img">
                     </div>
                 </section>
-                <orderComplete v-if="orderModalOpen" v-click-outside="closeOrderModal" @closeOrderModal="closeOrderModal" :order="order"/>
+                <orderComplete v-if="orderModalOpen" v-click-outside="closeOrderModal" @closeOrderModal="closeOrderModal" :order="order" />
                 <section class="stay-highlights flex">
                     <div class="stay-highlights-content flex ">
                         <img src="../assets/icons/Lock on bedroom door.svg" alt="">
@@ -192,7 +192,6 @@ export default {
             console.log('hu', this.calenderCentered)
         },
         orderSent(order){
-            console.log(arguments)
             this.order = order
             this.orderModalOpen = true
         },

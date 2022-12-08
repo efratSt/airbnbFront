@@ -235,8 +235,10 @@ export default {
                         totalPrice:this.totalStayPrice,
                     },
                     stay: {
+                        thumbnail: this.stay.imgUrls[0],
                         stayId: this.stay._id,
                         name: this.stay.name,
+                        loc: this.stay.loc
                     },
                     startDate: this.date(this.range.start),
                     endDate: this.date(this.range.end),
@@ -245,10 +247,9 @@ export default {
                     duration: this.duration,
                     mesgs: [],
                     buyer: this.$store.getters.loggedinUser || null,
-                    status: `pending`
+                    status: `pending`,
                 }
                 // this.order = order
-                console.log(order)
                 this.$emit('orderSent',order)
                 
             }

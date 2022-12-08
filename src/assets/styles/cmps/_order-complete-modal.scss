@@ -1,35 +1,37 @@
 .order-confirmation-modal {
     flex-direction: column;
-  width: min(100% - 25px, 960px);
-  margin-inline-start: auto;
-  margin-inline-end: auto;
+  width: min(100% - 25px, 1180px);
+  margin-inline: auto;
   z-index: 9000;
   position: fixed;
-  left: calc(100vw - 780px * 1.742);
+  left: calc(100vw - 1120px * 1.5);
   background-color: white;
   border: 1px solid #00000030;
   border-radius: 13px;
   box-shadow: 0 0 5px 5px hsla(0, 0%, 0%, 0.082);
   height: 700px;
-  left: 25%;
-  margin-left: -960px / 2;
+  left: 22%;
+  margin-left: -1120px / 2;
   margin-top: -700px / 2;
-  min-height: 700px;
-  /* min-width: 960px; */
+  min-height: 750px;
+  padding-top: 60px;
+  padding: 50px;
   position: fixed;
-  top: 15%;
-  padding: 80px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   .order-confirmation-details{
     display: flex;
     flex-direction: column;
     h1{
         font-size: 32px;
         font-weight: 700;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
     h5{
         font-size: 20px;
-        margin-bottom: 20px;
+        margin-bottom: 18px;
     }
     h2{
     font-size: 26px;
@@ -65,11 +67,15 @@
 }
 
 .order-image-container{
-    padding-top: 10%;
-    padding-left: 40px;
+   
+    padding-left: 120px;
     flex-direction: column;
     .order-image-img{
-        max-width: 400px;
+        max-width: 500px;
+        border-radius: 5px;    
+    }
+    .order-image.title{
+        font-weight: 600;
     }
 }
 
