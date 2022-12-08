@@ -16,11 +16,7 @@
                         <th>Status</th>
                         <th class="actions">Actions</th>
                     </tr>
-                    <tr
-                        v-if="orderByHost"
-                        v-for="(order, idx) in orderByHost"
-                        :key="orderByHost._id"
-                    >
+                    <tr v-if="orderByHost" v-for="(order, idx) in orderByHost" :key="orderByHost._id">
                         <td>
                             {{ new Date(order.createdAt).toLocaleDateString() }}
                         </td>
@@ -33,25 +29,17 @@
                         <td>{{ order.guests }}</td>
                         <td>${{ order.price / order.duration }}</td>
                         <td>${{ order.price.toLocaleString() }}</td>
-                        <td
-                            class="pending"
-                            :class="{
-                                green: order.status === 'Approved',
-                                red: order.status === 'Rejected',
-                            }"
-                        >
+                        <td class="pending" :class="{
+                            green: order.status === 'Approved',
+                            red: order.status === 'Rejected',
+                        }">
                             {{ order.status }}
                         </td>
                         <td class="orders-btns">
-                            <button
-                                @click="changeStatus('Approved', idx, order)"
-                                class="approve"
-                            >
+                            <button @click="changeStatus('Approved', idx, order)" class="approve">
                                 Approved
                             </button>
-                            <button
-                                @click="changeStatus('Rejected', idx, order)"
-                            >
+                            <button @click="changeStatus('Rejected', idx, order)">
                                 Reject
                             </button>
                         </td>
@@ -192,11 +180,8 @@ export default {
             type: 'loadOrders',
             filterBy: { hostId },
         })
-
         this.orderByHost = JSON.parse(JSON.stringify(orders))
-        // console.log('hostId: ', hostId);
         console.log('orderByHost: ', this.orderByHost)
-        // console.log('from back office', this.$route)
     },
 
     methods: {
@@ -205,17 +190,13 @@ export default {
         },
 
         changeStatus(status, idx, order) {
-            console.log('order before change: ', order)
-            // console.log('orderId: ', order._id);
             this.orderByHost[idx].status = status
+            this.$store.dispatch({
+                type: 'updateOrder',
+                order
+            })
         },
     },
-    computed: {
-        orders() {
-            return this.$store.getters.orders
-        },
-    },
-
     components: {
         stayAdd,
         awesomeChart,

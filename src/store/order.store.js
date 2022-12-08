@@ -1,5 +1,14 @@
 import { orderService } from '../services/order.service'
 
+
+export function getActionUpdateOrder(order) {
+  return {
+    type: "updateOrder",
+    order,
+  };
+}
+
+
 export const orderStore = {
     state: {
         orders: [],
@@ -19,6 +28,10 @@ export const orderStore = {
         removeOrder(state, { orderId }) {
             state.orders = state.orders.filter((order) => order._id !== orderId)
         },
+        updateOrder(state, { order }) {
+          const idx = state.orders.findIndex((c) => c.id === order._id);
+          state.orders.splice(idx, 1, order);
+        },
     },
     actions: {
         async addOrder(context, { order }) {
@@ -36,10 +49,9 @@ export const orderStore = {
         },
         async loadOrders(context, { filterBy }) {
             try {
-                // console.log('filterBy from loadOrders: ', filterBy);
                 const orders = await orderService.query(filterBy)
                 context.commit({ type: 'setOrders', orders })
-                console.log('order From Store: ', orders)
+                // console.log('order From Store: ', orders)
                 return orders
             } catch (err) {
                 console.log('orderStore: Error in loadOrders', err)
@@ -54,6 +66,19 @@ export const orderStore = {
                 console.log('orderStore: Error in removeOrder', err)
                 throw err
             }
+        },
+
+        async updateOrder(context, { order }) {
+          try {
+            console.log('order: ', order);
+            console.log('orderId: ', order._id);
+            order = await orderService.save(JSON.parse(JSON.stringify(order)))
+            context.commit({type: "updateOrder",order})
+            return order
+          } catch (err) {
+            console.log("orderStore: Error in updateOrder", err)
+            throw err
+          }
         },
     },
 }

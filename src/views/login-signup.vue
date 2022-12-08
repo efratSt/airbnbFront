@@ -4,9 +4,6 @@
 
         <div class="loggedin-user" v-if="loggedinUser">
             <h3>
-                <!-- Loggedin User:
-                {{ loggedinUser.fullname }}
-                <pre>{{loggedinUser}}</pre> -->
                 Welcome {{ loggedinUser.fullname }}
             </h3>
             <button @click="doLogout">Logout</button>
@@ -16,19 +13,8 @@
             <form @submit.prevent="doLogin">
                 <input v-model="loginCred.username" type="text" />
                 <input v-model="loginCred.password" type="password" />
-                    <!-- <option value="">Select User</option>
-                    <option v-for="user in users" :key="user._id" :value="user.username">
-                        {{ user.fullname }}
-                    </option> -->
-                <!-- <input type="text" v-model="loginCred.username" placeholder="User name" />
-        <input
-          type="text"
-          v-model="loginCred.password"
-          placeholder="Password"
-        /> -->
                 <button>Login</button>
             </form>
-            <!-- <p class="mute">user1 or admin, pass:123</p> -->
             <form class="signup-container" @submit.prevent="doSignup">
                 <h2>Signup</h2>
                 <input type="text" v-model="signupCred.fullname" placeholder="Your full name" />
@@ -37,16 +23,7 @@
                 <button>Signup</button>
             </form>
         </div>
-        <!-- <hr /> -->
-        <!-- <details>
-            <summary>Admin Section</summary>
-            <ul>
-                <li v-for="user in users" :key="user._id">
-                    <pre>{{ user }}</pre>
-                    <button @click="removeUser(user._id)">x</button>
-                </li>
-            </ul>
-        </details> -->
+        <router-link to="/orderList">here</router-link>
     </div>
 </template>
 

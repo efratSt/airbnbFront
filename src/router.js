@@ -7,6 +7,7 @@ import userDetails from './views/user-details.vue'
 import stayDetails from './views/stay-details.vue'
 import stayExplore from './views/stay-explore.vue'
 import stayBackOffice from './views/stay-back-office.vue'
+import stayOrderList from './views/Stay-order-list.vue'
 
 const routes = [
     {
@@ -43,6 +44,11 @@ const routes = [
         path: '/backoffice',
         name: 'stay-back-office',
         component: stayBackOffice,
+    },
+    {
+        path: '/orderList',
+        name: 'stay-order-list',
+        component: stayOrderList,
     },
 ]
 
