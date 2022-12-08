@@ -17,6 +17,7 @@
                         <th>Actions</th>
                     </tr>
                     <tr
+                        v-if="orderByHost"
                         v-for="(order, idx) in orderByHost"
                         :key="orderByHost._id"
                     >
@@ -27,7 +28,13 @@
                         <td>{{ order.guests }}</td>
                         <td>${{ order.price / order.duration }}</td>
                         <td>${{ order.price }}</td>
-                        <td class="pending" :class="setStatusStyle">
+                        <td
+                            class="pending"
+                            :class="{
+                                green: order.status === 'Approved',
+                                red: order.status === 'Rejected',
+                            }"
+                        >
                             {{ order.status }}
                         </td>
                         <td>
@@ -192,11 +199,11 @@ export default {
     },
 
     computed: {
-        setStatusStyle() {
-            if (!this.currStatus) return 'Pending'
-            if (this.currStatus === 'Rejected') return 'red'
-            return 'green'
-        },
+        // setStatusStyle() {
+        //     if (!this.currStatus) return 'Pending'
+        //     if (this.currStatus === 'Rejected') return 'red'
+        //     return 'green'
+        // },
     },
     components: {
         stayAdd,
