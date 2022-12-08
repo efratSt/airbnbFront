@@ -75,14 +75,14 @@
                     <div class="revenue-stats stats-info">
                         <div class="revenue-item">
                             <span>This Month</span>
-                            <span>$357</span>
+                            <span>$1,357</span>
                         </div>
                         <div class="revenue-item">
                             <span>This Year</span>
-                            <span>$1,578</span>
+                            <span>$19,578</span>
                         </div>
                         <div class="revenue-item">
-                            <span>Total Incom</span>
+                            <span>Total Income</span>
                             <span>$3,345</span>
                         </div>
                     </div>
