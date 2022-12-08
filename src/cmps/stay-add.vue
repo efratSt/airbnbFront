@@ -124,7 +124,7 @@
                         name=""
                         id=""
                         cols="30"
-                        rows="10"
+                        rows="23"
                     ></textarea>
                 </label>
             </div>
