@@ -29,7 +29,7 @@
                     </div>
                     <div>
                         <p class="name">{{ stay.name }}</p>
-                        <p v-if="isExploreShow" class="num-of-bads"> {{ Math.ceil(stay.capacity / 2) }} &nbsp{{ numOfBeds }}
+                        <p  class="num-of-bads"> {{ Math.ceil(stay.capacity / 2) }} &nbsp{{ numOfBeds }}
                         </p>
                     </div>
                     <p class="price-night">

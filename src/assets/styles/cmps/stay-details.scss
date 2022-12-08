@@ -192,6 +192,36 @@
   font-size: 14px;
   font-weight: 500;
 }
+
+.stay-highlights{
+  flex-direction: column;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: solid 1px $clr7;
+  
+}
+.stay-highlights-content{
+  line-height: 1.2rem;
+  margin-bottom: 8px;
+  img{
+    margin-right: 22px;
+    height: 24px;
+  }
+  &.inner{
+    flex-direction: column;
+  
+  &.title{
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+  }
+   &.detail{
+    font-size: 14px;
+    color: #717171;
+   } 
+  }
+}
+
 .stay-secondary.header {
   i {
     margin-right: 0.33rem;

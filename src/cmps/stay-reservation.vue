@@ -45,9 +45,7 @@
                         <input  :value="totalGuests">
                         <span class="guests-display"> {{guestDisplay}}</span>
                     </div>
-                    <svg viewBox="0 0 320 512" width="100" title="angle-down">
-                        <path
-                            d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" />
+                    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 4; overflow: visible;"><g fill="none"><path d="m28 12-11.2928932 11.2928932c-.3905243.3905243-1.0236893.3905243-1.4142136 0l-11.2928932-11.2928932"/></g>
                     </svg>
                     <guestsModal v-click-outside="toggleGuestsModal" @click.stop="" v-if="guestsModalOpen"
                         @counterChanged="counterChanged" :class="[{ 'details-page': guestsModalOpen }]" />
