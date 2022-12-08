@@ -43,7 +43,7 @@
         </div>
     </div>
         <div  class="order-modal-buttons">
-            <button class="order-modal-btn close">Back</button>
+            <button @click="$emit('closeOrderModal')" class="order-modal-btn close">Back</button>
             <button @click="sendOrder" class="order-modal-btn confirm">Confirm</button>
         </div>
     </div>
@@ -59,7 +59,7 @@ export default {
          }
  },
  created () {
-    console.log(this.order)
+  
  },
  computed:{
     currencyCode() {
@@ -72,6 +72,7 @@ export default {
     async sendOrder() {
         console.log(this.order)
             await this.$store.dispatch({ type: 'addOrder', order:this.order} )
+            this.$emit('closeOrderModal')
             // this.$router.push('/')
         }
  }
