@@ -116,12 +116,12 @@ header {
         display: none;
     }
 }
-
+.main-container{
 .login-modal {
     position: absolute;
     z-index: 100;
     top: 77px;
-    right: 80px;
+    
     background-color: #fff;
     display: flex;
     flex-direction: column;
@@ -146,4 +146,10 @@ header {
             width: 100%;
         }
     }
+}
+&.small{
+    .login-modal {
+   
+}
+}
 }

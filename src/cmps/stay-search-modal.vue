@@ -1,6 +1,6 @@
 <template>
     <section class="search-modal" v-if="isModalOpen">
-        <div class="search-container">
+        <div class="search-container-big">
             <div class="search-line">
                 <div
                     @click="searchOpen"

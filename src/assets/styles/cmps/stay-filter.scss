@@ -1,3 +1,4 @@
+.main-container{
 .stay-filter {
     padding-inline-start: 20px;
     padding-block: 15px;
@@ -28,6 +29,7 @@
         .guests-search {
             font-weight: 400;
         }
+      
     }
 
     .search-btn {
@@ -38,6 +40,17 @@
         z-index: 10;
         margin: 7px 7px 7px 0;
     }
+
+}
+&.small{
+    .stay-filter{
+    width: 295px;
+    justify-content: space-between;
+    }
+    .search-container{
+    display: none;
+    }
+}
 }
 
 .stay-filter:hover {
