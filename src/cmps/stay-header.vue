@@ -72,6 +72,9 @@
         </div>
     </header>
     <div v-if="isLoginOpen" class="login-modal">
+        <div @click="login" class="link">
+            <span>Login/Logout</span>
+        </div>
         <div @click="wishList" class="link">
             <span>Wish list</span>
         </div>
@@ -160,6 +163,11 @@ export default {
 
         MyOrders() {
             this.$router.push('/orderList')
+            this.isLoginOpen = false
+        },
+
+        login() {
+            this.$router.push('/login')
             this.isLoginOpen = false
         },
 
