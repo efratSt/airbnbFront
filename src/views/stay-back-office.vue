@@ -1,7 +1,7 @@
 <template>
     <section class="stay-back-office">
         <h3>My bnd details</h3>
-        <button @click="openAddModal" class="add-stay-btn">Add a stay</button>
+        <!-- <button @click="openAddModal" class="add-stay-btn">Add a stay</button> -->
         <div class="main-back-office">
             <div class="orders-list">
                 <table>
@@ -120,18 +120,18 @@
             </div>
         </div>
 
-        <section v-if="isAddModalOpen" class="add-modal">
+        <!-- <section v-if="isAddModalOpen" class="add-modal">
             <h1>Add a stay</h1>
             <button :title="'Back'" @click="isAddModalOpen = false">
                 <i class="fa-solid fa-arrow-left-long"></i>
             </button>
             <stay-add />
-        </section>
+        </section> -->
     </section>
 </template>
 
 <script>
-import stayAdd from '../cmps/stay-add.vue'
+// import stayAdd from '../cmps/stay-add.vue'
 import awesomeChart from '../cmps/awesome-chart.vue'
 export default {
     data() {
@@ -217,7 +217,7 @@ export default {
     },
 
     components: {
-        stayAdd,
+        // stayAdd,
         awesomeChart,
     },
 }

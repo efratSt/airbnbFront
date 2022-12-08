@@ -17,7 +17,7 @@
             </router-link>
 
             <stay-filter @click="isOpen = true" v-if="!isOpen" />
-            <div class="link-back">
+            <div class="link-back" @click="this.isAddModalOpen = true">
                 <span class="back-office-link">Airbnd your home</span>
             </div>
 
@@ -82,6 +82,13 @@
             <span>Back office</span>
         </div>
     </div>
+    <section v-if="isAddModalOpen" class="add-modal">
+        <h1>Add a stay</h1>
+        <button :title="'Back'" @click="isAddModalOpen = false">
+            <i class="fa-solid fa-arrow-left-long"></i>
+        </button>
+        <stay-add />
+    </section>
     <Transition name="slide-fade">
         <stay-search-modal v-if="isOpen" @closeScreen="closeScreen" />
     </Transition>
@@ -94,6 +101,7 @@
 
 <script>
 import stayFilter from './stay-filter.vue'
+import stayAdd from './stay-add.vue'
 import staySearchModal from './stay-search-modal.vue'
 import loginSignup from '../views/login-signup.vue'
 
@@ -104,6 +112,7 @@ export default {
             isLoginOpen: false,
             scrollPosition: null,
             loggedinUser: null,
+            isAddModalOpen: false,
         }
     },
 
@@ -148,12 +157,20 @@ export default {
             this.$router.push('/backoffice')
             this.isLoginOpen = false
         },
+
+        MyOrders() {
+            this.$router.push('/orderList')
+            this.isLoginOpen = false
+        },
+
+        wishList() {},
     },
 
     components: {
         stayFilter,
         staySearchModal,
         loginSignup,
+        stayAdd,
     },
 }
 </script>
