@@ -20,10 +20,10 @@
                         v-for="(order, idx) in orderByHost"
                         :key="orderByHost._id"
                     >
-                        <td>12/07/2022</td>
-                        <td>Puki ben david</td>
-                        <td>luki house</td>
-                        <td>12/09/2022 - 12/13/2022</td>
+                        <td>{{ new Date(order.createdAt).toDateString() }}</td>
+                        <td>{{ order.buyer.fullname }}</td>
+                        <td>{{ order.stay.name }}</td>
+                        <td>{{ order.startDate }} - {{ order.endDate }}</td>
                         <td>{{ order.guests }}</td>
                         <td>${{ order.price / order.duration }}</td>
                         <td>${{ order.price }}</td>
@@ -124,7 +124,7 @@ export default {
         return {
             isAddModalOpen: false,
             orderByHost: [],
-
+            currStatus: null,
             testData1: {
                 labels: [
                     'August',
@@ -187,16 +187,17 @@ export default {
 
         changeStatus(status, idx) {
             this.orderByHost[idx].status = status
+            this.currStatus = status
         },
     },
 
-    computed: {},
-    setStatusStyle(idx) {
-        // if (this.orderByHost[idx].status === 'Pending') return 'Pending'
-        // if (this.orderByHost[idx].status === 'Rejected') return 'red'
-        // return 'green'
+    computed: {
+        setStatusStyle() {
+            if (!this.currStatus) return 'Pending'
+            if (this.currStatus === 'Rejected') return 'red'
+            return 'green'
+        },
     },
-
     components: {
         stayAdd,
         awesomeChart,

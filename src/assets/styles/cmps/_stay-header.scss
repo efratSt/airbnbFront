@@ -25,6 +25,12 @@ header {
                 font-size: 23px;
                 font-weight: 700;
             }
+
+            @media (max-width: 620px) {
+                span {
+                    display: none;
+                }
+            }
         }
 
         .btn-user-all {
