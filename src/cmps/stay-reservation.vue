@@ -54,6 +54,7 @@
                 </div>
             </div>
         </section>
+        
         <div @click="setReservation" class="btn-container">
             <div class="btn-cell1"></div>
             <div class="btn-cell1"></div>
@@ -207,6 +208,7 @@ export default {
             duration: null,
             guestsModalOpen: false,
             totalGuests: 1,
+            order: null
         }
     },
     methods: {
@@ -226,9 +228,14 @@ export default {
             if (this.range.start && this.range.end) {
                 this.reservationStatus = 'confirm-send'
                 const order = {
+                    currencyCode : this.stay.currencyCode,
                     hostId: this.stay.host._id,
                     createdAt: Date.now(),
-                    price: this.totalStayPrice,
+                    price:{
+                        price: this.stay.price,
+                        fees: this.extraFee,
+                        totalPrice:this.totalStayPrice,
+                    },
                     stay: {
                         stayId: this.stay._id,
                         name: this.stay.name,
@@ -242,12 +249,12 @@ export default {
                     buyer: this.$store.getters.loggedinUser || null,
                     status: `pending`
                 }
-                this.sendOrder(order)
+                // this.order = order
+                console.log(order)
+                this.$emit('orderSent',order)
+                
             }
         },
-        async sendOrder(order) {
-            await this.$store.dispatch({ type: 'addOrder', order })
-        }
     },
     computed: {
         guestDisplay() {
@@ -289,7 +296,8 @@ export default {
         },
     },
     components: {
-        guestsModal
+        guestsModal,
+        
     }
 }
 </script>

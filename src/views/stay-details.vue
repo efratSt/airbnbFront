@@ -68,6 +68,7 @@
                             alt="host image" class="host-img">
                     </div>
                 </section>
+                <orderComplete v-if="orderModalOpen" v-click-outside="closeOrderModal" :order="order"/>
                 <section class="stay-highlights"></section>
                 <section class="stay-details-summary">
                     <p class="stay-details-summary content">{{ stay.summary }}</p>
@@ -92,7 +93,7 @@
                 </div>
             </div>
             <div class="reservation-cmp-container">
-                <stayReservation @moveCalender="moveCalender" :stay="stay" :range="range" />
+                <stayReservation @orderSent="orderSent" @moveCalender="moveCalender" :stay="stay" :range="range" />
             </div>
         </div>
         <div class="details-page-calender-container" :class="{ 'modal': calenderCentered }">
@@ -119,6 +120,7 @@
 </template>
 
 <script>
+import orderComplete from '../cmps/order-complete.vue' 
 import amenitiesModal from '../cmps/stay-amenities-modal.vue'
 import stayReservation from '../cmps/stay-reservation.vue'
 export default {
@@ -133,6 +135,8 @@ export default {
                 end: null,
             },
             isSaved: false,
+            orderModalOpen: false,
+            order: null
         }
     },
     computed: {
@@ -163,6 +167,11 @@ export default {
         moveCalender() {
             this.calenderCentered = true
             console.log('hu', this.calenderCentered)
+        },
+        orderSent(order){
+            console.log(arguments)
+            this.order = order
+            this.orderModalOpen = true
         },
         getSource(amenity) {
             const source = `src/assets/icons/${amenity}`.toLowerCase() + '.svg'
@@ -207,11 +216,15 @@ export default {
         },
         toggleAmenities() {
             this.showAmenities = !this.showAmenities
+        },
+        closeOrderModal(){
+            this.orderModalOpen = false
         }
     },
     components: {
         stayReservation,
-        amenitiesModal
+        amenitiesModal,
+        orderComplete
     },
 }
 </script>

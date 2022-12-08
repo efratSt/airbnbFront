@@ -250,7 +250,7 @@
 
 .reservation-cmp-container {
   position: sticky;
-  flex-shrink: 2;
+  flex-basis: 373px;
 }
 
 }
@@ -313,7 +313,7 @@
 }
 
 .details-page-calender-container {
-  max-width: 647px;
+  flex-basis: 647px;
   border-top: $clr7 1px solid;
   padding-bottom: 2rem;
   padding-top: 2rem;

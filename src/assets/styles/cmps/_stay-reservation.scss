@@ -2,7 +2,7 @@
   border: 1px solid #00000030;
   border-radius: 13px;
   padding: 20px;
-  width: 373px;
+  
   box-shadow: 0 0 5px 5px #00000015;
   display: flex;
   flex-direction: column;
@@ -11,15 +11,15 @@
   'Helvetica Neue', sans-serif;
   position: sticky;
   top: 100px;
-  @media (max-width: 1055px) {
-    width: 320px;
-     }
-  @media (min-width: 1055px) {
-      width: 344px;
-       }
-  @media (min-width: 1120px) {
-     width: 373px;
-      }
+  // @media (max-width: 1055px) {
+  //   width: 320px;
+  //    }
+  // @media (min-width: 1055px) {
+  //     width: 344px;
+  //      }
+  // @media (min-width: 1120px) {
+  //    width: 373px;
+  //     }
     
 }
 
@@ -28,9 +28,10 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  
   margin-bottom: 1rem;
-
+  @media (max-width: 1055px) {
+       display: block;
+      }
   p {
     margin-top: 0;
     text-decoration: none;
