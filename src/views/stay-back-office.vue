@@ -14,20 +14,25 @@
                         <th>Night</th>
                         <th>Total</th>
                         <th>Status</th>
-                        <th>Actions</th>
+                        <th class="actions">Actions</th>
                     </tr>
                     <tr
                         v-if="orderByHost"
                         v-for="(order, idx) in orderByHost"
                         :key="orderByHost._id"
                     >
-                        <td>{{ new Date(order.createdAt).toDateString() }}</td>
+                        <td>
+                            {{ new Date(order.createdAt).toLocaleDateString() }}
+                        </td>
                         <td>{{ order.buyer.fullname }}</td>
                         <td>{{ order.stay.name }}</td>
-                        <td>{{ order.startDate }} - {{ order.endDate }}</td>
+                        <td>
+                            {{ order.startDate }} -
+                            {{ order.endDate }}
+                        </td>
                         <td>{{ order.guests }}</td>
                         <td>${{ order.price / order.duration }}</td>
-                        <td>${{ order.price }}</td>
+                        <td>${{ order.price.toLocaleString() }}</td>
                         <td
                             class="pending"
                             :class="{
@@ -37,14 +42,16 @@
                         >
                             {{ order.status }}
                         </td>
-                        <td>
+                        <td class="orders-btns">
                             <button
                                 @click="changeStatus('Approved', idx, order)"
                                 class="approve"
                             >
                                 Approved
                             </button>
-                            <button @click="changeStatus('Rejected', idx, order)">
+                            <button
+                                @click="changeStatus('Rejected', idx, order)"
+                            >
                                 Reject
                             </button>
                         </td>
@@ -179,12 +186,16 @@ export default {
         }
     },
 
-    created() {
+    async created() {
         var hostId = this.$store.getters.loggedinUser._id
-        this.$store.dispatch({ type: 'loadOrders', filterBy: {hostId}})
-        this.orderByHost = this.$store.getters.orders
+        const orders = await this.$store.dispatch({
+            type: 'loadOrders',
+            filterBy: { hostId },
+        })
+
+        this.orderByHost = JSON.parse(JSON.stringify(orders))
         // console.log('hostId: ', hostId);
-        console.log('orderByHost: ',this.orderByHost)
+        console.log('orderByHost: ', this.orderByHost)
         // console.log('from back office', this.$route)
     },
 
@@ -194,19 +205,17 @@ export default {
         },
 
         changeStatus(status, idx, order) {
-            console.log('order before change: ', order);
+            console.log('order before change: ', order)
             // console.log('orderId: ', order._id);
             this.orderByHost[idx].status = status
         },
     },
-
     computed: {
-        // setStatusStyle() {
-        //     if (!this.currStatus) return 'Pending'
-        //     if (this.currStatus === 'Rejected') return 'red'
-        //     return 'green'
-        // },
+        orders() {
+            return this.$store.getters.orders
+        },
     },
+
     components: {
         stayAdd,
         awesomeChart,

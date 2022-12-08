@@ -32,6 +32,11 @@ header {
                 }
             }
         }
+        @media (max-width: 530px) {
+            .logo {
+                display: none;
+            }
+        }
 
         .btn-user-all {
             cursor: pointer;
