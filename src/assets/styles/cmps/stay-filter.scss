@@ -1,56 +1,54 @@
-.main-container{
-.stay-filter {
-    padding-inline-start: 20px;
-    padding-block: 15px;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    border-radius: 40px;
-    border: 1px solid #ebebeb;
-    justify-content: space-between;
-    box-shadow: 0 1px 2px #00000014, 0 4px 12px #0000000d;
-    transition: 0.2s;
-    height: 41px;
-    margin: 6px 0;
-    font-size: 14px;
-    font-weight: 700;
-    flex: 0 1 auto;
-    cursor: pointer;
-
-    .search-container {
+.main-container {
+    .stay-filter {
+        padding-inline-start: 20px;
+        padding-block: 15px;
         display: flex;
-        gap: 15px;
+        gap: 20px;
         align-items: center;
-        .search-border {
-            border-right: 1px solid #dddddd;
-            height: 26px;
+        border-radius: 40px;
+        border: 1px solid #ebebeb;
+        justify-content: space-between;
+        box-shadow: 0 1px 2px #00000014, 0 4px 12px #0000000d;
+        transition: 0.2s;
+        height: 46px;
+        margin: 6px 0;
+        font-size: 14px;
+        font-weight: 700;
+        flex: 0 1 auto;
+        cursor: pointer;
+
+        .search-container {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            .search-border {
+                border-right: 1px solid #dddddd;
+                height: 26px;
+            }
+
+            .guests-search {
+                font-weight: 400;
+            }
         }
 
-        .guests-search {
-            font-weight: 400;
+        .search-btn {
+            background-color: #ff385c;
+            padding: 10px;
+            border-radius: 50%;
+            color: #fff;
+            z-index: 10;
+            margin: 7px 7px 7px 0;
         }
-      
     }
-
-    .search-btn {
-        background-color: #ff385c;
-        padding: 10px;
-        border-radius: 50%;
-        color: #fff;
-        z-index: 10;
-        margin: 7px 7px 7px 0;
+    &.small {
+        .stay-filter {
+            width: 295px;
+            justify-content: space-between;
+        }
+        .search-container {
+            display: none;
+        }
     }
-
-}
-&.small{
-    .stay-filter{
-    width: 295px;
-    justify-content: space-between;
-    }
-    .search-container{
-    display: none;
-    }
-}
 }
 
 .stay-filter:hover {
