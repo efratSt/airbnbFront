@@ -5,7 +5,7 @@
         <h1 class="order-confirmation header">
         One last step</h1>
         <h5>Dear {{order.buyer.fullname}},</h5>
-        <h5>In order to confirm your reservation, please confirm the following details.</h5> 
+        <h5>In order to complete your reservation, please confirm the following details.</h5> 
         <h2>Reservation details</h2>
         <h3>Trip dates:</h3>
         <span>{{order.startDate}} - {{order.endDate}}</span>  
@@ -38,8 +38,8 @@
             </div>
         </div>
         <div class="order-image-container flex">
-        <img  class="order-image-img" src="https://res.cloudinary.com/dmtlr2viw/image/upload/v1663436456/aazeb5pemja3ddxauatd.jpg" alt="">
-        <span>{{ order.stay.name }}</span>
+        <img  class="order-image-img" :src='order.stay.thumbnail' alt="">
+        <span class="order-image title">{{ order.stay.name }}</span>
         </div>
     </div>
         <div  class="order-modal-buttons">
@@ -52,6 +52,7 @@
 export default {
   props : {
     order: Object,
+    
    
   },
   data() {
@@ -70,12 +71,11 @@ export default {
  },
  methods:{
     async sendOrder() {
-        console.log(this.order)
             await this.$store.dispatch({ type: 'addOrder', order:this.order} )
             this.$emit('closeOrderModal')
-            // this.$router.push('/')
+            this.$router.push('/')
         }
- }
- }
+ },
 
+ }
 </script>
