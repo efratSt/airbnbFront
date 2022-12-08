@@ -31,6 +31,7 @@ export const orderService = {
 
 
 function query(filterBy) {
+  // console.log('filterBy from orderStore: ', filterBy);
   return httpService.get(`order`, filterBy)
   // return storageService.query('order')
 }
