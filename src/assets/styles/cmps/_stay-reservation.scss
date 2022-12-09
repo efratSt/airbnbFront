@@ -2,27 +2,15 @@
   border: 1px solid #00000030;
   border-radius: 13px;
   padding: 20px;
-  
-  box-shadow: 0 0 5px 5px #00000015;
+  box-shadow: 0 0 3px 3px #00000015;
   display: flex;
   flex-direction: column;
-  
   font-family: 'Circular', -apple-system, 'BlinkMacSystemFont', 'Roboto',
-  'Helvetica Neue', sans-serif;
+    'Helvetica Neue', sans-serif;
   position: sticky;
   top: 100px;
-  // @media (max-width: 1055px) {
-  //   width: 320px;
-  //    }
-  // @media (min-width: 1055px) {
-  //     width: 344px;
-  //      }
-  // @media (min-width: 1120px) {
-  //    width: 373px;
-  //     }
-    
 }
-.reservation-no-dates-header{
+.reservation-no-dates-header {
   justify-self: flex-start;
   color: #222222;
   font-size: 22px;
@@ -36,22 +24,22 @@
   width: 100%;
   margin-bottom: 1rem;
   @media (max-width: 1055px) {
-       display: block;
-      }
+    display: block;
+  }
   p {
     margin-top: 0;
     text-decoration: none;
   }
   .order-form-header-secondary {
     display: flex;
-    align-items: center; 
+    align-items: center;
     color: black;
   }
-  i{
+  i {
     font-size: 10px;
   }
-  .reviews{
-    a{
+  .reviews {
+    a {
       font-weight: 600;
       font-size: 14px;
       color: #777777;
@@ -81,17 +69,17 @@
   &:last-of-type {
     border-left: 1px solid #00000050;
   }
-  label{
+  label {
     font-size: 10px;
     font-weight: 700;
   }
-  input{
+  input {
     height: 0px;
     font-size: 12px;
     background-color: white;
     padding-bottom: -5px;
   }
-  button{
+  button {
     all: unset;
     position: absolute;
     right: 10px;
@@ -102,14 +90,14 @@
     height: 32px;
     width: 32px;
     border-radius: 100%;
-    
+
     cursor: pointer;
-    &:hover{
-      background-color:#F7F7F7;
+    &:hover {
+      background-color: #f7f7f7;
     }
   }
 }
-.order-form-header-secondary.reviews{
+.order-form-header-secondary.reviews {
   font-size: 14px;
 }
 .guest-input {
@@ -151,7 +139,7 @@ span.cost {
 }
 
 span.reviews {
-  color:#B9B9B9;
+  color: #b9b9b9;
   font-size: 0.85em;
   text-decoration: underline;
 }
@@ -172,91 +160,90 @@ span.reviews {
       --positionX: #{$i};
     }
 
-    .btn-cell1:nth-child(n + #{10 * $i + 1}):nth-child(-n + #{10 * ($i + 1)}):hover
+    .btn-cell1:nth-child(n + #{10 * $i + 1}):nth-child(
+        -n + #{10 * ($i + 1)}
+      ):hover
       ~ .content {
       --positionY: #{$i};
     }
   }
 
+  .btn-cell1 {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    // border: 1px solid rgba(128, 128, 128, 0.753);
+  }
 
-.btn-cell1 {
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  // border: 1px solid rgba(128, 128, 128, 0.753);
+  .content {
+    --positionX: 0;
+    --positionY: 5;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    border-radius: 8px;
+
+    background-image: radial-gradient(
+      circle at calc((0 + var(--positionX, 0)) * 10%)
+        calc((0 + var(--positionY, 0)) * 5%),
+      rgb(241, 37, 75) 0%,
+      rgb(230, 30, 77) 27.5%,
+      rgb(227, 28, 95) 40%,
+      rgb(215, 4, 102) 57.5%,
+      rgb(189, 30, 89) 75%,
+      rgb(189, 30, 89) 100%
+    );
+  }
+
+  .action-btn {
+    padding: 0 0;
+    margin: 0 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+  }
+
+  span {
+    padding: 0 0;
+    margin: 0 0;
+    color: white;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
+    font-family: sans-serif;
+  }
 }
 
-.content {
-  --positionX: 0;
-  --positionY: 5;
-
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  border-radius: 8px;
-
-  background-image: radial-gradient(
-    circle at calc((0 + var(--positionX, 0)) * 10%)
-      calc((0 + var(--positionY, 0)) * 5%),
-    rgb(241, 37, 75) 0%,
-    rgb(230, 30, 77) 27.5%,
-    rgb(227, 28, 95) 40%,
-    rgb(215, 4, 102) 57.5%,
-    rgb(189, 30, 89) 75%,
-    rgb(189, 30, 89) 100%
-  );
-}
-
-.action-btn {
-  padding: 0 0;
-  margin: 0 0;
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-  border: none;
-}
-
-span {
-  padding: 0 0;
-  margin: 0 0;
-  color: white;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 600;
-  font-family: sans-serif;
-}
-}
-
-.reservation-price-container{
+.reservation-price-container {
   padding-top: 1rem;
   font-size: 16px;
   line-height: 2.2rem;
   width: 100%;
 }
-.reservation-price{
-
-    text-decoration: underline;
+.reservation-price {
+  text-decoration: underline;
 }
-.reservation-total{
+.reservation-total {
   margin-top: 1rem;
   padding-top: 1rem;
-  border-top:  $clr7 1px solid;
+  border-top: $clr7 1px solid;
   font-weight: 600;
 }
-.input-container{
+.input-container {
   width: 46px;
-  &.wide{
+  &.wide {
     width: 56px;
   }
-
 }
-.fa-solid.fa-star.reservation{
+.fa-solid.fa-star.reservation {
   font-size: 14px;
   scale: 0.7;
 }
