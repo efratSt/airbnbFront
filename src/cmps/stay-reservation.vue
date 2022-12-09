@@ -41,7 +41,10 @@
                             <path d="m6 6 20 20"></path>
                             <path d="m26 6-20 20"></path>
                         </svg></button>
-                    <Date-picker v-click-outside="closeCalenderModal" @click.stop="openCalender" v-if="calenderOpen" class="details-page-calender secondary" v-model="range" is-range :columns="2" color="gray" />
+                        <div>
+                          
+                    <Date-picker  v-click-outside="closeCalenderModal" @click.stop="openCalender" v-if="calenderOpen" class="details-page-calender secondary"  :attributes="attributes" v-model="range" is-range :columns="2"   color="gray" />
+                        </div>
                 </div>
             </div>
             <div>
@@ -221,6 +224,15 @@ export default {
     },
     data() {
         return {
+            attributes: [{
+                key: 'today',
+                key: 'today',
+                highlight :{
+                color:  'gray',
+                fillMode: 'outline',
+                },
+                 dates: new Date(),
+            }],
             stayPrice: null,
             cleaningFee: 63,
             serviceFee: 54,
@@ -233,7 +245,7 @@ export default {
             order: null,
             calenderOpen: false,
             range: {
-                start: Date.now(),
+                start: null,
                 end: null
             }
         }
@@ -242,6 +254,7 @@ export default {
         openCalender() {
             if ((this.calenderOpen) && (!this.range.start || !this.range.end))return
             this.calenderOpen = !this.calenderOpen
+           
             // this.$emit('updateCalender' , this.range)
         },
         closeCalenderModal(){
