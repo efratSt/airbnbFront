@@ -116,25 +116,25 @@ header {
         display: none;
     }
 }
-.main-container{
-.login-modal {
-    position: absolute;
-    z-index: 1100;
-    top: 77px;
-    right: 80px;
-    grid-column-start: 2;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    width: 200px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px #0000002e;
-    font-size: 16px;
-    padding: 15px 25px;
-    box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
-    border: 1px solid lightgray;
-}
+.main-container {
+    .login-modal {
+        position: fixed;
+        z-index: 1100;
+        top: 77px;
+        right: 80px;
+        grid-column-start: 2;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        width: 200px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px #0000002e;
+        font-size: 16px;
+        padding: 15px 25px;
+        box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
+        border: 1px solid lightgray;
+    }
     .link {
         flex-basis: 100%;
         padding-block: 10px;
@@ -148,9 +148,9 @@ header {
         }
     }
 
-    &.small{
-       .login-modal {
-      right: 390px;
-}
-}
+    &.small {
+        .login-modal {
+            right: 198px;
+        }
+    }
 }
