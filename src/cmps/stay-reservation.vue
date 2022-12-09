@@ -34,7 +34,7 @@
                 </div>
                 <div @click="openCalender" class="date-input">
                     <label>CHECKOUT</label>
-                    <input>{{ date(range.end) }}
+                    <input :disabled="true">{{ date(range.end) }}
                     <button @click="(range.end = null)" v-if="range.end"><svg viewBox="0 0 32 32"
                             xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false"
                             style="display: block; fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 4; overflow: visible;">
@@ -217,7 +217,7 @@ import guestsModal from '../cmps/stay-guests-modal.vue'
 export default {
     props: {
         stay: Object,
-        range: Object
+        // range: Object
     },
     data() {
         return {
@@ -232,14 +232,17 @@ export default {
             totalGuests: 1,
             order: null,
             calenderOpen: false,
-           
+            range: {
+                start: Date.now(),
+                end: null
+            }
         }
     },
     methods: {
         openCalender() {
             if ((this.calenderOpen) && (!this.range.start || !this.range.end))return
             this.calenderOpen = !this.calenderOpen
-            this.$emit('updateCalender' , this.range)
+            // this.$emit('updateCalender' , this.range)
         },
         closeCalenderModal(){
             this.calenderOpen = false
@@ -325,6 +328,7 @@ export default {
             return (this.stayPrice + this.serviceFee + this.cleaningFee + this.taxes).toLocaleString()
         },
     },
+    
     components: {
         guestsModal,
         

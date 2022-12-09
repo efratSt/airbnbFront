@@ -116,12 +116,12 @@
                 </div>
             </div>
             <div class="reservation-cmp-container">
-                <stayReservation @orderSent="orderSent" @updateCalender="updateCalender" :stay="stay" :range="range" />
+                <stayReservation @orderSent="orderSent" :stay="stay"/>
             </div>
         </div>
-        <div class="details-page-calender-container" :class="{ 'modal': calenderCentered }">
-            <Date-picker class="details-page-calender main" v-model="range" is-range :columns="2" color="gray" />
-        </div>
+        <!-- <div class="details-page-calender-container" :class="{ 'modal': calenderCentered }"> -->
+            <!-- <Date-picker class="details-page-calender main" v-model="range" is-range :columns="2" color="gray" /> -->
+        <!-- </div> -->
         <div class="stay-chosen-dates">
         </div>
         <div class="review-container">
@@ -191,6 +191,8 @@ export default {
             this.range = range
         },
         orderSent(order){
+            console.log(arguments)
+            console.log(order)
             this.order = order
             this.orderModalOpen = true
         },
@@ -245,7 +247,7 @@ export default {
     components: {
         stayReservation,
         amenitiesModal,
-        orderComplete
-    },
+        orderComplete,
+    }
 }
 </script>
