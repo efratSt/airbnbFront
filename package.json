@@ -15,6 +15,8 @@
         "chart.js": "^3.9.1",
         "element-plus": "^2.2.25",
         "express": "^4.18.2",
+        "i": "^0.3.7",
+        "npm": "^9.2.0",
         "sass": "^1.53.0",
         "socket.io-client": "^4.5.1",
         "v-calendar": "^3.0.0-alpha.8",
@@ -25,6 +27,7 @@
         "vue-router": "^4.1.2",
         "vue-slick-carousel": "^1.0.6",
         "vue3-carousel": "^0.2.8",
+        "vue3-google-map": "^0.15.0",
         "vuex": "^4.0.2"
     },
     "devDependencies": {

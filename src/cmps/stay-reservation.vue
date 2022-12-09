@@ -224,15 +224,6 @@ export default {
     },
     data() {
         return {
-            attributes: [{
-                key: 'today',
-                key: 'today',
-                highlight :{
-                color:  'gray',
-                fillMode: 'outline',
-                },
-                 dates: new Date(),
-            }],
             stayPrice: null,
             cleaningFee: 63,
             serviceFee: 54,

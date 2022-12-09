@@ -400,3 +400,19 @@
   fill: #000000;
   color: #222222 !important ;
 }
+
+.detail-map{
+  margin-top: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid $clr7;
+  &.header{
+    font-size: 22px;
+    letter-spacing: 0.25px;
+    padding: 0;
+    font-weight: 600;
+    color:#222222
+  }
+  .map{
+    margin-top: 2rem;
+  }
+}
