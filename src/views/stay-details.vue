@@ -125,7 +125,22 @@
         <div class="stay-chosen-dates">
         </div>
         <div class="review-container">
-            <h2>Reviews</h2>
+            <h2>
+                <div class="reviews-header container flex">
+                    <div class="flex">
+                        <div>
+                             <i class="fa-solid fa-star reviews"></i>
+                        </div>
+                        <div>
+                             <p>{{ stayRate }}</p>
+                        </div>
+                             <p> &nbsp&#183&nbsp </p>
+                             <p><span class="details-reviews">
+                             <a href="#">{{ stay.reviews.length }} reviews</a>
+                             </span></p>
+                    </div>
+                </div>
+            </h2>
             <div v-if="stay.reviews" class="review-list">
                 <div class="review-preview" v-for="review in stay.reviews.slice(0, 6)" :key="review._id">
                     <div class="review-title flex align-center">
