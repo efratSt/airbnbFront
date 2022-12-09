@@ -150,7 +150,7 @@ header {
 
     &.small {
         .login-modal {
-            right: 198px;
+            right: calc((100vw - 1138px)/2)
         }
     }
 }
