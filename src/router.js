@@ -8,6 +8,7 @@ import stayDetails from './views/stay-details.vue'
 import stayExplore from './views/stay-explore.vue'
 import stayBackOffice from './views/stay-back-office.vue'
 import stayOrderList from './views/Stay-order-list.vue'
+import wishList from './views/wish-list.vue'
 
 const routes = [
     {
@@ -49,6 +50,11 @@ const routes = [
         path: '/orderList',
         name: 'stay-order-list',
         component: stayOrderList,
+    },
+    {
+        path: '/wishList',
+        name: 'wish-list',
+        component: wishList,
     },
 ]
 

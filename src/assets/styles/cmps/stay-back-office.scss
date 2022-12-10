@@ -25,10 +25,10 @@
         height: 120%;
         display: grid;
         grid-template-columns: 1fr 2fr 2fr;
-        grid-template-rows: 0.8fr 0.2fr;
+        grid-template-rows: 0.7fr 0.4fr;
         gap: 20px;
         grid-template-areas:
-            'area1  area2 area2'
+            'area2  area2 area2'
             'area1  area3  area3';
     }
     @media (max-width: 1200px) {
@@ -41,6 +41,8 @@
                 'area3  area3  area3';
             .stats-info {
                 height: max-content;
+                .stats-item {
+                }
             }
         }
     }
@@ -76,11 +78,11 @@
     &.stats-charts {
         grid-area: area3;
         .stats-item {
-            width: 48.5%;
+            width: 49%;
             height: fit-content;
             gap: 10px;
             canvas {
-                height: 300px;
+                height: 380px;
             }
         }
     }
@@ -92,7 +94,7 @@
         box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
         border: 1px solid #ebebeb;
         border-radius: 15px;
-        height: 83.5%;
+        height: fit-content;
         .stats-item {
             height: 32.5%;
             border: none;
@@ -163,6 +165,10 @@
         tr {
             text-align: left;
             width: 100%;
+            transition: 0.5s;
+            &:hover:not(:first-child) {
+                background-color: #f7f3f3;
+            }
 
             th {
                 font-size: 16px;
@@ -192,6 +198,7 @@
                 }
 
                 button {
+                    cursor: pointer;
                     background-color: $clr-red;
                     border-radius: 5px;
                     padding: 5px 15px;

@@ -116,18 +116,33 @@
                 </div>
             </div>
             <div class="reservation-cmp-container">
-                <stayReservation @orderSent="orderSent" @moveCalender="moveCalender" :stay="stay" :range="range" />
+                <stayReservation @orderSent="orderSent" :stay="stay"/>
             </div>
         </div>
-        <div class="details-page-calender-container" :class="{ 'modal': calenderCentered }">
-            <Date-picker class="details-page-calender main" v-model="range" is-range :columns="2" color="gray" />
-        </div>
+        <!-- <div class="details-page-calender-container" :class="{ 'modal': calenderCentered }"> -->
+            <!-- <Date-picker class="details-page-calender main" v-model="range" is-range :columns="2" color="gray" /> -->
+        <!-- </div> -->
         <div class="stay-chosen-dates">
         </div>
         <div class="review-container">
-            <h2>Reviews</h2>
+            <h2>
+                <div class="reviews-header container flex">
+                    <div class="flex">
+                        <div>
+                             <i class="fa-solid fa-star reviews"></i>
+                        </div>
+                        <div>
+                             <p>{{ stayRate }}</p>
+                        </div>
+                             <p> &nbsp&#183&nbsp </p>
+                             <p><span class="details-reviews">
+                             <a href="#">{{ stay.reviews.length }} reviews</a>
+                             </span></p>
+                    </div>
+                </div>
+            </h2>
             <div v-if="stay.reviews" class="review-list">
-                <div class="review-preview" v-for="review in stay.reviews.slice(0, 8)" :key="review._id">
+                <div class="review-preview" v-for="review in stay.reviews.slice(0, 6)" :key="review._id">
                     <div class="review-title flex align-center">
                         <img class="review-user-img" :src="review.by.imgUrl" alt="" />
                         <div class="review-title content flex">
@@ -139,10 +154,23 @@
                 </div>
             </div>
         </div>
-    </div>
+            <div class="detail-map">
+                <h2 class="detail-map header">Where you’ll be</h2>
+                <div class="map">
+                    <GoogleMap v-if="stay"
+                            api-key="AIzaSyDuETDc-5x28cmhJpkzqNwLfi_oKVmzT1E"
+                            style="width: 100%; height: 500px"
+                            :center="center"
+                            :zoom="13">
+                    <Marker v-for="m in markers" :options="m" @click="center = m.position" />
+                </GoogleMap>
+                </div>
+            </div>
+        </div>
 </template>
 
 <script>
+import { GoogleMap, Marker } from 'vue3-google-map'
 import orderComplete from '../cmps/order-complete.vue' 
 import amenitiesModal from '../cmps/stay-amenities-modal.vue'
 import stayReservation from '../cmps/stay-reservation.vue'
@@ -159,8 +187,15 @@ export default {
             },
             isSaved: false,
             orderModalOpen: false,
-            order: null
-        }
+            order: null,
+            center: null,
+            markers:[{
+            title: '',
+            label: '🤍',
+            position: null,
+          }],
+            }
+        
     },
     computed: {
         stayRate() {
@@ -185,13 +220,23 @@ export default {
     created() {
         var stayId = this.$route.params.id
         this.getStayById(stayId)
+        
     },
     methods: {
-        moveCalender() {
-            this.calenderCentered = true
-            console.log('hu', this.calenderCentered)
+        getLocation(){
+            const position =  {lat: this.stay.loc.lan , lng:this.stay.loc.lat}
+            this.markers[0].position = position
+            this.markers[0].title = this.stay.name
+            return position
+        },
+        
+        updateCalender(range) {
+            this.range = range
         },
         orderSent(order){
+            
+            console.log(arguments)
+            console.log(order)
             this.order = order
             this.orderModalOpen = true
         },
@@ -209,6 +254,7 @@ export default {
                 type: 'getStayById',
                 stayId,
             })
+             this.center =  this.getLocation()
         },
         async getReviews(stayId) {
             await this.$store.dispatch({
@@ -246,7 +292,9 @@ export default {
     components: {
         stayReservation,
         amenitiesModal,
-        orderComplete
+        orderComplete,
+        GoogleMap, 
+        Marker,
     },
 }
 </script>

@@ -30,17 +30,13 @@ export const orderService = {
 };
 
 function query(filterBy) {
-  console.log('filterBy from orderStore: ', filterBy);
   return httpService.get(`order`, filterBy);
-  // return storageService.query('order')
 }
 
 async function remove(orderId) {
   await httpService.delete(`order/${orderId}`);
-  // await storageService.delete('order', orderId)
 }
 async function add(order) {
-  // storageService.post(ORDER_DB , order)
   const addedOrder = await httpService.post(ORDER_DB, order);
 
  

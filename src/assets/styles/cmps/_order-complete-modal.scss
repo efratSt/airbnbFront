@@ -1,5 +1,5 @@
 .order-confirmation-modal {
-    flex-direction: column;
+  flex-direction: column;
   width: min(100% - 25px, 1180px);
   margin-inline: auto;
   z-index: 9000;
@@ -21,39 +21,39 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
-  .order-confirmation-details{
+  .order-confirmation-details {
     display: flex;
     flex-direction: column;
-    h1{
-        font-size: 32px;
-        font-weight: 700;
-        margin-bottom: 20px;
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 20px;
     }
-    h5{
-        font-size: 20px;
+    h5 {
+      font-size: 20px;
+      margin-bottom: 18px;
+    }
+    h2 {
+      font-size: 26px;
+      font-weight: 600;
+      margin-bottom: 25px;
+    }
+    h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      &.order-price {
         margin-bottom: 18px;
+      }
     }
-    h2{
-    font-size: 26px;
-    font-weight: 600; 
-    margin-bottom: 25px;
-    }
-    h3{
-        font-size: 20px;
-        font-weight: 600;
-        margin-bottom: 8px; 
-        &.order-price{
-            margin-bottom: 18px;
-        }
-        }
-}
-   .order-guests{
+  }
+  .order-guests {
     margin-bottom: 16px;
     border-bottom: 1px solid $clr7;
-   }
   }
-.order-modal-buttons{
-    align-self: flex-end;
+}
+.order-modal-buttons {
+  align-self: flex-end;
 }
 .order-modal-btn {
   width: 180px;
@@ -61,28 +61,27 @@
   font-weight: 600;
   padding: 12px;
   border-radius: 10px;
+  background-color: $clr-red;
   &.close {
     background-color: rgb(91, 84, 79);
   }
 }
 
-.order-image-container{
-   
-    padding-left: 120px;
-    flex-direction: column;
-    .order-image-img{
-        max-width: 500px;
-        border-radius: 5px;    
-    }
-    .order-image.title{
-        font-weight: 600;
-    }
+.order-image-container {
+  padding-left: 120px;
+  flex-direction: column;
+  .order-image-img {
+    max-width: 500px;
+    border-radius: 5px;
+  }
+  .order-image.title {
+    font-weight: 600;
+  }
 }
 
-.order-total{
-    margin-top: 12px;
-    padding-top: 12px;
-    border-top: 1px solid $clr7;
-    font-weight: 600;
-
+.order-total {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid $clr7;
+  font-weight: 600;
 }
