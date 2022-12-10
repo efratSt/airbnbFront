@@ -171,7 +171,10 @@ export default {
             this.isLoginOpen = false
         },
 
-        wishList() {},
+        wishList() {
+            this.$router.push('/wishList')
+            this.isLoginOpen = false
+        },
     },
 
     components: {

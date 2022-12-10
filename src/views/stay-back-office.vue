@@ -75,15 +75,15 @@
                     <div class="revenue-stats stats-info">
                         <div class="revenue-item">
                             <span>This Month</span>
-                            <span>$1,357</span>
+                            <span class="order-green">${{ totalMonth }}</span>
                         </div>
                         <div class="revenue-item">
                             <span>This Year</span>
-                            <span>$19,578</span>
+                            <span class="order-green">${{ totalYear }}</span>
                         </div>
                         <div class="revenue-item">
                             <span>Total Income</span>
-                            <span>$3,345</span>
+                            <span class="order-green">${{ totalIncome }}</span>
                         </div>
                     </div>
                 </div>
@@ -95,12 +95,12 @@
                             <span class="order-red">10.5%</span>
                         </div>
                         <div class="orders-item">
-                            <span>Average revenue</span>
-                            <span class="order-green">$2,375</span>
+                            <span>Revenue</span>
+                            <span class="order-green">${{ totalYear }}</span>
                         </div>
                         <div class="orders-item">
                             <span>Pending now</span>
-                            <span>1</span>
+                            <span>{{ totalPending }}</span>
                         </div>
                     </div>
                 </div>
@@ -112,26 +112,17 @@
                             <span class="order-red">8.33%</span>
                         </div>
                         <div class="orders-item">
-                            <span>Average revenue</span>
-                            <span class="order-green">$3,875</span>
+                            <span>Revenue</span>
+                            <span class="order-green">$52,875</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- <section v-if="isAddModalOpen" class="add-modal">
-            <h1>Add a stay</h1>
-            <button :title="'Back'" @click="isAddModalOpen = false">
-                <i class="fa-solid fa-arrow-left-long"></i>
-            </button>
-            <stay-add />
-        </section> -->
     </section>
 </template>
 
 <script>
-// import stayAdd from '../cmps/stay-add.vue'
 import awesomeChart from '../cmps/awesome-chart.vue'
 export default {
     data() {
@@ -149,7 +140,7 @@ export default {
                 ],
                 datasets: [
                     {
-                        data: [350, 400, 600, 700, 500],
+                        data: [3580, 4285, 6500, 7420, 5850],
                         backgroundColor: [
                             'red',
                             '#77CEFF',
@@ -171,7 +162,7 @@ export default {
                 ],
                 datasets: [
                     {
-                        data: [150, 500, 700, 100, 200],
+                        data: [5209, 6785, 7855, 5725, 0],
                         backgroundColor: [
                             'red',
                             '#77CEFF',
@@ -209,8 +200,46 @@ export default {
             })
         },
     },
+
+    computed: {
+        totalPending() {
+            const total = this.orderByHost.reduce((acc, order) => {
+                if (order.status === 'Pending') acc++
+                return acc
+            }, 0)
+            return total
+        },
+        totalMonth() {
+            const total = this.orderByHost.reduce((acc, order) => {
+                if (order.status === 'Approved') acc += order.price.totalPrice
+                return acc
+            }, 0)
+            this.testData2.datasets[0].data[4] = total
+            return total.toLocaleString()
+        },
+
+        totalYear() {
+            let total = this.orderByHost.reduce((acc, order) => {
+                if (order.status === 'Approved') acc += order.price.totalPrice
+                return acc
+            }, 0)
+            this.testData2.datasets[0].data[4] = total
+            total += 51000
+            return total.toLocaleString()
+        },
+
+        totalIncome() {
+            let total = this.orderByHost.reduce((acc, order) => {
+                if (order.status === 'Approved') acc += order.price.totalPrice
+                return acc
+            }, 0)
+            this.testData2.datasets[0].data[4] = total
+            total += 172850
+            return total.toLocaleString()
+        },
+    },
+
     components: {
-        // stayAdd,
         awesomeChart,
     },
 }

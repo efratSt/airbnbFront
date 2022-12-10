@@ -4,15 +4,15 @@
     </h1>
     <div v-else class="order-list">
         <div class="">
-            <div class="order-list-container header">
-                <div class="order-list-img"></div>
-                <div class="order-list-name">Name</div>
-                <div class="order-list-place">City</div>
-                <div class="order-list-date-start">Start Date</div>
-                <div class="order-list-date-end">End Date</div>
-                <div class="order-list-date-create">Created</div>
-                <div class="order-list-date-create">Total</div>
-                <div class="order-list-place-status">Status</div>
+            <div class="order-list-container">
+                <div class="order-list-img header"></div>
+                <div class="order-list-name header">Name</div>
+                <div class="order-list-place header">City</div>
+                <div class="order-list-date-start header">Start Date</div>
+                <div class="order-list-date-end header">End Date</div>
+                <div class="order-list-date-create header">Created</div>
+                <div class="order-list-date-create header">Total</div>
+                <div class="order-list-place-status header">Status</div>
             </div>
             <div
                 class="order-list-container"
@@ -40,7 +40,13 @@
                 <div class="order-list-date-create">
                     <p>${{ order.price.totalPrice.toLocaleString() }}</p>
                 </div>
-                <div class="order-list-place-status">
+                <div
+                    class="order-list-place-status"
+                    :class="{
+                        green: order.status === 'Approved',
+                        red: order.status === 'Rejected',
+                    }"
+                >
                     <p>{{ order.status }}</p>
                 </div>
             </div>
@@ -64,6 +70,9 @@ export default {
             filterBy: { buyerId: this.loggedInUser._id },
         })
         this.ordersByUser = JSON.parse(JSON.stringify(orders))
+        // test color
+        this.ordersByUser[0].status = 'Approved'
+        this.ordersByUser[1].status = 'Rejected'
     },
 }
 </script>
