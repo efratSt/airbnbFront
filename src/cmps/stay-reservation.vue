@@ -220,6 +220,7 @@ import guestsModal from '../cmps/stay-guests-modal.vue'
 export default {
     props: {
         stay: Object,
+        search: Object
         // range: Object
     },
     data() {
@@ -232,16 +233,17 @@ export default {
             numberOfGuest: null,
             duration: null,
             guestsModalOpen: false,
-            totalGuests: 1,
+            totalGuests: this.search.guests || 1,
             order: null,
             calenderOpen: false,
             range: {
-                start: null,
-                end: null
+                start: this.search.rangeStart || null,
+                end: this.search.rangeEnd || null,
             }
         }
     },
     methods: {
+       
         openCalender() {
             if ((this.calenderOpen) && (!this.range.start || !this.range.end))return
             this.calenderOpen = !this.calenderOpen
@@ -294,6 +296,11 @@ export default {
         },
     },
     computed: {
+        stayDuration() {
+            if (this.range.start && this.range.end)
+             this.duration = (((Math.round(new Date(this.range.end).getTime()) - Math.round(new Date(this.range.start).getTime())) / (1000 * 3600 * 24))).toFixed(0)
+            return this.duration
+        },
         guestDisplay() {
             return (this.totalGuests === 1) ? 'guest' : 'guests'
         },
@@ -323,14 +330,13 @@ export default {
             })
             return (rateSum / this.stay.reviews.length).toFixed(2)
         },
-        stayDuration() {
-            if (this.range.start && this.range.end)
-                this.duration = (((this.range.end - this.range.start) / (1000 * 3600 * 24))).toFixed(0)
-            return this.duration
-        },
+       
         totalPrice() {
             return (this.stayPrice + this.serviceFee + this.cleaningFee + this.taxes).toLocaleString()
         },
+    },
+    created (){
+        
     },
     
     components: {
