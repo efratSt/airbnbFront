@@ -1,8 +1,5 @@
 <template>
-    <h1 class="no-orders" v-if="!ordersByUser.length">
-        No orders yet &nbsp;:(
-    </h1>
-    <div v-else class="order-list">
+    <div class="order-list">
         <div class="">
             <div class="order-list-container">
                 <div class="order-list-img header"></div>
@@ -71,8 +68,8 @@ export default {
         })
         this.ordersByUser = JSON.parse(JSON.stringify(orders))
         // test color
-        this.ordersByUser[0].status = 'Approved'
-        this.ordersByUser[1].status = 'Rejected'
+        this.ordersByUser[0].status = 'Pending'
+        // this.ordersByUser[1].status = 'Rejected'
     },
 }
 </script>
