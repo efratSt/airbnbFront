@@ -94,13 +94,13 @@ export default {
     methods: {
         toggleSaved() {
             this.isSaved = !this.isSaved
-            
+
             // return !this.isSaved
 
         },
         goToDetails() {
-            if(this.$router.params){
-            this.$router.push(`/stay/${this.stay._id}/`+this.$router.params )
+            if (this.$router.params) {
+                this.$router.push(`/stay/${this.stay._id}/` + this.$router.params)
             } else this.$router.push(`/stay/${this.stay._id}`)
         },
     },

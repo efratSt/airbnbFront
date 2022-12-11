@@ -236,10 +236,6 @@ export default {
                 filterBy: { ...this.filterBy },
             })
 
-            // this.$router.push({
-            //     path: '/'
-            // })
-
             this.isSearchOpen = false
             this.isGuestOpen = false
             this.isCalOpen = false
@@ -256,6 +252,9 @@ export default {
                 this.$router.params = queryStringParams
                 this.$router.push('/explore/' + queryStringParams)
             }
+            // else {
+            //     this.$router.push('/')
+            // }
         },
     },
 
