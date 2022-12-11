@@ -16,14 +16,14 @@ function normalizeData(stays) {
     stays.forEach((stay) => {
       stay.currencyCode = 'USD'
       stay.reviews.forEach(
-        (review) => (review.rate = utilService.getRandomIntInclusive(3, 5))
+        (review) => (review.rate = utilService.getRandomIntInclusive(4, 5))
       )
       return stays
     })
   } else {
     stays.currencyCode = 'USD'
     stays.reviews.forEach((review) => {
-      ;(review.rate = utilService.getRandomIntInclusive(3, 5)),
+      ;(review.rate = utilService.getRandomIntInclusive(4, 5)),
         
         review.by.imgUrl = getImage()})
     }
