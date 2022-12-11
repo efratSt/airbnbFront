@@ -231,8 +231,10 @@ export default {
     created() {
         var stayId = this.$route.params.id
         this.getStayById(stayId)
+        if (this.$route.query.rangeStart){
         const [rangeStart, rangeEnd, guests] = this.$route.query
         this.search = {rangeStart, rangeEnd, guests}
+        }
         console.log(this.search)
     },
     methods: {
