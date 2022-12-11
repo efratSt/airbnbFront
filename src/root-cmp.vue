@@ -21,6 +21,8 @@ export default {
     created() {
         const user = userService.getLoggedinUser()
         if (user) store.commit({ type: 'setLoggedinUser', user })
+        // if (!user.wishList) user.wishList = []
+        // console.log('user: ', user);
     },
     computed: {
         notMain() {
