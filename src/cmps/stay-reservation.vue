@@ -233,7 +233,7 @@ export default {
             numberOfGuest: null,
             duration: null,
             guestsModalOpen: false,
-            totalGuests: this.search.guests || 1,
+            totalGuests: this.search.guests,
             order: null,
             calenderOpen: false,
             range: {
@@ -243,7 +243,7 @@ export default {
         }
     },
     methods: {
-       
+        
         openCalender() {
             if ((this.calenderOpen) && (!this.range.start || !this.range.end))return
             this.calenderOpen = !this.calenderOpen
@@ -296,6 +296,7 @@ export default {
         },
     },
     computed: {
+       
         stayDuration() {
             if (this.range.start && this.range.end)
              this.duration = (((Math.round(new Date(this.range.end).getTime()) - Math.round(new Date(this.range.start).getTime())) / (1000 * 3600 * 24))).toFixed(0)
@@ -336,6 +337,8 @@ export default {
         },
     },
     created (){
+        console.log(this.search.guests)
+        if (this.search.guests == 0) this.totalGuests = 1
         
     },
     
