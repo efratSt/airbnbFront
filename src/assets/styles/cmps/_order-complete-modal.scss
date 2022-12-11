@@ -1,87 +1,88 @@
 .order-confirmation-modal {
-  flex-direction: column;
-  width: min(100% - 25px, 1180px);
-  margin-inline: auto;
-  z-index: 9000;
-  position: fixed;
-  left: calc(100vw - 1120px * 1.5);
-  background-color: white;
-  border: 1px solid #00000030;
-  border-radius: 13px;
-  box-shadow: 0 0 5px 5px hsla(0, 0%, 0%, 0.082);
-  height: 700px;
-  left: 22%;
-  margin-left: -1120px / 2;
-  margin-top: -700px / 2;
-  min-height: 750px;
-  padding-top: 60px;
-  padding: 50px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  .order-confirmation-details {
-    display: flex;
     flex-direction: column;
-    h1 {
-      font-size: 32px;
-      font-weight: 700;
-      margin-bottom: 20px;
+    width: min(100% - 25px, 1180px);
+    margin-inline: auto;
+    z-index: 9000;
+    position: fixed;
+    left: calc(100vw - 1120px * 1.5);
+    background-color: white;
+    border: 1px solid #00000030;
+    border-radius: 13px;
+    box-shadow: 0 0 5px 5px hsla(0, 0%, 0%, 0.082);
+    height: 700px;
+    left: 22%;
+    margin-left: -1120px / 2;
+    margin-top: -700px / 2;
+    min-height: 750px;
+    padding-top: 60px;
+    padding: 50px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .order-confirmation-details {
+        display: flex;
+        flex-direction: column;
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        h5 {
+            font-size: 20px;
+            margin-bottom: 18px;
+        }
+        h2 {
+            font-size: 26px;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+        h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            &.order-price {
+                margin-bottom: 18px;
+            }
+        }
     }
-    h5 {
-      font-size: 20px;
-      margin-bottom: 18px;
+    .order-guests {
+        margin-bottom: 16px;
+        border-bottom: 1px solid $clr7;
     }
-    h2 {
-      font-size: 26px;
-      font-weight: 600;
-      margin-bottom: 25px;
-    }
-    h3 {
-      font-size: 20px;
-      font-weight: 600;
-      margin-bottom: 8px;
-      &.order-price {
-        margin-bottom: 18px;
-      }
-    }
-  }
-  .order-guests {
-    margin-bottom: 16px;
-    border-bottom: 1px solid $clr7;
-  }
 }
 .order-modal-buttons {
-  align-self: flex-end;
+    align-self: flex-end;
 }
 .order-modal-btn {
-  width: 180px;
-  font-size: 17px;
-  font-weight: 600;
-  padding: 12px;
-  border-radius: 10px;
-  background-color: $clr-red;
-  &.close {
-    background-color: rgb(91, 84, 79);
-  }
+    cursor: pointer;
+    width: 180px;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 12px;
+    border-radius: 10px;
+    background-color: $clr-red;
+    &.close {
+        background-color: rgb(91, 84, 79);
+    }
 }
 
 .order-image-container {
-  padding-left: 120px;
-  flex-direction: column;
-  .order-image-img {
-    max-width: 500px;
-    border-radius: 5px;
-  }
-  .order-image.title {
-    font-weight: 600;
-  }
+    padding-left: 120px;
+    flex-direction: column;
+    .order-image-img {
+        max-width: 500px;
+        border-radius: 5px;
+    }
+    .order-image.title {
+        font-weight: 600;
+    }
 }
 
 .order-total {
-  margin-top: 12px;
-  padding-top: 12px;
-  border-top: 1px solid $clr7;
-  font-weight: 600;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid $clr7;
+    font-weight: 600;
 }

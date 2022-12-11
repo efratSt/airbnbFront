@@ -185,8 +185,10 @@ export default {
         })
         this.orderByHost = JSON.parse(JSON.stringify(orders))
         console.log('orderByHost: ', this.orderByHost)
+        this.orderByHost[0].status = 'Pending'
     },
 
+    mounted() {},
     methods: {
         openAddModal() {
             this.isAddModalOpen = true
