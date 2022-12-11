@@ -57,6 +57,7 @@ export default {
         }
     },
     created() {
+        // console.log('router params: ', this.$route.query);
     },
     computed: {
         sumReviews() {
@@ -98,6 +99,8 @@ export default {
 
         },
         goToDetails() {
+            // if (this.$route.query) this.$router.push(`/stay/${this.stay._id}/` + this.$route.query)
+            // console.log('router.query: ', this.$route.query);
             this.$router.push(`/stay/${this.stay._id}`)
         },
     },

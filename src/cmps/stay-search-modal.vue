@@ -235,6 +235,11 @@ export default {
                 type: 'setFilterBy',
                 filterBy: { ...this.filterBy },
             })
+
+            // this.$router.push({
+            //     path: '/'
+            // })
+
             this.isSearchOpen = false
             this.isGuestOpen = false
             this.isCalOpen = false
