@@ -240,9 +240,6 @@ export default {
             this.range = range
         },
         orderSent(order){
-            
-            console.log(arguments)
-            console.log(order)
             this.order = order
             this.orderModalOpen = true
         },

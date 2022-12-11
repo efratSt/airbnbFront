@@ -47,7 +47,7 @@
                                 @click="changeStatus('Approved', idx, order)"
                                 class="approve"
                             >
-                                Approved
+                                Approve
                             </button>
                             <button
                                 @click="changeStatus('Rejected', idx, order)"

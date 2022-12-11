@@ -43,7 +43,7 @@
                         </svg></button>
                         <div>
                           
-                    <Date-picker  v-click-outside="closeCalenderModal" @click.stop="openCalender" v-if="calenderOpen" class="details-page-calender secondary"  :attributes="attributes" v-model="range" is-range :columns="2"   color="gray" />
+                    <Date-picker  v-click-outside="closeCalenderModal" @click.stop="openCalender" v-if="calenderOpen" class="details-page-calender secondary" v-model="range" is-range :columns="2"   color="gray" />
                         </div>
                 </div>
             </div>

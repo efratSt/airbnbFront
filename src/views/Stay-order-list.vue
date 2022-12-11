@@ -68,8 +68,8 @@ export default {
         })
         this.ordersByUser = JSON.parse(JSON.stringify(orders))
         // test color
-        this.ordersByUser[0].status = 'Pending'
-        // this.ordersByUser[1].status = 'Rejected'
+        this.ordersByUser[0].status = 'Approved'
+        this.ordersByUser[1].status = 'Approved'
     },
 }
 </script>
