@@ -126,7 +126,10 @@
                 font-weight: 600;
                 padding: 1.5px;
             }
-
+            .rating-value{
+                font-weight: unset;
+                font-weight: 400;
+            }
             .sum-reviews {
                 font-family: "airbnb-medium";
                 font-weight: 200;
@@ -156,3 +159,4 @@
         }
     }
 }
+
