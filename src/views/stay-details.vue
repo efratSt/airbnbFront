@@ -226,7 +226,7 @@ export default {
     created() {
         var stayId = this.$route.params.id
         this.getStayById(stayId)
-        
+        const queryStringParams = this.$router.params
     },
     methods: {
         getLocation(){

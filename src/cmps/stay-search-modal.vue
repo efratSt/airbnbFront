@@ -247,8 +247,10 @@ export default {
             ).toLocaleDateString()}&location=${this.filterBy.location}&guests=${
                 this.filterBy.guests
             }`
-            if (this.filterBy.location)
+            if (this.filterBy.location){
+                this.$router.params = queryStringParams
                 this.$router.push('/explore/' + queryStringParams)
+            }
         },
     },
 
