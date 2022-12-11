@@ -130,7 +130,7 @@
 }
 .stay-amenities-container {
   border-top: $clr7 1px solid;
-  padding-top: 1rem;
+  padding-top: 1.25rem;
   margin-bottom: 1rem;
   h2 {
     font-size: 22px;
@@ -141,7 +141,7 @@
   .stay-amenities-list {
     margin-top: 20px;
     max-width: 647px;
-    margin-bottom: 25px;
+    margin-bottom: 1rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -180,6 +180,8 @@
     border-radius: 10px;
     letter-spacing: -0.1px;
     transition: box-shadow 0.2s ease, transform 0.1s ease;
+    margin-top: -12px;
+    margin-bottom: 10px;
   }
 }
 
@@ -196,7 +198,7 @@
 .stay-highlights {
   flex-direction: column;
   margin-bottom: 1rem;
-  padding-bottom: 1rem;
+  padding-bottom: 0.25rem;
   border-bottom: solid 1px $clr7;
 }
 .stay-highlights-content {
@@ -246,17 +248,17 @@
 }
 
 .stay-details.host {
-  max-width: 647px;
+  flex-basis: 647px;
 }
 
 .stay-details-summary {
-  padding-bottom: 1rem;
+  padding-bottom: 8px;
   .content {
     max-width: 65ch;
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
       Helvetica Neue, sans-serif;
     font-size: 14px;
-    line-height: 1.43;
+    line-height: 1.43rem;
     margin: 0;
     display: -webkit-box;
     -webkit-line-clamp: 4;
@@ -286,7 +288,7 @@
 .review-container {
   border-top: $clr7 1px solid;
   padding-bottom: 2rem;
-  padding-top: 2rem;
+  padding-top: 12px;
   h2 {
     font-size: 22px;
     letter-spacing: 0.25px;
@@ -348,16 +350,16 @@
   width: 100%;
   font-size: 16px;
   padding-top: 12px;
-  margin-bottom: 14px;
+  margin-bottom: 2.5rem;
   line-height: 1.5rem;
   max-width: 50ch;
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
     Helvetica Neue, sans-serif;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  // overflow: hidden;
+  // text-overflow: ellipsis;
 }
 
 .details-page-calender-container {
@@ -434,4 +436,9 @@
   .map {
     margin-top: 2rem;
   }
+}
+.space-helper{
+  display: inline;
+  font-size: 8px;
+  letter-spacing: 0.15px;
 }

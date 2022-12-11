@@ -11,7 +11,7 @@
                         <span>&nbsp&#183 </span>
                         <span class="reviews">
                             <a  class="reviews-link" href="#">
-                                {{ stay.reviews.length }}reviews</a>   
+                                {{ stay.reviews.length }}<div class="space-helper">&nbsp</div>reviews</a>   
                         </span >&nbsp&#183 <span class="superhost" v-if="stay.host.isSuperhost">
                             <svg class="superhost-badge" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"  ><path d="m16 17c3.8659932 0 7 3.1340068 7 7s-3.1340068 7-7 7-7-3.1340068-7-7 3.1340068-7 7-7zm0 2c-2.7614237 0-5 2.2385763-5 5s2.2385763 5 5 5 5-2.2385763 5-5-2.2385763-5-5-5zm9.6666667-18.66666667c1.0543618 0 1.9181651.81587779 1.9945142 1.85073766l.0054858.14926234v6.38196601c0 .70343383-.3690449 1.35080636-.9642646 1.71094856l-.1413082.0779058-9.6666667 4.8333334c-.5067495.2533747-1.0942474.2787122-1.6171466.0760124l-.1717078-.0760124-9.66666666-4.8333334c-.62917034-.3145851-1.04315599-.93418273-1.09908674-1.62762387l-.00648607-.16123049v-6.38196601c0-1.05436179.81587779-1.91816512 1.85073766-1.99451426l.14926234-.00548574zm0 2h-19.33333337v6.38196601l9.66666667 4.83333336 9.6666667-4.83333336z"></path></svg>Superhost&nbsp&#183&nbsp</span>
                         <a class="location-details" href="#"><h4>{{ stay.loc.city }},{{stay.loc.country}}</h4></a>
@@ -165,7 +165,7 @@
                             api-key="AIzaSyDuETDc-5x28cmhJpkzqNwLfi_oKVmzT1E"
                             style="width: 100%; height: 500px"
                             :center="center"
-                            :zoom="13">
+                            :zoom="11">
                     <Marker v-for="m in markers" :options="m" @click="center = m.position" />
                 </GoogleMap>
                 </div>
@@ -199,7 +199,7 @@ export default {
             label: '🤍',
             position: null,
           }],
-          showReviews : false,
+            showReviews : false,
          }
         
     },
@@ -284,9 +284,7 @@ export default {
         date.getFullYear(),
         ]
         return  month + ' ' + year
-        },
-        
-        
+        },   
         toggleAmenities() {
             this.showAmenities = !this.showAmenities
         },
