@@ -136,8 +136,8 @@
                             style="
                                 display: block;
                                 fill: none;
-                                height: 12px;
-                                width: 12px;
+                                height: 16px;
+                                width: 16px;
                                 stroke: currentcolor;
                                 stroke-width: 5.33333;
                                 overflow: visible;

@@ -125,14 +125,23 @@
                 background-color: #ebebeb;
             }
             .search-btn {
+                display: flex;
+                align-items: center;
+                height: 46px;
+
+                gap: 10px;
                 background-color: #ff385c;
                 padding: 15px;
-                border-radius: 50%;
+                border-radius: 50px;
                 color: #fff;
                 z-index: 10;
                 margin: 7px 7px 7px 0;
                 cursor: pointer;
                 transition: 0.5s;
+                &::after {
+                    content: 'Search';
+                    font-weight: 600;
+                }
             }
             .search-btn:hover {
                 background-color: #c62b47;
