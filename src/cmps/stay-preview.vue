@@ -98,10 +98,7 @@ export default {
 
         },
         goToDetails() {
-            
-                
-             console.log(this.$router.params)
-                // this.$router.push(`/stay/${this.stay._id}/`+ this.$route.params)   
+            // this.$router.push(`/stay/${this.stay._id}/`+ this.$route.params)   
             this.$router.push(`/stay/${this.stay._id}/`+this.$router.params )
         },
     },

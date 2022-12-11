@@ -200,9 +200,14 @@ export default {
             position: null,
           }],
             showReviews : false,
-         }
-        
-    },
+            search: {
+                rangeStart: null,
+                rangeEnd: null,
+                guests:1
+                }
+
+            }
+         },
     computed: {
         stayRate() {
             let rateSum = 0
@@ -226,7 +231,9 @@ export default {
     created() {
         var stayId = this.$route.params.id
         this.getStayById(stayId)
-        const queryStringParams = this.$router.params
+        const [rangeStart, rangeEnd, guests] = this.$route.query
+        this.search = {rangeStart, rangeEnd, guests}
+        console.log(this.search)
     },
     methods: {
         getLocation(){
