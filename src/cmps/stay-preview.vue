@@ -98,8 +98,9 @@ export default {
 
         },
         goToDetails() {
-            // this.$router.push(`/stay/${this.stay._id}/`+ this.$route.params)   
+            if(this.$router.params){
             this.$router.push(`/stay/${this.stay._id}/`+this.$router.params )
+            } else this.$router.push(`/stay/${this.stay._id}`)
         },
     },
     components: {
