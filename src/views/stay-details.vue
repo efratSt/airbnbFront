@@ -116,7 +116,7 @@
                 </div>
             </div>
             <div class="reservation-cmp-container">
-                <stayReservation @orderSent="orderSent" :stay="stay"/>
+                <stayReservation @orderSent="orderSent" :stay="stay" :search="search"/>
             </div>
         </div>
         <!-- <div class="details-page-calender-container" :class="{ 'modal': calenderCentered }"> -->
@@ -232,7 +232,8 @@ export default {
         var stayId = this.$route.params.id
         this.getStayById(stayId)
         if (this.$route.query.rangeStart){
-        const [rangeStart, rangeEnd, guests] = this.$route.query
+            // console.log(this.$route.query)
+        const {rangeStart, rangeEnd, guests} = this.$route.query
         this.search = {rangeStart, rangeEnd, guests}
         }
         console.log(this.search)
