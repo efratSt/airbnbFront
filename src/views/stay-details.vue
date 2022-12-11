@@ -129,15 +129,15 @@
                 <div class="reviews-header container flex">
                     <div class="flex">
                         <div>
-                             <i class="fa-solid fa-star reviews"></i>
+                            <i class="fa-solid fa-star reviews"></i>
                         </div>
                         <div>
-                             <p>{{ stayRate }}</p>
+                            <p>{{ stayRate }}</p>
                         </div>
-                             <p> &nbsp&#183&nbsp </p>
-                             <p><span class="details-reviews">
-                             <a href="#">{{ stay.reviews.length }} reviews</a>
-                             </span></p>
+                            <p> &nbsp&#183&nbsp </p>
+                            <p><span class="details-reviews">
+                            <a href="#">{{ stay.reviews.length }} reviews</a>
+                            </span></p>
                     </div>
                 </div>
             </h2>
@@ -152,6 +152,10 @@
                     </div>
                     <p class="review-content">{{ review.txt }}</p>
                 </div>
+                <reviewsModal v-click-outside="toggleReviews" v-if="showReviews" @toggleReviews="toggleReviews" :reviews="stay.reviews" class="reviews-modal"/>                
+                <button  @click="toggleReviews" class="reviews-button" v-if="stay.reviews.length > 6">
+                            Show all {{ stay.reviews.length }} reviews
+                        </button>
             </div>
         </div>
             <div class="detail-map">
@@ -171,6 +175,7 @@
 
 <script>
 import { GoogleMap, Marker } from 'vue3-google-map'
+import reviewsModal from '../cmps/stay-reviews-modal.vue'
 import orderComplete from '../cmps/order-complete.vue' 
 import amenitiesModal from '../cmps/stay-amenities-modal.vue'
 import stayReservation from '../cmps/stay-reservation.vue'
@@ -194,7 +199,8 @@ export default {
             label: '🤍',
             position: null,
           }],
-            }
+          showReviews : false,
+         }
         
     },
     computed: {
@@ -278,23 +284,29 @@ export default {
         const [day, year] = [
         
         date.getDate(),
-         date.getFullYear(),
-         ]
+        date.getFullYear(),
+        ]
         return  month + ' ' + year
         },
+        
+        
         toggleAmenities() {
             this.showAmenities = !this.showAmenities
+        },
+        toggleReviews(){
+            this.showReviews = !this.showReviews
         },
         closeOrderModal(){
             this.orderModalOpen = false
         }
-    },
+},
     components: {
         stayReservation,
         amenitiesModal,
         orderComplete,
         GoogleMap, 
         Marker,
+        reviewsModal
     },
 }
 </script>
