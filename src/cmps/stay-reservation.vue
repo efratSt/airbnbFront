@@ -243,12 +243,9 @@ export default {
         }
     },
     methods: {
-        
         openCalender() {
             if ((this.calenderOpen) && (!this.range.start || !this.range.end))return
             this.calenderOpen = !this.calenderOpen
-           
-            // this.$emit('updateCalender' , this.range)
         },
         closeCalenderModal(){
             this.calenderOpen = false
@@ -291,12 +288,10 @@ export default {
                 }
                 // CHECK DECONSTRUCTION OPTION OR SENDING STAY AS WHOLE
                 this.$emit('orderSent',order)
-                
             }
         },
     },
     computed: {
-       
         stayDuration() {
             if (this.range.start && this.range.end)
              this.duration = (((Math.round(new Date(this.range.end).getTime()) - Math.round(new Date(this.range.start).getTime())) / (1000 * 3600 * 24))).toFixed(0)
@@ -331,7 +326,6 @@ export default {
             })
             return (rateSum / this.stay.reviews.length).toFixed(2)
         },
-       
         totalPrice() {
             return (this.stayPrice + this.serviceFee + this.cleaningFee + this.taxes).toLocaleString()
         },
@@ -340,10 +334,8 @@ export default {
         if (this.search.guests == 0) this.totalGuests = 1
         
     },
-    
     components: {
         guestsModal,
-        
     }
 }
 </script>
