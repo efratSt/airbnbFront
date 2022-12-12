@@ -261,10 +261,10 @@
     line-height: 1.43rem;
     margin: 0;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    // overflow: hidden;
+    padding-bottom: unset;
     text-overflow: ellipsis;
   }
 }
@@ -289,7 +289,7 @@
 
 .review-container {
   border-top: $clr7 1px solid;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
   padding-top: 12px;
   h2 {
     font-size: 22px;
@@ -303,6 +303,7 @@
   }
 
   .review-list {
+    padding-bottom: 10px;
     padding-top: 1rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -424,11 +425,12 @@
 }
 
 .detail-map {
-  margin-top: 1rem;
-  padding-top: 2rem;
+  // margin-top: 1rem;
+  padding-top: 1.25rem;
   border-top: 1px solid $clr7;
   padding-bottom: 2rem;
   &.header {
+    padding-top: 0;
     font-size: 22px;
     letter-spacing: 0.25px;
     padding: 0;

@@ -7,7 +7,7 @@
             </div>
             <section class="simple-counter">
                 <button
-                    :disabled="adultsCounter <= 0"
+                    :disabled="adultsCounter <= 1"
                     @click="changeCounter(-1, 'adults')"
                 >
                     -
@@ -92,9 +92,12 @@
 
 <script>
 export default {
+    props :{
+        guests: Number
+    },
     data() {
         return {
-            adultsCounter: 0,
+            adultsCounter: 1,
             childrenCounter: 0,
             infantsCounter: 0,
             petsCounter: 0,
@@ -110,5 +113,8 @@ export default {
             this.$emit('counterChanged', totalGuests);
         },
     },
-};
+    created(){
+        if(this.guests) this.adultsCounter = this.guests
+    }
+}
 </script>

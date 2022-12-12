@@ -224,7 +224,6 @@ export default {
         },
 
         flexSearch(location) {
-            console.log(location)
             this.filterBy.location = location
             this.isSearchOpen = false
         },

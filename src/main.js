@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
-import { SetupCalendar, Calendar, DatePicker } from 'v-calendar'
 import { router } from './router.js'
 import { store } from './store/store.js'
+import { SetupCalendar, Calendar, DatePicker } from 'v-calendar'
 import 'v-calendar/dist/style.css'
 import VueCarousel from 'vue-carousel'
 
