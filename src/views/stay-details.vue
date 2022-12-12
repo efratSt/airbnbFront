@@ -248,8 +248,8 @@ export default {
             this.orderModalOpen = true
         },
         getSource(amenity) {
-            const fileAmenity = amenity.toLowerCase().replaceAll(' ', '_')
-            const source = `/assets/ICON_S/${fileAmenity}` + '.svg'
+            const fileAmenity = amenity.replaceAll(' ', '_')
+            const source = `../assets/ICON_S/${fileAmenity}` + '.svg'
             return source
         },
         toggleSaved() {
