@@ -40,10 +40,9 @@ export const clickOutsideDirective = {
     document.removeEventListener('click', el.clickOutside)
   },
 }
-
 export const close = {
   mounted(el, { value }, x) {
-    console.log(x)
+    // console.log(x)
     el.onkeyup = () => {
       const color = _getRandomColor()
       el.style.backgroundColor = color

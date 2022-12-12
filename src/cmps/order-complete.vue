@@ -83,7 +83,7 @@
       async sendOrder() {
         await this.$store.dispatch({ type: 'addOrder', order: this.order })
         this.$emit('closeOrderModal')
-        this.$router.push('/orderList')
+        this.$router.push('/')
       },
     },
   }
