@@ -91,7 +91,7 @@
         <button :title="'Back'" @click="isAddModalOpen = false">
             <i class="fa-solid fa-arrow-left-long"></i>
         </button>
-        <stay-add />
+        <stay-add @closeAddModal="isAddModalOpen = false" />
     </section>
     <Transition name="slide-fade">
         <stay-search-modal v-if="isOpen" @closeScreen="closeScreen" />

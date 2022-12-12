@@ -1,7 +1,6 @@
 <template>
     <section class="stay-back-office">
         <h3>My bnd details</h3>
-        <!-- <button @click="openAddModal" class="add-stay-btn">Add a stay</button> -->
         <div class="main-back-office">
             <div class="orders-list">
                 <table>
@@ -47,7 +46,7 @@
                                 @click="changeStatus('Approved', idx, order)"
                                 class="approve"
                             >
-                                Approved
+                                Approve
                             </button>
                             <button
                                 @click="changeStatus('Rejected', idx, order)"
