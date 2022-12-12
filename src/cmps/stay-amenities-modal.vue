@@ -31,7 +31,7 @@
         :key="idx"
         :class="amenity">
         <img
-          class="amenity-icon"
+          class="amenity-icon-modal"
           :src="this.getSource(amenity)"
           width="24"
           height="24" />
