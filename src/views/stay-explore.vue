@@ -1,6 +1,6 @@
 <template>
     <section class="stay-explore">
-        <div class="more-show">Over {{ showHowManyStays }} homes</div>
+        <div class="more-show">Found {{ sumOfStays }} homes</div>
         <stay-list :stays="getStays" />
     </section>
 </template>

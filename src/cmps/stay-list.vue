@@ -7,6 +7,7 @@
 </template>
 
 <script>
+
 import stayPreview from '../cmps/stay-preview.vue';
 
 export default {
