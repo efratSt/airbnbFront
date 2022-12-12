@@ -115,7 +115,7 @@
             align-self: center;
             align-content: center;
             white-space: nowrap;
-            margin-bottom: 7px;
+            margin-bottom: 3px;
             margin-top: -14px;
             color: #222222;
 
@@ -126,7 +126,10 @@
                 font-weight: 600;
                 padding: 1.5px;
             }
-
+            .rating-value{
+                font-weight: unset;
+                font-weight: 400;
+            }
             .sum-reviews {
                 font-family: "airbnb-medium";
                 font-weight: 200;
@@ -147,7 +150,7 @@
         }
 
         .price-night {
-            margin-top: 10px;
+            margin-top: 6px;
             color: #292222;
 
             .price {
@@ -156,3 +159,4 @@
         }
     }
 }
+

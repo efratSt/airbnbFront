@@ -9,6 +9,11 @@ export const SOCKET_EVENT_USER_UPDATED = 'user-updated'
 export const SOCKET_EVENT_REVIEW_ADDED = 'review-added'
 export const SOCKET_EVENT_REVIEW_ABOUT_YOU = 'review-about-you'
 
+// export const SOCKET_EVENT_ORDER_ADD = "order-add";
+// export const SOCKET_EMIT_ORDER_ADD = "order-added"; 
+// export const SOCKET_EVENT_ORDER_STATUS = "order-status";
+// export const SOCKET_EMIT_ORDER_STATUS = "order-status-change";
+
 const SOCKET_EMIT_LOGIN = 'set-user-socket'
 const SOCKET_EMIT_LOGOUT = 'unset-user-socket'
 

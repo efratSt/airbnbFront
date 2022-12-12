@@ -23,8 +23,8 @@
                         <span>{{ stay.roomType }} in {{ stay.loc.city }}</span>
                         <div class="rating">
                             <span class="star">★</span>
-                            <span>{{ stayRate }}</span>
-                            <span class="sum-reviews">({{ sumReviews }})</span>
+                            <span class="rating-value">{{ stayRate }}</span>
+                            <span class="rating-value">({{ sumReviews }})</span>
                         </div>
                     </div>
                     <div>
@@ -57,6 +57,7 @@ export default {
         }
     },
     created() {
+        // console.log('router params: ', this.$route.query);
     },
     computed: {
         sumReviews() {
@@ -93,12 +94,14 @@ export default {
     methods: {
         toggleSaved() {
             this.isSaved = !this.isSaved
-            
+
             // return !this.isSaved
 
         },
         goToDetails() {
-            this.$router.push(`/stay/${this.stay._id}`)
+            if (this.$router.params) {
+                this.$router.push(`/stay/${this.stay._id}/` + this.$router.params)
+            } else this.$router.push(`/stay/${this.stay._id}`)
         },
     },
     components: {
