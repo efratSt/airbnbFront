@@ -6,7 +6,6 @@ import { showSuccessMsg } from './event-bus.service'
 
 const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
 
-console.log('from socketServvice');
 
 export const userService = {
     login,
@@ -62,6 +61,7 @@ async function login(userCred) {
     // const user = users.find(user => user.username === userCred.username)
     const user = await httpService.post('auth/login', userCred)
     if (user) {
+        console.log('from user service login');
         socketService.login(user._id)
         return saveLocalUser(user)
     }
