@@ -64,7 +64,6 @@ export const stayStore = {
       return stayToShow;
     },
     getRateCalcPerStay({ reviews }) {
-      console.log("reviews", reviews);
       var sum = 0;
       reviews.forEach((review) => {
         sum += review.rate;

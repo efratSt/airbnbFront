@@ -169,7 +169,6 @@ export default {
 
     methods: {
         addStay() {
-            console.log(this.stayToAdd)
             this.$emit('closeAddModal')
         },
     },

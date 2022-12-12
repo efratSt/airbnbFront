@@ -336,8 +336,6 @@ export default {
             this.range.start = null
              this.range.end = null
             }
-        console.log(this.search)
-        console.log(Math.round(new Date(this.range.end).getTime()))
     },
     components: {
         guestsModal,
