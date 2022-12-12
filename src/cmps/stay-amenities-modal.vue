@@ -51,7 +51,7 @@
     },
     methods: {
       getSource(amenity) {
-        const fileAmenity = amenity.toLowerCase().replaceAll(' ', '_')
+        const fileAmenity = amenity.replaceAll(' ', '_')
         const source = `../assets/ICON_S/${fileAmenity}` + '.svg'
         return source
       },
