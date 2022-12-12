@@ -141,7 +141,6 @@
         <button @click="addStay">Save</button>
     </section>
 </template>
-
 <script>
 export default {
     data() {
@@ -166,7 +165,6 @@ export default {
             },
         }
     },
-
     methods: {
         addStay() {
             this.$emit('closeAddModal')

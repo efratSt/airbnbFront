@@ -40,7 +40,6 @@ export const clickOutsideDirective = {
     document.removeEventListener('click', el.clickOutside)
   },
 }
-
 export const close = {
   mounted(el, { value }, x) {
     // console.log(x)
