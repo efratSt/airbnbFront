@@ -59,40 +59,40 @@
                                     @click.stop="flexSearch('Australia')"
                                     class="img-wrapper"
                                 >
-                                    <!-- <img
-                                        src="	https://a0.muscache.com/pictures/f9ec8a23-ed44-420b-83e5-10ff1f071a13.jpg"
-                                        alt=""
-                                    /> -->
+                                    <img
+                                        src="https://res.cloudinary.com/ddhr06j1v/image/upload/v1670854691/flex_bsjdqq.jpg"
+                                        alt="flex"
+                                    />
                                     <span>I'm flexible</span>
                                 </div>
                                 <div
                                     @click.stop="flexSearch('United States')"
                                     class="img-wrapper"
                                 >
-                                    <!-- <img
-                                        src="		https://a0.muscache.com/im/pictures/4e762891-75a3-4fe1-b73a-cd7e673ba915.jpg?im_w=320"
-                                        alt=""
-                                    /> -->
+                                    <img
+                                        src="https://res.cloudinary.com/ddhr06j1v/image/upload/v1670854714/us_civdvk.webp"
+                                        alt="us"
+                                    />
                                     <span>United States</span>
                                 </div>
                                 <div
                                     @click.stop="flexSearch('South America')"
                                     class="img-wrapper"
                                 >
-                                    <!-- <img
-                                        src="	https://a0.muscache.com/im/pictures/06a30699-aead-492e-ad08-33ec0b383399.jpg?im_w=320"
-                                        alt=""
-                                    /> -->
+                                    <img
+                                        src="https://res.cloudinary.com/ddhr06j1v/image/upload/v1670854705/sa_h0wynp.webp"
+                                        alt="sa"
+                                    />
                                     <span>South America</span>
                                 </div>
                                 <div
                                     @click.stop="flexSearch('Europe')"
                                     class="img-wrapper"
                                 >
-                                    <!-- <img
-                                        src="	https://a0.muscache.com/im/pictures/7b5cf816-6c16-49f8-99e5-cbc4adfd97e2.jpg?im_w=320"
-                                        alt=""
-                                    /> -->
+                                    <img
+                                        src="https://res.cloudinary.com/ddhr06j1v/image/upload/v1670854680/eu_ggxpah.webp"
+                                        alt="eu"
+                                    />
                                     <span>Europe</span>
                                 </div>
                             </div>
@@ -250,13 +250,14 @@ export default {
             ).toLocaleDateString()}&rangeEnd=${new Date(
                 this.filterBy.range.end
             ).toLocaleDateString()}&location=${this.filterBy.location}&guests=${
-                this.filterBy.guests}`
+                this.filterBy.guests
+            }`
             if (this.filterBy.location) {
                 this.$router.params = queryStringParams
                 this.$router.push('/explore/' + queryStringParams)
-            // }
-            // else {
-            //     this.$router.push('/')
+                // }
+                // else {
+                //     this.$router.push('/')
             }
         },
     },
