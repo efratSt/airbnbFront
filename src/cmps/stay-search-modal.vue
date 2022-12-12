@@ -58,40 +58,40 @@
                                     @click.stop="flexSearch('Australia')"
                                     class="img-wrapper"
                                 >
-                                    <img
+                                    <!-- <img
                                         src="	https://a0.muscache.com/pictures/f9ec8a23-ed44-420b-83e5-10ff1f071a13.jpg"
                                         alt=""
-                                    />
+                                    /> -->
                                     <span>I'm flexible</span>
                                 </div>
                                 <div
                                     @click.stop="flexSearch('United States')"
                                     class="img-wrapper"
                                 >
-                                    <img
+                                    <!-- <img
                                         src="		https://a0.muscache.com/im/pictures/4e762891-75a3-4fe1-b73a-cd7e673ba915.jpg?im_w=320"
                                         alt=""
-                                    />
+                                    /> -->
                                     <span>United States</span>
                                 </div>
                                 <div
                                     @click.stop="flexSearch('South America')"
                                     class="img-wrapper"
                                 >
-                                    <img
+                                    <!-- <img
                                         src="	https://a0.muscache.com/im/pictures/06a30699-aead-492e-ad08-33ec0b383399.jpg?im_w=320"
                                         alt=""
-                                    />
+                                    /> -->
                                     <span>South America</span>
                                 </div>
                                 <div
                                     @click.stop="flexSearch('Europe')"
                                     class="img-wrapper"
                                 >
-                                    <img
+                                    <!-- <img
                                         src="	https://a0.muscache.com/im/pictures/7b5cf816-6c16-49f8-99e5-cbc4adfd97e2.jpg?im_w=320"
                                         alt=""
-                                    />
+                                    /> -->
                                     <span>Europe</span>
                                 </div>
                             </div>
