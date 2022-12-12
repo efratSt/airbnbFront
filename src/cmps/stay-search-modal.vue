@@ -75,7 +75,7 @@
                                     <span>United States</span>
                                 </div>
                                 <div
-                                    @click.stop="flexSearch('Brazil')"
+                                    @click.stop="flexSearch('South America')"
                                     class="img-wrapper"
                                 >
                                     <img
@@ -85,7 +85,7 @@
                                     <span>South America</span>
                                 </div>
                                 <div
-                                    @click.stop="flexSearch('Spain')"
+                                    @click.stop="flexSearch('Europe')"
                                     class="img-wrapper"
                                 >
                                     <img
@@ -175,7 +175,7 @@ export default {
         return {
             isGuestOpen: false,
             isCalOpen: false,
-            isSearchOpen: false,
+            isSearchOpen: true,
             isModalOpen: true,
             totalGuests: 0,
             filterBy: {
@@ -224,7 +224,6 @@ export default {
         },
 
         flexSearch(location) {
-            console.log(location)
             this.filterBy.location = location
             this.isSearchOpen = false
         },
@@ -248,7 +247,7 @@ export default {
             ).toLocaleDateString()}&location=${this.filterBy.location}&guests=${
                 this.filterBy.guests
             }`
-            if (this.filterBy.location){
+            if (this.filterBy.location) {
                 this.$router.params = queryStringParams
                 this.$router.push('/explore/' + queryStringParams)
             }

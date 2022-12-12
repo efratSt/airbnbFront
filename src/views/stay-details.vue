@@ -236,7 +236,6 @@ export default {
         const {rangeStart, rangeEnd, guests} = this.$route.query
         this.search = {rangeStart, rangeEnd, guests}
         }
-        console.log(this.search)
     },
     methods: {
         getLocation(){

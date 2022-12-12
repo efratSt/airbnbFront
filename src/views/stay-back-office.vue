@@ -1,7 +1,6 @@
 <template>
     <section class="stay-back-office">
         <h3>My bnd details</h3>
-        <!-- <button @click="openAddModal" class="add-stay-btn">Add a stay</button> -->
         <div class="main-back-office">
             <div class="orders-list">
                 <table>
@@ -104,7 +103,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="orders stats-item">
+                <!-- <div class="orders stats-item">
                     <h4>2021</h4>
                     <div class="orders-stats stats-info">
                         <div class="orders-item">
@@ -116,7 +115,7 @@
                             <span class="order-green">$52,875</span>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>

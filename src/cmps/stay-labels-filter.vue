@@ -3,15 +3,6 @@
         class="stay-labels-filter main-container full"
         :class="{ shadow: scrollPosition }"
     >
-        <!-- <div class="icons-wrapper main-container">
-            <div class="icons-container" v-for="(icon, idx) in icons" :key="idx">
-                <div class="icon btn-label-filter" :class="labels[idx]" @click="filterByLabel(labels[idx])">
-                    <img :src="icons[idx]" alt="" />
-                    <p>{{ labels[idx] }}</p>
-                </div>
-            </div>
-        </div> -->
-
         <Carousel
             class="icons-wrapper main-container"
             :settings="settings"
@@ -21,6 +12,7 @@
                 <div
                     class="carousel__item icon btn-label-filter"
                     :class="labels[idx]"
+                    :tabindex="idx"
                     @click="filterByLabel(labels[idx])"
                 >
                     <img :src="icons[idx]" alt="" />
@@ -36,8 +28,8 @@
 </template>
 
 <script>
-import 'vue3-carousel/dist/carousel.css';
-import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
+import 'vue3-carousel/dist/carousel.css'
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 
 export default {
     data() {
@@ -130,19 +122,18 @@ export default {
                 1600: {
                     itemsToShow: 13.5,
                 },
-
             },
-        };
+        }
     },
     mounted() {
-        window.addEventListener('scroll', this.updateScroll);
+        window.addEventListener('scroll', this.updateScroll)
     },
     methods: {
         filterByLabel(label) {
-            this.$store.commit({ type: 'setFilterByLabel', label });
+            this.$store.commit({ type: 'setFilterByLabel', label })
         },
         updateScroll() {
-            this.scrollPosition = window.scrollY;
+            this.scrollPosition = window.scrollY
         },
     },
     components: {
@@ -151,5 +142,5 @@ export default {
         Pagination,
         Navigation,
     },
-};
+}
 </script>

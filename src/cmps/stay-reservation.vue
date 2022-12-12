@@ -57,7 +57,7 @@
                     <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 4; overflow: visible;"><g fill="none"><path d="m28 12-11.2928932 11.2928932c-.3905243.3905243-1.0236893.3905243-1.4142136 0l-11.2928932-11.2928932"/></g>
                     </svg>
                     <guestsModal v-click-outside="toggleGuestsModal" @click.stop="" v-if="guestsModalOpen"
-                        @counterChanged="counterChanged" :class="[{ 'details-page': guestsModalOpen }]" />
+                        @counterChanged="counterChanged" :class="[{ 'details-page': guestsModalOpen }]" :guests="+search.guests" />
                 </div>
             </div>
         </section>
@@ -287,7 +287,7 @@ export default {
                     duration: this.duration,
                     mesgs: [],
                     buyer: this.$store.getters.loggedinUser || null,
-                    status: `pending`,
+                    status: `Pending`,
                 }
                 // CHECK DECONSTRUCTION OPTION OR SENDING STAY AS WHOLE
                 this.$emit('orderSent',order)
@@ -337,7 +337,6 @@ export default {
         },
     },
     created (){
-        console.log(this.search.guests)
         if (this.search.guests == 0) this.totalGuests = 1
         
     },

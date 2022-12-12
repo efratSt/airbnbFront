@@ -131,7 +131,7 @@ header {
         border-radius: 10px;
         box-shadow: 0 2px 4px #0000002e;
         font-size: 16px;
-        padding: 15px 25px;
+        padding: 5px 15px;
         box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
         border: 1px solid lightgray;
     }
@@ -146,11 +146,15 @@ header {
             border-radius: 10px;
             width: 100%;
         }
+
+        &.login-link {
+            border: none;
+        }
     }
 
     &.small {
         .login-modal {
-            right: calc((100vw - 1138px)/2)
+            right: calc((100vw - 1138px) / 2);
         }
     }
 }
