@@ -15,31 +15,31 @@
   overflow-y: scroll;
   overflow-x: hidden;
   left: 50%;
-  margin-left:  calc( -1 * 780px / 2);
-  margin-top:  calc( -1 * 700px / 2);
+  margin-left: calc(-1 * 780px / 2);
+  margin-top: calc(-1 * 700px / 2);
   min-height: 700px;
   min-width: 780px;
   position: fixed;
   top: 58%;
 
-  .button-container{
-  border-left: 1px solid #00000030;
-  border-right: 1px solid #00000030;
-  border-top: 1px solid #00000030;
-  border-top-left-radius : 13px;
-  border-top-right-radius : 13px;
-  box-shadow: -1px 0px 0 0 hsla(0, 0%, 0%, 0.082);
-  height: 4rem;
-  left: 50%;
-  margin-left: - 780px / 2;
-  margin-top: - 700px / 2;
-  min-height: 10px;
-  min-width: 780px;
-  position: fixed;
-  top: 55%;
-  background-color: white;
-  padding-bottom: 1rem;
-}
+  .button-container {
+    border-left: 1px solid #00000030;
+    border-right: 1px solid #00000030;
+    border-top: 1px solid #00000030;
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
+    box-shadow: -1px 0px 0 0 hsla(0, 0%, 0%, 0.082);
+    height: 4rem;
+    left: 50%;
+    margin-left: calc(-1 * 780px / 2);
+    margin-top: calc(-1 * 700px / 2);
+    min-height: 10px;
+    min-width: 780px;
+    position: fixed;
+    top: 55%;
+    background-color: white;
+    padding-bottom: 1rem;
+  }
   h2 {
     margin-top: 3.5rem;
     padding-left: 25px;
@@ -62,7 +62,8 @@
       border-bottom: $clr7 1px solid;
     }
   }
-  .close-amenities-modal { //button
+  .close-amenities-modal {
+    //button
     color: black;
     background-color: white;
     cursor: pointer;

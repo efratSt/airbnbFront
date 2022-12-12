@@ -177,14 +177,14 @@ export default {
             isCalOpen: false,
             isSearchOpen: true,
             isModalOpen: true,
-            totalGuests: 0,
+            totalGuests: 1,
             filterBy: {
                 range: {
                     start: null,
                     end: null,
                 },
                 location: '',
-                guests: 0,
+                guests: 1,
                 label: '',
             },
         }
@@ -245,15 +245,14 @@ export default {
             ).toLocaleDateString()}&rangeEnd=${new Date(
                 this.filterBy.range.end
             ).toLocaleDateString()}&location=${this.filterBy.location}&guests=${
-                this.filterBy.guests
-            }`
+                this.filterBy.guests}`
             if (this.filterBy.location) {
                 this.$router.params = queryStringParams
                 this.$router.push('/explore/' + queryStringParams)
-            }
+            // }
             // else {
             //     this.$router.push('/')
-            // }
+            }
         },
     },
 
