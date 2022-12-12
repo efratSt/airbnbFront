@@ -43,6 +43,7 @@ export const orderStore = {
       }
     },
     async loadOrders(context, { filterBy }) {
+      console.log('filterBy from orderStore: ', filterBy);
       try {
         const orders = await orderService.query(filterBy);
         context.commit({ type: "setOrders", orders });

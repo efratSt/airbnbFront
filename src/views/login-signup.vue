@@ -33,7 +33,7 @@ export default {
     data() {
         return {
             msg: '',
-            loginCred: { username: '75091963', password: 'Edgar' },
+            loginCred: { username: '118676', password: 'Lizzy' },
             signupCred: {
                 username: '',
                 password: '',
