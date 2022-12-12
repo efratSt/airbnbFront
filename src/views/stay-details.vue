@@ -94,16 +94,14 @@
                 <section class="stay-details-summary">
                     <p class="stay-details-summary content">{{ stay.summary }}</p>
                 </section>
-                
-                
                 <div class="stay-details-main flex space-between">
                     <section class="stay-amenities-container">
                         <h2>What this place offers</h2>
                         <ul class="stay-amenities-list clean-list">
                             <li class="stay-amenity flex align-center"
                                 v-for="(amenity, idx) in stay.amenities.slice(0, 10)" :key="idx" :class="amenity">
-                                <object class="amenity-icon" :data="this.getSource(amenity)" width="24"
-                                    height="24"></object>
+                                <img class="amenity-icon" :src="this.getSource(amenity)" width="24"
+                                    height="24">
                                 {{ amenity }}
                             </li>
                         </ul>
@@ -173,7 +171,6 @@
         </div>
         <div  v-if="orderModalOpen" @click="orderModalOpen=false" class="screen full"></div>
 </template>
-
 <script>
 import { GoogleMap, Marker } from 'vue3-google-map'
 import reviewsModal from '../cmps/stay-reviews-modal.vue'
@@ -199,16 +196,15 @@ export default {
             title: '',
             label: '🤍',
             position: null,
-          }],
+        }],
             showReviews : false,
             search: {
                 rangeStart: null,
                 rangeEnd: null,
                 guests:1
                 }
-
             }
-         },
+        },
     computed: {
         stayRate() {
             let rateSum = 0
@@ -223,7 +219,6 @@ export default {
                 ? 'These dates are available'
                 : 'Stay is not available in these dates'
         },
-
         reviews() {
             return this.$store.getters.getReviews
             // return null
@@ -245,7 +240,6 @@ export default {
             this.markers[0].title = this.stay.name
             return position
         },
-        
         updateCalender(range) {
             this.range = range
         },
@@ -268,7 +262,7 @@ export default {
                 type: 'getStayById',
                 stayId,
             })
-             this.center =  this.getLocation()
+            this.center =  this.getLocation()
         },
         async getReviews(stayId) {
             await this.$store.dispatch({
@@ -290,7 +284,6 @@ export default {
         const date = new Date(date1)
         const month = date.toLocaleString('default', { month: 'long' })
         const [day, year] = [
-        
         date.getDate(),
         date.getFullYear(),
         ]
@@ -305,7 +298,7 @@ export default {
         closeOrderModal(){
             this.orderModalOpen = false
         }
-},
+    },
     components: {
         stayReservation,
         amenitiesModal,
