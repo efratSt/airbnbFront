@@ -3,6 +3,7 @@
         <div class="search-container-big">
             <div class="search-line">
                 <div
+                    ref="focusMe"
                     @click="searchOpen"
                     class="where search-line-btn"
                     tabindex="1"
@@ -190,6 +191,10 @@ export default {
         }
     },
 
+    mounted() {
+        this.$refs.focusMe.focus()
+    },
+
     methods: {
         date(date) {
             return date ? new Date(date).toLocaleDateString() : 'Add dates'
@@ -254,6 +259,10 @@ export default {
             //     this.$router.push('/')
             }
         },
+    },
+
+    unmounted() {
+        this.$emit('updateLoc', this.filterBy.location)
     },
 
     computed: {

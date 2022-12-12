@@ -159,7 +159,7 @@
             </div>
         </div>
             <div class="detail-map">
-                <h2 class="detail-map header">Where you’ll be</h2>
+                <h2 class="detail-map header">Where you'll be</h2>
                 <div class="map">
                     <GoogleMap v-if="stay"
                             api-key="AIzaSyDuETDc-5x28cmhJpkzqNwLfi_oKVmzT1E"
@@ -171,6 +171,7 @@
                 </div>
             </div>
         </div>
+        <div  v-if="orderModalOpen" @click="orderModalOpen=false" class="screen full"></div>
 </template>
 
 <script>
