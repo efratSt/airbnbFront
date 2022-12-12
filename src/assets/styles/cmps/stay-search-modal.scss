@@ -61,7 +61,7 @@
             &.where {
                 position: relative;
                 flex-basis: 100%;
-                padding-inline-start: 25px;
+                padding-inline-start: 30px;
                 input {
                     padding-top: 3px;
                     width: 100%;
@@ -128,14 +128,13 @@
                 display: flex;
                 align-items: center;
                 height: 46px;
-
                 gap: 10px;
                 background-color: #ff385c;
-                padding: 15px;
                 border-radius: 50px;
                 color: #fff;
                 z-index: 10;
-                margin: 7px 7px 7px 0;
+                transform: translateX(2px);
+                // margin: 7px 7px 7px 0;
                 cursor: pointer;
                 transition: 0.5s;
                 &::after {
