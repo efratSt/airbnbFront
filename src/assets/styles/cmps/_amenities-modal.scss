@@ -15,8 +15,8 @@
   overflow-y: scroll;
   overflow-x: hidden;
   left: 50%;
-  margin-left: - 780px / 2;
-  margin-top: - 700px / 2;
+  margin-left:  calc( -1 * 780px / 2);
+  margin-top:  calc( -1 * 700px / 2);
   min-height: 700px;
   min-width: 780px;
   position: fixed;
