@@ -249,7 +249,7 @@ export default {
         },
         getSource(amenity) {
             const fileAmenity = amenity.replaceAll(' ', '_')
-            const source = `../assets/ICON_S/${fileAmenity}` + '.svg'
+            const source = `/assets/ICON_S/${fileAmenity}` + '.svg'
             return source
         },
         toggleSaved() {
