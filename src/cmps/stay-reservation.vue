@@ -332,7 +332,11 @@ export default {
     },
     created (){
         if (this.search.guests == 0) this.totalGuests = 1
-        
+        if (this.search.rangeStart === -32400000){
+             this.search.rangeStart === null
+            }
+        console.log(this.search)
+        console.log(Math.round(new Date(this.range.end).getTime()))
     },
     components: {
         guestsModal,
