@@ -28,7 +28,7 @@ socketService.setup()
 
 function createSocketService() {
     var socket = null
-    const socketService = {
+    const socketService = { 
         setup() {
             socket = io(baseUrl)
             setTimeout(() => {
@@ -49,6 +49,7 @@ function createSocketService() {
             socket.emit(eventName, data)
         },
         login(userId) {
+            console.log('from login socket service');
             socket.emit(SOCKET_EMIT_LOGIN, userId)
         },
         logout() {
@@ -72,7 +73,9 @@ function createDummySocketService() {
         terminate() {
             this.setup()
         },
-        login() {},
+        login() {
+
+        },
         logout() {},
         on(eventName, cb) {
             listenersMap[eventName] = [...(listenersMap[eventName] || []), cb]
