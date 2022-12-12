@@ -185,7 +185,7 @@ export default {
         this.orderByHost = JSON.parse(JSON.stringify(orders))
         console.log('orderByHost: ', this.orderByHost)
         // demo data
-        this.orderByHost[0].status = 'Pending'
+        // this.orderByHost[0].status = 'Pending'
         this.orderByHost[0].guests = 2
     },
 
