@@ -127,7 +127,7 @@
             .search-btn {
                 display: flex;
                 align-items: center;
-                height: 46px;
+                height: 45px;
                 gap: 10px;
                 background-color: #ff385c;
                 border-radius: 50px;
@@ -139,7 +139,8 @@
                 transition: 0.5s;
                 &::after {
                     content: 'Search';
-                    font-weight: 600;
+                    font-weight: 500;
+                    transform: translateY(-1px);
                 }
             }
             .search-btn:hover {

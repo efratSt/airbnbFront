@@ -101,16 +101,16 @@ export default {
             childrenCounter: 0,
             infantsCounter: 0,
             petsCounter: 0,
-        };
+        }
     },
     methods: {
         changeCounter(diff, countType) {
-            if (countType === 'adults') this.adultsCounter += diff;
-            else if (countType === 'children') this.childrenCounter += diff;
-            else if (countType === 'infants') this.infantsCounter += diff;
-            else this.petsCounter += diff;
-            let totalGuests = this.adultsCounter + this.childrenCounter;
-            this.$emit('counterChanged', totalGuests);
+            if (countType === 'adults') this.adultsCounter += diff
+            else if (countType === 'children') this.childrenCounter += diff
+            else if (countType === 'infants') this.infantsCounter += diff
+            else this.petsCounter += diff
+            let totalGuests = this.adultsCounter + this.childrenCounter
+            this.$emit('counterChanged', totalGuests)
         },
     },
     created(){
