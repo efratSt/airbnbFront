@@ -35,7 +35,7 @@
             </div>
         </div>
         <div class="stay-details-extra flex space-between">
-            <div>
+            <div class="left-side">
                 <section class="stay-details host">
                     <div class="host-header flex space-between">
                         <div>
@@ -71,21 +71,21 @@
                 <orderComplete v-if="orderModalOpen" v-click-outside="closeOrderModal" @closeOrderModal="closeOrderModal" :order="order" />
                 <section class="stay-highlights flex">
                     <div class="stay-highlights-content flex ">
-                        <img src="../assets/ICON_S/Lock_on_bedroom.svg" alt="">
+                        <img src="../assets/icons/Lock_on_bedroom.svg" alt="">
                         <div class="stay-highlights-content inner flex">
                             <span class="stay-highlights-content inner title"> Self check-in</span>
                             <span class="stay-highlights-content inner detail">Check yourself in with the keypad.</span>                   
                         </div>
                     </div >
                     <div class="stay-highlights-content flex">
-                        <img class="stay-highlights-content img" src="../assets/ICON_S/Park_for_free.svg" alt="">
+                        <img class="stay-highlights-content img" src="../assets/icons/Park_for_free.svg" alt="">
                         <div class="stay-highlights-content inner flex">
                             <span class="stay-highlights-content inner title">Park for free </span>
                             <span class="stay-highlights-content inner detail">This is one of the few places in the area with free parking.</span>
                         </div>
                     </div>
                     <div class="stay-highlights-content flex">
-                        <img class="stay-highlights-content img" src="../assets/ICON_S/Long_term_allowed.svg" alt="">
+                        <img class="stay-highlights-content img" src="../assets/icons/Long_term_allowed.svg" alt="">
                         <div class="stay-highlights-content inner flex">
                             <span class="stay-highlights-content inner title"> Free cancellation for 48 hours. </span>
                         </div>
@@ -248,8 +248,8 @@ export default {
             this.orderModalOpen = true
         },
         getSource(amenity) {
-            const fileAmenity = amenity.toLowerCase().replaceAll(' ', '_')
-            const source = `/assets/ICON_S/${fileAmenity}` + '.svg'
+            const fileAmenity = amenity.replaceAll(' ', '_')
+            const source = `../src/assets/icons/${fileAmenity}`+'.svg'
             return source
         },
         toggleSaved() {
