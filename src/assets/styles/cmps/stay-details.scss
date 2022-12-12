@@ -81,6 +81,7 @@
     .img-1 {
       border-top-left-radius: unset;
       border-bottom-left-radius: unset;
+      height: calc(100vw/1.75);
     }
     .img-2 {
       display: none;
@@ -140,14 +141,11 @@
   }
   .stay-amenities-list {
     margin-top: 20px;
-    max-width: 647px;
+    flex-basis: 647px;
     margin-bottom: 1rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    // display: grid;
-    // grid-template-columns: 1fr 1fr;
-    // grid-template-rows: repeat(5, 1fr);
     line-height: 1.5rem;
     .amenity-icon {
       margin-right: 1rem;
@@ -387,7 +385,7 @@
 }
 .details-page-calender {
   &.main {
-    max-width: 647px;
+    flex-basis: 647px;
   }
   &.secondary {
     position: absolute;
@@ -445,4 +443,15 @@
   display: inline;
   font-size: 8px;
   letter-spacing: 0.15px;
+}
+.left-side{
+  max-width: 647px;
+}
+@media (max-width: 800px)  {
+  .stay-details-extra {
+    flex-direction: column;
+}
+}
+@media (min-width: 1130px) {
+  
 }
