@@ -182,11 +182,11 @@ export default {
             type: 'loadOrders',
             filterBy: { hostId },
         })
-        this.orderByHost = JSON.parse(JSON.stringify(orders))
+        this.orderByHost = JSON.parse(JSON.stringify(orders)).reverse()
         console.log('orderByHost: ', this.orderByHost)
         // demo data
         // this.orderByHost[0].status = 'Pending'
-        this.orderByHost[0].guests = 2
+        // this.orderByHost[0].guests = 2
     },
 
     mounted() {},
