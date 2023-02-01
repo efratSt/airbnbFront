@@ -33,7 +33,6 @@
             font-size: 14px;
             justify-content: center;
             border-radius: 50px;
-            // width: 100%;
             flex-basis: 50%;
             padding-inline-start: 20px;
             &:hover {
@@ -135,7 +134,6 @@
                 color: #fff;
                 z-index: 10;
                 transform: translateX(2px);
-                // margin: 7px 7px 7px 0;
                 cursor: pointer;
                 transition: 0.5s;
                 &::after {

@@ -31,17 +31,8 @@ export const orderStore = {
       state.orders.splice(idx, 1, order)
     },
   },
+
   actions: {
-    async addOrder(context, { order }) {
-      try {
-        order = await orderService.add(order)
-        context.commit({ type: 'addOrder', order })
-        return order
-      } catch (err) {
-        console.log('orderStore: Error in addOrder', err)
-        throw err
-      }
-    },
     async loadOrders(context, { filterBy }) {
       try {
         const orders = await orderService.query(filterBy)
@@ -49,6 +40,48 @@ export const orderStore = {
         return orders
       } catch (err) {
         console.log('orderStore: Error in loadOrders', err)
+        throw err
+      }
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    async addOrder(context, { order }) {
+      try {
+        order = await orderService.add(order)
+        context.commit({ type: 'addOrder', order })
+        return order
+      } catch (err) {
+        console.log('orderStore: Error in addOrder', err)
         throw err
       }
     },
