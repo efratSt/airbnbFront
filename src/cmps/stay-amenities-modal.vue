@@ -30,11 +30,11 @@
         v-for="(amenity, idx) in amenities"
         :key="idx"
         :class="amenity">
-        <img
+        <object
           class="amenity-icon-modal"
-          :src="this.getSource(amenity)"
+          :data="this.getSource(amenity)"
           width="24"
-          height="24" />
+          height="24" ></object>
         {{ amenity }}
       </li>
     </ul>

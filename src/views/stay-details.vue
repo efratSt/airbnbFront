@@ -100,8 +100,8 @@
                         <ul class="stay-amenities-list clean-list">
                             <li class="stay-amenity flex align-center"
                                 v-for="(amenity, idx) in stay.amenities.slice(0, 10)" :key="idx" :class="amenity">
-                                <img class="amenity-icon" :src="this.getSource(amenity)" width="24"
-                                    height="24">
+                                <object class="amenity-icon" :data="this.getSource(amenity)" width="24"
+                                    height="24"></object>
                                 {{ amenity }}
                             </li>
                         </ul>
@@ -249,7 +249,7 @@ export default {
         },
         getSource(amenity) {
             const fileAmenity = amenity.replaceAll(' ', '_')
-            const source = `src/assets/icons/${fileAmenity}`+'.svg'
+            const source = `assets/icons/${fileAmenity}`+'.svg'
             return source
         },
         toggleSaved() {
